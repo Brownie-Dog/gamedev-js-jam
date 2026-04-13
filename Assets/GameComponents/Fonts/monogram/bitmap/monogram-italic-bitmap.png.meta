@@ -1,0 +1,2379 @@
+fileFormatVersion: 2
+guid: 8e6010b0e0701df41a1e30274a303987
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4834763863754068009
+    second: monogram-italic-bitmap_0
+  - first:
+      213: -2830738768098490435
+    second: monogram-italic-bitmap_1
+  - first:
+      213: -2602469582851961047
+    second: monogram-italic-bitmap_2
+  - first:
+      213: -3360940384769957348
+    second: monogram-italic-bitmap_3
+  - first:
+      213: 5817157033192396135
+    second: monogram-italic-bitmap_4
+  - first:
+      213: 677536857216765900
+    second: monogram-italic-bitmap_5
+  - first:
+      213: -6429127531967210696
+    second: monogram-italic-bitmap_6
+  - first:
+      213: -102008352401324765
+    second: monogram-italic-bitmap_7
+  - first:
+      213: 5699114589940330354
+    second: monogram-italic-bitmap_8
+  - first:
+      213: 7449506376221486328
+    second: monogram-italic-bitmap_9
+  - first:
+      213: 4152307326551752357
+    second: monogram-italic-bitmap_10
+  - first:
+      213: -2579242921906073351
+    second: monogram-italic-bitmap_11
+  - first:
+      213: -410383248530688140
+    second: monogram-italic-bitmap_12
+  - first:
+      213: 7425717459348948871
+    second: monogram-italic-bitmap_13
+  - first:
+      213: -8114182306905825534
+    second: monogram-italic-bitmap_14
+  - first:
+      213: -1238787976135334708
+    second: monogram-italic-bitmap_15
+  - first:
+      213: -2445458826585040037
+    second: monogram-italic-bitmap_16
+  - first:
+      213: 4036066971481331581
+    second: monogram-italic-bitmap_17
+  - first:
+      213: -4642425399067319213
+    second: monogram-italic-bitmap_18
+  - first:
+      213: 7908289758973795608
+    second: monogram-italic-bitmap_19
+  - first:
+      213: 4777801881924875644
+    second: monogram-italic-bitmap_20
+  - first:
+      213: -2602126292925911124
+    second: monogram-italic-bitmap_21
+  - first:
+      213: 2684338257798140276
+    second: monogram-italic-bitmap_22
+  - first:
+      213: -6249454238092010123
+    second: monogram-italic-bitmap_23
+  - first:
+      213: 106945359865224359
+    second: monogram-italic-bitmap_24
+  - first:
+      213: 3490232816656480023
+    second: monogram-italic-bitmap_25
+  - first:
+      213: -4453257119821044400
+    second: monogram-italic-bitmap_26
+  - first:
+      213: -1149567859808274010
+    second: monogram-italic-bitmap_27
+  - first:
+      213: -7698075727486320124
+    second: monogram-italic-bitmap_28
+  - first:
+      213: 4903112936388144595
+    second: monogram-italic-bitmap_29
+  - first:
+      213: -5949495111492564970
+    second: monogram-italic-bitmap_30
+  - first:
+      213: 3961794574648007553
+    second: monogram-italic-bitmap_31
+  - first:
+      213: 820880516567574366
+    second: monogram-italic-bitmap_32
+  - first:
+      213: 3997866886336410848
+    second: monogram-italic-bitmap_33
+  - first:
+      213: -5049933744580641992
+    second: monogram-italic-bitmap_34
+  - first:
+      213: -7717466187061399820
+    second: monogram-italic-bitmap_35
+  - first:
+      213: -5277479385613767719
+    second: monogram-italic-bitmap_36
+  - first:
+      213: 847968115447727091
+    second: monogram-italic-bitmap_37
+  - first:
+      213: 8312145399862977853
+    second: monogram-italic-bitmap_38
+  - first:
+      213: -63658750191519856
+    second: monogram-italic-bitmap_39
+  - first:
+      213: -2741932396330329805
+    second: monogram-italic-bitmap_40
+  - first:
+      213: 6971198788784112997
+    second: monogram-italic-bitmap_41
+  - first:
+      213: 5236704677207346995
+    second: monogram-italic-bitmap_42
+  - first:
+      213: 1582647564884429533
+    second: monogram-italic-bitmap_43
+  - first:
+      213: -5156433561261205138
+    second: monogram-italic-bitmap_44
+  - first:
+      213: 2079835771630506542
+    second: monogram-italic-bitmap_45
+  - first:
+      213: -2519667268887985874
+    second: monogram-italic-bitmap_46
+  - first:
+      213: 2115662475924738175
+    second: monogram-italic-bitmap_47
+  - first:
+      213: -2291862037477295343
+    second: monogram-italic-bitmap_48
+  - first:
+      213: -6741217804397825147
+    second: monogram-italic-bitmap_49
+  - first:
+      213: -7870977936464597241
+    second: monogram-italic-bitmap_50
+  - first:
+      213: -5234769669289345731
+    second: monogram-italic-bitmap_51
+  - first:
+      213: 4157299767125475091
+    second: monogram-italic-bitmap_52
+  - first:
+      213: -3262190230338609613
+    second: monogram-italic-bitmap_53
+  - first:
+      213: -1189649894107896787
+    second: monogram-italic-bitmap_54
+  - first:
+      213: -6082903081917239272
+    second: monogram-italic-bitmap_55
+  - first:
+      213: -5022144608839543807
+    second: monogram-italic-bitmap_56
+  - first:
+      213: 2596613715395428546
+    second: monogram-italic-bitmap_57
+  - first:
+      213: -1760438737885197258
+    second: monogram-italic-bitmap_58
+  - first:
+      213: 7666151569819186146
+    second: monogram-italic-bitmap_59
+  - first:
+      213: 8187789724712803908
+    second: monogram-italic-bitmap_60
+  - first:
+      213: 8696201742648517439
+    second: monogram-italic-bitmap_61
+  - first:
+      213: -9007246456217520374
+    second: monogram-italic-bitmap_62
+  - first:
+      213: -3949989018537636502
+    second: monogram-italic-bitmap_63
+  - first:
+      213: -1352997934180467269
+    second: monogram-italic-bitmap_64
+  - first:
+      213: 140426923713870477
+    second: monogram-italic-bitmap_65
+  - first:
+      213: 3194178505483742431
+    second: monogram-italic-bitmap_66
+  - first:
+      213: 8567060347437649752
+    second: monogram-italic-bitmap_67
+  - first:
+      213: 8141561931021820414
+    second: monogram-italic-bitmap_68
+  - first:
+      213: -4453577912947939058
+    second: monogram-italic-bitmap_69
+  - first:
+      213: 2771803123130251130
+    second: monogram-italic-bitmap_70
+  - first:
+      213: -3253744437999408112
+    second: monogram-italic-bitmap_71
+  - first:
+      213: 3300743606268671104
+    second: monogram-italic-bitmap_72
+  - first:
+      213: -1834322276261371350
+    second: monogram-italic-bitmap_73
+  - first:
+      213: 4962308552420768072
+    second: monogram-italic-bitmap_74
+  - first:
+      213: 8847681534001905577
+    second: monogram-italic-bitmap_75
+  - first:
+      213: 8772592957582364989
+    second: monogram-italic-bitmap_76
+  - first:
+      213: 7877915173639521919
+    second: monogram-italic-bitmap_77
+  - first:
+      213: -1920063821077539163
+    second: monogram-italic-bitmap_78
+  - first:
+      213: -8457498807306047319
+    second: monogram-italic-bitmap_79
+  - first:
+      213: 8981027104718169654
+    second: monogram-italic-bitmap_80
+  - first:
+      213: 7602784311522120315
+    second: monogram-italic-bitmap_81
+  - first:
+      213: 603643249242740319
+    second: monogram-italic-bitmap_82
+  - first:
+      213: 381383581571382157
+    second: monogram-italic-bitmap_83
+  - first:
+      213: 761679198208628304
+    second: monogram-italic-bitmap_84
+  - first:
+      213: -2608662238737392459
+    second: monogram-italic-bitmap_85
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 86
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920d4ff4e18881340800000000000000
+      internalID: 4834763863754068009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 85
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7009b961237b8d0800000000000000
+      internalID: -2830738768098490435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 86
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f895fe3bb22ebd0800000000000000
+      internalID: -2602469582851961047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 86
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12a58ee68a8b51d0800000000000000
+      internalID: -3360940384769957348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_4
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 86
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76519164081bab050800000000000000
+      internalID: 5817157033192396135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 85
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfc3a09e28176900800000000000000
+      internalID: 677536857216765900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_6
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 74
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b1969929627c6a0800000000000000
+      internalID: -6429127531967210696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 74
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3250ff6a1f7959ef0800000000000000
+      internalID: -102008352401324765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 74
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27fa3ab3682571f40800000000000000
+      internalID: 5699114589940330354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_9
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 74
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc60ba7496f16760800000000000000
+      internalID: 7449506376221486328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_10
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 74
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae7e5d7385ff9930800000000000000
+      internalID: 4152307326551752357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_11
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 74
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f0195a5a30b43cd0800000000000000
+      internalID: -2579242921906073351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 74
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477be891c960e4af0800000000000000
+      internalID: -410383248530688140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 74
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78709e6afa27d0760800000000000000
+      internalID: 7425717459348948871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_14
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 74
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f5e12ce22a46f80800000000000000
+      internalID: -8114182306905825534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 74
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4ad6a26e0fecee0800000000000000
+      internalID: -1238787976135334708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_16
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 74
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b1e80672cff0ed0800000000000000
+      internalID: -2445458826585040037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_17
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 73
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d77d4dcc68df20830800000000000000
+      internalID: 4036066971481331581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 75
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354675832bac29fb0800000000000000
+      internalID: -4642425399067319213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d1e78c2a3efbd60800000000000000
+      internalID: 7908289758973795608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 62
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75335b6f792e4240800000000000000
+      internalID: 4777801881924875644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_21
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caf62795ce363ebd0800000000000000
+      internalID: -2602126292925911124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_22
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4719c095c6fa04520800000000000000
+      internalID: 2684338257798140276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_23
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d57724b7a7549a0800000000000000
+      internalID: -6249454238092010123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 62
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac9429fc32fb7100800000000000000
+      internalID: 106945359865224359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_25
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 62
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7177834314ccf6030800000000000000
+      internalID: 3490232816656480023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_26
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055669f6e3ad232c0800000000000000
+      internalID: -4453257119821044400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9fbe64f1aeb00f0800000000000000
+      internalID: -1149567859808274010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_28
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 62
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4020f1979e0fa2590800000000000000
+      internalID: -7698075727486320124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_29
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 62
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dda903ec3b5b0440800000000000000
+      internalID: 4903112936388144595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_30
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6180096c7b52f6da0800000000000000
+      internalID: -5949495111492564970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_31
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18bd6f6dc2f1bf630800000000000000
+      internalID: 3961794574648007553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_32
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 50
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57ac090b7a546b00800000000000000
+      internalID: 820880516567574366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_33
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 62
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4f06360c64b7730800000000000000
+      internalID: 3997866886336410848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_34
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 62
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b3307d3080be9b0800000000000000
+      internalID: -5049933744580641992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4feed1a446d06e490800000000000000
+      internalID: -7717466187061399820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_36
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 49
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db6b07c570a2c6b0800000000000000
+      internalID: -5277479385613767719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_37
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f38e1e128694cb00800000000000000
+      internalID: 847968115447727091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_38
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35ea38933caa5370800000000000000
+      internalID: 8312145399862977853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_39
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0973df734b6dd1ff0800000000000000
+      internalID: -63658750191519856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_40
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339589e4303b2f9d0800000000000000
+      internalID: -2741932396330329805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_41
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5654c180d5caeb060800000000000000
+      internalID: 6971198788784112997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_42
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f029e98238ca840800000000000000
+      internalID: 5236704677207346995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_43
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 50
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddac2953391b6f510800000000000000
+      internalID: 1582647564884429533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_44
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 50
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e699f19fefaa078b0800000000000000
+      internalID: -5156433561261205138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_45
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 50
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e22df276d9f0ddc10800000000000000
+      internalID: 2079835771630506542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_46
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 38
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21c0cdf7f7580dd0800000000000000
+      internalID: -2519667268887985874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_47
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 38
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f701e1600d75c5d10800000000000000
+      internalID: 2115662475924738175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_48
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 38
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b76f5ae9ba130e0800000000000000
+      internalID: -2291862037477295343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_49
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 38
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58334579f126272a0800000000000000
+      internalID: -6741217804397825147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_50
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 38
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70f271ed44ba4c290800000000000000
+      internalID: -7870977936464597241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_51
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 36
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3df40588bc5a57b0800000000000000
+      internalID: -5234769669289345731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_52
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 36
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ff354ac12b1b930800000000000000
+      internalID: 4157299767125475091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_53
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 38
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33edae2f44f5ab2d0800000000000000
+      internalID: -3262190230338609613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_54
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 38
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d242e9e69b38d7fe0800000000000000
+      internalID: -1189649894107896787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_55
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 36
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810b13720ef259ba0800000000000000
+      internalID: -6082903081917239272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_56
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 38
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104d9733612cd4ab0800000000000000
+      internalID: -5022144608839543807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_57
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 16
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c04d0daa66090420800000000000000
+      internalID: 2596613715395428546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_58
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 38
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c048b8b4aa197e0800000000000000
+      internalID: -1760438737885197258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_59
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 38
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e330695c34a36a60800000000000000
+      internalID: 7666151569819186146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_60
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 38
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e9915bf5fd0a170800000000000000
+      internalID: 8187789724712803908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_61
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33a2b5196d1fa870800000000000000
+      internalID: 8696201742648517439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_62
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 14
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0732cc0215dff280800000000000000
+      internalID: -9007246456217520374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_63
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6dce536ae1de29c0800000000000000
+      internalID: -3949989018537636502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_64
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdf55f1c8f293de0800000000000000
+      internalID: -1352997934180467269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_65
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 26
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8abdd80b85e2f100800000000000000
+      internalID: 140426923713870477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_66
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdceb806d60045c20800000000000000
+      internalID: 3194178505483742431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_67
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f0b5aeeff44e670800000000000000
+      internalID: 8567060347437649752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_68
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1266fb073acf070800000000000000
+      internalID: 8141561931021820414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_69
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e096637fb76b132c0800000000000000
+      internalID: -4453577912947939058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_70
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 24
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a773f7d314c677620800000000000000
+      internalID: 2771803123130251130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_71
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 26
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c64273ca068d2d0800000000000000
+      internalID: -3253744437999408112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084394262d89ecd20800000000000000
+      internalID: 3300743606268671104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_73
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 14
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22eadfbb9d2b86e0800000000000000
+      internalID: -1834322276261371350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_74
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 14
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8493ce44659add440800000000000000
+      internalID: 4962308552420768072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_75
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 14
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af77f76a7749ca70800000000000000
+      internalID: 8847681534001905577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_76
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 14
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d315ac3d0d28eb970800000000000000
+      internalID: 8772592957582364989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_77
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7681778c1af35d60800000000000000
+      internalID: 7877915173639521919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_78
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 14
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6189ea0209a55e0800000000000000
+      internalID: -1920063821077539163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_79
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 14
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0bb3ef4ade0aa80800000000000000
+      internalID: -8457498807306047319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 66
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636a1e6719403ac70800000000000000
+      internalID: 8981027104718169654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_81
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 4
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b725030dc04828960800000000000000
+      internalID: 7602784311522120315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_82
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 4
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f561d224652906800800000000000000
+      internalID: 603643249242740319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_83
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 2
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b7ab6c852fa4500800000000000000
+      internalID: 381383581571382157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_84
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 2
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 056970af137029a00800000000000000
+      internalID: 761679198208628304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monogram-italic-bitmap_85
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 2
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc1511e38b2ccbd0800000000000000
+      internalID: -2608662238737392459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      monogram-italic-bitmap_0: 4834763863754068009
+      monogram-italic-bitmap_1: -2830738768098490435
+      monogram-italic-bitmap_10: 4152307326551752357
+      monogram-italic-bitmap_11: -2579242921906073351
+      monogram-italic-bitmap_12: -410383248530688140
+      monogram-italic-bitmap_13: 7425717459348948871
+      monogram-italic-bitmap_14: -8114182306905825534
+      monogram-italic-bitmap_15: -1238787976135334708
+      monogram-italic-bitmap_16: -2445458826585040037
+      monogram-italic-bitmap_17: 4036066971481331581
+      monogram-italic-bitmap_18: -4642425399067319213
+      monogram-italic-bitmap_19: 7908289758973795608
+      monogram-italic-bitmap_2: -2602469582851961047
+      monogram-italic-bitmap_20: 4777801881924875644
+      monogram-italic-bitmap_21: -2602126292925911124
+      monogram-italic-bitmap_22: 2684338257798140276
+      monogram-italic-bitmap_23: -6249454238092010123
+      monogram-italic-bitmap_24: 106945359865224359
+      monogram-italic-bitmap_25: 3490232816656480023
+      monogram-italic-bitmap_26: -4453257119821044400
+      monogram-italic-bitmap_27: -1149567859808274010
+      monogram-italic-bitmap_28: -7698075727486320124
+      monogram-italic-bitmap_29: 4903112936388144595
+      monogram-italic-bitmap_3: -3360940384769957348
+      monogram-italic-bitmap_30: -5949495111492564970
+      monogram-italic-bitmap_31: 3961794574648007553
+      monogram-italic-bitmap_32: 820880516567574366
+      monogram-italic-bitmap_33: 3997866886336410848
+      monogram-italic-bitmap_34: -5049933744580641992
+      monogram-italic-bitmap_35: -7717466187061399820
+      monogram-italic-bitmap_36: -5277479385613767719
+      monogram-italic-bitmap_37: 847968115447727091
+      monogram-italic-bitmap_38: 8312145399862977853
+      monogram-italic-bitmap_39: -63658750191519856
+      monogram-italic-bitmap_4: 5817157033192396135
+      monogram-italic-bitmap_40: -2741932396330329805
+      monogram-italic-bitmap_41: 6971198788784112997
+      monogram-italic-bitmap_42: 5236704677207346995
+      monogram-italic-bitmap_43: 1582647564884429533
+      monogram-italic-bitmap_44: -5156433561261205138
+      monogram-italic-bitmap_45: 2079835771630506542
+      monogram-italic-bitmap_46: -2519667268887985874
+      monogram-italic-bitmap_47: 2115662475924738175
+      monogram-italic-bitmap_48: -2291862037477295343
+      monogram-italic-bitmap_49: -6741217804397825147
+      monogram-italic-bitmap_5: 677536857216765900
+      monogram-italic-bitmap_50: -7870977936464597241
+      monogram-italic-bitmap_51: -5234769669289345731
+      monogram-italic-bitmap_52: 4157299767125475091
+      monogram-italic-bitmap_53: -3262190230338609613
+      monogram-italic-bitmap_54: -1189649894107896787
+      monogram-italic-bitmap_55: -6082903081917239272
+      monogram-italic-bitmap_56: -5022144608839543807
+      monogram-italic-bitmap_57: 2596613715395428546
+      monogram-italic-bitmap_58: -1760438737885197258
+      monogram-italic-bitmap_59: 7666151569819186146
+      monogram-italic-bitmap_6: -6429127531967210696
+      monogram-italic-bitmap_60: 8187789724712803908
+      monogram-italic-bitmap_61: 8696201742648517439
+      monogram-italic-bitmap_62: -9007246456217520374
+      monogram-italic-bitmap_63: -3949989018537636502
+      monogram-italic-bitmap_64: -1352997934180467269
+      monogram-italic-bitmap_65: 140426923713870477
+      monogram-italic-bitmap_66: 3194178505483742431
+      monogram-italic-bitmap_67: 8567060347437649752
+      monogram-italic-bitmap_68: 8141561931021820414
+      monogram-italic-bitmap_69: -4453577912947939058
+      monogram-italic-bitmap_7: -102008352401324765
+      monogram-italic-bitmap_70: 2771803123130251130
+      monogram-italic-bitmap_71: -3253744437999408112
+      monogram-italic-bitmap_72: 3300743606268671104
+      monogram-italic-bitmap_73: -1834322276261371350
+      monogram-italic-bitmap_74: 4962308552420768072
+      monogram-italic-bitmap_75: 8847681534001905577
+      monogram-italic-bitmap_76: 8772592957582364989
+      monogram-italic-bitmap_77: 7877915173639521919
+      monogram-italic-bitmap_78: -1920063821077539163
+      monogram-italic-bitmap_79: -8457498807306047319
+      monogram-italic-bitmap_8: 5699114589940330354
+      monogram-italic-bitmap_80: 8981027104718169654
+      monogram-italic-bitmap_81: 7602784311522120315
+      monogram-italic-bitmap_82: 603643249242740319
+      monogram-italic-bitmap_83: 381383581571382157
+      monogram-italic-bitmap_84: 761679198208628304
+      monogram-italic-bitmap_85: -2608662238737392459
+      monogram-italic-bitmap_9: 7449506376221486328
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
