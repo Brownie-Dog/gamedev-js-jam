@@ -31,13 +31,13 @@ public class PlayerInteractionController : MonoBehaviour
             layerMask = Physics2D.GetLayerCollisionMask(_detectionCollider.gameObject.layer)
         };
 
-        int count = Physics2D.OverlapCollider(_detectionCollider, filter, _overlapResults);
+        Physics2D.OverlapCollider(_detectionCollider, filter, _overlapResults);
 
         IInteractable closest = null;
         float closestDistanceSq = float.MaxValue;
         Vector2 playerPosition = transform.position;
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < _overlapResults.Count; i++)
         {
             if (!_overlapResults[i].CompareTag(GlobalConstants.INTERACTABLE_TAG))
             {
