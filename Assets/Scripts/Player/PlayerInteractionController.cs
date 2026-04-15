@@ -21,7 +21,6 @@ public class PlayerInteractionController : MonoBehaviour
         {
             return;
         }
-
         GetClosestInteractable()?.Interact();
     }
 
