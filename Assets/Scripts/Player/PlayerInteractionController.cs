@@ -4,21 +4,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractionController : MonoBehaviour
 {
-    [SerializeField] private PlayerStats _stats;
+    [SerializeField]
+    private PlayerStats _stats;
 
-    [SerializeField] private Rigidbody2D _rigidBody;
+    [SerializeField]
+    private Rigidbody2D _rigidBody;
 
-    [SerializeField] private Collider2D _detectionCollider;
+    [SerializeField]
+    private Collider2D _detectionCollider;
 
     private readonly List<Collider2D> _overlapResults = new();
 
     public void OnInteract(InputAction.CallbackContext context)
-    { 
+    {
         if (!context.performed)
         {
             return;
         }
-        
         GetClosestInteractable()?.Interact();
     }
 
@@ -28,16 +30,16 @@ public class PlayerInteractionController : MonoBehaviour
         {
             useTriggers = true,
             useLayerMask = true,
-            layerMask = Physics2D.GetLayerCollisionMask(_detectionCollider.gameObject.layer)
+            layerMask = Physics2D.GetLayerCollisionMask(_detectionCollider.gameObject.layer),
         };
 
-        int count = Physics2D.OverlapCollider(_detectionCollider, filter, _overlapResults);
+        Physics2D.OverlapCollider(_detectionCollider, filter, _overlapResults);
 
         IInteractable closest = null;
         float closestDistanceSq = float.MaxValue;
         Vector2 playerPosition = transform.position;
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < _overlapResults.Count; i++)
         {
             if (!_overlapResults[i].CompareTag(GlobalConstants.INTERACTABLE_TAG))
             {
@@ -51,7 +53,9 @@ public class PlayerInteractionController : MonoBehaviour
 
             if (interactable is MonoBehaviour behaviour)
             {
-                float distanceSq = ((Vector2)behaviour.transform.position - playerPosition).sqrMagnitude;
+                float distanceSq = (
+                    (Vector2)behaviour.transform.position - playerPosition
+                ).sqrMagnitude;
 
                 if (distanceSq < closestDistanceSq)
                 {
