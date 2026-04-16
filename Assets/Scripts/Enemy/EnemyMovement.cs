@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
     private float _movementSpeed = 5f;
     [SerializeField]
     private float _detectionRadius = 5.0f;
+    [SerializeField] 
+    private float _chasingRadius = 20.0f;
     
     [Header("Audio Wrapper")]
     [SerializeField]
@@ -18,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     
     private Rigidbody2D _rb;
     private AudioSource _audioSource;
+    private bool _isChasing = false;
     
     void Start() 
     {
@@ -31,6 +34,16 @@ public class EnemyMovement : MonoBehaviour
         float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
 
         if (IsPlayerInRange(distanceToPlayer))
+        {
+            _isChasing = true;
+        }
+
+        if (isPlayerOutsideChaseRadius(distanceToPlayer) && _isChasing)
+        {
+            _isChasing = false;
+        }
+
+        if (_isChasing)
         {
             ChasePlayer();
             if (!_detectionSound.IsPlaying(_audioSource))
@@ -54,5 +67,10 @@ public class EnemyMovement : MonoBehaviour
     bool IsPlayerInRange(float distanceToPlayer)
     {
         return distanceToPlayer <= _detectionRadius;
+    }
+    
+    bool isPlayerOutsideChaseRadius (float distanceToPlayer)
+    {
+        return distanceToPlayer >= _chasingRadius;
     }
 }
