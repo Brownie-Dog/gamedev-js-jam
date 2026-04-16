@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
   _arrowLength: 1
   _arrowHeadAngle: 135
-  _rotationOffset: 0
+  _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &3229091112246798102
 GameObject:
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
   _arrowLength: 1
   _arrowHeadAngle: 135
-  _rotationOffset: 0
+  _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &4120198749229490778
 GameObject:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
   _arrowLength: 1
   _arrowHeadAngle: 135
-  _rotationOffset: 0
+  _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &5495760148684320693
 GameObject:
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
   _arrowLength: 1
   _arrowHeadAngle: 135
-  _rotationOffset: 0
+  _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &7855978038013584639
 GameObject:
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
   _arrowLength: 1
   _arrowHeadAngle: 135
-  _rotationOffset: 0
+  _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &8232643813525639276
 GameObject:
