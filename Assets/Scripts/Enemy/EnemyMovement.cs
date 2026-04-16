@@ -18,16 +18,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private Transform _playerTransform;
     
+    [SerializeField]
     private Rigidbody2D _rb;
+    [SerializeField]
     private AudioSource _audioSource;
     private bool _isChasing = false;
-    
-    void Start() 
-    {
-        _rb = GetComponent<Rigidbody2D>();
-        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        _audioSource = GetComponent<AudioSource>();
-    }
     
     void Update()
     {
