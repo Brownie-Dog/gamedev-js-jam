@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b873f4c23dde04c842799a1f37d06e, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  MovementSpeed: 5
+  MovementSpeed: 12
