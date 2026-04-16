@@ -30,7 +30,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8446796442686484799}
-  - {fileID: 2270082707817016930}
   - {fileID: 8676772841974893465}
   - {fileID: 909437693786460123}
   - {fileID: 3709717588362197419}
@@ -46,6 +45,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8446796442686484799}
+  - component: {fileID: 291075037575602817}
+  - component: {fileID: 5197029817154738383}
   m_Layer: 0
   m_Name: ItemSlot (1)
   m_TagString: Untagged
@@ -61,13 +62,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875999885854097188}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
   m_LocalPosition: {x: -1.221, y: -0.129, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2341980178147183215}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+--- !u!210 &291075037575602817
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875999885854097188}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!114 &5197029817154738383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875999885854097188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077bd6bd3a2f45c69101a0c316706c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
+  _arrowLength: 1
+  _arrowHeadAngle: 135
+  _rotationOffset: 45
+  _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &3229091112246798102
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8676772841974893465}
+  - component: {fileID: 4510492549719505195}
+  - component: {fileID: 4053495417764824636}
   m_Layer: 0
   m_Name: ItemSlot (3)
   m_TagString: Untagged
@@ -92,13 +124,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3229091112246798102}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0.041, y: 0.058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2341980178147183215}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!210 &4510492549719505195
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229091112246798102}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!114 &4053495417764824636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229091112246798102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077bd6bd3a2f45c69101a0c316706c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
+  _arrowLength: 1
+  _arrowHeadAngle: 135
+  _rotationOffset: 45
+  _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &4120198749229490778
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +169,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909437693786460123}
+  - component: {fileID: 6306823553078355873}
+  - component: {fileID: 8788312618306164967}
   m_Layer: 0
   m_Name: ItemSlot (4)
   m_TagString: Untagged
@@ -123,13 +186,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4120198749229490778}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 1.128, y: -0.357, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2341980178147183215}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+--- !u!210 &6306823553078355873
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120198749229490778}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!114 &8788312618306164967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120198749229490778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077bd6bd3a2f45c69101a0c316706c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
+  _arrowLength: 1
+  _arrowHeadAngle: 135
+  _rotationOffset: 45
+  _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &5495760148684320693
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +368,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3709717588362197419}
+  - component: {fileID: 7525362513600477078}
+  - component: {fileID: 1031610946925431421}
   m_Layer: 0
   m_Name: ItemSlot (5)
   m_TagString: Untagged
@@ -291,13 +385,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6488873578817156798}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.95371693, w: 0.30070582}
   m_LocalPosition: {x: 0.127, y: -0.661, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2341980178147183215}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -145}
+--- !u!210 &7525362513600477078
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488873578817156798}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!114 &1031610946925431421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488873578817156798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077bd6bd3a2f45c69101a0c316706c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
+  _arrowLength: 1
+  _arrowHeadAngle: 135
+  _rotationOffset: 45
+  _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &7855978038013584639
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +430,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108281533649607938}
+  - component: {fileID: 6247348416748931534}
+  - component: {fileID: 439586913100426667}
   m_Layer: 0
   m_Name: ItemSlot (6)
   m_TagString: Untagged
@@ -322,13 +447,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7855978038013584639}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.767, y: 0.568, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2341980178147183215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &6247348416748931534
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855978038013584639}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!114 &439586913100426667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855978038013584639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077bd6bd3a2f45c69101a0c316706c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.ItemSlotGizmo
+  _arrowLength: 1
+  _arrowHeadAngle: 135
+  _rotationOffset: 45
+  _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
 --- !u!1 &8232643813525639276
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,9 +498,9 @@ GameObject:
   - component: {fileID: 53944788169518672}
   - component: {fileID: 8557419963232160952}
   - component: {fileID: 6968245968921767180}
-  - component: {fileID: 1770017078930649557}
   - component: {fileID: 1572932811235936537}
   - component: {fileID: 7489397724563928781}
+  - component: {fileID: 526240358348230129}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -635,7 +789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d682c2d582c304f864fd5cc39ce428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _stats: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
 --- !u!114 &8557419963232160952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3907b8b707bbdea46b76ecc9bdae5756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementController
-  _stats: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
+  _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
   _rigidBody: {fileID: 1067242104011912755}
 --- !u!114 &6968245968921767180
 MonoBehaviour:
@@ -662,23 +815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef7eaf1fc1307b419de35be0b51ca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractionController
-  _stats: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
+  _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
   _rigidBody: {fileID: 1067242104011912755}
   _detectionCollider: {fileID: 1572932811235936537}
---- !u!114 &1770017078930649557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8232643813525639276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca851d2e83110c54facf9fdc804f4e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageController
-  _stats: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
-  _currentHealth: 0
 --- !u!61 &1572932811235936537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -771,34 +910,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.45, y: 1.44}
   m_EdgeRadius: 0
---- !u!1 &8496800396272910813
-GameObject:
+--- !u!114 &526240358348230129
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2270082707817016930}
-  m_Layer: 0
-  m_Name: ItemSlot (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2270082707817016930
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8496800396272910813}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.023, y: 0.189, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2341980178147183215}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5739adebc30e4782a1137589bf402107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWeaponController
+  _weaponSlots:
+  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+    HookPoint: {fileID: 8446796442686484799}
+  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+    HookPoint: {fileID: 8676772841974893465}
+  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+    HookPoint: {fileID: 909437693786460123}
+  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+    HookPoint: {fileID: 3709717588362197419}
+  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+    HookPoint: {fileID: 8108281533649607938}
