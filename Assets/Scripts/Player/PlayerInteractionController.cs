@@ -21,8 +21,8 @@ public class PlayerInteractionController : MonoBehaviour
         Assert.IsNotNull(_statsSo);
         Assert.IsNotNull(_rigidBody);
     }
-    
-    public void OnInteract(InputAction.CallbackContext context)
+
+    public void InputEvent_OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed)
         {
