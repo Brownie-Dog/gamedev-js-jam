@@ -4,7 +4,7 @@
 [attr]unity-yaml        merge=unityyamlmerge eol=lf linguist-language=yaml
 
 # Optionally collapse Unity YAML files on GitHub diffs
-# [attr]unity-yaml        merge=unityyamlmerge text linguist-language=yaml linguist-generated
+[attr]unity-yaml        merge=unityyamlmerge text linguist-language=yaml linguist-generated
 
 # Unity source files
 *.cginc                 text
