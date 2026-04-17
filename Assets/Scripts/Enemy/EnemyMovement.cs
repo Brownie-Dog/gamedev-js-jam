@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -5,67 +6,68 @@ public class EnemyMovement : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField]
     private float _movementSpeed = 5f;
-    [SerializeField]
-    private float _detectionRadius = 5.0f;
-    [SerializeField] 
-    private float _chasingRadius = 20.0f;
-    
-    [Header("Audio Wrapper")]
-    [SerializeField]
-    private SoundEffect _detectionSound;
 
     [Header("References")] 
-    [SerializeField]
-    private Transform _playerTransform;
+    [SerializeField] private Transform _player;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private EnemyDetection _enemyDetection;
+    [SerializeField] private float _stoppingDistance = 0f;
     
-    [SerializeField]
-    private Rigidbody2D _rb;
-    [SerializeField]
-    private AudioSource _audioSource;
     private bool _isChasing = false;
-    
-    void Update()
+
+    private void OnEnable()
     {
-        float distanceToPlayer = Vector2.Distance(_playerTransform.position, transform.position);
-
-        if (IsPlayerInRange(distanceToPlayer))
+        if (_enemyDetection !=  null)
         {
-            _isChasing = true;
+            _enemyDetection.OnPlayerDetected += HandlePlayerDetected;
+            _enemyDetection.OnPlayerLost += HandlePlayerLost;
         }
-
-        if (isPlayerOutsideChaseRadius(distanceToPlayer) && _isChasing)
+        
+    }
+    private void OnDisable()
+    {
+        if (_enemyDetection != null)
         {
-            _isChasing = false;
+            _enemyDetection.OnPlayerDetected -= HandlePlayerDetected;
+            _enemyDetection.OnPlayerLost -= HandlePlayerLost;
         }
-
-        if (_isChasing)
+    }
+    private void Update()
+    {
+        if (_isChasing && _player)
         {
-            ChasePlayer();
-            if (!_detectionSound.IsPlaying(_audioSource))
+            float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
+            if (distanceToPlayer > _stoppingDistance)
             {
-                _detectionSound.Play(_audioSource);
+                ChasePlayer();
+            }
+            else
+            {
+                _rb.linearVelocity = Vector2.zero;
             }
         }
         else
         {
             _rb.linearVelocity = Vector2.zero;
         }
-
     }
 
-    private void ChasePlayer()
+    private void HandlePlayerDetected(object sender, EventArgs e)
     {
-        Vector2 direction = ((Vector2)_playerTransform.position - (Vector2)transform.position).normalized;
-        _rb.linearVelocity = direction *  _movementSpeed;
+        _isChasing = true;
     }
 
-    bool IsPlayerInRange(float distanceToPlayer)
+    private void HandlePlayerLost(object sender, EventArgs e)
     {
-        return distanceToPlayer <= _detectionRadius;
+        _isChasing = false;
     }
     
-    bool isPlayerOutsideChaseRadius (float distanceToPlayer)
+    private void ChasePlayer()
     {
-        return distanceToPlayer >= _chasingRadius;
+        if (!_player) return;
+        
+        Vector2 direction = ((Vector2)_player.position - (Vector2)transform.position).normalized;
+        _rb.linearVelocity = direction * _movementSpeed;
     }
+
 }

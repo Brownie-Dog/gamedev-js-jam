@@ -1,25 +1,26 @@
+using System;
 using UnityEngine;
-
-[System.Serializable]
-public class SoundEffect
+public class SoundEffect : MonoBehaviour
 {
-    [SerializeField] 
-    private AudioSource _source;
-    [SerializeField]
-    private AudioClip _audioClip;
-    [SerializeField]
-    private float _startTime = 0f;
-    [SerializeField]
-    [Range(0, 1)] private float _volume = 1f;
+    [SerializeField] private float _startTime = 0f;
+    [SerializeField] [Range(0, 1)] private float _volume = 1f;
+    [SerializeField] private AudioSource _audioSource;
 
-    public void Play(AudioSource source)
+    public void Play()
     {
-        if (!_audioClip|| !source) return;
-        source.clip = _audioClip;
-        source.volume = _volume;
-        source.Play();
-        source.time = _startTime;
+        if (!_audioSource.clip || !_audioSource) return;
+        _audioSource.volume = _volume;
+        _audioSource.Play();
+        _audioSource.time = _startTime;
     }
     
-    public bool IsPlaying(AudioSource source) => source && source.isPlaying;
+    public void Stop()
+    {
+        if (_audioSource)
+        {
+            _audioSource.Stop();
+        }
+    }
+
+    public bool IsPlaying => _audioSource && _audioSource.isPlaying;
 }
