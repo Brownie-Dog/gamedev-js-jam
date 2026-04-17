@@ -6,19 +6,21 @@ using UnityEngine.InputSystem;
 public class PlayerDamageController : MonoBehaviour, IDamageable
 {
     [SerializeField]
-    private PlayerStats _stats;
-
-    [SerializeField]
-    private int _currentHealth = 0;
+    private PlayerStatsSo _statsSo;
+    
+    [SerializeField] 
+    private PlayerHealthUI _healthUI;
 
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
-    }
-    
-    private void Awake()
-    {
-        _currentHealth = _stats.MaxHealth;
+        _statsSo.CurrentHealth -= damage;
+        _statsSo.CurrentHealth = Mathf.Max(_statsSo.CurrentHealth, 0);
+        
+        if (_healthUI != null)
+        {
+            _healthUI.UpdateHealthUI(_statsSo.CurrentHealth);
+        }
+        
     }
     
 }

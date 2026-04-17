@@ -3,7 +3,7 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
     [SerializeField]
-    private int _damageAmount = 10;
+    private int _damageAmount = 1;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

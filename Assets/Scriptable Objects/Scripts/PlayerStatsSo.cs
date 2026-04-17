@@ -4,5 +4,6 @@ using UnityEngine;
 public class PlayerStatsSo : ScriptableObject
 {
     public float MovementSpeed = 5f;
-    public int MaxHealth = 100;
+    public int MaxHealth = 10;
+    public int CurrentHealth = 10;
 }
