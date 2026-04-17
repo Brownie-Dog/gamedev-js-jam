@@ -6,6 +6,9 @@ using Weapons;
 
 public class PlayerWeaponController : MonoBehaviour
 {
+    public EventHandler PrimaryFireTriggered;
+    public EventHandler SecondaryFireTriggered;
+
     [Serializable]
     private class WeaponSlot
     {
