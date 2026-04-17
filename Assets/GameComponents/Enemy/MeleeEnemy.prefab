@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &813812169577939913
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4410278449341559807, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 7291244544740494293}
+    - target: {fileID: 4635953153365060193, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_Name
+      value: MeleeAttackSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063254208242421708, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063254208242421708, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.27509558
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063254208242421708, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.0141509175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948816348107166719, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_Name
+      value: MeleeDetectionSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692730486218562616, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_Name
+      value: MeleeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7692730486218562616, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 18687080808029932}
+  m_SourcePrefab: {fileID: 100100000, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+--- !u!114 &3926937910527733814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4410278449341559807, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+  m_PrefabInstance: {fileID: 813812169577939913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab618d559eb0d4747a4ebbd4bb120f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEffect
+--- !u!1 &7028197371816534001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7692730486218562616, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+  m_PrefabInstance: {fileID: 813812169577939913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &18687080808029932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028197371816534001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47b4f2a36ab8104b93f62e0ba947239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeAttack
+  _attackCooldown: 0.5
+  _attackSound: {fileID: 3926937910527733814}
+--- !u!82 &7291244544740494293 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7954634106872416284, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+  m_PrefabInstance: {fileID: 813812169577939913}
+  m_PrefabAsset: {fileID: 0}
