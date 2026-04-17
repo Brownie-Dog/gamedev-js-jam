@@ -24,7 +24,11 @@ namespace ItemDrops
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // todo: invoke OnItemPickup on item drop system
+            if (!other.CompareTag(GlobalConstants.PLAYER_TAG))
+            {
+                return;
+            }
+
             Invoke(nameof(PickupItem), _pickupDelay);
         }
 
