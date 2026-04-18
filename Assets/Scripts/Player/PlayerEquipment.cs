@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using ItemDrops;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -19,7 +20,7 @@ namespace Player
         private Transform[] _hookPoints;
 
         [SerializeField]
-        private GameObject[] _defaultWeapons;
+        private WeaponItemData[] _defaultWeapons;
 
         private GameObject[] _equippedWeaponInstances;
         private List<WeaponItemData> _equippedWeapons = new();
@@ -32,6 +33,10 @@ namespace Player
             UnlockedSlots = _initialUnlockedSlots;
 
             _equippedWeaponInstances = new GameObject[MaxSlots];
+            for (int i = 0; i < UnlockedSlots; i++)
+            {
+                _equippedWeapons.Add(null);
+            }
         }
 
         private void Start()
@@ -48,8 +53,19 @@ namespace Player
         {
             return slotIndex >= 0
                 && slotIndex < UnlockedSlots
-                && _equippedWeapons.Count > slotIndex
-                && _equippedWeapons[slotIndex] != null;
+                && _equippedWeapons[slotIndex] == null;
+        }
+
+        public int FirstEmptySlot()
+        {
+            for (int i = 0; i < UnlockedSlots; i++)
+            {
+                if (_equippedWeapons[i] == null)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public void UnlockSlot()
@@ -57,6 +73,7 @@ namespace Player
             if (UnlockedSlots < MaxSlots)
             {
                 UnlockedSlots++;
+                _equippedWeapons.Add(null);
             }
         }
 
@@ -76,14 +93,6 @@ namespace Player
                 _hookPoints[slotIndex]
             );
 
-            if (_equippedWeapons.Count <= slotIndex)
-            {
-                while (_equippedWeapons.Count <= slotIndex)
-                {
-                    _equippedWeapons.Add(null);
-                }
-            }
-
             _equippedWeapons[slotIndex] = weapon;
         }
 
@@ -98,10 +107,7 @@ namespace Player
                 _equippedWeaponInstances[slotIndex] = null;
             }
 
-            if (slotIndex < _equippedWeapons.Count)
-            {
-                _equippedWeapons[slotIndex] = null;
-            }
+            _equippedWeapons[slotIndex] = null;
         }
 
         public bool HasWeapon(WeaponItemData weapon)
@@ -111,7 +117,7 @@ namespace Player
 
         public List<WeaponItemData> GetAllOwnedWeapons()
         {
-            return _equippedWeapons;
+            return _equippedWeapons.Where(w => w != null).ToList();
         }
 
         private void SpawnDefaultWeapons()
@@ -120,7 +126,7 @@ namespace Player
             {
                 if (_defaultWeapons[i] != null)
                 {
-                    _equippedWeaponInstances[i] = Instantiate(_defaultWeapons[i], _hookPoints[i]);
+                    Equip(_defaultWeapons[i], i);
                 }
             }
         }
