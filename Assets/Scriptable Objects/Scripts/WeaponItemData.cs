@@ -22,13 +22,12 @@ namespace ItemDrops
 
         public override void Apply(PlayerEquipment equipment, PlayerInventory inventory)
         {
-            for (int i = 0; i < equipment.UnlockedSlots; i++)
+            var emptySlot = equipment.FirstEmptySlot();
+
+            if (emptySlot >= 0)
             {
-                if (equipment.IsSlotEmpty(i))
-                {
-                    equipment.Equip(this, i);
-                    return;
-                }
+                equipment.Equip(this, emptySlot);
+                return;
             }
 
             inventory.AddItem(this);
