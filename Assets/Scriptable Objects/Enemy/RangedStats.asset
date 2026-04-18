@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af0f47f874e4204c88a0d3a4c2ca3ce, type: 3}
   m_Name: RangedStats
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  movementSpeed: 6
-  stoppingDistance: 8
-  detectionRadius: 9
-  chasingRadius: 15
+  movementSpeed: 8
+  stoppingDistance: 12
+  detectionRadius: 12
+  chasingRadius: 20
   attackCooldown: 0.6
-  attackRange: 8
+  attackRange: 12
   maxHealth: 100
