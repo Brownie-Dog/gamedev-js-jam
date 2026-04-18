@@ -10,7 +10,7 @@ public class PlayerHealthUI : MonoBehaviour
     [SerializeField]
     private PlayerStatsSo _statsSo;
     
-    private List<Image> _health = new List<Image>();
+    private List<Image> _hearts = new List<Image>();
 
     private void Start()
     {
@@ -24,21 +24,21 @@ public class PlayerHealthUI : MonoBehaviour
         for (int i = 0; i < maxHealth; i++)
         {
             GameObject heart = Instantiate(_HeartPrefab, transform);
-            _health.Add(heart.GetComponent<Image>());
+            _hearts.Add(heart.GetComponent<Image>());
         }
     }
 
     public void UpdateHealthUI(int currentHealth)
     {
-        for (int i = 0; i < _health.Count; i++)
+        for (int i = 0; i < _hearts.Count; i++)
         {
             if (i < currentHealth)
             {
-                _health[i].color = Color.white; 
+                _hearts[i].color = Color.white; 
             }
             else
             {
-                _health[i].color = new Color(0.5f, 0.5f, 0.5f, 0.5f); 
+                _hearts[i].color = new Color(0.5f, 0.5f, 0.5f, 0.5f); 
             }
         }
     }
