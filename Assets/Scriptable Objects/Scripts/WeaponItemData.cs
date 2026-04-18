@@ -30,6 +30,7 @@ namespace ItemDrops
                 return;
             }
 
+            Debug.Log($"No empty equipment slot for {ItemName}, adding to inventory");
             inventory.AddItem(this);
         }
     }
