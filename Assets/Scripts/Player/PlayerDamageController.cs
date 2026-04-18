@@ -8,6 +8,11 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
     [SerializeField]
     private PlayerStatsSo _statsSo;
 
+    private void Awake()
+    {
+        Assert.IsNotNull(_statsSo);
+    }
+
     public void TakeDamage(int damage)
     {
         int newHealth = _statsSo.CurrentHealth - damage;
@@ -15,10 +20,6 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
         
         _statsSo.UpdateHealth(newHealth);
         
-    }
-    private void Awake()
-    {
-        Assert.IsNotNull(_statsSo);
     }
     
 }
