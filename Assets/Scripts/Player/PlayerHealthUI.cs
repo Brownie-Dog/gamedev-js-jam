@@ -15,6 +15,7 @@ public class PlayerHealthUI : MonoBehaviour
     private void Awake()
     {
         Assert.IsNotNull(_statsSo);
+        Assert.IsNotNull(_HeartPrefab);
     }
 
     private void Start()
