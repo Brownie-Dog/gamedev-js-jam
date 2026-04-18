@@ -8,12 +8,12 @@ public class PlayerStatsSo : ScriptableObject
     public int MaxHealth = 10;
     public int CurrentHealth = 10;
     
-    public Action OnHealthChanged; 
+    public EventHandler OnHealthChanged; 
 
     public void UpdateHealth(int newHealth)
     {
         CurrentHealth = newHealth;
-        OnHealthChanged?.Invoke(); 
+        OnHealthChanged?.Invoke(this, EventArgs.Empty); 
     }
     
 }

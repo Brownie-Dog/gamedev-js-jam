@@ -53,7 +53,7 @@ public class PlayerHealthUI : MonoBehaviour
         _statsSo.OnHealthChanged -= HandleHealthUpdate;
     }
 
-    private void HandleHealthUpdate()
+    private void HandleHealthUpdate(object sender, EventArgs args)
     {
         UpdateHealthUI(_statsSo.CurrentHealth);
     }
