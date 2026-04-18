@@ -5,10 +5,13 @@ namespace ItemDrops
     [System.Serializable]
     public class LootEntry
     {
-        [field: SerializeField]
-        public ItemData Item { get; private set; } = null;
+        [SerializeField]
+        private ItemData _item;
 
-        [field: SerializeField]
-        public float Weight { get; private set; } = 1.0f;
+        [SerializeField]
+        private float _weight = 1.0f;
+
+        public ItemData Item => _item;
+        public float Weight => _weight;
     }
 }

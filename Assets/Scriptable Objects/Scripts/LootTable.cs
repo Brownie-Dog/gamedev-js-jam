@@ -10,13 +10,7 @@ namespace ItemDrops
     public class LootTable : ScriptableObject
     {
         [SerializeField]
-        private List<LootEntry> _rarePool = new();
-
-        [SerializeField]
-        private List<LootEntry> _epicPool = new();
-
-        [SerializeField]
-        private List<LootEntry> _legendaryPool = new();
+        private List<LootEntry> _items = new();
 
         [SerializeField]
         private float _rareWeight = 70.0f;
@@ -44,14 +38,12 @@ namespace ItemDrops
             {
                 var rarity = guaranteeLegendary ? Rarity.Legendary : RollRarity();
 
-                var pool = GetPool(rarity);
-                var filteredPool = FilterPool(pool, equipment, inventory, rarity);
+                var filteredPool = FilterPool(_items, equipment, inventory, rarity);
 
                 var fallbackRarity = GetFallbackRarity(rarity);
                 while (filteredPool.Count == 0 && fallbackRarity != Rarity.Rare)
                 {
-                    pool = GetPool(fallbackRarity);
-                    filteredPool = FilterPool(pool, equipment, inventory, fallbackRarity);
+                    filteredPool = FilterPool(_items, equipment, inventory, fallbackRarity);
                     fallbackRarity = GetFallbackRarity(fallbackRarity);
                 }
 
@@ -85,16 +77,6 @@ namespace ItemDrops
             }
 
             return Rarity.Rare;
-        }
-
-        private List<LootEntry> GetPool(Rarity rarity)
-        {
-            return rarity switch
-            {
-                Rarity.Legendary => _legendaryPool,
-                Rarity.Epic => _epicPool,
-                _ => _rarePool,
-            };
         }
 
         private List<LootEntry> FilterPool(
