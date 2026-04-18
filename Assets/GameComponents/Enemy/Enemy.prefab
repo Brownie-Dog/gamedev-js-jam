@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7954634106872416284}
   - component: {fileID: 4410278449341559807}
   m_Layer: 0
-  m_Name: AttackSound
+  m_Name: RangedAttackSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e9be2659b03e25a468cea878b9d4a2f2, type: 3}
+  m_Resource: {fileID: 8300000, guid: 64717a9934cbee743a67fa33361b78f1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffect
   _startTime: 0.09
   _volume: 0.297
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 7954634106872416284}
 --- !u!1 &5948816348107166719
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 6962262529771811365}
   - component: {fileID: 2797096308382902589}
   m_Layer: 0
-  m_Name: DetectionSound
+  m_Name: RangedDetectionSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,6 +290,37 @@ MonoBehaviour:
   _startTime: 0.26
   _volume: 0.166
   _audioSource: {fileID: 6962262529771811365}
+--- !u!1 &7128404226461679633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709262828084257308}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709262828084257308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7128404226461679633}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08, y: -0.39, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8864757015423021585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7692730486218562616
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +360,7 @@ Transform:
   m_Children:
   - {fileID: 4949273440440161743}
   - {fileID: 653811333576649775}
+  - {fileID: 709262828084257308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5063254208242421708
@@ -381,7 +413,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8698701957669871245, guid: 361d5a989fdb83b4380766383092ccb3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.10844896, g: 0.990566, b: 0.07943219, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -495,10 +527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed8003e1a451e2409589d4092d82b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  _movementSpeed: 6
-  _player: {fileID: 0}
+  _player: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
   _rb: {fileID: 4772534123666485531}
   _enemyDetection: {fileID: 602503740545238276}
+  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
 --- !u!114 &602503740545238276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,10 +543,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a1bf182bb648418390be1d5425582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  _detectionRadius: 7.57
-  _chasingRadius: 15
-  _player: {fileID: 0}
+  _player: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
   _detectionSound: {fileID: 2797096308382902589}
+  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
 --- !u!114 &1752728236125080976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,4 +571,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630fa3b3850e74e42971d505483e2485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  _maxHealth: 100
+  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
