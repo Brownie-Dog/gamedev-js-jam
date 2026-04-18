@@ -1,16 +1,22 @@
 using System;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EnemyMovement : MonoBehaviour
 {
     [Header("References")] 
-    [SerializeField] private Transform _player;
+    private Transform _player;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private EnemyDetection _enemyDetection;
     [SerializeField] private EnemyStats _stats;
     
     private bool _isChasing = false;
 
+    private void Awake()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        Assert.IsNotNull(_player);
+    }
     private void OnEnable()
     {
         if (_enemyDetection !=  null)

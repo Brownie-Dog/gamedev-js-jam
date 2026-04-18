@@ -19,10 +19,13 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        
+        // red sprite flashin sound effect
         OnHealthChange?.Invoke(this, EventArgs.Empty);
 
         if (IsDead())
         {
+            // drop item or something 
             OnDeath?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }

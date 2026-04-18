@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EnemyDetection : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform _player;
+    private Transform _player;
     [SerializeField] private SoundEffect _detectionSound;
     [SerializeField] private EnemyStats _stats;
     
@@ -13,6 +14,13 @@ public class EnemyDetection : MonoBehaviour
 
     private bool _isDetectingPlayer = false;
 
+    
+    private void Awake()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        Assert.IsNotNull(_player);
+    }
+    
     private void Update()
     {
         if (!_player) return;

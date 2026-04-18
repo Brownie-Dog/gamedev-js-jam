@@ -1,9 +1,18 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class RangedAttack : EnemyAttack
 {
-    [SerializeField] private Transform _player;
+    private Transform _player;
+    [SerializeField] private Transform _firePoint;
+    [SerializeField] private ObjectPooler _bulletPool;
 
+    
+    private void Awake()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        Assert.IsNotNull(_player);
+    }
     private void Update()
     {
         if (!_player) return;
@@ -19,8 +28,13 @@ public class RangedAttack : EnemyAttack
     protected override void Attack()
     {
         Debug.Log("Firing Projectile!");
-        
+
         // bullet or projectile
         // do damage
+        if (!_player) return;
+        Projectile bullet = _bulletPool.Get();
+        bullet.transform.position = _firePoint.position;
+        Vector2 targetDirection = (_player.position - _firePoint.position).normalized;
+        bullet.Launch(targetDirection);
     }
 }
