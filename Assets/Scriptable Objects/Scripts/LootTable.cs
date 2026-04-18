@@ -122,14 +122,7 @@ namespace ItemDrops
                     continue;
                 }
 
-                if (entry.Item is WeaponItemData weapon)
-                {
-                    if (ownedWeapons.Contains(weapon) || inventoryWeapons.Contains(weapon))
-                    {
-                        continue;
-                    }
-                }
-                else if (entry.Item is WeaponUpgradeItemData upgrade)
+                if (entry.Item is WeaponUpgradeItemData upgrade)
                 {
                     if (
                         !ownedWeapons.Contains(upgrade.TargetWeapon)
