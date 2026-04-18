@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 
 public class PlayerInteractionController : MonoBehaviour
 {
     [SerializeField]
-    private PlayerStats _stats;
+    private PlayerStatsSo _statsSo;
 
     [SerializeField]
     private Rigidbody2D _rigidBody;
@@ -15,7 +16,13 @@ public class PlayerInteractionController : MonoBehaviour
 
     private readonly List<Collider2D> _overlapResults = new();
 
-    public void OnInteract(InputAction.CallbackContext context)
+    private void Awake()
+    {
+        Assert.IsNotNull(_statsSo);
+        Assert.IsNotNull(_rigidBody);
+    }
+
+    public void InputEvent_OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed)
         {
