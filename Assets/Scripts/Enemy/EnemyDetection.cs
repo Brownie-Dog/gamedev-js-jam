@@ -3,13 +3,10 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour
 {
-    [Header("Detection Settings")] 
-    [SerializeField] private float _detectionRadius = 5.0f;
-    [SerializeField] private float _chasingRadius = 20.0f;
-    
     [Header("References")]
     [SerializeField] private Transform _player;
     [SerializeField] private SoundEffect _detectionSound;
+    [SerializeField] private EnemyStats _stats;
     
     public event EventHandler OnPlayerDetected;
     public event EventHandler OnPlayerLost;
@@ -48,12 +45,12 @@ public class EnemyDetection : MonoBehaviour
     
     private bool IsPlayerInRange(float distanceToPlayer)
     {
-        return distanceToPlayer <= _detectionRadius;
+        return distanceToPlayer <= _stats.detectionRadius;
     }
     
     
     private bool IsPlayerOutsideChaseRadius (float distanceToPlayer)
     {
-        return distanceToPlayer >= _chasingRadius;
+        return distanceToPlayer >= _stats.chasingRadius;
     }
 }

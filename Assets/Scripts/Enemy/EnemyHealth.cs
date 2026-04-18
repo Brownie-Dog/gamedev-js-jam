@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField] private int _maxHealth = 100;
+    [SerializeField] private EnemyStats _stats;
     private int _currentHealth;
 
     public EventHandler OnDeath;
@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Awake()
     {
-        _currentHealth = _maxHealth;
+        _currentHealth = _stats.maxHealth;
     }
     
     public void TakeDamage(int damage)

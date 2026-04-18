@@ -3,15 +3,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    [SerializeField]
-    private float _movementSpeed = 5f;
-
     [Header("References")] 
     [SerializeField] private Transform _player;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private EnemyDetection _enemyDetection;
-    [SerializeField] private float _stoppingDistance = 0f;
+    [SerializeField] private EnemyStats _stats;
     
     private bool _isChasing = false;
 
@@ -37,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         if (_isChasing && _player)
         {
             float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
-            if (distanceToPlayer > _stoppingDistance)
+            if (distanceToPlayer > _stats.stoppingDistance)
             {
                 ChasePlayer();
             }
@@ -67,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
         if (!_player) return;
         
         Vector2 direction = ((Vector2)_player.position - (Vector2)transform.position).normalized;
-        _rb.linearVelocity = direction * _movementSpeed;
+        _rb.linearVelocity = direction * _stats.movementSpeed;
     }
 
 }
