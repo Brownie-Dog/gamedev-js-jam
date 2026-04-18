@@ -1,7 +1,8 @@
+using System;
 using ItemDrops;
 using Player;
 using UnityEngine;
-using Weapons;
+using UnityEngine.Assertions;
 
 namespace ItemDrops
 {
@@ -12,14 +13,31 @@ namespace ItemDrops
     public class StatBoostItemData : ItemData
     {
         [field: SerializeField]
-        public string StatName { get; private set; } = string.Empty;
+        public StatType Stat { get; private set; } = StatType.None;
 
         [field: SerializeField]
         public float Value { get; private set; } = 0f;
 
-        public override void Apply(PlayerEquipment equipment, PlayerInventory inventory)
+        public override void Apply(
+            PlayerEquipment equipment,
+            PlayerInventory inventory,
+            PlayerStatsSo stats
+        )
         {
-            Debug.Log($"Applied {StatName} boost: {Value}");
+            Assert.IsNotNull(stats);
+
+            switch (Stat)
+            {
+                case StatType.MovementSpeed:
+                    stats.MovementSpeed += Value;
+                    break;
+                case StatType.MaxHealth:
+                    stats.MaxHealth += (int)Value;
+                    stats.UpdateHealth(stats.MaxHealth);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

@@ -1,7 +1,6 @@
 using ItemDrops;
 using Player;
 using UnityEngine;
-using Weapons;
 
 namespace ItemDrops
 {
@@ -20,7 +19,7 @@ namespace ItemDrops
         [field: SerializeField]
         public float CooldownTime { get; private set; } = 0f;
 
-        public override void Apply(PlayerEquipment equipment, PlayerInventory inventory)
+        public override void Apply(PlayerEquipment equipment, PlayerInventory inventory, PlayerStatsSo stats)
         {
             var emptySlot = equipment.FirstEmptySlot();
 
@@ -32,6 +31,12 @@ namespace ItemDrops
 
             Debug.Log($"No empty equipment slot for {ItemName}, adding to inventory");
             inventory.AddItem(this);
+        }
+
+        public void ApplyUpgrade(float damageMultiplier, float speedMultiplier)
+        {
+            Damage = (int)(Damage * damageMultiplier);
+            CooldownTime *= speedMultiplier;
         }
     }
 }

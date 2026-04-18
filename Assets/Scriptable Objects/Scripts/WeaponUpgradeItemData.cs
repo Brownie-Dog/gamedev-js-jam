@@ -2,7 +2,6 @@ using ItemDrops;
 using Player;
 using UnityEngine;
 using UnityEngine.Assertions;
-using Weapons;
 
 namespace ItemDrops
 {
@@ -26,14 +25,19 @@ namespace ItemDrops
             Assert.IsNotNull(TargetWeapon, $"{name}: TargetWeapon must be set.");
         }
 
-        public override void Apply(PlayerEquipment equipment, PlayerInventory inventory)
+        public override void Apply(PlayerEquipment equipment, PlayerInventory inventory, PlayerStatsSo stats)
         {
+            if (TargetWeapon == null)
+            {
+                return;
+            }
+
             var equippedWeapons = equipment.GetAllOwnedWeapons();
             foreach (var weapon in equippedWeapons)
             {
                 if (weapon == TargetWeapon)
                 {
-                    ApplyUpgradeToWeapon(weapon);
+                    weapon.ApplyUpgrade(DamageMultiplier, SpeedMultiplier);
                 }
             }
 
@@ -42,14 +46,9 @@ namespace ItemDrops
             {
                 if (weapon == TargetWeapon)
                 {
-                    ApplyUpgradeToWeapon(weapon);
+                    weapon.ApplyUpgrade(DamageMultiplier, SpeedMultiplier);
                 }
             }
-        }
-
-        private void ApplyUpgradeToWeapon(WeaponItemData weapon)
-        {
-            Debug.Log($"Applied upgrade to weapon: {weapon.ItemName}");
         }
     }
 }

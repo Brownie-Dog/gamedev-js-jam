@@ -21,6 +21,6 @@ namespace ItemDrops
         [field: SerializeField]
         public ItemType ItemType { get; private set; } = ItemType.Weapon;
 
-        public abstract void Apply(PlayerEquipment equipment, PlayerInventory inventory);
+        public abstract void Apply(PlayerEquipment equipment, PlayerInventory inventory, PlayerStatsSo stats);
     }
 }
