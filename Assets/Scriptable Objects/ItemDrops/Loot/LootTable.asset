@@ -15,6 +15,8 @@ MonoBehaviour:
   _rarePool:
   - <Item>k__BackingField: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
     <Weight>k__BackingField: 1
+  - <Item>k__BackingField: {fileID: 11400000, guid: faae48cc47fbae94eb1741282033ef6d, type: 2}
+    <Weight>k__BackingField: 1
   _epicPool:
   - <Item>k__BackingField: {fileID: 11400000, guid: d553cc3355ee05c4aa5788142d2429b3, type: 2}
     <Weight>k__BackingField: 1
