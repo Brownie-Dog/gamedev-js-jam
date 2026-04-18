@@ -8,7 +8,7 @@ namespace Weapons
     public class Sword : SecondaryWeapon
     {
         [SerializeField]
-        private BaseWeaponSo _weaponData;
+        private ItemDrops.WeaponItemData _weaponData;
 
         [SerializeField]
         private float _rotationSpeed = 180f;
@@ -21,11 +21,13 @@ namespace Weapons
 
             _renderer = GetComponent<SpriteRenderer>();
             Assert.IsNotNull(_renderer);
+
+            Assert.IsNotNull(_weaponData);
         }
 
         private void Start()
         {
-            _renderer.sprite = _weaponData.Sprite;
+            _renderer.sprite = _weaponData.Icon;
         }
 
         private void Update()
