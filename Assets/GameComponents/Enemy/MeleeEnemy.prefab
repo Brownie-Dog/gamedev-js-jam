@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47b4f2a36ab8104b93f62e0ba947239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeAttack
-  _attackCooldown: 0.5
+  _stats: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
   _attackSound: {fileID: 3926937910527733814}
 --- !u!82 &7291244544740494293 stripped
 AudioSource:

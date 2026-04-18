@@ -117,10 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee12fce8e881a143bf635e710f73b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedAttack
-  _attackCooldown: 0.6
-  _attackRange: 7
-  _player: {fileID: 0}
+  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
   _attackSound: {fileID: 7215993551519547939}
+  _player: {fileID: 0}
 --- !u!82 &3996001933030799808 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7954634106872416284, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
