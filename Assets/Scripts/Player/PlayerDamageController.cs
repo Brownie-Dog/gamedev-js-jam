@@ -10,13 +10,15 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        if (_statsSo == null) return;
-
         int newHealth = _statsSo.CurrentHealth - damage;
         newHealth = Mathf.Max(newHealth, 0);
         
         _statsSo.UpdateHealth(newHealth);
         
+    }
+    private void Awake()
+    {
+        Assert.IsNotNull(_statsSo);
     }
     
 }
