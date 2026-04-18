@@ -412,6 +412,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5262043768326152804, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262043768326152804, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262043768326152804, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262043768326152804, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262043768326152804, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5262043768326152804, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5473002303331690447, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -532,6 +556,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7753148550315558325, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753148550315558325, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753148550315558325, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753148550315558325, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753148550315558325, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753148550315558325, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7789273947189489933, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -556,6 +604,30 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1885529961}
+    - target: {fileID: 7992628294228292774, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992628294228292774, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992628294228292774, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992628294228292774, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992628294228292774, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7992628294228292774, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9095465570864321237, guid: 28d6750c45a966841b6ed8289751bd4e, type: 3}
       propertyPath: m_Name
       value: ChooseItemScreen

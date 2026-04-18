@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d39e15c866854daf029b5bb3a334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
-  _initialUnlockedSlots: 1
+  _initialUnlockedSlots: 3
   _hookPoints:
   - {fileID: 8446796442686484799}
   - {fileID: 8676772841974893465}
@@ -907,7 +907,7 @@ MonoBehaviour:
   - {fileID: 3709717588362197419}
   - {fileID: 8108281533649607938}
   _defaultWeapons:
-  - {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+  - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
 --- !u!114 &7002355511745351319
 MonoBehaviour:
   m_ObjectHideFlags: 0
