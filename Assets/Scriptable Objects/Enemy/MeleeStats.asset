@@ -16,6 +16,6 @@ MonoBehaviour:
   stoppingDistance: 0.5
   detectionRadius: 7.5
   chasingRadius: 15
-  attackCooldown: 0.5
+  attackCooldown: 1
   attackRange: 1
   maxHealth: 100

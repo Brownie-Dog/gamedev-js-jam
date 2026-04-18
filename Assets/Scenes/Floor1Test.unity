@@ -250,45 +250,17 @@ PrefabInstance:
       value: RangedEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 5858245165374665944, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
-    - target: {fileID: 5858245165374665944, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 980578281}
-    - target: {fileID: 5858245165374665944, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _detectionRadius
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543501000229510037, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 980578281}
     - target: {fileID: 7543501000229510037, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _attackRange
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543501000229510037, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _attackCooldown
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7712193965149022518, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
-    - target: {fileID: 8701495436877251310, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
-    - target: {fileID: 8701495436877251310, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 980578281}
     - target: {fileID: 8701495436877251310, guid: 747d79b7a9f8b9d4e91804d4f26028b6, type: 3}
-      propertyPath: _stoppingDistance
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 980578281}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -303,37 +275,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 222849218423703245, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
-      propertyPath: _stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
-    - target: {fileID: 222849218423703245, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 980578281}
     - target: {fileID: 3070040016908480763, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
-      propertyPath: _stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
-    - target: {fileID: 3070040016908480763, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 980578281}
-    - target: {fileID: 3070040016908480763, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
-      propertyPath: _movementSpeed
-      value: 8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3070040016908480763, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
-      propertyPath: _stoppingDistance
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3926937910527733814, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
-      propertyPath: _volume
-      value: 0.189
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133219594759199523, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
-      propertyPath: _stats
-      value: 
-      objectReference: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
     - target: {fileID: 7028197371816534001, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
       propertyPath: m_Name
       value: MeleeEnemy
