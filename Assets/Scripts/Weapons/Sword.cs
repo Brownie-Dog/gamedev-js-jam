@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -11,9 +12,10 @@ namespace Weapons
         private ItemDrops.WeaponItemData _weaponData;
 
         [SerializeField]
-        private float _rotationSpeed = 180f;
+        private float _attackDuration = 0.15f;
 
         private SpriteRenderer _renderer;
+        private bool _isAttacking;
 
         protected override void Awake()
         {
@@ -30,11 +32,6 @@ namespace Weapons
             _renderer.sprite = _weaponData.Icon;
         }
 
-        private void Update()
-        {
-            transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime);
-        }
-
         protected override void OnSecondaryAttack(object obj, EventArgs args)
         {
             Attack();
@@ -42,7 +39,33 @@ namespace Weapons
 
         public void Attack()
         {
-            Debug.Log("Sword attack!");
+            if (_isAttacking)
+            {
+                return;
+            }
+
+            StartCoroutine(SpinAttack());
+        }
+
+        private IEnumerator SpinAttack()
+        {
+            _isAttacking = true;
+
+            var elapsed = 0f;
+            var startRotation = transform.localRotation.eulerAngles.z;
+
+            while (elapsed < _attackDuration)
+            {
+                elapsed += Time.deltaTime;
+                var t = elapsed / _attackDuration;
+                var angle = Mathf.Lerp(startRotation, startRotation - 360f, t);
+                transform.localRotation = Quaternion.Euler(0, 0, angle);
+
+                yield return null;
+            }
+
+            transform.localRotation = Quaternion.Euler(0, 0, startRotation);
+            _isAttacking = false;
         }
     }
 }
