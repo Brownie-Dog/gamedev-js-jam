@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 291075037575602817}
   - component: {fileID: 5197029817154738383}
   m_Layer: 0
-  m_Name: ItemSlot (1)
+  m_Name: BackSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4510492549719505195}
   - component: {fileID: 4053495417764824636}
   m_Layer: 0
-  m_Name: ItemSlot (3)
+  m_Name: TopSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 6306823553078355873}
   - component: {fileID: 8788312618306164967}
   m_Layer: 0
-  m_Name: ItemSlot (4)
+  m_Name: RightSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 7525362513600477078}
   - component: {fileID: 1031610946925431421}
   m_Layer: 0
-  m_Name: ItemSlot (5)
+  m_Name: BottomSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 6247348416748931534}
   - component: {fileID: 439586913100426667}
   m_Layer: 0
-  m_Name: ItemSlot (6)
+  m_Name: TopRightHeadSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,10 +500,11 @@ GameObject:
   - component: {fileID: 8557419963232160952}
   - component: {fileID: 6968245968921767180}
   - component: {fileID: 526240358348230129}
-  - component: {fileID: 1728836434372743118}
+  - component: {fileID: 2810164907020316400}
+  - component: {fileID: 7002355511745351319}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -886,18 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5739adebc30e4782a1137589bf402107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeaponController
-  _weaponSlots:
-  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-    HookPoint: {fileID: 8446796442686484799}
-  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-    HookPoint: {fileID: 8676772841974893465}
-  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-    HookPoint: {fileID: 909437693786460123}
-  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-    HookPoint: {fileID: 3709717588362197419}
-  - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-    HookPoint: {fileID: 8108281533649607938}
---- !u!114 &1728836434372743118
+--- !u!114 &2810164907020316400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -906,8 +896,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8232643813525639276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca851d2e83110c54facf9fdc804f4e2e, type: 3}
+  m_Script: {fileID: 11500000, guid: ec6d39e15c866854daf029b5bb3a334d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageController
-  _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
-  _healthUI: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
+  _initialUnlockedSlots: 3
+  _hookPoints:
+  - {fileID: 8446796442686484799}
+  - {fileID: 8676772841974893465}
+  - {fileID: 909437693786460123}
+  - {fileID: 3709717588362197419}
+  - {fileID: 8108281533649607938}
+  _defaultWeapons:
+  - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
+--- !u!114 &7002355511745351319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176b880e9e835c840b466b37571618b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory

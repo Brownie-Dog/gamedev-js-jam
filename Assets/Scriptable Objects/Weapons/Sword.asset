@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1334385d2a49df9d933a5ce3aaba15, type: 3}
+  m_Script: {fileID: 11500000, guid: b9a83fedc677e0542ac2288e851943b2, type: 3}
   m_Name: Sword
-  m_EditorClassIdentifier: Assembly-CSharp::Weapons.BaseWeaponSo
-  <Sprite>k__BackingField: {fileID: -2445865832411743802, guid: 9ac6e587c7baba941aa2b0d8543265d0, type: 3}
-  Damage: 1
-  CooldownTime: 0
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
+  <ItemName>k__BackingField: Wooden Sword
+  <Description>k__BackingField: This is definitely made out of wood...
+  <Icon>k__BackingField: {fileID: -2445865832411743802, guid: 9ac6e587c7baba941aa2b0d8543265d0, type: 3}
+  <Rarity>k__BackingField: 0
+  <ItemType>k__BackingField: 0
+  <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+  <Damage>k__BackingField: 1
+  <CooldownTime>k__BackingField: 0

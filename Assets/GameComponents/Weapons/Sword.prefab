@@ -82,15 +82,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2445865832411743802, guid: 9ac6e587c7baba941aa2b0d8543265d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6, y: 1.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!114 &2183656251151406364
 MonoBehaviour:
@@ -104,4 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0568942de0fb487ab6dc11ca4ea3600a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.Sword
-  _weaponData: {fileID: 11400000, guid: a4f38a3472f71d94598b773a779a39b6, type: 2}
+  _weaponData: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
+  _rotationSpeed: 180
