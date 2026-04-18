@@ -12,6 +12,11 @@ public class PlayerHealthUI : MonoBehaviour
     
     private List<Image> _hearts = new List<Image>();
 
+    private void Awake()
+    {
+        Assert.IsNotNull(_statsSo);
+    }
+
     private void Start()
     {
         _statsSo.CurrentHealth = _statsSo.MaxHealth;
