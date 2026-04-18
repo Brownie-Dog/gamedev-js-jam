@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 8557419963232160952}
   - component: {fileID: 6968245968921767180}
   - component: {fileID: 526240358348230129}
+  - component: {fileID: 1728836434372743118}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -896,3 +897,17 @@ MonoBehaviour:
     HookPoint: {fileID: 3709717588362197419}
   - WeaponPrefab: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
     HookPoint: {fileID: 8108281533649607938}
+--- !u!114 &1728836434372743118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca851d2e83110c54facf9fdc804f4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageController
+  _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
+  _healthUI: {fileID: 0}
