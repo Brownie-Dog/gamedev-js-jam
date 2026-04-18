@@ -1,19 +1,30 @@
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public abstract class EnemyAttack : MonoBehaviour
 {
-    [Header("Attack Settings")] [SerializeField]
-    private float _attackCooldown = 1f;
+    [SerializeField] protected EnemyStats _stats;
+    [SerializeField] protected SoundEffect _attackSound;
 
     private float _lastAttackTime;
-
-    public bool CanAttack()
+    
+    public void ExecuteAttack()
     {
-        return Time.time >= _lastAttackTime + _attackCooldown;
+        if (CanAttack())
+        {
+            Attack();
+            _attackSound?.Play();
+            ResetCooldown();
+        }
     }
 
-    public void ResetCooldown()
+    protected bool CanAttack()
+    {
+        return Time.time >= _lastAttackTime + _stats.attackCooldown;
+    }
+    protected abstract void Attack();
+    private void ResetCooldown()
     {
         _lastAttackTime = Time.time;
     }
 }
+
