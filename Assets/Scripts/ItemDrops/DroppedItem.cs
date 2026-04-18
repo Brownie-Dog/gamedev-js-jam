@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -29,11 +29,13 @@ namespace ItemDrops
                 return;
             }
 
-            Invoke(nameof(PickupItem), _pickupDelay);
+            StartCoroutine(PickupAfterDelay());
         }
 
-        private void PickupItem()
+        private IEnumerator PickupAfterDelay()
         {
+            yield return new WaitForSeconds(_pickupDelay);
+
             _itemDropManager.OnItemPickup(this.gameObject);
         }
     }
