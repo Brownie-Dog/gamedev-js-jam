@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   MovementSpeed: 12
+  MaxHealth: 5
+  CurrentHealth: 3

@@ -14,8 +14,9 @@ public class PlayerHealthUI : MonoBehaviour
 
     private void Start()
     {
-        SetupHearts(_statsSo.MaxHealth);
         _statsSo.CurrentHealth = _statsSo.MaxHealth;
+        SetupHearts(_statsSo.MaxHealth);
+        UpdateHealthUI(_statsSo.CurrentHealth);
     }
     
     private void SetupHearts(int maxHealth)
@@ -31,8 +32,30 @@ public class PlayerHealthUI : MonoBehaviour
     {
         for (int i = 0; i < _health.Count; i++)
         {
-            _health[i].enabled = i < currentHealth;
+            if (i < currentHealth)
+            {
+                _health[i].color = Color.white; 
+            }
+            else
+            {
+                _health[i].color = new Color(0.5f, 0.5f, 0.5f, 0.5f); 
+            }
         }
+    }
+    
+    private void OnEnable() 
+    {
+        _statsSo.OnHealthChanged += HandleHealthUpdate;
+    }
+
+    private void OnDisable() 
+    {
+        _statsSo.OnHealthChanged -= HandleHealthUpdate;
+    }
+
+    private void HandleHealthUpdate()
+    {
+        UpdateHealthUI(_statsSo.CurrentHealth);
     }
 
 }

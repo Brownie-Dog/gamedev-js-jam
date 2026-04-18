@@ -7,19 +7,15 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
 {
     [SerializeField]
     private PlayerStatsSo _statsSo;
-    
-    [SerializeField] 
-    private PlayerHealthUI _healthUI;
 
     public void TakeDamage(int damage)
     {
-        _statsSo.CurrentHealth -= damage;
-        _statsSo.CurrentHealth = Mathf.Max(_statsSo.CurrentHealth, 0);
+        if (_statsSo == null) return;
+
+        int newHealth = _statsSo.CurrentHealth - damage;
+        newHealth = Mathf.Max(newHealth, 0);
         
-        if (_healthUI != null)
-        {
-            _healthUI.UpdateHealthUI(_statsSo.CurrentHealth);
-        }
+        _statsSo.UpdateHealth(newHealth);
         
     }
     
