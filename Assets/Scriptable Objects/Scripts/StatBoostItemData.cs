@@ -18,6 +18,8 @@ namespace ItemDrops
         [field: SerializeField]
         public float Value { get; private set; } = 0f;
 
+        public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
+
         public override void Apply(
             PlayerEquipment equipment,
             PlayerInventory inventory,
@@ -25,6 +27,7 @@ namespace ItemDrops
         )
         {
             Assert.IsNotNull(stats);
+            Assert.AreNotEqual(StatType.None, Stat, $"{name}: StatType must be set.");
 
             switch (Stat)
             {

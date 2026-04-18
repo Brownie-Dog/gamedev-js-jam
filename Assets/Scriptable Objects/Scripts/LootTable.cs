@@ -3,7 +3,6 @@ using System.Linq;
 using Player;
 using UnityEngine;
 using UnityEngine.Assertions;
-using Weapons;
 
 namespace ItemDrops
 {
@@ -107,9 +106,6 @@ namespace ItemDrops
         {
             var filtered = new List<LootEntry>();
 
-            var ownedWeapons = equipment.GetAllOwnedWeapons();
-            var inventoryWeapons = inventory.GetAllWeapons();
-
             foreach (var entry in pool)
             {
                 if (entry.Item == null)
@@ -122,15 +118,9 @@ namespace ItemDrops
                     continue;
                 }
 
-                if (entry.Item is WeaponUpgradeItemData upgrade)
+                if (!entry.Item.CanDrop(equipment, inventory))
                 {
-                    if (
-                        !ownedWeapons.Contains(upgrade.TargetWeapon)
-                        && !inventoryWeapons.Contains(upgrade.TargetWeapon)
-                    )
-                    {
-                        continue;
-                    }
+                    continue;
                 }
 
                 filtered.Add(entry);

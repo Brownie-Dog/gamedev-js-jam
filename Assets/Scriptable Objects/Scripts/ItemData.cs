@@ -1,6 +1,5 @@
 using Player;
 using UnityEngine;
-using Weapons;
 
 namespace ItemDrops
 {
@@ -18,8 +17,7 @@ namespace ItemDrops
         [field: SerializeField]
         public Rarity Rarity { get; private set; } = Rarity.Rare;
 
-        [field: SerializeField]
-        public ItemType ItemType { get; private set; } = ItemType.Weapon;
+        public abstract bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory);
 
         public abstract void Apply(PlayerEquipment equipment, PlayerInventory inventory, PlayerStatsSo stats);
     }

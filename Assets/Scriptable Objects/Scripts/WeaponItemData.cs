@@ -19,7 +19,13 @@ namespace ItemDrops
         [field: SerializeField]
         public float CooldownTime { get; private set; } = 0f;
 
-        public override void Apply(PlayerEquipment equipment, PlayerInventory inventory, PlayerStatsSo stats)
+        public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
+
+        public override void Apply(
+            PlayerEquipment equipment,
+            PlayerInventory inventory,
+            PlayerStatsSo stats
+        )
         {
             var emptySlot = equipment.FirstEmptySlot();
 
@@ -33,10 +39,19 @@ namespace ItemDrops
             inventory.AddItem(this);
         }
 
-        public void ApplyUpgrade(float damageMultiplier, float speedMultiplier)
+        public void AddFlatDamage(int damageIncrease)
         {
-            Damage = (int)(Damage * damageMultiplier);
-            CooldownTime *= speedMultiplier;
+            Damage += damageIncrease;
+        }
+
+        public void MultiplyDamage(float multiplier)
+        {
+            Damage = (int)(Damage * multiplier);
+        }
+
+        public void MultiplyCooldown(float multiplier)
+        {
+            CooldownTime *= multiplier;
         }
     }
 }
