@@ -50,6 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ItemDropManager
   _chooseItemScreen: {fileID: 0}
   _itemDropPrefab: {fileID: 5975824759436001735, guid: ec544ce2f1cb53242aa3fa484ca69f0a, type: 3}
+  _lootTable: {fileID: 11400000, guid: 4e4d60f743abb22498c7898714f0291d, type: 2}
+  _playerEquipment: {fileID: 0}
+  _playerInventory: {fileID: 0}
 --- !u!1001 &165273237043735045
 PrefabInstance:
   m_ObjectHideFlags: 0

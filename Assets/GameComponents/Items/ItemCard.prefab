@@ -346,6 +346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bbaea23ccf148399e66d452a99ead8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ItemCardButton
+  _itemCardButton: {fileID: 7904990392475934887}
+  _titleText: {fileID: 8875002054424753373}
+  _descriptionText: {fileID: 8829916682131201209}
+  _iconImage: {fileID: 4184930852072751880}
 --- !u!1 &7169279305490456897
 GameObject:
   m_ObjectHideFlags: 0

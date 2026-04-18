@@ -6,8 +6,19 @@ namespace ItemDrops
 {
     public class ItemCardButton : MonoBehaviour
     {
+        [SerializeField]
         private Button _itemCardButton;
 
+        [SerializeField]
+        private TMPro.TextMeshProUGUI _titleText;
+
+        [SerializeField]
+        private TMPro.TextMeshProUGUI _descriptionText;
+
+        [SerializeField]
+        private Image _iconImage;
+
+        private ItemData _itemData;
         private ItemChoiceScreen _itemChoiceScreen;
 
         private void Awake()
@@ -15,8 +26,10 @@ namespace ItemDrops
             _itemChoiceScreen = GetComponentInParent<ItemChoiceScreen>();
             Assert.IsNotNull(_itemChoiceScreen);
 
-            _itemCardButton = GetComponent<Button>();
             Assert.IsNotNull(_itemCardButton);
+            Assert.IsNotNull(_titleText);
+            Assert.IsNotNull(_descriptionText);
+            Assert.IsNotNull(_iconImage);
         }
 
         private void Start()
@@ -24,14 +37,19 @@ namespace ItemDrops
             _itemCardButton.onClick.AddListener(OnCardButtonPressed);
         }
 
-        private void OnCardButtonPressed()
+        public void SetItemData(ItemData itemData)
         {
-            _itemChoiceScreen.OnChoicePicked(OnCardSelected);
+            _itemData = itemData;
+
+            _titleText.text = itemData.ItemName;
+            _descriptionText.text = itemData.Description;
+            _iconImage.sprite = itemData.Icon;
         }
 
-        private void OnCardSelected()
+        private void OnCardButtonPressed()
         {
-            Debug.Log("OnCardSelected");
+            Assert.IsNotNull(_itemData);
+            _itemChoiceScreen.OnChoicePicked(_itemData);
         }
     }
 }

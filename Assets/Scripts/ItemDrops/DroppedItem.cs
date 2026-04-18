@@ -14,6 +14,8 @@ namespace ItemDrops
 
         private ItemDropManager _itemDropManager;
 
+        public bool GuaranteeLegendary { get; set; }
+
         private void Awake()
         {
             Assert.IsNotNull(_collider);
@@ -36,7 +38,7 @@ namespace ItemDrops
         {
             yield return new WaitForSeconds(_pickupDelay);
 
-            _itemDropManager.OnItemPickup(this.gameObject);
+            _itemDropManager.OnItemPickup(this.gameObject, GuaranteeLegendary);
         }
     }
 }
