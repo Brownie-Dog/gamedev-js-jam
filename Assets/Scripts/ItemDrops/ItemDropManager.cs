@@ -23,6 +23,9 @@ namespace ItemDrops
         [SerializeField]
         private PlayerInventory _playerInventory;
 
+        [SerializeField]
+        private PlayerStatsSo _playerStats;
+
         private bool _guaranteeLegendary;
 
         private void Awake()
@@ -32,6 +35,7 @@ namespace ItemDrops
             Assert.IsNotNull(_lootTable);
             Assert.IsNotNull(_playerEquipment);
             Assert.IsNotNull(_playerInventory);
+            Assert.IsNotNull(_playerStats);
         }
 
         private void OnEnable()
@@ -74,17 +78,12 @@ namespace ItemDrops
 
         private void HandleItemPicked(object sender, ItemPickedEventArgs e)
         {
-            e.Item.Apply(_playerEquipment, _playerInventory);
+            e.Item.Apply(_playerEquipment, _playerInventory, _playerStats);
         }
 
         private void HandleRerollRequested(object sender, EventArgs e)
         {
-            ItemData[] items = _lootTable.Roll(
-                _guaranteeLegendary,
-                _playerEquipment,
-                _playerInventory
-            );
-
+            var items = _lootTable.Roll(_guaranteeLegendary, _playerEquipment, _playerInventory);
             _chooseItemScreen.Reroll(items);
         }
     }

@@ -1,14 +1,49 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+namespace Player
 {
-    [SerializeField]
-    private int _damageAmount = 1;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    [RequireComponent(typeof(Collider2D))]
+    public class DamageDealer : MonoBehaviour
     {
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        target?.TakeDamage(_damageAmount);
+        private int _damageAmount;
+        private bool _active;
+        private readonly HashSet<Collider2D> _hitTargets = new();
+
+        public event Action OnHit;
+
+        public void Activate(int damage)
+        {
+            _damageAmount = damage;
+            _active = true;
+            _hitTargets.Clear();
+        }
+
+        public void Deactivate()
+        {
+            _active = false;
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!_active)
+            {
+                return;
+            }
+
+            if (_hitTargets.Contains(other))
+            {
+                return;
+            }
+
+            var target = other.gameObject.GetComponent<IDamageable>();
+            if (target != null)
+            {
+                target.TakeDamage(_damageAmount);
+                _hitTargets.Add(other);
+                OnHit?.Invoke();
+            }
+        }
     }
-    
 }
