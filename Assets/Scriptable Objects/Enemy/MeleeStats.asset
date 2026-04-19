@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af0f47f874e4204c88a0d3a4c2ca3ce, type: 3}
   m_Name: MeleeStats
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  movementSpeed: 8.5
-  stoppingDistance: 0.5
-  detectionRadius: 7.5
-  chasingRadius: 15
-  attackCooldown: 1
-  attackRange: 1
-  maxHealth: 100
+  MovementSpeed: 10
+  StoppingDistance: 0.5
+  DetectionRadius: 7
+  ChasingRadius: 15
+  AttackCooldown: 1
+  AttackRange: 1
+  Damage: 1
+  MaxHealth: 100
