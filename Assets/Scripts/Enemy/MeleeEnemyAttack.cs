@@ -1,17 +1,59 @@
 using UnityEngine;
+using UnityEngine.Assertions;
+using Player;
 
+[RequireComponent(typeof(DamageDealer))]
 public class MeleeEnemyAttack : EnemyAttack
 {
-    protected override void Attack()
+    private DamageDealer _damageDealer;
+    private Collider2D _playerCollider;
+
+    private void Awake()
     {
-        Debug.Log("MELEE ATTACK");
+        _damageDealer = GetComponent<DamageDealer>();
+        Assert.IsNotNull(_damageDealer);
+
+        _damageDealer.OnHit += OnEnemyHit;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnEnemyHit()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        _damageDealer.Deactivate();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag(GlobalConstants.PLAYER_TAG))
         {
-            ExecuteAttack();
+            return;
+        }
+
+        _playerCollider = other;
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (!other.CompareTag(GlobalConstants.PLAYER_TAG))
+        {
+            return;
+        }
+
+        ExecuteAttack();
+    }
+
+    protected override void Attack()
+    {
+        var direction = ((Vector2)(_playerCollider.transform.position - transform.position)).normalized;
+        var damageInfo = new DamageInfo(_stats.Damage, direction * _stats.KnockbackForce);
+        _damageDealer.Activate(damageInfo);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag(GlobalConstants.PLAYER_TAG))
+        {
+            _playerCollider = null;
+            _damageDealer?.Deactivate();
         }
     }
 }

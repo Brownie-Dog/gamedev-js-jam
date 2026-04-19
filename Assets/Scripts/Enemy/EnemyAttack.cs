@@ -5,27 +5,22 @@ public abstract class EnemyAttack : MonoBehaviour
     [SerializeField] protected EnemyStats _stats;
     [SerializeField] protected SoundEffect _attackSound;
 
-    private float _lastAttackTime;
+    private float _lastAttackTime = float.MinValue;
 
-    public void ExecuteAttack()
+    protected void ExecuteAttack()
     {
         if (CanAttack())
         {
             Attack();
             _attackSound?.Play();
-            ResetCooldown();
+            _lastAttackTime = Time.time;
         }
     }
 
-    protected bool CanAttack()
+    private bool CanAttack()
     {
         return Time.time >= _lastAttackTime + _stats.AttackCooldown;
     }
 
     protected abstract void Attack();
-
-    private void ResetCooldown()
-    {
-        _lastAttackTime = Time.time;
-    }
 }

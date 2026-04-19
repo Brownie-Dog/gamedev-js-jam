@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8230461480171691232}
   - component: {fileID: 7729389339553513010}
   - component: {fileID: 5442161242388031772}
-  - component: {fileID: 148848121725040535}
+  - component: {fileID: 4827543062457733671}
+  - component: {fileID: 3285378652751197902}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -157,7 +158,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.28
---- !u!114 &148848121725040535
+--- !u!114 &4827543062457733671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +167,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3730379951702473993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941dc94485806c342b7bb46da052c912, type: 3}
+  m_Script: {fileID: 11500000, guid: caf534c7a45dd72449be03af84b56b5d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  _data: {fileID: 11400000, guid: 473893d6c83681049961d43fefb9cb2a, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::Player.DamageDealer
+  _targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &3285378652751197902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730379951702473993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e136767957fbb67468fbd2b9946c53cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.Bullet
+  _speed: 20
+  _lifetime: 3

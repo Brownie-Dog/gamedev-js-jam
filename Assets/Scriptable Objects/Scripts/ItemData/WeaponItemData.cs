@@ -9,7 +9,7 @@ namespace ItemDrops
         fileName = nameof(WeaponItemData),
         menuName = "ScriptableObjects/Items/Weapon"
     )]
-    public class WeaponItemData : ItemData
+    public class WeaponItemData : ItemData, IWeaponData
     {
         [field: SerializeField]
         public GameObject WeaponPrefab { get; private set; } = null;
