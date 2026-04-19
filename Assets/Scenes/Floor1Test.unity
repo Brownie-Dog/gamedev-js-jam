@@ -338,6 +338,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2484006982182933208, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2527963291618036540, guid: 2019a96374261014d843d769c56e0373, type: 3}
+    - target: {fileID: 3240155425574240640, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240155425574240640, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.05
@@ -382,6 +394,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9003351969405847894, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: _up
+      value: 
+      objectReference: {fileID: -8928028179063679652, guid: 2019a96374261014d843d769c56e0373, type: 3}
+    - target: {fileID: 9003351969405847894, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: _down
+      value: 
+      objectReference: {fileID: -6611473660949076343, guid: 2019a96374261014d843d769c56e0373, type: 3}
+    - target: {fileID: 9003351969405847894, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: _side
+      value: 
+      objectReference: {fileID: -2527963291618036540, guid: 2019a96374261014d843d769c56e0373, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
