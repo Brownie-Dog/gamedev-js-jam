@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "ScriptableObjects/PlayerStats")]
 public class PlayerStatsSo : ScriptableObject
@@ -15,7 +16,8 @@ public class PlayerStatsSo : ScriptableObject
     public int CurrentHealth;
 
     public EventHandler OnHealthChanged;
-
+    public EventHandler OnPlayerDeath;
+    
     private void OnEnable()
     {
         MovementSpeed = _initialMovementSpeed;
@@ -27,5 +29,12 @@ public class PlayerStatsSo : ScriptableObject
     {
         CurrentHealth = newHealth;
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
+    
+    public void Death()
+    {
+        CurrentHealth = MaxHealth;
+        UpdateHealth(CurrentHealth);
+        OnPlayerDeath?.Invoke(this, EventArgs.Empty);
     }
 }

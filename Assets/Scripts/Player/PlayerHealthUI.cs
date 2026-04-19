@@ -19,7 +19,7 @@ public class PlayerHealthUI : MonoBehaviour
         Assert.IsNotNull(_statsSo);
         Assert.IsNotNull(_HeartPrefab);
     }
-
+    
     private void Start()
     {
         SetupHearts(_statsSo.MaxHealth);

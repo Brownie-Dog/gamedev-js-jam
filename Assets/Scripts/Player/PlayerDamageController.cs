@@ -7,7 +7,7 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
 {
     [SerializeField]
     private PlayerStatsSo _statsSo;
-
+    
     private void Awake()
     {
         Assert.IsNotNull(_statsSo);
@@ -19,7 +19,10 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
         newHealth = Mathf.Max(newHealth, 0);
         
         _statsSo.UpdateHealth(newHealth);
-        
+
+        if (newHealth <= 0)
+        {
+            _statsSo.Death();
+        }
     }
-    
 }
