@@ -343,6 +343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7291244544740494293, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: e9be2659b03e25a468cea878b9d4a2f2, type: 3}
     - target: {fileID: 8092630237250433496, guid: 52f44a2004ee6764da1a70d19c2a7932, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.55
