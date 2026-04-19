@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.Pool;
 using Weapons;
 
 public class RangedEnemyAttack : EnemyAttack
@@ -10,7 +9,7 @@ public class RangedEnemyAttack : EnemyAttack
     [SerializeField] private Transform _firePoint;
 
     private Transform _player;
-    private IObjectPool<Bullet> _bulletPool;
+    private MonoBehaviourPool<Bullet> _bulletPool;
 
     private void Awake()
     {
@@ -19,8 +18,8 @@ public class RangedEnemyAttack : EnemyAttack
         Assert.IsNotNull(_bulletPrefab);
         Assert.IsNotNull(_firePoint);
 
-        _bulletPool = new ObjectPool<Bullet>(CreateBullet, OnGetBullet, OnReleaseBullet, OnDestroyBullet,
-            defaultCapacity: _poolSize, maxSize: _poolSize
+        _bulletPool = new MonoBehaviourPool<Bullet>(_bulletPrefab, _poolSize, _poolSize, transform,
+            b => b.SetPool(_bulletPool.Pool)
         );
     }
 
@@ -36,32 +35,9 @@ public class RangedEnemyAttack : EnemyAttack
 
     protected override void Attack()
     {
-        var direction = ((Vector2)(_player.position - _firePoint.position)).normalized;
+        Vector2 direction = ((Vector2)(_player.position - _firePoint.position)).normalized;
         var damageInfo = new DamageInfo(_stats.Damage, direction * _stats.KnockbackForce);
-        var bullet = _bulletPool.Get();
+        Bullet bullet = _bulletPool.Get();
         bullet.Activate(_firePoint.position, direction, damageInfo);
-    }
-
-    private Bullet CreateBullet()
-    {
-        var bullet = Instantiate(_bulletPrefab, transform);
-        bullet.SetPool(_bulletPool);
-        return bullet;
-    }
-
-    private void OnGetBullet(Bullet bullet)
-    {
-        bullet.gameObject.SetActive(true);
-    }
-
-    private void OnReleaseBullet(Bullet bullet)
-    {
-        bullet.Deactivate();
-        bullet.gameObject.SetActive(false);
-    }
-
-    private void OnDestroyBullet(Bullet bullet)
-    {
-        Destroy(bullet.gameObject);
     }
 }
