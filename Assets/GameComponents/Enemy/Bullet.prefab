@@ -169,6 +169,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941dc94485806c342b7bb46da052c912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  _speed: 17
-  _imageRotation: 180
-  _lifetime: 2
+  _data: {fileID: 11400000, guid: 473893d6c83681049961d43fefb9cb2a, type: 2}
