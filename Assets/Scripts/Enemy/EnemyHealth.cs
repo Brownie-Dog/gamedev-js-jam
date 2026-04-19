@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private void Awake()
     {
         Assert.NotNull(_stats);
-        _currentHealth = _stats.maxHealth;
+        _currentHealth = _stats.MaxHealth;
     }
     
     public void TakeDamage(int damage)

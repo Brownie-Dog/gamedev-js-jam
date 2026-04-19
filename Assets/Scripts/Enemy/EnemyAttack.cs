@@ -19,7 +19,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
     protected bool CanAttack()
     {
-        return Time.time >= _lastAttackTime + _stats.attackCooldown;
+        return Time.time >= _lastAttackTime + _stats.AttackCooldown;
     }
     protected abstract void Attack();
     private void ResetCooldown()

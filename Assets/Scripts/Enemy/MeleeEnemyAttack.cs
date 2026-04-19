@@ -1,3 +1,5 @@
+using System;
+using NUnit.Framework;
 using UnityEngine;
 
 public class MeleeEnemyAttack : EnemyAttack
@@ -6,7 +8,6 @@ public class MeleeEnemyAttack : EnemyAttack
     {
         Debug.Log("MELEE ATTACK");
         
-        // do damage
     }
 
     private void OnCollisionStay2D(Collision2D collision)

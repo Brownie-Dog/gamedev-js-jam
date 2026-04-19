@@ -4,17 +4,18 @@ using UnityEngine;
 public class EnemyStats : ScriptableObject
 {
     [Header("Movement")]
-    public float movementSpeed = 5f;
-    public float stoppingDistance = 0.5f;
+    public float MovementSpeed = 5f;
+    public float StoppingDistance = 0.5f;
 
     [Header("Detection")]
-    public float detectionRadius = 7f;
-    public float chasingRadius = 15f;
+    public float DetectionRadius = 7f;
+    public float ChasingRadius = 15f;
 
     [Header("Combat")]
-    public float attackCooldown = 1f;
-    public float attackRange = 1f;
+    public float AttackCooldown = 1f;
+    public float AttackRange = 1f;
+    public int Damage = 1;
 
     [Header("Health")]
-    public int maxHealth = 100;
+    public int MaxHealth = 100;
 }

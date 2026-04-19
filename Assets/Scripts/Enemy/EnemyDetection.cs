@@ -48,11 +48,11 @@ public class EnemyDetection : MonoBehaviour
     
     private bool IsPlayerInRange(float distanceToPlayer)
     {
-        return distanceToPlayer <= _stats.detectionRadius;
+        return distanceToPlayer <= _stats.DetectionRadius;
     }
     
     private bool IsPlayerOutsideChaseRadius (float distanceToPlayer)
     {
-        return distanceToPlayer >= _stats.chasingRadius;
+        return distanceToPlayer >= _stats.ChasingRadius;
     }
 }

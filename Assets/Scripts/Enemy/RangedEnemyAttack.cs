@@ -4,7 +4,7 @@ using UnityEngine.Assertions;
 public class RangedEnemyAttack : EnemyAttack
 {
     [SerializeField] private Transform _firePoint;
-    [SerializeField] private ObjectPooler _bulletPool;
+    [SerializeField] private EnemyProjectilePooler _bulletPool;
     
     private Transform _player;
     
@@ -12,12 +12,13 @@ public class RangedEnemyAttack : EnemyAttack
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         Assert.IsNotNull(_player);
+        Assert.IsNotNull(_bulletPool);
     }
     private void Update()
     {
         float distance = Vector2.Distance(transform.position, _player.position);
         
-        if (distance <= _stats.attackRange)
+        if (distance <= _stats.AttackRange)
         {
             ExecuteAttack();
         }
@@ -26,8 +27,7 @@ public class RangedEnemyAttack : EnemyAttack
     protected override void Attack()
     {
         Debug.Log("Firing Projectile!");
-        if (!_player) return;
-        Projectile bullet = _bulletPool.Get();
+        PooledEnemyProjectile bullet = _bulletPool.RequestProjectile();
         bullet.transform.position = _firePoint.position;
         Vector2 targetDirection = (_player.position - _firePoint.position).normalized;
         bullet.Launch(targetDirection);

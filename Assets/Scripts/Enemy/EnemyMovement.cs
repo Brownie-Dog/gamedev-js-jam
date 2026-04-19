@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
         if (_isChasing)
         {
             float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
-            if (distanceToPlayer > _stats.stoppingDistance)
+            if (distanceToPlayer > _stats.StoppingDistance)
             {
                 ChasePlayer();
             }
@@ -62,7 +62,7 @@ public class EnemyMovement : MonoBehaviour
     private void ChasePlayer()
     {
         Vector2 direction = ((Vector2)_player.position - (Vector2)transform.position).normalized;
-        _rb.linearVelocity = direction * _stats.movementSpeed;
+        _rb.linearVelocity = direction * _stats.MovementSpeed;
     }
 
 }
