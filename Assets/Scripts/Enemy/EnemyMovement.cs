@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private EnemyDetection _enemyDetection;
     [SerializeField] private EnemyStats _stats;
-    
+
     private Transform _player;
     private bool _isChasing = false;
 
@@ -17,18 +17,19 @@ public class EnemyMovement : MonoBehaviour
         Assert.IsNotNull(_player);
         Assert.IsNotNull(_enemyDetection);
     }
-    
+
     private void OnEnable()
     {
         _enemyDetection.OnPlayerDetected += HandlePlayerDetected;
         _enemyDetection.OnPlayerLost += HandlePlayerLost;
-        
     }
+
     private void OnDisable()
     {
         _enemyDetection.OnPlayerDetected -= HandlePlayerDetected;
         _enemyDetection.OnPlayerLost -= HandlePlayerLost;
     }
+
     private void Update()
     {
         if (_isChasing)
@@ -58,11 +59,10 @@ public class EnemyMovement : MonoBehaviour
     {
         _isChasing = false;
     }
-    
+
     private void ChasePlayer()
     {
         Vector2 direction = ((Vector2)_player.position - (Vector2)transform.position).normalized;
         _rb.linearVelocity = direction * _stats.MovementSpeed;
     }
-
 }

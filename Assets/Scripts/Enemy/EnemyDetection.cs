@@ -6,18 +6,19 @@ public class EnemyDetection : MonoBehaviour
 {
     [SerializeField] private SoundEffect _detectionSound;
     [SerializeField] private EnemyStats _stats;
-    
+
     private Transform _player;
+    private bool _isDetectingPlayer = false;
+
     public event EventHandler OnPlayerDetected;
     public event EventHandler OnPlayerLost;
-    private bool _isDetectingPlayer = false;
-    
+
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         Assert.IsNotNull(_player);
     }
-    
+
     private void Update()
     {
         float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
@@ -42,16 +43,17 @@ public class EnemyDetection : MonoBehaviour
             {
                 _detectionSound.Stop();
             }
+
             OnPlayerLost?.Invoke(this, EventArgs.Empty);
         }
     }
-    
+
     private bool IsPlayerInRange(float distanceToPlayer)
     {
         return distanceToPlayer <= _stats.DetectionRadius;
     }
-    
-    private bool IsPlayerOutsideChaseRadius (float distanceToPlayer)
+
+    private bool IsPlayerOutsideChaseRadius(float distanceToPlayer)
     {
         return distanceToPlayer >= _stats.ChasingRadius;
     }

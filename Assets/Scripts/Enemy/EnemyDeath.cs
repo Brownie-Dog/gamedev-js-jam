@@ -1,10 +1,9 @@
 using System;
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EnemyDeath : MonoBehaviour
 {
-    [Header("References")]
     [SerializeField] private EnemyHealth _health;
 
     private void Awake()
@@ -21,7 +20,7 @@ public class EnemyDeath : MonoBehaviour
     {
         _health.OnDeath -= HandleDeath;
     }
-    
+
     private void HandleDeath(object sender, EventArgs e)
     {
         Debug.Log($"{gameObject.name} has died.");
