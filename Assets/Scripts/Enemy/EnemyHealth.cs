@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.EventSystems;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private EnemyStats _stats;
     [SerializeField] private int _currentHealth;
+    [SerializeField] private KnockbackReceiver _knockbackReceiver;
 
     public EventHandler OnDeath;
     public EventHandler OnHealthChanged;
@@ -14,19 +14,23 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private void Awake()
     {
         Assert.IsNotNull(_stats);
+        Assert.IsNotNull(_knockbackReceiver);
         _currentHealth = _stats.MaxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(DamageInfo info)
     {
-        _currentHealth -= damage;
+        _currentHealth -= info.Damage;
 
-        // red sprite flashing, sound effect
+        if (info.Knockback.sqrMagnitude > 0.001f)
+        {
+            _knockbackReceiver.Apply(info.Knockback);
+        }
+
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
 
         if (IsDead())
         {
-            // drop item or something 
             OnDeath?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }

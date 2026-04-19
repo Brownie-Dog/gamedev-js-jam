@@ -527,7 +527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed8003e1a451e2409589d4092d82b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  _player: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
   _rb: {fileID: 4772534123666485531}
   _enemyDetection: {fileID: 602503740545238276}
   _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
@@ -543,7 +542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a1bf182bb648418390be1d5425582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  _player: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
   _detectionSound: {fileID: 2797096308382902589}
   _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
 --- !u!114 &1752728236125080976
@@ -572,3 +570,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
+  _currentHealth: 0
+  _rigidbody: {fileID: 4772534123666485531}

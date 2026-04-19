@@ -32,11 +32,11 @@ namespace Weapons
             _damageDealer.OnHit -= ReturnToPool;
         }
 
-        public void Activate(Vector2 position, Vector2 direction, int damage)
+        public void Activate(Vector2 position, Vector2 direction, DamageInfo damageInfo)
         {
             transform.position = position;
             transform.up = direction;
-            _damageDealer.Activate(damage);
+            _damageDealer.Activate(damageInfo);
             _rb.linearVelocity = direction.normalized * _speed;
             _lifetimeTimer = _lifetime;
         }
@@ -60,7 +60,7 @@ namespace Weapons
         {
             _pool.Release(this);
         }
-        
+
         public void SetPool(IObjectPool<Bullet> pool)
         {
             _pool = pool;

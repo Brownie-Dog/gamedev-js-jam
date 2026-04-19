@@ -23,6 +23,12 @@ namespace ItemDrops
         [field: SerializeField]
         public AimMode DefaultAimMode { get; private set; } = AimMode.None;
 
+        [field: SerializeField]
+        public bool AutoFire { get; private set; } = false;
+
+        [field: SerializeField]
+        public float KnockbackForce { get; private set; } = 0f;
+
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
 
         public override void Apply(

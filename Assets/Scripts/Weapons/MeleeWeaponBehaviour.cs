@@ -31,7 +31,8 @@ namespace Weapons
 
         public IEnumerator DoAttack()
         {
-            _damageDealer.Activate(_weapon.WeaponData.Damage);
+            var damageInfo = new DamageInfo(_weapon.WeaponData.Damage, Vector2.up * _weapon.WeaponData.KnockbackForce);
+            _damageDealer.Activate(damageInfo);
 
             try
             {
