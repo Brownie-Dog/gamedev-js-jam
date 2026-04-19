@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a83fedc677e0542ac2288e851943b2, type: 3}
+  m_Name: Spike
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
+  <ItemName>k__BackingField: Spike
+  <Description>k__BackingField: This hurts more than you think!
+  <Icon>k__BackingField: {fileID: 193080379733523790, guid: b1e90a4cefc1f2a409ac727d50028c54, type: 3}
+  <Rarity>k__BackingField: 1
+  <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: 1cd8f774ad3795a41ab16a1a269956ca, type: 3}
+  <Damage>k__BackingField: 100
+  <CooldownTime>k__BackingField: 0.05
+  <DefaultAimMode>k__BackingField: 1
+  <AutoFire>k__BackingField: 1

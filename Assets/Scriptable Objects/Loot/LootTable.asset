@@ -17,17 +17,15 @@ MonoBehaviour:
     _weight: 1
   - _item: {fileID: 11400000, guid: 15f745c435cc0cf40afa460c8b429b10, type: 2}
     _weight: 1
+  - _item: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}
+    _weight: 1
   - _item: {fileID: 11400000, guid: e31c0fcb507dd3b49a750b2787d2b64d, type: 2}
-    _weight: 1
-  - _item: {fileID: 11400000, guid: d553cc3355ee05c4aa5788142d2429b3, type: 2}
-    _weight: 1
-  - _item: {fileID: 11400000, guid: 192aba9f73e0ae14aa5e902bcc3af9b8, type: 2}
     _weight: 1
   - _item: {fileID: 11400000, guid: d4cb0403518ec094bbf538aaeebac3be, type: 2}
     _weight: 1
   - _item: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
     _weight: 1
-  - _item: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}
+  - _item: {fileID: 11400000, guid: 8be4b37e9415e3c4bba4e91e40102f7d, type: 2}
     _weight: 100
   _rareWeight: 70
   _epicWeight: 25

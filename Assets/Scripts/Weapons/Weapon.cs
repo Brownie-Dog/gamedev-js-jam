@@ -15,7 +15,8 @@ namespace Weapons
         {
             Invalid,
             Primary,
-            Secondary
+            Secondary,
+            None,
         }
 
         [SerializeField] private WeaponType _weaponType = WeaponType.Invalid;
@@ -63,6 +64,8 @@ namespace Weapons
                     _weaponController.SecondaryFireStarted += OnFireStarted;
                     _weaponController.SecondaryFireCanceled += OnFireCanceled;
                     break;
+                case WeaponType.None:
+                    break;
                 case WeaponType.Invalid:
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -80,6 +83,8 @@ namespace Weapons
                 case WeaponType.Secondary:
                     _weaponController.SecondaryFireStarted -= OnFireStarted;
                     _weaponController.SecondaryFireCanceled -= OnFireCanceled;
+                    break;
+                case WeaponType.None:
                     break;
                 case WeaponType.Invalid:
                 default:
