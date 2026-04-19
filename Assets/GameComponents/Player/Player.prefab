@@ -483,7 +483,7 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
---- !u!1 &8232643813525639276
+--- !u!1 &8061850941542633862
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -491,49 +491,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3786387213844115255}
-  - component: {fileID: 7835887835750569907}
-  - component: {fileID: 1067242104011912755}
-  - component: {fileID: 1572932811235936537}
-  - component: {fileID: 7489397724563928781}
-  - component: {fileID: 1985227060345300915}
-  - component: {fileID: 8557419963232160952}
-  - component: {fileID: 6968245968921767180}
-  - component: {fileID: 526240358348230129}
-  - component: {fileID: 2810164907020316400}
-  - component: {fileID: 7002355511745351319}
+  - component: {fileID: 3240155425574240640}
+  - component: {fileID: 2484006982182933208}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  m_Name: PlayerVisuals
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3786387213844115255
+--- !u!4 &3240155425574240640
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8232643813525639276}
+  m_GameObject: {fileID: 8061850941542633862}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2341980178147183215}
-  - {fileID: 5988356853382580324}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 3786387213844115255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7835887835750569907
+--- !u!212 &2484006982182933208
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8232643813525639276}
+  m_GameObject: {fileID: 8061850941542633862}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -573,18 +562,62 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8698701957669871245, guid: 361d5a989fdb83b4380766383092ccb3, type: 3}
+  m_Sprite: {fileID: 7860700521546193573, guid: 89d5edd672231c741a3426a59bc64ce5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.2200003, y: 5.2200003}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &8232643813525639276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3786387213844115255}
+  - component: {fileID: 1067242104011912755}
+  - component: {fileID: 1572932811235936537}
+  - component: {fileID: 7489397724563928781}
+  - component: {fileID: 1985227060345300915}
+  - component: {fileID: 8557419963232160952}
+  - component: {fileID: 6968245968921767180}
+  - component: {fileID: 526240358348230129}
+  - component: {fileID: 2810164907020316400}
+  - component: {fileID: 7002355511745351319}
+  - component: {fileID: 9003351969405847894}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3786387213844115255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2341980178147183215}
+  - {fileID: 5988356853382580324}
+  - {fileID: 3240155425574240640}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1067242104011912755
 Rigidbody2D:
   serializedVersion: 5
@@ -692,7 +725,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.39157927}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -702,7 +735,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.45, y: 1.44}
+  m_Size: {x: 2.45, y: 0.6568415}
   m_EdgeRadius: 0
 --- !u!114 &1985227060345300915
 MonoBehaviour:
@@ -746,7 +779,19 @@ MonoBehaviour:
     m_ActionId: b0022e74-9276-4bdc-a141-b2e935230ced
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9003351969405847894}
+        m_TargetAssemblyTypeName: PlayerLook, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2b1c655e-5d9f-4ab3-97f1-68fb61afedb2
     m_ActionName: 'Player/Look[/Mouse/delta]'
   - m_PersistentCalls:
@@ -921,3 +966,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176b880e9e835c840b466b37571618b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory
+--- !u!114 &9003351969405847894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2018fe08ba4da4b8d1e0be0caa9924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLook
+  _spriteRenderer: {fileID: 2484006982182933208}
+  _visualPivot: {fileID: 3240155425574240640}
+  _up: {fileID: 2409406619132347402, guid: 89d5edd672231c741a3426a59bc64ce5, type: 3}
+  _down: {fileID: 8846410874494700856, guid: 89d5edd672231c741a3426a59bc64ce5, type: 3}
+  _side: {fileID: 7860700521546193573, guid: 89d5edd672231c741a3426a59bc64ce5, type: 3}
