@@ -7,8 +7,6 @@ namespace Player
 {
     public class PlayerWeaponController : MonoBehaviour
     {
-        public EventHandler PrimaryFireTriggered;
-        public EventHandler SecondaryFireTriggered;
         public EventHandler PrimaryFireStarted;
         public EventHandler PrimaryFireCanceled;
         public EventHandler SecondaryFireStarted;
@@ -31,10 +29,6 @@ namespace Player
             {
                 PrimaryFireStarted?.Invoke(this, EventArgs.Empty);
             }
-            else if (context.performed)
-            {
-                PrimaryFireTriggered?.Invoke(this, EventArgs.Empty);
-            }
             else if (context.canceled)
             {
                 PrimaryFireCanceled?.Invoke(this, EventArgs.Empty);
@@ -46,10 +40,6 @@ namespace Player
             if (context.started)
             {
                 SecondaryFireStarted?.Invoke(this, EventArgs.Empty);
-            }
-            else if (context.performed)
-            {
-                SecondaryFireTriggered?.Invoke(this, EventArgs.Empty);
             }
             else if (context.canceled)
             {

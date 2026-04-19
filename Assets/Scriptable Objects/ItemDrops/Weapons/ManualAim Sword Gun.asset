@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9a83fedc677e0542ac2288e851943b2, type: 3}
-  m_Name: Directional Hold Sword Gun
+  m_Name: ManualAim Sword Gun
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
-  <ItemName>k__BackingField: Directional Automatic Sword Gun
+  <ItemName>k__BackingField: Manual Aim Sword Gun
   <Description>k__BackingField: This is definitely a gun
   <Icon>k__BackingField: {fileID: -2445865832411743802, guid: 9ac6e587c7baba941aa2b0d8543265d0, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0.1
-  <DefaultAimMode>k__BackingField: 0
-  <DefaultFireMode>k__BackingField: 1
+  <DefaultAimMode>k__BackingField: 2

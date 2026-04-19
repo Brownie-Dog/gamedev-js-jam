@@ -22,21 +22,13 @@ namespace Weapons
         private IWeaponBehaviour _behaviour;
         private PlayerWeaponController _weaponController;
         private bool _isOnCooldown;
-        private FireMode _fireMode;
         private bool _isHoldingFire;
 
         public ItemDrops.WeaponItemData WeaponData => _weaponData;
 
-        public FireMode FireMode
-        {
-            get => _fireMode;
-            set => _fireMode = value;
-        }
-
         public void Initialize(ItemDrops.WeaponItemData weaponData)
         {
             _weaponData = weaponData;
-            _fireMode = _weaponData.DefaultFireMode;
         }
 
         protected virtual void Awake()
@@ -60,12 +52,10 @@ namespace Weapons
             switch (_weaponType)
             {
                 case WeaponType.Primary:
-                    _weaponController.PrimaryFireTriggered += OnAttack;
                     _weaponController.PrimaryFireStarted += OnFireStarted;
                     _weaponController.PrimaryFireCanceled += OnFireCanceled;
                     break;
                 case WeaponType.Secondary:
-                    _weaponController.SecondaryFireTriggered += OnAttack;
                     _weaponController.SecondaryFireStarted += OnFireStarted;
                     _weaponController.SecondaryFireCanceled += OnFireCanceled;
                     break;
@@ -80,12 +70,10 @@ namespace Weapons
             switch (_weaponType)
             {
                 case WeaponType.Primary:
-                    _weaponController.PrimaryFireTriggered -= OnAttack;
                     _weaponController.PrimaryFireStarted -= OnFireStarted;
                     _weaponController.PrimaryFireCanceled -= OnFireCanceled;
                     break;
                 case WeaponType.Secondary:
-                    _weaponController.SecondaryFireTriggered -= OnAttack;
                     _weaponController.SecondaryFireStarted -= OnFireStarted;
                     _weaponController.SecondaryFireCanceled -= OnFireCanceled;
                     break;
@@ -95,61 +83,32 @@ namespace Weapons
             }
         }
 
-        private void OnAttack(object obj, EventArgs args)
-        {
-            if (_fireMode == FireMode.Tap)
-            {
-                TryAttack();
-            }
-        }
-
         private void OnFireStarted(object obj, EventArgs args)
         {
-            if (_fireMode == FireMode.Hold)
-            {
-                _isHoldingFire = true;
-                StartCoroutine(HoldFireLoop());
-            }
+            _isHoldingFire = true;
+            StartCoroutine(HoldFireLoop());
         }
 
         private void OnFireCanceled(object obj, EventArgs args)
         {
-            if (_fireMode == FireMode.Hold)
-            {
-                _isHoldingFire = false;
-            }
+            _isHoldingFire = false;
         }
 
         private IEnumerator HoldFireLoop()
         {
             while (_isHoldingFire)
             {
-                yield return TryAttackCoroutine();
+                yield return CooldownAndAttack();
             }
         }
 
-        private void TryAttack()
-        {
-            if (_isOnCooldown)
-            {
-                return;
-            }
-
-            StartCoroutine(CooldownAndAttack());
-        }
-
-        private IEnumerator TryAttackCoroutine()
+        private IEnumerator CooldownAndAttack()
         {
             if (_isOnCooldown)
             {
                 yield break;
             }
 
-            yield return CooldownAndAttack();
-        }
-
-        private IEnumerator CooldownAndAttack()
-        {
             yield return StartCoroutine(_behaviour.DoAttack());
 
             _isOnCooldown = true;

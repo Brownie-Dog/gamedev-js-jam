@@ -21,10 +21,7 @@ namespace ItemDrops
         public float CooldownTime { get; private set; } = 0f;
 
         [field: SerializeField]
-        public AimMode DefaultAimMode { get; private set; } = AimMode.Directional;
-
-        [field: SerializeField]
-        public FireMode DefaultFireMode { get; private set; } = FireMode.Tap;
+        public AimMode DefaultAimMode { get; private set; } = AimMode.None;
 
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
 
