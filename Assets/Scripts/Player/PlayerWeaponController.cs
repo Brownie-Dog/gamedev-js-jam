@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Weapons;
 
 namespace Player
 {
@@ -8,6 +9,17 @@ namespace Player
     {
         public EventHandler PrimaryFireTriggered;
         public EventHandler SecondaryFireTriggered;
+        public EventHandler<AimDirectionArgs> AimDirectionUpdated;
+
+        [SerializeField] private Camera _mainCamera;
+
+        private void Update()
+        {
+            var mouseScreenPos = Mouse.current.position.ReadValue();
+            var mouseWorldPos = _mainCamera.ScreenToWorldPoint(mouseScreenPos);
+            var direction = ((Vector2)mouseWorldPos - (Vector2)transform.position).normalized;
+            AimDirectionUpdated?.Invoke(this, new AimDirectionArgs(direction));
+        }
 
         public void InputEvent_OnPrimaryFire(InputAction.CallbackContext context)
         {

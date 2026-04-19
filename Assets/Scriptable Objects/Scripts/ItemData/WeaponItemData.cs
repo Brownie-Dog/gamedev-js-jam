@@ -1,6 +1,7 @@
 using ItemDrops;
 using Player;
 using UnityEngine;
+using Weapons;
 
 namespace ItemDrops
 {
@@ -18,6 +19,9 @@ namespace ItemDrops
 
         [field: SerializeField]
         public float CooldownTime { get; private set; } = 0f;
+
+        [field: SerializeField]
+        public AimMode DefaultAimMode { get; private set; } = AimMode.None;
 
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
 
