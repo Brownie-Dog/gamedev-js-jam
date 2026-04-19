@@ -412,5 +412,6 @@ MonoBehaviour:
   _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
   _canvasObject: {fileID: 535477926947747176}
   _bsodLayer: {fileID: 576700001443933528}
+  _staticLayer: {fileID: 3457522340044454151}
   _videoDisplay: {fileID: 6316499896879314066}
   _videoPlayer: {fileID: 6591742044728497699}
