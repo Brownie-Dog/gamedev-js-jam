@@ -1,5 +1,4 @@
 using System.Collections;
-using ItemDrops;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Assertions;
@@ -8,16 +7,18 @@ namespace Weapons
 {
     public class GunWeaponBehaviour : MonoBehaviour, IWeaponBehaviour
     {
-        [SerializeField] private WeaponItemData _weaponData;
         [SerializeField] private Bullet _bulletPrefab;
         [SerializeField] private int _poolSize = 50;
         [SerializeField] private Transform _firePoint;
 
+        private Weapon _weapon;
         private IObjectPool<Bullet> _bulletPool;
 
         private void Awake()
         {
-            Assert.IsNotNull(_weaponData);
+            _weapon = GetComponent<Weapon>();
+            Assert.IsNotNull(_weapon);
+
             Assert.IsNotNull(_bulletPrefab);
             Assert.IsNotNull(_firePoint);
 
@@ -63,7 +64,7 @@ namespace Weapons
         private void FireBullet()
         {
             var bullet = _bulletPool.Get();
-            bullet.Activate(_firePoint.position, _firePoint.up, _weaponData.Damage);
+            bullet.Activate(_firePoint.position, transform.up, _weapon.WeaponData.Damage);
         }
     }
 }

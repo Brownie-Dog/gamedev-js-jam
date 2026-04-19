@@ -16,15 +16,16 @@ namespace Weapons
             Secondary
         }
 
-        [SerializeField] protected ItemDrops.WeaponItemData _weaponData;
-
         [SerializeField] private WeaponType _weaponType = WeaponType.Invalid;
 
+        private ItemDrops.WeaponItemData _weaponData;
         private IWeaponBehaviour _behaviour;
         private PlayerWeaponController _weaponController;
         private bool _isOnCooldown;
         private FireMode _fireMode;
         private bool _isHoldingFire;
+
+        public ItemDrops.WeaponItemData WeaponData => _weaponData;
 
         public FireMode FireMode
         {
@@ -32,18 +33,26 @@ namespace Weapons
             set => _fireMode = value;
         }
 
+        public void Initialize(ItemDrops.WeaponItemData weaponData)
+        {
+            _weaponData = weaponData;
+            _fireMode = _weaponData.DefaultFireMode;
+        }
+
         protected virtual void Awake()
         {
             _weaponController = GetComponentInParent<PlayerWeaponController>();
             Assert.IsNotNull(_weaponController);
-            Assert.IsNotNull(_weaponData);
 
             Assert.IsTrue(_weaponType != WeaponType.Invalid);
 
             _behaviour = GetComponent<IWeaponBehaviour>();
             Assert.IsNotNull(_behaviour);
+        }
 
-            _fireMode = _weaponData.DefaultFireMode;
+        protected virtual void Start()
+        {
+            Assert.IsNotNull(_weaponData);
         }
 
         protected virtual void OnEnable()

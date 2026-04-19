@@ -3,6 +3,7 @@ using System.Linq;
 using ItemDrops;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Weapons;
 
 namespace Player
 {
@@ -88,11 +89,16 @@ namespace Player
                 Destroy(oldInstance);
             }
 
-            _equippedWeaponInstances[slotIndex] = Instantiate(
+            var instance = Instantiate(
                 weapon.WeaponPrefab,
                 _hookPoints[slotIndex]
             );
 
+            var weaponComponent = instance.GetComponent<Weapon>();
+            Assert.IsNotNull(weaponComponent);
+            weaponComponent.Initialize(weapon);
+
+            _equippedWeaponInstances[slotIndex] = instance;
             _equippedWeapons[slotIndex] = weapon;
         }
 

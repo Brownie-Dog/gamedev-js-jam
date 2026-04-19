@@ -73,14 +73,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756017507210011342}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7307795380562453035}
   m_Father: {fileID: 1751083775469928399}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7115586464288355915
 SpriteRenderer:
   serializedVersion: 2
@@ -227,7 +227,6 @@ MonoBehaviour:
     m_Bits: 64
   _autoAimDetectionRadius: {fileID: 7089281253156675974}
   _manualAimRotateRoot: {fileID: 4158817338976130329}
-  _weaponData: {fileID: 11400000, guid: d4cb0403518ec094bbf538aaeebac3be, type: 2}
   _rotationOffset: -45
 --- !u!114 &1462373941423661093
 MonoBehaviour:
@@ -290,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbbf0718d74e9e4f8abdbebfba2a0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.Weapon
-  _weaponData: {fileID: 11400000, guid: d4cb0403518ec094bbf538aaeebac3be, type: 2}
   _weaponType: 1
 --- !u!114 &8446891031811390757
 MonoBehaviour:
@@ -304,7 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cacde10265434a83193c606e373a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.GunWeaponBehaviour
-  _weaponData: {fileID: 11400000, guid: d4cb0403518ec094bbf538aaeebac3be, type: 2}
   _bulletPrefab: {fileID: 3189316879295589563, guid: f0d6493407047f546973a98dcd3a9e5e, type: 3}
   _poolSize: 50
   _firePoint: {fileID: 7307795380562453035}

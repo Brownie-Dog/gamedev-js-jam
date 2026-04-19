@@ -10,9 +10,9 @@ namespace Weapons
         [SerializeField] private LayerMask _enemyLayer;
         [SerializeField] private CircleCollider2D _autoAimDetectionRadius;
         [SerializeField] private Transform _manualAimRotateRoot;
-        [SerializeField] private ItemDrops.WeaponItemData _weaponData;
         [SerializeField] private float _rotationOffset;
 
+        private Weapon _weapon;
         private PlayerWeaponController _weaponController;
         private AimMode _aimMode;
         private Vector2 _manualAimDirection;
@@ -30,11 +30,16 @@ namespace Weapons
 
             Assert.IsNotNull(_manualAimRotateRoot);
 
+            _weapon = GetComponentInParent<Weapon>();
+            Assert.IsNotNull(_weapon);
+
             _weaponController = GetComponentInParent<PlayerWeaponController>();
             Assert.IsNotNull(_weaponController);
+        }
 
-            Assert.IsNotNull(_weaponData);
-            _aimMode = _weaponData.DefaultAimMode;
+        private void Start()
+        {
+            _aimMode = _weapon.WeaponData.DefaultAimMode;
         }
 
         private void OnEnable()

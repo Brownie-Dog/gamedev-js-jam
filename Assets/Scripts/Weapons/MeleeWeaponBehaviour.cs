@@ -8,15 +8,17 @@ namespace Weapons
     [RequireComponent(typeof(DamageDealer))]
     public class MeleeWeaponBehaviour : MonoBehaviour, IWeaponBehaviour
     {
-        [SerializeField] private ItemDrops.WeaponItemData _weaponData;
+        private Weapon _weapon;
         private IWeaponAnimation _weaponAnimation;
         private DamageDealer _damageDealer;
 
         private void Awake()
         {
+            _weapon = GetComponent<Weapon>();
+            Assert.IsNotNull(_weapon);
+
             _damageDealer = GetComponent<DamageDealer>();
             Assert.IsNotNull(_damageDealer);
-            Assert.IsNotNull(_weaponData);
 
             _weaponAnimation = GetComponent<IWeaponAnimation>();
             Assert.IsNotNull(_weaponAnimation);
@@ -29,7 +31,7 @@ namespace Weapons
 
         public IEnumerator DoAttack()
         {
-            _damageDealer.Activate(_weaponData.Damage);
+            _damageDealer.Activate(_weapon.WeaponData.Damage);
 
             try
             {
