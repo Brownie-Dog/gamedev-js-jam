@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace Player
         private int _damageAmount;
         private bool _active;
         private readonly HashSet<Collider2D> _hitTargets = new();
+
+        public event Action OnHit;
 
         public void Activate(int damage)
         {
@@ -39,6 +42,7 @@ namespace Player
             {
                 target.TakeDamage(_damageAmount);
                 _hitTargets.Add(other);
+                OnHit?.Invoke();
             }
         }
     }

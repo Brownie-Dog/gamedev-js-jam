@@ -23,6 +23,8 @@ MonoBehaviour:
     _weight: 1
   - _item: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
     _weight: 1
+  - _item: {fileID: 11400000, guid: d4cb0403518ec094bbf538aaeebac3be, type: 2}
+    _weight: 1
   _rareWeight: 70
   _epicWeight: 25
   _legendaryWeight: 5
