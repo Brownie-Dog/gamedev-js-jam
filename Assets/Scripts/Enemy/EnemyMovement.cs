@@ -4,39 +4,34 @@ using UnityEngine.Assertions;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("References")] 
-    private Transform _player;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private EnemyDetection _enemyDetection;
     [SerializeField] private EnemyStats _stats;
     
+    private Transform _player;
     private bool _isChasing = false;
 
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         Assert.IsNotNull(_player);
+        Assert.IsNotNull(_enemyDetection);
     }
+    
     private void OnEnable()
     {
-        if (_enemyDetection !=  null)
-        {
-            _enemyDetection.OnPlayerDetected += HandlePlayerDetected;
-            _enemyDetection.OnPlayerLost += HandlePlayerLost;
-        }
+        _enemyDetection.OnPlayerDetected += HandlePlayerDetected;
+        _enemyDetection.OnPlayerLost += HandlePlayerLost;
         
     }
     private void OnDisable()
     {
-        if (_enemyDetection != null)
-        {
-            _enemyDetection.OnPlayerDetected -= HandlePlayerDetected;
-            _enemyDetection.OnPlayerLost -= HandlePlayerLost;
-        }
+        _enemyDetection.OnPlayerDetected -= HandlePlayerDetected;
+        _enemyDetection.OnPlayerLost -= HandlePlayerLost;
     }
     private void Update()
     {
-        if (_isChasing && _player)
+        if (_isChasing)
         {
             float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
             if (distanceToPlayer > _stats.stoppingDistance)
@@ -66,8 +61,6 @@ public class EnemyMovement : MonoBehaviour
     
     private void ChasePlayer()
     {
-        if (!_player) return;
-        
         Vector2 direction = ((Vector2)_player.position - (Vector2)transform.position).normalized;
         _rb.linearVelocity = direction * _stats.movementSpeed;
     }
