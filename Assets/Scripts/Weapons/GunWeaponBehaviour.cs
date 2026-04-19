@@ -64,7 +64,7 @@ namespace Weapons
         private void FireBullet()
         {
             var bullet = _bulletPool.Get();
-            bullet.Activate(_firePoint.position, transform.up, _weapon.WeaponData.Damage);
+            bullet.Activate(_firePoint.position, _firePoint.up, _weapon.WeaponData.Damage);
         }
     }
 }
