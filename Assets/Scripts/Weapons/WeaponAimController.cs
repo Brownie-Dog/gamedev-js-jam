@@ -63,7 +63,7 @@ namespace Weapons
                     var enemyDir = FindNearestEnemyDirection();
                     RotateTowards(enemyDir.HasValue ? enemyDir.Value : _manualAimDirection);
                     break;
-                case AimMode.None:
+                case AimMode.Directional:
                 default:
                     break;
             }
