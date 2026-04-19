@@ -27,6 +27,16 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            TryDealDamage(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            TryDealDamage(other);
+        }
+
+        private void TryDealDamage(Collider2D other)
+        {
             if (!_active)
             {
                 return;

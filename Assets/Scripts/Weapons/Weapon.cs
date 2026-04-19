@@ -8,6 +8,8 @@ namespace Weapons
 {
     public class Weapon : MonoBehaviour
     {
+        public ItemDrops.WeaponItemData WeaponData { get; private set; }
+
         [Serializable]
         private enum WeaponType
         {
@@ -18,17 +20,19 @@ namespace Weapons
 
         [SerializeField] private WeaponType _weaponType = WeaponType.Invalid;
 
-        private ItemDrops.WeaponItemData _weaponData;
         private IWeaponBehaviour _behaviour;
         private PlayerWeaponController _weaponController;
         private bool _isOnCooldown;
-        private bool _isHoldingFire;
+        private bool _isManualFiring;
+        private bool _isAutoFiring;
+        private Coroutine _holdFireCoroutine;
 
-        public ItemDrops.WeaponItemData WeaponData => _weaponData;
+        private bool IsFiring => _isManualFiring || _isAutoFiring;
+
 
         public void Initialize(ItemDrops.WeaponItemData weaponData)
         {
-            _weaponData = weaponData;
+            WeaponData = weaponData;
         }
 
         protected virtual void Awake()
@@ -44,7 +48,7 @@ namespace Weapons
 
         protected virtual void Start()
         {
-            Assert.IsNotNull(_weaponData);
+            Assert.IsNotNull(WeaponData);
         }
 
         protected virtual void OnEnable()
@@ -83,23 +87,36 @@ namespace Weapons
             }
         }
 
+        public void StartFiring()
+        {
+            _isAutoFiring = true;
+            _holdFireCoroutine ??= StartCoroutine(HoldFireLoop());
+        }
+
+        public void StopFiring()
+        {
+            _isAutoFiring = false;
+        }
+
         private void OnFireStarted(object obj, EventArgs args)
         {
-            _isHoldingFire = true;
-            StartCoroutine(HoldFireLoop());
+            _isManualFiring = true;
+            _holdFireCoroutine ??= StartCoroutine(HoldFireLoop());
         }
 
         private void OnFireCanceled(object obj, EventArgs args)
         {
-            _isHoldingFire = false;
+            _isManualFiring = false;
         }
 
         private IEnumerator HoldFireLoop()
         {
-            while (_isHoldingFire)
+            while (IsFiring)
             {
                 yield return CooldownAndAttack();
             }
+
+            _holdFireCoroutine = null;
         }
 
         private IEnumerator CooldownAndAttack()
@@ -112,7 +129,7 @@ namespace Weapons
             yield return StartCoroutine(_behaviour.DoAttack());
 
             _isOnCooldown = true;
-            yield return new WaitForSeconds(_weaponData.CooldownTime);
+            yield return new WaitForSeconds(WeaponData.CooldownTime);
             _isOnCooldown = false;
         }
     }
