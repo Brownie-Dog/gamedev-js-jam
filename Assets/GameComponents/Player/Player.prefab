@@ -950,4 +950,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
   _duration: 0.15
-  _disableDuringKnockback: []
+  _disableDuringKnockback:
+  - {fileID: 8557419963232160952}
