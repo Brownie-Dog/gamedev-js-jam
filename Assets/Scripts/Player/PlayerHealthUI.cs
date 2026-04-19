@@ -18,7 +18,7 @@ public class PlayerHealthUI : MonoBehaviour
         Assert.IsNotNull(_statsSo);
         Assert.IsNotNull(_HeartPrefab);
     }
-
+    
     private void Start()
     {
         _statsSo.CurrentHealth = _statsSo.MaxHealth;
