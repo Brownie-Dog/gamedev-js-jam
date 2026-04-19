@@ -22,10 +22,6 @@ public class PlayerStatsSo : ScriptableObject
         CurrentHealth = MaxHealth;
         UpdateHealth(CurrentHealth);
         OnPlayerDeath?.Invoke(this, EventArgs.Empty);
-        
-        // This code needs to be moved to where ever the Level is being managed
-        // int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        // SceneManager.LoadScene(currentSceneIndex);
     }
     
 }
