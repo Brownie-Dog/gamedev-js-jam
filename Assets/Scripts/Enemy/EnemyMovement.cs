@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
         _enemyDetection.OnPlayerLost -= HandlePlayerLost;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isChasing)
         {

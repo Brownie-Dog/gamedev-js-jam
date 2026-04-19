@@ -22,13 +22,8 @@ namespace Weapons
             Assert.IsNotNull(_bulletPrefab);
             Assert.IsNotNull(_firePoint);
 
-            _bulletPool = new ObjectPool<Bullet>(
-                CreateBullet,
-                OnGetBullet,
-                OnReleaseBullet,
-                OnDestroyBullet,
-                defaultCapacity: _poolSize,
-                maxSize: _poolSize
+            _bulletPool = new ObjectPool<Bullet>(CreateBullet, OnGetBullet, OnReleaseBullet, OnDestroyBullet,
+                defaultCapacity: _poolSize, maxSize: _poolSize
             );
         }
 
@@ -63,8 +58,9 @@ namespace Weapons
 
         private void FireBullet()
         {
+            var damageInfo = new DamageInfo(_weapon.WeaponData.Damage, Vector2.up * _weapon.WeaponData.KnockbackForce);
             var bullet = _bulletPool.Get();
-            bullet.Activate(_firePoint.position, _firePoint.up, _weapon.WeaponData.Damage);
+            bullet.Activate(_firePoint.position, _firePoint.up, damageInfo);
         }
     }
 }

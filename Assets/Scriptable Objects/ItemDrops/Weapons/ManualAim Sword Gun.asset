@@ -20,3 +20,5 @@ MonoBehaviour:
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0.1
   <DefaultAimMode>k__BackingField: 2
+  <AutoFire>k__BackingField: 0
+  <KnockbackForce>k__BackingField: 5

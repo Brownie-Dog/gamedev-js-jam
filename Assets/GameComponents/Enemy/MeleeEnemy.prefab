@@ -16,10 +16,18 @@ PrefabInstance:
       propertyPath: _stats
       value: 
       objectReference: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
+    - target: {fileID: 2436945453276017458, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: _knockbackReceiver
+      value: 
+      objectReference: {fileID: 9176126956446854083}
     - target: {fileID: 3609380606772451562, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
       propertyPath: _stats
       value: 
       objectReference: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
+    - target: {fileID: 3609380606772451562, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      propertyPath: _knockbackReceiver
+      value: 
+      objectReference: {fileID: 9176126956446854083}
     - target: {fileID: 4410278449341559807, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
       propertyPath: _volume
       value: 0.189
@@ -58,11 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.55
+      value: 9.182308
       objectReference: {fileID: 0}
     - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.63
+      value: 15.85475
       objectReference: {fileID: 0}
     - target: {fileID: 8864757015423021585, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -96,14 +104,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2096345109439983372, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7692730486218562616, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 18687080808029932}
+    - targetCorrespondingSourceObject: {fileID: 7692730486218562616, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9176126956446854083}
   m_SourcePrefab: {fileID: 100100000, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+--- !u!114 &222849218423703245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 602503740545238276, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+  m_PrefabInstance: {fileID: 813812169577939913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028197371816534001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3a1bf182bb648418390be1d5425582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
+--- !u!114 &3070040016908480763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2436945453276017458, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
+  m_PrefabInstance: {fileID: 813812169577939913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028197371816534001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed8003e1a451e2409589d4092d82b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
 --- !u!114 &3926937910527733814 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4410278449341559807, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}
@@ -134,6 +168,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeleeAttack
   _stats: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
   _attackSound: {fileID: 3926937910527733814}
+--- !u!114 &9176126956446854083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028197371816534001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f671960cefde6469200a44d81e4143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  _decayRate: 6
+  _disableDuringKnockback:
+  - {fileID: 3070040016908480763}
+  - {fileID: 222849218423703245}
 --- !u!82 &7291244544740494293 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7954634106872416284, guid: 69cbf174a39fe1a409085a50d1ee64a1, type: 3}

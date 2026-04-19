@@ -8,14 +8,16 @@ namespace Player
     public class DamageDealer : MonoBehaviour
     {
         private int _damageAmount;
+        private float _knockbackForce;
         private bool _active;
         private readonly HashSet<Collider2D> _hitTargets = new();
 
         public event Action OnHit;
 
-        public void Activate(int damage)
+        public void Activate(DamageInfo damageInfo)
         {
-            _damageAmount = damage;
+            _damageAmount = damageInfo.Damage;
+            _knockbackForce = damageInfo.Knockback.magnitude;
             _active = true;
             _hitTargets.Clear();
         }
@@ -50,7 +52,9 @@ namespace Player
             var target = other.gameObject.GetComponent<IDamageable>();
             if (target != null)
             {
-                target.TakeDamage(_damageAmount);
+                var direction = ((Vector2)(other.transform.position - transform.position)).normalized;
+                var info = new DamageInfo(_damageAmount, direction * _knockbackForce);
+                target.TakeDamage(info);
                 _hitTargets.Add(other);
                 OnHit?.Invoke();
             }

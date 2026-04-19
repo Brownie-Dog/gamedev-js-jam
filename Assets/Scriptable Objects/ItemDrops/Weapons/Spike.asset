@@ -17,7 +17,8 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 193080379733523790, guid: b1e90a4cefc1f2a409ac727d50028c54, type: 3}
   <Rarity>k__BackingField: 1
   <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: 1cd8f774ad3795a41ab16a1a269956ca, type: 3}
-  <Damage>k__BackingField: 100
-  <CooldownTime>k__BackingField: 0.05
+  <Damage>k__BackingField: 1
+  <CooldownTime>k__BackingField: 0
   <DefaultAimMode>k__BackingField: 1
   <AutoFire>k__BackingField: 1
+  <KnockbackForce>k__BackingField: 10

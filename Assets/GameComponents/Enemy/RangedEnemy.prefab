@@ -428,6 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
   _currentHealth: 0
+  _rigidbody: {fileID: 7690971756102779718}
 --- !u!114 &7760926200436154275
 MonoBehaviour:
   m_ObjectHideFlags: 0
