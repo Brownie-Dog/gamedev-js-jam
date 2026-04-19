@@ -7,9 +7,5 @@ public class PlayerController : MonoBehaviour
 {
     public void OnLook(InputAction.CallbackContext context) { }
 
-    public void OnPrimaryFire(InputAction.CallbackContext context) { }
-
-    public void OnSecondaryFire(InputAction.CallbackContext context) { }
-
     public void OnLegButton(InputAction.CallbackContext context) { }
 }

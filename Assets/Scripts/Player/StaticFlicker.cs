@@ -8,8 +8,8 @@ public class StaticFlicker : MonoBehaviour
 
     void Awake()
     {
-        Assert.IsNotNull(_rawImage);
         _rawImage = GetComponent<RawImage>();
+        Assert.IsNotNull(_rawImage);
     }
 
     void Update()

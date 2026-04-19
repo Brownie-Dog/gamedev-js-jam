@@ -1,44 +1,28 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
-using Weapons;
+using UnityEngine.InputSystem;
 
-public class PlayerWeaponController : MonoBehaviour
+namespace Player
 {
-    [Serializable]
-    private class WeaponSlot
+    public class PlayerWeaponController : MonoBehaviour
     {
-        public GameObject WeaponPrefab;
-        public Transform HookPoint;
+        public EventHandler PrimaryFireTriggered;
+        public EventHandler SecondaryFireTriggered;
 
-        public void Initialize()
+        public void InputEvent_OnPrimaryFire(InputAction.CallbackContext context)
         {
-            Assert.IsNotNull(WeaponPrefab);
-            Assert.IsNotNull(HookPoint);
+            if (context.performed)
+            {
+                PrimaryFireTriggered?.Invoke(this, EventArgs.Empty);
+            }
         }
-    }
 
-    [SerializeField] private List<WeaponSlot> _weaponSlots;
-
-    private void Awake()
-    {
-        foreach (WeaponSlot slot in _weaponSlots)
+        public void InputEvent_OnSecondaryFire(InputAction.CallbackContext context)
         {
-            slot.Initialize();
-        }
-    }
-
-    private void Start()
-    {
-        SpawnWeaponsAtSlots();
-    }
-
-    private void SpawnWeaponsAtSlots()
-    {
-        foreach (WeaponSlot weapon in _weaponSlots)
-        {
-            Instantiate(weapon.WeaponPrefab, weapon.HookPoint);
+            if (context.performed)
+            {
+                SecondaryFireTriggered?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 }
