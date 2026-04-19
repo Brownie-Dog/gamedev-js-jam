@@ -1,18 +1,20 @@
 using System;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     [Header("Health Settings")]
     [SerializeField] private EnemyStats _stats;
-    private int _currentHealth;
+    [SerializeField] private int _currentHealth;
 
     public EventHandler OnDeath;
-    public EventHandler OnHealthChange; 
+    public EventHandler OnHealthChanged; 
 
     private void Awake()
     {
+        Assert.NotNull(_stats);
         _currentHealth = _stats.maxHealth;
     }
     
@@ -20,8 +22,8 @@ public class EnemyHealth : MonoBehaviour
     {
         _currentHealth -= damage;
         
-        // red sprite flashin sound effect
-        OnHealthChange?.Invoke(this, EventArgs.Empty);
+        // red sprite flashing, sound effect
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
 
         if (IsDead())
         {
@@ -35,6 +37,4 @@ public class EnemyHealth : MonoBehaviour
     {
         return _currentHealth <= 0;
     }
-    public int GetCurrentHealth() => _currentHealth;
-    
 }
