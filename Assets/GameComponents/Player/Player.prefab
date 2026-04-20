@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2165533778336729109}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.962, y: 0.453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49,6 +49,7 @@ MonoBehaviour:
   _up: {fileID: 2996120614091640538, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
   _down: {fileID: 6858240640563278742, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
   _side: {fileID: 7993984696265895434, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
+  _maxRotationAngle: 45
 --- !u!1 &2269424509346498033
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,8 +298,8 @@ Transform:
   m_GameObject: {fileID: 5054733166407384460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.386, y: 0.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1645416840526916346}
@@ -588,7 +589,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3786387213844115255}
@@ -917,14 +918,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3118165053820105909}
+        m_TargetAssemblyTypeName: PlayerBodyController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b0022e74-9276-4bdc-a141-b2e935230ced
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 610c59f5174578542b0208713438601c, type: 3}
-        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 3118165053820105909}
+        m_TargetAssemblyTypeName: PlayerBodyController, Assembly-CSharp
+        m_MethodName: OnLook
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1120,8 +1133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBodyController
   _bodyRenderer: {fileID: 3858102962967013598}
-  _bodyUp: {fileID: 447287058598398315, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
-  _bodyDown: {fileID: -8077052530050016984, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
   _bodySide: {fileID: 8092599274614522597, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
   _headController: {fileID: 9068332210729767383}
   _headPivot: {fileID: 1645416840526916346}
