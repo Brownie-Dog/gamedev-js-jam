@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ItemDrops;
@@ -9,6 +10,9 @@ namespace Player
 {
     public class PlayerEquipment : MonoBehaviour
     {
+        public event Action<int, WeaponItemData> OnItemEquipped;
+        public event Action<int, WeaponItemData> OnItemUnequipped;
+
         public int MaxBaseSlots => _baseSlotCount;
         public int UnlockedBaseSlots { get; private set; }
         public int TotalSlots { get; private set; }
@@ -56,7 +60,13 @@ namespace Player
             SpawnDefaultWeapons();
         }
 
-        private Transform GetHookPointForSlot(int slotId)
+        public SlotType GetSlotType(int slotId)
+        {
+            _slotTypes.TryGetValue(slotId, out var slotType);
+            return slotType;
+        }
+
+        public Transform GetHookPoint(int slotId)
         {
             _hookPoints.TryGetValue(slotId, out var hookPoint);
             return hookPoint;
@@ -81,6 +91,22 @@ namespace Player
         public bool IsSlotEmpty(int slotId)
         {
             return IsSlotUnlocked(slotId) && !_equippedWeapons.ContainsKey(slotId);
+        }
+
+        public WeaponItemData GetWeaponInSlot(int slotId)
+        {
+            _equippedWeapons.TryGetValue(slotId, out var weapon);
+            return weapon;
+        }
+
+        public IReadOnlyDictionary<int, WeaponItemData> GetAllEquippedWeapons()
+        {
+            return _equippedWeapons;
+        }
+
+        public IReadOnlyDictionary<int, SlotType> GetAllSlotTypes()
+        {
+            return _slotTypes;
         }
 
         public int FirstEmptySlot(WeaponItemData weapon)
@@ -137,13 +163,29 @@ namespace Player
             return newSlotId;
         }
 
+        public bool TryEquip(WeaponItemData weapon, int slotId)
+        {
+            if (!IsSlotUnlocked(slotId))
+            {
+                return false;
+            }
+
+            if (!weapon.CompatibleSlotTypes.Contains(_slotTypes[slotId]))
+            {
+                return false;
+            }
+
+            Equip(weapon, slotId);
+            return true;
+        }
+
         public void Equip(WeaponItemData weapon, int slotId)
         {
             Assert.IsNotNull(weapon.WeaponPrefab);
             Assert.IsTrue(IsSlotUnlocked(slotId));
             Assert.IsTrue(weapon.CompatibleSlotTypes.Contains(_slotTypes[slotId]));
 
-            var hookPoint = GetHookPointForSlot(slotId);
+            var hookPoint = GetHookPoint(slotId);
             Assert.IsNotNull(hookPoint);
 
             _equippedWeapons.TryGetValue(slotId, out var existingWeapon);
@@ -171,6 +213,8 @@ namespace Player
             {
                 RegisterExtensionSlots(slotId, instance);
             }
+
+            OnItemEquipped?.Invoke(slotId, weapon);
         }
 
         private void RegisterExtensionSlots(int parentSlotId, GameObject instance)
@@ -181,13 +225,13 @@ namespace Player
             }
         }
 
-        public void Unequip(int slotId)
+        public WeaponItemData UnequipWithReturn(int slotId)
         {
             Assert.IsTrue(IsSlotUnlocked(slotId));
 
-            _equippedWeapons.TryGetValue(slotId, out var existingWeapon);
+            _equippedWeapons.TryGetValue(slotId, out var weapon);
 
-            if (existingWeapon is ExtensionWeaponItemData)
+            if (weapon is ExtensionWeaponItemData)
             {
                 CascadeToInventory(slotId);
             }
@@ -199,6 +243,13 @@ namespace Player
             }
 
             _equippedWeapons.Remove(slotId);
+            OnItemUnequipped?.Invoke(slotId, weapon);
+            return weapon;
+        }
+
+        public void Unequip(int slotId)
+        {
+            UnequipWithReturn(slotId);
         }
 
         private void CascadeToInventory(int slotId)
@@ -240,6 +291,26 @@ namespace Player
         public List<WeaponItemData> GetAllOwnedWeapons()
         {
             return _equippedWeapons.Values.Where(w => w != null).ToList();
+        }
+
+        public IEnumerable<int> GetAllSlotIds()
+        {
+            var slotIds = new List<int>();
+
+            for (int i = 0; i < UnlockedBaseSlots; i++)
+            {
+                slotIds.Add(i);
+            }
+
+            foreach (var slotId in _hookPoints.Keys)
+            {
+                if (slotId >= _baseSlotCount && !slotIds.Contains(slotId))
+                {
+                    slotIds.Add(slotId);
+                }
+            }
+
+            return slotIds;
         }
 
         private void SpawnDefaultWeapons()

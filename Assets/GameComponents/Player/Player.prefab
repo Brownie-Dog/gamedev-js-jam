@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
-  <SlotType>k__BackingField: 1
+  <SlotType>k__BackingField: 0
 --- !u!1 &4120198749229490778
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 8137589601223373071}
   - component: {fileID: 2313973947408361796}
   - component: {fileID: 1628022931760623983}
+  - component: {fileID: 3599423287212688177}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -292,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 5495760148684320693}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029999956, y: -0.15999998, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -401,6 +402,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &3599423287212688177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495760148684320693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc62c66411ef374ea49cf444306e0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Loadout.CameraController
+  _zoomSpeed: 3
+  _zoomPadding: 6
+  _loadoutCenterOffsetX: 3
+  _playerEquipment: {fileID: 2810164907020316400}
 --- !u!1 &6488873578817156798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,3 +1034,4 @@ MonoBehaviour:
   _duration: 0.15
   _disableDuringKnockback:
   - {fileID: 8557419963232160952}
+

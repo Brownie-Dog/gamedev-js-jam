@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2183656251151406364}
   - component: {fileID: 6907870921195002624}
   - component: {fileID: 7594039743211267909}
+  - component: {fileID: 7393485658849845585}
   m_Layer: 0
   m_Name: RareSword
   m_TagString: Untagged
@@ -108,7 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbbf0718d74e9e4f8abdbebfba2a0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.Weapon
-  _weaponData: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
   _weaponType: 2
 --- !u!114 &7574088088642536805
 MonoBehaviour:
@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341e18de4548427ea88ac379389a81ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.MeleeWeaponBehaviour
-  _weaponData: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
 --- !u!114 &2183656251151406364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf534c7a45dd72449be03af84b56b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
+  _targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!60 &7594039743211267909
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -222,3 +224,15 @@ PolygonCollider2D:
       - {x: 0.63, y: -0.01}
       - {x: 0.88, y: 0.03}
   m_UseDelaunayMesh: 1
+--- !u!114 &7393485658849845585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907648602986796793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3404395cb440ae488a85e8abf935a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Loadout.IncludeInCameraBounds
