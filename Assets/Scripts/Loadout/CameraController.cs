@@ -30,6 +30,7 @@ namespace Loadout
             _targetLocalX = _defaultLocalPosition.x;
         }
 
+        // TODO: Call this on specific events instead of every frame
         private void LateUpdate()
         {
             var bounds = CalculatePlayerBounds();
