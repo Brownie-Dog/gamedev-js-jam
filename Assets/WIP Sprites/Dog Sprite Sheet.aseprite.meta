@@ -398,10 +398,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
+        x: 16
         y: 6
-        width: 62
-        height: 54
+        width: 47
+        height: 36
       spriteId: 1cf4b5208da032f419c2961084e2b751
     - name: Frame_1
       frameIndex: 1
@@ -427,8 +427,8 @@ ScriptedImporter:
       cellRect:
         x: 1
         y: 6
-        width: 62
-        height: 52
+        width: 47
+        height: 36
       spriteId: fde37efff73247848b098afe864f96b6
     - name: Frame_7
       frameIndex: 7
@@ -482,7 +482,7 @@ ScriptedImporter:
         x: 18
         y: 0
         width: 28
-        height: 64
+        height: 50
       spriteId: a285e466d3f0bfd4186606fd9cef90dc
     - name: Frame_10
       frameIndex: 10
@@ -548,4 +548,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 128, y: 256}
+  previousTextureSize: {x: 256, y: 128}
