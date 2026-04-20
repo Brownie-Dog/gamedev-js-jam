@@ -6,17 +6,13 @@ namespace Loadout
 {
     public class CameraController : MonoBehaviour
     {
-        [SerializeField]
-        private float _zoomSpeed = 3f;
+        [SerializeField] private float _zoomSpeed = 3f;
 
-        [SerializeField]
-        private float _zoomPadding = 1.5f;
+        [SerializeField] private float _zoomPadding = 1.5f;
 
-        [SerializeField]
-        private float _loadoutCenterOffsetX = -3f;
+        [SerializeField] private float _loadoutCenterOffsetX = -3f;
 
-        [SerializeField]
-        private PlayerEquipment _playerEquipment;
+        [SerializeField] private PlayerEquipment _playerEquipment;
 
         private Camera _camera;
         private float _defaultOrthographicSize;
@@ -40,9 +36,7 @@ namespace Loadout
             UpdateTargetOrthographicSize(bounds);
             UpdateTargetLocalX();
 
-            _camera.orthographicSize = Mathf.Lerp(
-                _camera.orthographicSize,
-                _targetOrthographicSize,
+            _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, _targetOrthographicSize,
                 _zoomSpeed * Time.deltaTime
             );
 
@@ -59,10 +53,7 @@ namespace Loadout
         private void UpdateTargetOrthographicSize(Bounds bounds)
         {
             var aspect = _camera.aspect;
-            var requiredSize = Mathf.Max(
-                bounds.size.x / aspect,
-                bounds.size.y
-            ) / 2f + _zoomPadding;
+            var requiredSize = Mathf.Max(bounds.size.x / aspect, bounds.size.y) / 2f + _zoomPadding;
 
             if (_loadoutOffsetActive)
             {

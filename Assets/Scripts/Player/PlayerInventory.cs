@@ -50,6 +50,7 @@ namespace Player
                     weapons.Add(weapon);
                 }
             }
+
             return weapons;
         }
     }

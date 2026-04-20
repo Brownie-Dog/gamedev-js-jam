@@ -8,17 +8,13 @@ namespace Loadout
 {
     public class LoadoutDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        [SerializeField]
-        private Image _dragIcon;
+        [SerializeField] private Image _dragIcon;
 
-        [SerializeField]
-        private LoadoutUI _loadoutUI;
+        [SerializeField] private LoadoutUI _loadoutUI;
 
-        [SerializeField]
-        private PlayerEquipment _playerEquipment;
+        [SerializeField] private PlayerEquipment _playerEquipment;
 
-        [SerializeField]
-        private PlayerInventory _playerInventory;
+        [SerializeField] private PlayerInventory _playerInventory;
 
         public bool IsDragging { get; private set; }
         public WeaponItemData DraggedWeapon { get; private set; }
@@ -86,7 +82,9 @@ namespace Loadout
             var slotUI = dropTarget.GetComponentInParent<LoadoutSlotUI>();
             if (slotUI != null)
             {
-                _loadoutUI.HandleDropOnSlot(DraggedWeapon, _dragFromEquipment, _sourceSlotId, _sourceInventoryIndex, slotUI.SlotId);
+                _loadoutUI.HandleDropOnSlot(DraggedWeapon, _dragFromEquipment, _sourceSlotId, _sourceInventoryIndex,
+                    slotUI.SlotId
+                );
                 return;
             }
 

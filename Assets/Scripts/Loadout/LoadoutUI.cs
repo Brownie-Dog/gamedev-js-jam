@@ -11,35 +11,25 @@ namespace Loadout
 {
     public class LoadoutUI : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerEquipment _playerEquipment;
+        [SerializeField] private PlayerEquipment _playerEquipment;
 
-        [SerializeField]
-        private PlayerInventory _playerInventory;
+        [SerializeField] private PlayerInventory _playerInventory;
 
-        [SerializeField]
-        private Transform _slotContainer;
+        [SerializeField] private Transform _slotContainer;
 
-        [SerializeField]
-        private Transform _inventoryContainer;
+        [SerializeField] private Transform _inventoryContainer;
 
-        [SerializeField]
-        private LoadoutSlotUI _slotUIPrefab;
+        [SerializeField] private LoadoutSlotUI _slotUIPrefab;
 
-        [SerializeField]
-        private LoadoutInventoryItemUI _inventoryItemPrefab;
+        [SerializeField] private LoadoutInventoryItemUI _inventoryItemPrefab;
 
-        [SerializeField]
-        private GameObject _canvasRoot;
+        [SerializeField] private GameObject _canvasRoot;
 
-        [SerializeField]
-        private Camera _mainCamera;
+        [SerializeField] private Camera _mainCamera;
 
-[SerializeField]
-        private Color _emptySlotColor = new Color(0.2f, 0.8f, 0.2f, 0.5f);
+        [SerializeField] private Color _emptySlotColor = new Color(0.2f, 0.8f, 0.2f, 0.5f);
 
-        [SerializeField]
-        private Color _occupiedSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.7f);
+        [SerializeField] private Color _occupiedSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.7f);
 
         private readonly Dictionary<int, LoadoutSlotUI> _slotUIs = new();
         private readonly List<LoadoutInventoryItemUI> _inventoryItemUIs = new();
@@ -96,7 +86,8 @@ namespace Loadout
             ClearAll();
         }
 
-        public void HandleDropOnSlot(WeaponItemData weapon, bool dragFromEquipment, int sourceSlotId, int sourceInventoryIndex, int targetSlotId)
+        public void HandleDropOnSlot(WeaponItemData weapon, bool dragFromEquipment, int sourceSlotId,
+            int sourceInventoryIndex, int targetSlotId)
         {
             var targetSlotType = _playerEquipment.GetSlotType(targetSlotId);
 
@@ -244,6 +235,7 @@ namespace Loadout
             {
                 Destroy(slotUI.gameObject);
             }
+
             _slotUIs.Clear();
         }
 
@@ -253,6 +245,7 @@ namespace Loadout
             {
                 Destroy(itemUI.gameObject);
             }
+
             _inventoryItemUIs.Clear();
         }
 

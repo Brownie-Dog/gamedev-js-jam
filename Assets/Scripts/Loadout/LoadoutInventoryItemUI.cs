@@ -8,8 +8,7 @@ namespace Loadout
 {
     public class LoadoutInventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        [SerializeField]
-        private Image _iconImage;
+        [SerializeField] private Image _iconImage;
 
         private LoadoutDragHandler _dragHandler;
 

@@ -17,14 +17,11 @@ namespace Player
         public int UnlockedBaseSlots { get; private set; }
         public int TotalSlots { get; private set; }
 
-        [SerializeField]
-        private int _initialUnlockedSlots = 1;
+        [SerializeField] private int _initialUnlockedSlots = 1;
 
-        [SerializeField]
-        private WeaponItemData[] _defaultWeapons;
+        [SerializeField] private WeaponItemData[] _defaultWeapons;
 
-        [SerializeField]
-        private PlayerInventory _inventory;
+        [SerializeField] private PlayerInventory _inventory;
 
         private int _baseSlotCount;
 
@@ -158,6 +155,7 @@ namespace Player
             {
                 _extensionChildren[parentSlotId] = new List<int>();
             }
+
             _extensionChildren[parentSlotId].Add(newSlotId);
 
             return newSlotId;
