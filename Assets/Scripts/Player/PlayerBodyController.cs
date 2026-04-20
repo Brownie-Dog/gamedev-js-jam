@@ -8,9 +8,8 @@ public class PlayerBodyController : MonoBehaviour
     [SerializeField] private SpriteRenderer _bodyRenderer;
     [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
 
-    [Header("Head Config")] [SerializeField]
-    private PlayerHeadController _headController;
-
+    [Header("Head Config")] 
+    [SerializeField] private PlayerHeadController _headController;
     [SerializeField] private Transform _headPivot;
 
     private Vector2 _moveInput;
@@ -58,9 +57,9 @@ public class PlayerBodyController : MonoBehaviour
         }
     }
 
-    private void ChangeBodySpriteDirection(Sprite s, bool flipX, int headOrder)
+    private void ChangeBodySpriteDirection(Sprite currentSpriteDirection, bool flipX, int headOrder)
     {
-        _bodyRenderer.sprite = s;
+        _bodyRenderer.sprite = currentSpriteDirection;
         _bodyRenderer.flipX = flipX;
 
         var headSR = _headPivot.GetComponentInChildren<SpriteRenderer>();
@@ -68,11 +67,11 @@ public class PlayerBodyController : MonoBehaviour
 
         var localPos = Vector3.zero;
 
-        if (s == _bodyUp)
+        if (currentSpriteDirection == _bodyUp)
         {
             localPos = new Vector3(0, 1f, 0);
         }
-        else if (s == _bodySide)
+        else if (currentSpriteDirection == _bodySide)
         {
             float xOffset = 1f;
             localPos = new Vector3(flipX ? -xOffset : xOffset, 0.5f, 0);
