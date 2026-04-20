@@ -11,7 +11,7 @@ namespace ItemDrops
     {
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory)
         {
-            return equipment.FirstEmptySlot() >= 0;
+            return equipment.FirstEmptySlot(this) >= 0;
         }
 
         public override void Apply(
@@ -20,7 +20,7 @@ namespace ItemDrops
             PlayerStatsSo stats
         )
         {
-            var emptySlot = equipment.FirstEmptySlot();
+            var emptySlot = equipment.FirstEmptySlot(this);
 
             if (emptySlot >= 0)
             {

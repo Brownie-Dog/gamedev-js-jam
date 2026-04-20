@@ -1,3 +1,4 @@
+using System.Linq;
 using ItemDrops;
 using Player;
 using UnityEngine;
@@ -29,6 +30,9 @@ namespace ItemDrops
         [field: SerializeField]
         public float KnockbackForce { get; private set; } = 0f;
 
+        [field: SerializeField]
+        public SlotType[] CompatibleSlotTypes { get; private set; } = { SlotType.General };
+
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
 
         public override void Apply(
@@ -37,7 +41,7 @@ namespace ItemDrops
             PlayerStatsSo stats
         )
         {
-            var emptySlot = equipment.FirstEmptySlot();
+            var emptySlot = equipment.FirstEmptySlot(this);
 
             if (emptySlot >= 0)
             {
