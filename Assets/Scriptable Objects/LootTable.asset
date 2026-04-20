@@ -21,12 +21,14 @@ MonoBehaviour:
     _weight: 1
   - _item: {fileID: 11400000, guid: e31c0fcb507dd3b49a750b2787d2b64d, type: 2}
     _weight: 1
+  - _item: {fileID: 11400000, guid: a3ba8464069f07840aed9729a77966c2, type: 2}
+    _weight: 1
   - _item: {fileID: 11400000, guid: d4cb0403518ec094bbf538aaeebac3be, type: 2}
     _weight: 1
   - _item: {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
     _weight: 1
   - _item: {fileID: 11400000, guid: 8be4b37e9415e3c4bba4e91e40102f7d, type: 2}
-    _weight: 100
+    _weight: 1
   _rareWeight: 70
   _epicWeight: 25
   _legendaryWeight: 5
