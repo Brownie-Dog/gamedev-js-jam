@@ -69,12 +69,6 @@ namespace Player
             return hookPoint;
         }
 
-        public SlotType GetSlotType(int slotId)
-        {
-            _slotTypes.TryGetValue(slotId, out var slotType);
-            return slotType;
-        }
-
         public bool IsSlotUnlocked(int slotId)
         {
             if (slotId >= 0 && slotId < _baseSlotCount)
