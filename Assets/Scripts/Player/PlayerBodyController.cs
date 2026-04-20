@@ -4,9 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerBodyController : MonoBehaviour
 {
-    [Header("Body Config")] [SerializeField]
-    private SpriteRenderer _bodyRenderer;
-
+    [Header("Body Config")] 
+    [SerializeField] private SpriteRenderer _bodyRenderer;
     [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
 
     [Header("Head Config")] [SerializeField]
@@ -39,27 +38,27 @@ public class PlayerBodyController : MonoBehaviour
 
     private void Update()
     {
-        HandleBodyLogic();
-        _headController.UpdateHeadVisuals(_mouseInput);
+        UpdateBodyVisuals();
+        _headController.LookAtMouse(_mouseInput);
     }
 
-    private void HandleBodyLogic()
+    private void UpdateBodyVisuals()
     {
         if (_moveInput.sqrMagnitude < 0.01f) return;
 
         if (Mathf.Abs(_moveInput.y) > Mathf.Abs(_moveInput.x))
         {
-            if (_moveInput.y > 0) SetBodyState(_bodyUp, false, 4);
-            else SetBodyState(_bodyDown, false, 8);
+            if (_moveInput.y > 0) ChangeBodySpriteDirection(_bodyUp, false, 4);
+            else ChangeBodySpriteDirection(_bodyDown, false, 8);
         }
         else
         {
             bool flip = _moveInput.x < 0;
-            SetBodyState(_bodySide, flip, 8);
+            ChangeBodySpriteDirection(_bodySide, flip, 8);
         }
     }
 
-    private void SetBodyState(Sprite s, bool flipX, int headOrder)
+    private void ChangeBodySpriteDirection(Sprite s, bool flipX, int headOrder)
     {
         _bodyRenderer.sprite = s;
         _bodyRenderer.flipX = flipX;

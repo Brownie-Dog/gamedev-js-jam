@@ -23,7 +23,7 @@ public class PlayerHeadController : MonoBehaviour
         _camera = Camera.main;
     }
 
-    public void UpdateHeadVisuals(Vector2 mouseInput)
+    public void LookAtMouse(Vector2 mouseInput)
     {
         Vector3 mouseScreenWithDepth = new Vector3(mouseInput.x, mouseInput.y, 10f);
         Vector3 mouseWorldPos = _camera.ScreenToWorldPoint(mouseScreenWithDepth);
@@ -34,10 +34,10 @@ public class PlayerHeadController : MonoBehaviour
         if (direction.sqrMagnitude < 0.01f) return;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        UpdateHeadSpriteAndRotation(angle);
+        UpdateHeadSprite(angle);
     }
 
-    private void UpdateHeadSpriteAndRotation(float angle)
+    private void UpdateHeadSprite(float angle)
     {
         float visualAngle = angle;
 
