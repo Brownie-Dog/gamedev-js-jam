@@ -43,21 +43,30 @@ public class DeathUI : MonoBehaviour
 
     private IEnumerator DeathRoutine()
     {
-        
+        // 1. FREEZE the game world
+        Time.timeScale = 0f;
+
+        // 2. The Glitch (Use Realtime so it doesn't freeze the UI)
         _staticLayer.SetActive(true);
-        yield return new WaitForSeconds(0.4f); 
+        yield return new WaitForSecondsRealtime(0.4f); 
         _staticLayer.SetActive(false);
-        
+    
+        // 3. The CRT Collapse
         _videoDisplay.gameObject.SetActive(true);
         _videoPlayer.Play();
 
-        yield return new WaitForSeconds((float)_videoPlayer.length);
+        // Use Realtime to wait for the video length
+        yield return new WaitForSecondsRealtime((float)_videoPlayer.length);
+        _videoPlayer.Stop();
 
+        // 4. The BSOD
         _bsodLayer.SetActive(true);
         _videoDisplay.gameObject.SetActive(false);
 
-        // Move this to level manager or something
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSecondsRealtime(3f);
+
+        // 5. IMPORTANT: Unfreeze time before loading the next scene
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
