@@ -38,13 +38,16 @@ namespace Weapons
 
         protected virtual void Awake()
         {
-            _weaponController = GetComponentInParent<PlayerWeaponController>();
-            Assert.IsNotNull(_weaponController);
-
             Assert.IsTrue(_weaponType != WeaponType.Invalid);
 
-            _behaviour = GetComponent<IWeaponBehaviour>();
-            Assert.IsNotNull(_behaviour);
+            if (_weaponType != WeaponType.None)
+            {
+                _weaponController = GetComponentInParent<PlayerWeaponController>();
+                Assert.IsNotNull(_weaponController);
+
+                _behaviour = GetComponent<IWeaponBehaviour>();
+                Assert.IsNotNull(_behaviour);
+            }
         }
 
         protected virtual void Start()
@@ -94,6 +97,11 @@ namespace Weapons
 
         public void StartFiring()
         {
+            if (_weaponType == WeaponType.None)
+            {
+                return;
+            }
+
             _isAutoFiring = true;
             _holdFireCoroutine ??= StartCoroutine(HoldFireLoop());
         }
