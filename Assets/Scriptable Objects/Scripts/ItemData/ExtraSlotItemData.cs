@@ -12,7 +12,7 @@ namespace ItemDrops
     {
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory)
         {
-            return equipment.UnlockedSlots < equipment.MaxSlots;
+            return equipment.UnlockedBaseSlots < equipment.MaxBaseSlots;
         }
 
         public override void Apply(PlayerEquipment equipment, PlayerInventory inventory, PlayerStatsSo stats)

@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8446796442686484799}
   - component: {fileID: 291075037575602817}
   - component: {fileID: 5197029817154738383}
+  - component: {fileID: 6716959228469294914}
   m_Layer: 7
   m_Name: BackSlot
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &6716959228469294914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875999885854097188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
 --- !u!1 &3229091112246798102
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +122,7 @@ GameObject:
   - component: {fileID: 8676772841974893465}
   - component: {fileID: 4510492549719505195}
   - component: {fileID: 4053495417764824636}
+  - component: {fileID: 8722619057824286473}
   m_Layer: 7
   m_Name: TopSlot
   m_TagString: Untagged
@@ -160,6 +174,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &8722619057824286473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229091112246798102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
 --- !u!1 &4120198749229490778
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +197,7 @@ GameObject:
   - component: {fileID: 909437693786460123}
   - component: {fileID: 6306823553078355873}
   - component: {fileID: 8788312618306164967}
+  - component: {fileID: 8254212490159024178}
   m_Layer: 7
   m_Name: RightSlot
   m_TagString: Untagged
@@ -222,6 +249,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &8254212490159024178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120198749229490778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
 --- !u!1 &5495760148684320693
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +409,7 @@ GameObject:
   - component: {fileID: 3709717588362197419}
   - component: {fileID: 7525362513600477078}
   - component: {fileID: 1031610946925431421}
+  - component: {fileID: 7974110827906345567}
   m_Layer: 7
   m_Name: BottomSlot
   m_TagString: Untagged
@@ -421,6 +461,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &7974110827906345567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488873578817156798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
 --- !u!1 &7855978038013584639
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +484,7 @@ GameObject:
   - component: {fileID: 8108281533649607938}
   - component: {fileID: 6247348416748931534}
   - component: {fileID: 439586913100426667}
+  - component: {fileID: 3762911617581823584}
   m_Layer: 7
   m_Name: TopRightHeadSlot
   m_TagString: Untagged
@@ -483,6 +536,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &3762911617581823584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855978038013584639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
 --- !u!1 &8232643813525639276
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,14 +968,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
   _initialUnlockedSlots: 3
-  _hookPoints:
-  - {fileID: 8446796442686484799}
-  - {fileID: 8676772841974893465}
-  - {fileID: 909437693786460123}
-  - {fileID: 3709717588362197419}
-  - {fileID: 8108281533649607938}
   _defaultWeapons:
   - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
+  _inventory: {fileID: 7002355511745351319}
 --- !u!114 &7002355511745351319
 MonoBehaviour:
   m_ObjectHideFlags: 0
