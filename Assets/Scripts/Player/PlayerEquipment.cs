@@ -25,6 +25,7 @@ namespace Player
         private int _baseSlotCount;
 
         private readonly Dictionary<int, Transform> _hookPoints = new();
+        private readonly Dictionary<int, SlotType> _slotTypes = new();
         private readonly Dictionary<int, WeaponItemData> _equippedWeapons = new();
         private readonly Dictionary<int, GameObject> _equippedWeaponInstances = new();
         private readonly Dictionary<int, List<int>> _extensionChildren = new();
@@ -42,6 +43,7 @@ namespace Player
             for (int i = 0; i < baseHookPoints.Length; i++)
             {
                 _hookPoints[i] = baseHookPoints[i].transform;
+                _slotTypes[i] = baseHookPoints[i].SlotType;
             }
 
             UnlockedBaseSlots = _initialUnlockedSlots;
@@ -60,6 +62,12 @@ namespace Player
             return hookPoint;
         }
 
+        public SlotType GetSlotType(int slotId)
+        {
+            _slotTypes.TryGetValue(slotId, out var slotType);
+            return slotType;
+        }
+
         public bool IsSlotUnlocked(int slotId)
         {
             if (slotId >= 0 && slotId < _baseSlotCount)
@@ -75,11 +83,13 @@ namespace Player
             return IsSlotUnlocked(slotId) && !_equippedWeapons.ContainsKey(slotId);
         }
 
-        public int FirstEmptySlot()
+        public int FirstEmptySlot(WeaponItemData weapon)
         {
+            var compatibleTypes = weapon.CompatibleSlotTypes;
+
             for (int i = 0; i < UnlockedBaseSlots; i++)
             {
-                if (!_equippedWeapons.ContainsKey(i))
+                if (!_equippedWeapons.ContainsKey(i) && compatibleTypes.Contains(_slotTypes[i]))
                 {
                     return i;
                 }
@@ -92,7 +102,7 @@ namespace Player
                     continue;
                 }
 
-                if (!_equippedWeapons.ContainsKey(slotId))
+                if (!_equippedWeapons.ContainsKey(slotId) && compatibleTypes.Contains(_slotTypes[slotId]))
                 {
                     return slotId;
                 }
@@ -110,12 +120,13 @@ namespace Player
             }
         }
 
-        public int UnlockExtensionSlot(int parentSlotId, Transform hookPoint)
+        public int UnlockExtensionSlot(int parentSlotId, Transform hookPoint, SlotType slotType)
         {
             int newSlotId = _nextExtensionSlotId++;
             TotalSlots++;
 
             _hookPoints[newSlotId] = hookPoint;
+            _slotTypes[newSlotId] = slotType;
 
             if (!_extensionChildren.ContainsKey(parentSlotId))
             {
@@ -130,6 +141,7 @@ namespace Player
         {
             Assert.IsNotNull(weapon.WeaponPrefab);
             Assert.IsTrue(IsSlotUnlocked(slotId));
+            Assert.IsTrue(weapon.CompatibleSlotTypes.Contains(_slotTypes[slotId]));
 
             var hookPoint = GetHookPointForSlot(slotId);
             Assert.IsNotNull(hookPoint);
@@ -165,7 +177,7 @@ namespace Player
         {
             foreach (var hookPoint in instance.GetComponentsInChildren<HookPoint>())
             {
-                UnlockExtensionSlot(parentSlotId, hookPoint.transform);
+                UnlockExtensionSlot(parentSlotId, hookPoint.transform, hookPoint.SlotType);
             }
         }
 
@@ -213,6 +225,7 @@ namespace Player
                 _equippedWeapons.Remove(childSlotId);
                 _equippedWeaponInstances.Remove(childSlotId);
                 _hookPoints.Remove(childSlotId);
+                _slotTypes.Remove(childSlotId);
                 TotalSlots--;
             }
 
@@ -231,11 +244,17 @@ namespace Player
 
         private void SpawnDefaultWeapons()
         {
-            for (int i = 0; i < _defaultWeapons.Length && i < UnlockedBaseSlots; i++)
+            foreach (var weapon in _defaultWeapons)
             {
-                if (_defaultWeapons[i] != null)
+                if (weapon == null)
                 {
-                    Equip(_defaultWeapons[i], i);
+                    continue;
+                }
+
+                var slot = FirstEmptySlot(weapon);
+                if (slot >= 0)
+                {
+                    Equip(weapon, slot);
                 }
             }
         }

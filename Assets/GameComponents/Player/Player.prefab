@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8446796442686484799}
   - {fileID: 8676772841974893465}
+  - {fileID: 8446796442686484799}
   - {fileID: 909437693786460123}
   - {fileID: 3709717588362197419}
   - {fileID: 8108281533649607938}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 5197029817154738383}
   - component: {fileID: 6716959228469294914}
   m_Layer: 7
-  m_Name: BackSlot
+  m_Name: LeftSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &3229091112246798102
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 1
 --- !u!1 &4120198749229490778
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &5495760148684320693
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &7855978038013584639
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &8232643813525639276
 GameObject:
   m_ObjectHideFlags: 0
