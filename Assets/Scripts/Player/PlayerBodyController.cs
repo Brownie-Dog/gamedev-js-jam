@@ -41,11 +41,9 @@ public class PlayerBodyController : MonoBehaviour
 
     private void UpdateBodyDirection()
     {
-        if (IsMovingHorizontally())
-        {
-            bool shouldFaceLeft = _moveInput.x < 0;
-            FlipCharacter(shouldFaceLeft);
-        }
+        if (!IsMovingHorizontally()) return;
+        var shouldFaceLeft = _moveInput.x < 0;
+        FlipCharacter(shouldFaceLeft);
     }
 
     private bool IsMovingHorizontally()
@@ -56,7 +54,7 @@ public class PlayerBodyController : MonoBehaviour
     private void FlipCharacter(bool left)
     {
         _bodyRenderer.flipX = left;
-        float mirroredX = left ? -_headPivotPosition.x : _headPivotPosition.x;
+        var mirroredX = left ? -_headPivotPosition.x : _headPivotPosition.x;
         _headPivot.localPosition = new Vector3(mirroredX, _headPivotPosition.y, _headPivotPosition.z);
     }
 }
