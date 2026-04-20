@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 6907870921195002624}
   - component: {fileID: 280844976823369410}
   - component: {fileID: 8953137811423253545}
+  - component: {fileID: -2061916155912372316}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -218,6 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf534c7a45dd72449be03af84b56b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
+  _targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &280844976823369410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -276,3 +280,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bdfe85c227f5d44b16578547ad42f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.StaticAnimation
+--- !u!114 &-2061916155912372316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907648602986796793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3404395cb440ae488a85e8abf935a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Loadout.IncludeInCameraBounds
