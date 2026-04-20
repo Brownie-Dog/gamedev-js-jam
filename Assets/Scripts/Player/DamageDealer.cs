@@ -7,12 +7,32 @@ namespace Player
     [RequireComponent(typeof(Collider2D))]
     public class DamageDealer : MonoBehaviour
     {
+        [SerializeField] private LayerMask _targetLayerMask;
+
         private int _damageAmount;
         private float _knockbackForce;
         private bool _active;
         private readonly HashSet<Collider2D> _hitTargets = new();
 
         public event Action OnHit;
+
+        private void Awake()
+        {
+            if (_targetLayerMask == LayerMask.NameToLayer(GlobalConstants.DEFAULT_LAYER))
+            {
+                _targetLayerMask = LayerMask.GetMask(GlobalConstants.ENEMY_LAYER);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            // TryDealDamage(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            TryDealDamage(other);
+        }
 
         public void Activate(DamageInfo damageInfo)
         {
@@ -27,19 +47,15 @@ namespace Player
             _active = false;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            TryDealDamage(other);
-        }
-
-        private void OnTriggerStay2D(Collider2D other)
-        {
-            TryDealDamage(other);
-        }
 
         private void TryDealDamage(Collider2D other)
         {
             if (!_active)
+            {
+                return;
+            }
+
+            if (((1 << other.gameObject.layer) & _targetLayerMask) == 0)
             {
                 return;
             }

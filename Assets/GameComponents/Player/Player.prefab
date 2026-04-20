@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2341980178147183215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ItemSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8446796442686484799}
   - component: {fileID: 291075037575602817}
   - component: {fileID: 5197029817154738383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8676772841974893465}
   - component: {fileID: 4510492549719505195}
   - component: {fileID: 4053495417764824636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 909437693786460123}
   - component: {fileID: 6306823553078355873}
   - component: {fileID: 8788312618306164967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 8137589601223373071}
   - component: {fileID: 2313973947408361796}
   - component: {fileID: 1628022931760623983}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 3709717588362197419}
   - component: {fileID: 7525362513600477078}
   - component: {fileID: 1031610946925431421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BottomSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 8108281533649607938}
   - component: {fileID: 6247348416748931534}
   - component: {fileID: 439586913100426667}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopRightHeadSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,9 @@ GameObject:
   - component: {fileID: 526240358348230129}
   - component: {fileID: 2810164907020316400}
   - component: {fileID: 7002355511745351319}
-  m_Layer: 0
+  - component: {fileID: 5163483307381371666}
+  - component: {fileID: 1816514615952822593}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -921,3 +923,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176b880e9e835c840b466b37571618b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory
+--- !u!114 &5163483307381371666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca851d2e83110c54facf9fdc804f4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageController
+  _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
+  _knockbackReceiver: {fileID: 1816514615952822593}
+--- !u!114 &1816514615952822593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f671960cefde6469200a44d81e4143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  _duration: 0.15
+  _disableDuringKnockback:
+  - {fileID: 8557419963232160952}

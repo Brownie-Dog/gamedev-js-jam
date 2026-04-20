@@ -1,23 +1,32 @@
 using UnityEngine;
 using UnityEngine.Assertions;
+using Weapons;
 
 public class RangedEnemyAttack : EnemyAttack
 {
+    [SerializeField] private Bullet _bulletPrefab;
+    [SerializeField] private int _poolSize = 15;
     [SerializeField] private Transform _firePoint;
-    [SerializeField] private EnemyProjectilePooler _bulletPool;
-    
+
     private Transform _player;
-    
+    private MonoBehaviourPool<Bullet> _bulletPool;
+
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         Assert.IsNotNull(_player);
-        Assert.IsNotNull(_bulletPool);
+        Assert.IsNotNull(_bulletPrefab);
+        Assert.IsNotNull(_firePoint);
+
+        _bulletPool = new MonoBehaviourPool<Bullet>(_bulletPrefab, _poolSize, _poolSize, transform,
+            b => b.SetPool(_bulletPool.Pool)
+        );
     }
+
     private void Update()
     {
         float distance = Vector2.Distance(transform.position, _player.position);
-        
+
         if (distance <= _stats.AttackRange)
         {
             ExecuteAttack();
@@ -26,10 +35,9 @@ public class RangedEnemyAttack : EnemyAttack
 
     protected override void Attack()
     {
-        Debug.Log("Firing Projectile!");
-        PooledEnemyProjectile bullet = _bulletPool.RequestProjectile();
-        bullet.transform.position = _firePoint.position;
-        Vector2 targetDirection = (_player.position - _firePoint.position).normalized;
-        bullet.Launch(targetDirection);
+        Vector2 direction = ((Vector2)(_player.position - _firePoint.position)).normalized;
+        var damageInfo = new DamageInfo(_stats.Damage, direction * _stats.KnockbackForce);
+        Bullet bullet = _bulletPool.Get();
+        bullet.Activate(_firePoint.position, direction, damageInfo);
     }
 }
