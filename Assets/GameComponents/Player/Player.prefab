@@ -1034,4 +1034,3 @@ MonoBehaviour:
   _duration: 0.15
   _disableDuringKnockback:
   - {fileID: 8557419963232160952}
-

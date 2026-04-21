@@ -2334,7 +2334,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4104096690570108146}
   m_Direction: 3
   m_Value: 0
-  m_Size: 0.1
+  m_Size: 0.9999976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9880,7 +9880,7 @@ MonoBehaviour:
   _playerEquipment: {fileID: 0}
   _playerInventory: {fileID: 0}
   _slotContainer: {fileID: 7486341543317377558}
-  _inventoryContainer: {fileID: 4367992702616215967}
+  _inventoryContainer: {fileID: 7963083806771686749}
   _slotUIPrefab: {fileID: 3489671289883452160, guid: 68c92471f439de44c948d6303cca3f64, type: 3}
   _inventoryItemPrefab: {fileID: 7456772356796427550, guid: ad4db647a985b8c4287c2b3799fc7157, type: 3}
   _canvasRoot: {fileID: 4292935521568245304}
@@ -18556,7 +18556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00021362305}
+  m_AnchoredPosition: {x: 0, y: 0.0010070801}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8910878818624308982
