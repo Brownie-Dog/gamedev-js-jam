@@ -140,8 +140,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2976135448196196091, guid: a2f458a422c9c3944a1baa5f60d1e073, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: -4896436831441241515, guid: 76ec64aaedca6624892be69a3caa0c6c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -202,8 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Loadout.LoadoutInventoryItemUI
   _iconImage: {fileID: 6053598815901247024}
-  _nameText: {fileID: 0}
-  _dragHandler: {fileID: 0}
 --- !u!1 &9044357745568511339
 GameObject:
   m_ObjectHideFlags: 0
