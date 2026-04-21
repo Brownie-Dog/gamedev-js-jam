@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 8997636140998381153}
   - component: {fileID: 6497415450256394785}
   - component: {fileID: 5965891425854871898}
+  - component: {fileID: 7276741289568648151}
   m_Layer: 5
   m_Name: DeathVideoPlayer
   m_TagString: Untagged
@@ -214,6 +215,20 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &7276741289568648151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493365044136649607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d20689c9b575047956039f3300c00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VideoEffect
+  _player: {fileID: 5965891425854871898}
+  _display: {fileID: 6497415450256394785}
 --- !u!1 &3577359446079524255
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +314,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7797578621487943250}
   - component: {fileID: 5308731576064437347}
-  - component: {fileID: 1141059892350475995}
   - component: {fileID: 342768036510367289}
+  - component: {fileID: 55472533707984387}
   m_Layer: 5
   m_Name: StaticLayer
   m_TagString: Untagged
@@ -335,18 +350,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4499889640904130803}
   m_CullTransparentMesh: 1
---- !u!114 &1141059892350475995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4499889640904130803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065c9a47cc5f25743b66f33e64133a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StaticFlicker
 --- !u!114 &342768036510367289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +377,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &55472533707984387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499889640904130803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5df7e736e3e9242b60bfb484c4526e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StaticEffect
 --- !u!1 &6706279156568476593
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +437,5 @@ MonoBehaviour:
   _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
   _canvasObject: {fileID: 201827347511930810}
   _bsodLayer: {fileID: 3577359446079524255}
-  _staticLayer: {fileID: 4499889640904130803}
-  _videoDisplay: {fileID: 6497415450256394785}
-  _videoPlayer: {fileID: 5965891425854871898}
+  _staticEffect: {fileID: 55472533707984387}
+  _videoEffect: {fileID: 7276741289568648151}
