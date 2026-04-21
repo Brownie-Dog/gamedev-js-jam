@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerBodyController : MonoBehaviour
 {
+    [Header("Head Pivot Offsets")]
+    [SerializeField] private Vector3 _upHeadOffset = new Vector3(0, 0.8f, 0);
+    [SerializeField] private Vector3 _downHeadOffset = new Vector3(0, -0.5f, 0);
+    [SerializeField] private Vector3 _rightHeadOffset = new Vector3(0.8f, 0.5f, 0);
+    
+    [Header("References")]
     [SerializeField] private SpriteRenderer _bodyRenderer;
     [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
     [SerializeField] private PlayerHeadController _headController;
@@ -17,10 +23,12 @@ public class PlayerBodyController : MonoBehaviour
         Left,
         Right
     }
+
     private Vector2 _moveInput;
     private Vector2 _mouseInput;
     private Direction _currentDir = Direction.Right;
     private SpriteRenderer _headRenderer;
+    private Vector3 _leftHeadOffset => new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
 
     private void Awake()
     {
@@ -64,16 +72,16 @@ public class PlayerBodyController : MonoBehaviour
         switch (_currentDir)
         {
             case Direction.Right:
-                SetBodySpriteDirection(_bodySide, false, 8, new Vector3(1f, 0.5f, 0));
+                SetBodySpriteDirection(_bodySide, false, 8, _rightHeadOffset);
                 break;
             case Direction.Up:
-                SetBodySpriteDirection(_bodyUp, false, 4, new Vector3(0, 1f, 0));
+                SetBodySpriteDirection(_bodyUp, false, 8, _upHeadOffset);
                 break;
             case Direction.Down:
-                SetBodySpriteDirection(_bodyDown, false, 8, new Vector3(0, 0.3f, 0));
+                SetBodySpriteDirection(_bodyDown, false, 8, _downHeadOffset);
                 break;
             case Direction.Left:
-                SetBodySpriteDirection(_bodySide, true, 8, new Vector3(-1f, 0.5f, 0));
+                SetBodySpriteDirection(_bodySide, true, 8, _leftHeadOffset);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
