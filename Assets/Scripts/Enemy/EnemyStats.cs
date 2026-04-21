@@ -1,3 +1,4 @@
+using ItemDrops;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy/EnemyStats")]
@@ -23,6 +24,11 @@ public class EnemyStats : ScriptableObject, IWeaponData
     [Header("Health")] 
     
     public int MaxHealth = 100;
+
+    [Header("Drops")]
+
+    public float DropChance = 0.05f;
+    public ItemData GuaranteedItem;
 
     int IWeaponData.Damage => Damage;
     float IWeaponData.KnockbackForce => KnockbackForce;

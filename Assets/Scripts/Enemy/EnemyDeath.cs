@@ -1,14 +1,21 @@
 using System;
+using ItemDrops;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Random = UnityEngine.Random;
 
 public class EnemyDeath : MonoBehaviour
 {
-    [SerializeField] private EnemyHealth _health;
+    [SerializeField]
+    private EnemyHealth _health;
+
+    [SerializeField]
+    private EnemyStats _stats;
 
     private void Awake()
     {
         Assert.IsNotNull(_health);
+        Assert.IsNotNull(_stats);
     }
 
     private void OnEnable()
@@ -23,7 +30,11 @@ public class EnemyDeath : MonoBehaviour
 
     private void HandleDeath(object sender, EventArgs e)
     {
-        Debug.Log($"{gameObject.name} has died.");
-        Debug.Log($"Drops nothing hahaha");
+        if (Random.value > _stats.DropChance)
+        {
+            return;
+        }
+
+        ItemDropManager.Instance.SpawnItemDropObject(transform.position, _stats.GuaranteedItem);
     }
 }

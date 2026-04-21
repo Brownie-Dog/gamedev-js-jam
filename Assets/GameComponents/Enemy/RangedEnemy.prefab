@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   _health: {fileID: 5715554420424153486}
+  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
 --- !u!114 &5715554420424153486
 MonoBehaviour:
   m_ObjectHideFlags: 0
