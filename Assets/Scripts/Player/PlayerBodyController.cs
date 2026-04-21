@@ -1,22 +1,31 @@
+using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 
 public class PlayerBodyController : MonoBehaviour
 {
-    [Header("Body Config")] 
     [SerializeField] private SpriteRenderer _bodyRenderer;
     [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
-
-    [Header("Head Config")] 
     [SerializeField] private PlayerHeadController _headController;
     [SerializeField] private Transform _headPivot;
 
+    private enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
     private Vector2 _moveInput;
     private Vector2 _mouseInput;
+    private Direction _currentDir = Direction.Right;
+    private SpriteRenderer _headRenderer;
 
     private void Awake()
     {
+        _headRenderer = _headPivot.GetComponentInChildren<SpriteRenderer>();
+        Assert.IsNotNull(_headRenderer);
         Assert.IsNotNull(_bodyRenderer);
         Assert.IsNotNull(_bodyUp);
         Assert.IsNotNull(_bodyDown);
@@ -37,46 +46,61 @@ public class PlayerBodyController : MonoBehaviour
 
     private void Update()
     {
-        UpdateBodyVisuals();
-        _headController.LookAtMouse(_mouseInput);
+        var aimAngle = GetAngleToMouse();
+        _headController.LookAtMouse(aimAngle);
+        UpdateBodyVisuals(aimAngle);
     }
 
-    private void UpdateBodyVisuals()
+    private float GetAngleToMouse()
     {
-        if (_moveInput.sqrMagnitude < 0.01f) return;
+        var mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(_mouseInput.x, _mouseInput.y, 10f));
+        var direction = (Vector2)mouseWorldPos - (Vector2)transform.position;
+        return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    }
 
-        if (Mathf.Abs(_moveInput.y) > Mathf.Abs(_moveInput.x))
+    private void UpdateBodyVisuals(float angle)
+    {
+        _currentDir = GetCardinalDirection(angle);
+        switch (_currentDir)
         {
-            if (_moveInput.y > 0) ChangeBodySpriteDirection(_bodyUp, false, 4);
-            else ChangeBodySpriteDirection(_bodyDown, false, 8);
-        }
-        else
-        {
-            bool flip = _moveInput.x < 0;
-            ChangeBodySpriteDirection(_bodySide, flip, 8);
+            case Direction.Right:
+                SetBodySpriteDirection(_bodySide, false, 8, new Vector3(1f, 0.5f, 0));
+                break;
+            case Direction.Up:
+                SetBodySpriteDirection(_bodyUp, false, 4, new Vector3(0, 1f, 0));
+                break;
+            case Direction.Down:
+                SetBodySpriteDirection(_bodyDown, false, 8, new Vector3(0, 0.3f, 0));
+                break;
+            case Direction.Left:
+                SetBodySpriteDirection(_bodySide, true, 8, new Vector3(-1f, 0.5f, 0));
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
-    private void ChangeBodySpriteDirection(Sprite currentSpriteDirection, bool flipX, int headOrder)
+    private void SetBodySpriteDirection(Sprite sprite, bool flipX, int headOrder, Vector3 headPos)
     {
-        _bodyRenderer.sprite = currentSpriteDirection;
+        _bodyRenderer.sprite = sprite;
         _bodyRenderer.flipX = flipX;
+        UpdateHeadAnchor(headPos, headOrder);
+    }
 
-        var headSR = _headPivot.GetComponentInChildren<SpriteRenderer>();
-        headSR.sortingOrder = headOrder;
+    private void UpdateHeadAnchor(Vector3 headPos, int headOrder)
+    {
+        _headRenderer.sortingOrder = headOrder;
+        _headPivot.localPosition = headPos;
+    }
 
-        var localPos = Vector3.zero;
-
-        if (currentSpriteDirection == _bodyUp)
+    private static Direction GetCardinalDirection(float angle)
+    {
+        return angle switch
         {
-            localPos = new Vector3(0, 1f, 0);
-        }
-        else if (currentSpriteDirection == _bodySide)
-        {
-            float xOffset = 1f;
-            localPos = new Vector3(flipX ? -xOffset : xOffset, 0.5f, 0);
-        }
-
-        _headPivot.localPosition = localPos;
+            > -45f and <= 45f => Direction.Right,
+            > 45f and <= 135f => Direction.Up,
+            > -135f and <= -45f => Direction.Down,
+            _ => Direction.Left
+        };
     }
 }
