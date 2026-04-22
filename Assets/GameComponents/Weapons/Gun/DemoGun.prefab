@@ -305,3 +305,4 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3189316879295589563, guid: f0d6493407047f546973a98dcd3a9e5e, type: 3}
   _poolSize: 50
   _firePoint: {fileID: 7307795380562453035}
+  _penetrationCount: 1

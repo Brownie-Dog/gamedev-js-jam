@@ -8,6 +8,7 @@ public class GunWeaponBehaviour : MonoBehaviour, IWeaponBehaviour
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private int _poolSize = 50;
     [SerializeField] private Transform _firePoint;
+    [SerializeField] private int _penetrationCount = 1;
 
     private Weapon _weapon;
     private MonoBehaviourPool<Bullet> _bulletPool;
@@ -35,6 +36,6 @@ public class GunWeaponBehaviour : MonoBehaviour, IWeaponBehaviour
     {
         var damageInfo = new DamageInfo(_weapon.WeaponData.Damage, Vector2.up * _weapon.WeaponData.KnockbackForce);
         Bullet bullet = _bulletPool.Get();
-        bullet.Activate(_firePoint.position, _firePoint.up, damageInfo);
+        bullet.Activate(_firePoint.position, _firePoint.up, damageInfo, _penetrationCount);
     }
 }
