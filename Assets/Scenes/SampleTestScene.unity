@@ -1361,10 +1361,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 347181360280665919, guid: 5f90903442d2456488a1db91c356c374, type: 3}
-      propertyPath: m_Size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 513658016907040050, guid: 5f90903442d2456488a1db91c356c374, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1999,7 +1995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6512222569268189596, guid: 5f90903442d2456488a1db91c356c374, type: 3}
       propertyPath: m_Name
-      value: LoudoutUI2
+      value: LoadoutUI
       objectReference: {fileID: 0}
     - target: {fileID: 6581724982083584344, guid: 5f90903442d2456488a1db91c356c374, type: 3}
       propertyPath: m_Pivot.x
