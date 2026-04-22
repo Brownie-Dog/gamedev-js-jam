@@ -23,11 +23,7 @@ namespace ItemDrops
 
         public int RollCount => 3;
 
-        public ItemData[] Roll(
-            bool guaranteeLegendary,
-            PlayerEquipment equipment,
-            PlayerInventory inventory
-        )
+        public ItemData[] Roll(PlayerEquipment equipment, PlayerInventory inventory)
         {
             Assert.IsNotNull(equipment);
             Assert.IsNotNull(inventory);
@@ -36,7 +32,7 @@ namespace ItemDrops
 
             for (int i = 0; i < RollCount; i++)
             {
-                var rarity = guaranteeLegendary ? Rarity.Legendary : RollRarity();
+                var rarity = RollRarity();
 
                 var filteredPool = FilterPool(_items, equipment, inventory, rarity);
 
@@ -51,10 +47,6 @@ namespace ItemDrops
                 {
                     var item = RollFromPool(filteredPool);
                     results.Add(item);
-                }
-                else if (guaranteeLegendary)
-                {
-                    results.Add(null);
                 }
             }
 

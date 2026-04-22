@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2341980178147183215}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ItemSlots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +78,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8446796442686484799}
   - {fileID: 8676772841974893465}
+  - {fileID: 8446796442686484799}
   - {fileID: 909437693786460123}
   - {fileID: 3709717588362197419}
   - {fileID: 8108281533649607938}
@@ -96,8 +96,9 @@ GameObject:
   - component: {fileID: 8446796442686484799}
   - component: {fileID: 291075037575602817}
   - component: {fileID: 5197029817154738383}
-  m_Layer: 0
-  m_Name: BackSlot
+  - component: {fileID: 6716959228469294914}
+  m_Layer: 7
+  m_Name: LeftSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,6 +148,19 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &6716959228469294914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875999885854097188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &3229091112246798102
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +172,8 @@ GameObject:
   - component: {fileID: 8676772841974893465}
   - component: {fileID: 4510492549719505195}
   - component: {fileID: 4053495417764824636}
-  m_Layer: 0
+  - component: {fileID: 8722619057824286473}
+  m_Layer: 7
   m_Name: TopSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +224,19 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &8722619057824286473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229091112246798102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 1
 --- !u!1 &4120198749229490778
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +248,8 @@ GameObject:
   - component: {fileID: 909437693786460123}
   - component: {fileID: 6306823553078355873}
   - component: {fileID: 8788312618306164967}
-  m_Layer: 0
+  - component: {fileID: 8254212490159024178}
+  m_Layer: 7
   m_Name: RightSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +300,19 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &8254212490159024178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120198749229490778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &5054733166407384460
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +416,7 @@ GameObject:
   - component: {fileID: 8137589601223373071}
   - component: {fileID: 2313973947408361796}
   - component: {fileID: 1628022931760623983}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -431,7 +473,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -510,7 +552,8 @@ GameObject:
   - component: {fileID: 3709717588362197419}
   - component: {fileID: 7525362513600477078}
   - component: {fileID: 1031610946925431421}
-  m_Layer: 0
+  - component: {fileID: 7974110827906345567}
+  m_Layer: 7
   m_Name: BottomSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,6 +604,19 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &7974110827906345567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488873578817156798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &7778793132514014231
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +719,8 @@ GameObject:
   - component: {fileID: 8108281533649607938}
   - component: {fileID: 6247348416748931534}
   - component: {fileID: 439586913100426667}
-  m_Layer: 0
+  - component: {fileID: 3762911617581823584}
+  m_Layer: 7
   m_Name: TopRightHeadSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,6 +771,19 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
+--- !u!114 &3762911617581823584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855978038013584639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &8232643813525639276
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,8 +802,10 @@ GameObject:
   - component: {fileID: 526240358348230129}
   - component: {fileID: 2810164907020316400}
   - component: {fileID: 7002355511745351319}
+  - component: {fileID: 5163483307381371666}
+  - component: {fileID: 1816514615952822593}
   - component: {fileID: 3118165053820105909}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -918,7 +990,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: b0022e74-9276-4bdc-a141-b2e935230ced
-    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11500000, guid: 610c59f5174578542b0208713438601c, type: 3}
@@ -934,7 +1006,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 2b1c655e-5d9f-4ab3-97f1-68fb61afedb2
-    m_ActionName: 'Player/Look[/Mouse/delta]'
+    m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 526240358348230129}
@@ -950,39 +1022,39 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 415d6f39-5a75-41b3-8cb7-033447054303
-    m_ActionName: 'Player/Fire[/Mouse/leftButton]'
+    m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 5f0dc2f9-edda-421c-93b9-f5ff67b246b6
-    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: be8f66ef-38b0-4559-bce5-5096b9f85965
-    m_ActionName: 'UI/Submit[/Keyboard/enter]'
+    m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: e3a17f2f-2d39-4ea6-a281-73794e0e7919
-    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+    m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 3c6248a3-73e8-4b61-a97a-229fb1d63088
-    m_ActionName: 'UI/Point[/Mouse/position]'
+    m_ActionName: UI/Point[/Mouse/position]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: fec162c1-2c42-4d9b-9db7-b9f55a0ff32c
-    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+    m_ActionName: UI/Click[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cb34ef21-1cc6-41d9-919c-c2c66b073938
-    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 33bc3109-1764-477c-97dd-3ee7f50abb65
-    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 1d86ae6e-2522-47c1-bc98-19ef46ac51b0
-    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cce2ae34-77d3-4bdf-bfb5-40cf4c5d3c56
@@ -994,7 +1066,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: b25c2c27-cc7e-47bd-950d-09832d81e43d
-    m_ActionName: 'Player/Leg[/Mouse/rightButton]'
+    m_ActionName: Player/Leg[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 526240358348230129}
@@ -1010,7 +1082,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: e98b1808-1d91-4583-8969-1f8f2c977419
-    m_ActionName: 'Player/SecondaryFire[/Keyboard/space]'
+    m_ActionName: Player/SecondaryFire[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6968245968921767180}
@@ -1026,7 +1098,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 26da108d-aa2d-4641-b2b7-416ee9ebbe35
-    m_ActionName: 'Player/Interact[/Keyboard/f]'
+    m_ActionName: Player/Interact[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1087,14 +1159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
   _initialUnlockedSlots: 3
-  _hookPoints:
-  - {fileID: 8446796442686484799}
-  - {fileID: 8676772841974893465}
-  - {fileID: 909437693786460123}
-  - {fileID: 3709717588362197419}
-  - {fileID: 8108281533649607938}
   _defaultWeapons:
   - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
+  _inventory: {fileID: 7002355511745351319}
 --- !u!114 &7002355511745351319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1174,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176b880e9e835c840b466b37571618b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory
+--- !u!114 &5163483307381371666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca851d2e83110c54facf9fdc804f4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageController
+  _statsSo: {fileID: 11400000, guid: badf03037e5c1a440b5230f284674f94, type: 2}
+  _knockbackReceiver: {fileID: 1816514615952822593}
+--- !u!114 &1816514615952822593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232643813525639276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f671960cefde6469200a44d81e4143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  _duration: 0.15
+  _disableDuringKnockback:
+  - {fileID: 8557419963232160952}
 --- !u!114 &3118165053820105909
 MonoBehaviour:
   m_ObjectHideFlags: 0

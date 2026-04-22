@@ -19,4 +19,7 @@ MonoBehaviour:
   AttackCooldown: 1
   AttackRange: 1
   Damage: 1
-  MaxHealth: 100
+  KnockbackForce: 10
+  MaxHealth: 10
+  DropChance: 1
+  GuaranteedItem: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}

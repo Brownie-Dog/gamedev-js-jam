@@ -1,3 +1,4 @@
+using System.Linq;
 using ItemDrops;
 using Player;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace ItemDrops
         fileName = nameof(WeaponItemData),
         menuName = "ScriptableObjects/Items/Weapon"
     )]
-    public class WeaponItemData : ItemData
+    public class WeaponItemData : ItemData, IWeaponData
     {
         [field: SerializeField]
         public GameObject WeaponPrefab { get; private set; } = null;
@@ -23,6 +24,15 @@ namespace ItemDrops
         [field: SerializeField]
         public AimMode DefaultAimMode { get; private set; } = AimMode.None;
 
+        [field: SerializeField]
+        public bool AutoFire { get; private set; } = false;
+
+        [field: SerializeField]
+        public float KnockbackForce { get; private set; } = 0f;
+
+        [field: SerializeField]
+        public SlotType[] CompatibleSlotTypes { get; private set; } = { SlotType.General };
+
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory) => true;
 
         public override void Apply(
@@ -31,7 +41,7 @@ namespace ItemDrops
             PlayerStatsSo stats
         )
         {
-            var emptySlot = equipment.FirstEmptySlot();
+            var emptySlot = equipment.FirstEmptySlot(this);
 
             if (emptySlot >= 0)
             {

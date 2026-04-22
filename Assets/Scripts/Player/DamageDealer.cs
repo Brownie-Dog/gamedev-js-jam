@@ -7,15 +7,37 @@ namespace Player
     [RequireComponent(typeof(Collider2D))]
     public class DamageDealer : MonoBehaviour
     {
+        [SerializeField] private LayerMask _targetLayerMask;
+
         private int _damageAmount;
+        private float _knockbackForce;
         private bool _active;
         private readonly HashSet<Collider2D> _hitTargets = new();
 
         public event Action OnHit;
 
-        public void Activate(int damage)
+        private void Awake()
         {
-            _damageAmount = damage;
+            if (_targetLayerMask == LayerMask.NameToLayer(GlobalConstants.DEFAULT_LAYER))
+            {
+                _targetLayerMask = LayerMask.GetMask(GlobalConstants.ENEMY_LAYER);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            // TryDealDamage(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            TryDealDamage(other);
+        }
+
+        public void Activate(DamageInfo damageInfo)
+        {
+            _damageAmount = damageInfo.Damage;
+            _knockbackForce = damageInfo.Knockback.magnitude;
             _active = true;
             _hitTargets.Clear();
         }
@@ -25,9 +47,15 @@ namespace Player
             _active = false;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+
+        private void TryDealDamage(Collider2D other)
         {
             if (!_active)
+            {
+                return;
+            }
+
+            if (((1 << other.gameObject.layer) & _targetLayerMask) == 0)
             {
                 return;
             }
@@ -40,7 +68,9 @@ namespace Player
             var target = other.gameObject.GetComponent<IDamageable>();
             if (target != null)
             {
-                target.TakeDamage(_damageAmount);
+                var direction = ((Vector2)(other.transform.position - transform.position)).normalized;
+                var info = new DamageInfo(_damageAmount, direction * _knockbackForce);
+                target.TakeDamage(info);
                 _hitTargets.Add(other);
                 OnHit?.Invoke();
             }

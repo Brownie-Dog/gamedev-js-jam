@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1013221015242572209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -0.39, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,7 +186,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4373263350032111108}
   - component: {fileID: 880405440784652497}
-  - component: {fileID: 5755402082452386426}
   - component: {fileID: 7690971756102779718}
   - component: {fileID: 8765935225642597128}
   - component: {fileID: 7214160061941574700}
@@ -194,8 +193,8 @@ GameObject:
   - component: {fileID: 2605498392226838878}
   - component: {fileID: 5715554420424153486}
   - component: {fileID: 7760926200436154275}
-  - component: {fileID: 6576457220233667056}
-  m_Layer: 0
+  - component: {fileID: 7224369787679792813}
+  m_Layer: 6
   m_Name: RangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 5394226868365281370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.49, y: 33.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -279,26 +278,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5755402082452386426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5394226868365281370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteSkin
-  m_RootBone: {fileID: 0}
-  m_BoneTransforms: []
-  m_Bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_AlwaysUpdate: 1
-  m_AutoRebind: 0
-  m_BoundsMode: 0
 --- !u!50 &7690971756102779718
 Rigidbody2D:
   serializedVersion: 5
@@ -356,7 +335,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -414,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   _health: {fileID: 5715554420424153486}
+  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
 --- !u!114 &5715554420424153486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
   _currentHealth: 0
+  _knockbackReceiver: {fileID: 7224369787679792813}
 --- !u!114 &7760926200436154275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,9 +423,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedAttack
   _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
   _attackSound: {fileID: 4317388816459954186}
+  _bulletPrefab: {fileID: 3285378652751197902, guid: e2230b045c729544fb06537d661d89ef, type: 3}
+  _poolSize: 15
   _firePoint: {fileID: 5543516648793022522}
-  _bulletPool: {fileID: 6576457220233667056}
---- !u!114 &6576457220233667056
+--- !u!114 &7224369787679792813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,11 +435,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5394226868365281370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e531a83f6bab134d80e9ca1a6cbf95d, type: 3}
+  m_Script: {fileID: 11500000, guid: f6f671960cefde6469200a44d81e4143, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
-  _projectilePrefab: {fileID: 148848121725040535, guid: e2230b045c729544fb06537d661d89ef, type: 3}
-  _data: {fileID: 11400000, guid: 473893d6c83681049961d43fefb9cb2a, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::KnockbackReceiver
+  _duration: 0.15
+  _disableDuringKnockback:
+  - {fileID: 7214160061941574700}
+  - {fileID: 7774049587185927270}
 --- !u!1 &8326058291645060806
 GameObject:
   m_ObjectHideFlags: 0
