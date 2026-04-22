@@ -300,25 +300,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
---- !u!114 &8254212490159024178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4120198749229490778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
-  <SlotType>k__BackingField: 0
+<<<<<<< HEAD
 --- !u!1 &5054733166407384460
 GameObject:
+=======
+--- !u!114 &8254212490159024178
+MonoBehaviour:
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1618279007097158238}
@@ -404,6 +397,15 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+  m_GameObject: {fileID: 4120198749229490778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
 --- !u!1 &5495760148684320693
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,25 +606,18 @@ MonoBehaviour:
   _arrowHeadAngle: 135
   _rotationOffset: 45
   _arrowColor: {r: 0.015686274, g: 1, b: 0.09365815, a: 1}
---- !u!114 &7974110827906345567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6488873578817156798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
-  <SlotType>k__BackingField: 0
+<<<<<<< HEAD
 --- !u!1 &7778793132514014231
 GameObject:
+=======
+--- !u!114 &7974110827906345567
+MonoBehaviour:
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6947659126249166286}
@@ -708,6 +703,15 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+=======
+  m_GameObject: {fileID: 6488873578817156798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
 --- !u!1 &7855978038013584639
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,10 +806,14 @@ GameObject:
   - component: {fileID: 526240358348230129}
   - component: {fileID: 2810164907020316400}
   - component: {fileID: 7002355511745351319}
+<<<<<<< HEAD
+  - component: {fileID: 3118165053820105909}
+  m_Layer: 0
+=======
   - component: {fileID: 5163483307381371666}
   - component: {fileID: 1816514615952822593}
-  - component: {fileID: 3118165053820105909}
   m_Layer: 7
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -990,7 +998,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: b0022e74-9276-4bdc-a141-b2e935230ced
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11500000, guid: 610c59f5174578542b0208713438601c, type: 3}
@@ -1006,7 +1014,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 2b1c655e-5d9f-4ab3-97f1-68fb61afedb2
-    m_ActionName: Player/Look[/Mouse/delta]
+    m_ActionName: 'Player/Look[/Mouse/delta]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 526240358348230129}
@@ -1022,39 +1030,39 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 415d6f39-5a75-41b3-8cb7-033447054303
-    m_ActionName: Player/Fire[/Mouse/leftButton]
+    m_ActionName: 'Player/Fire[/Mouse/leftButton]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 5f0dc2f9-edda-421c-93b9-f5ff67b246b6
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: be8f66ef-38b0-4559-bce5-5096b9f85965
-    m_ActionName: UI/Submit[/Keyboard/enter]
+    m_ActionName: 'UI/Submit[/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: e3a17f2f-2d39-4ea6-a281-73794e0e7919
-    m_ActionName: UI/Cancel[/Keyboard/escape]
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 3c6248a3-73e8-4b61-a97a-229fb1d63088
-    m_ActionName: UI/Point[/Mouse/position]
+    m_ActionName: 'UI/Point[/Mouse/position]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: fec162c1-2c42-4d9b-9db7-b9f55a0ff32c
-    m_ActionName: UI/Click[/Mouse/leftButton]
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cb34ef21-1cc6-41d9-919c-c2c66b073938
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 33bc3109-1764-477c-97dd-3ee7f50abb65
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 1d86ae6e-2522-47c1-bc98-19ef46ac51b0
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
+    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cce2ae34-77d3-4bdf-bfb5-40cf4c5d3c56
@@ -1066,7 +1074,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: b25c2c27-cc7e-47bd-950d-09832d81e43d
-    m_ActionName: Player/Leg[/Mouse/rightButton]
+    m_ActionName: 'Player/Leg[/Mouse/rightButton]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 526240358348230129}
@@ -1082,7 +1090,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: e98b1808-1d91-4583-8969-1f8f2c977419
-    m_ActionName: Player/SecondaryFire[/Keyboard/space]
+    m_ActionName: 'Player/SecondaryFire[/Keyboard/space]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6968245968921767180}
@@ -1098,7 +1106,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 26da108d-aa2d-4641-b2b7-416ee9ebbe35
-    m_ActionName: Player/Interact[/Keyboard/f]
+    m_ActionName: 'Player/Interact[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1174,7 +1182,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176b880e9e835c840b466b37571618b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInventory
+<<<<<<< HEAD
+--- !u!114 &3118165053820105909
+=======
 --- !u!114 &5163483307381371666
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1183,6 +1195,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8232643813525639276}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: 610c59f5174578542b0208713438601c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBodyController
+  _bodyRenderer: {fileID: 3858102962967013598}
+  _bodyUp: {fileID: 447287058598398315, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
+  _bodyDown: {fileID: -8077052530050016984, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
+  _bodySide: {fileID: 8092599274614522597, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
+  _headController: {fileID: 9068332210729767383}
+  _headPivot: {fileID: 1645416840526916346}
+=======
   m_Script: {fileID: 11500000, guid: ca851d2e83110c54facf9fdc804f4e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageController
@@ -1203,21 +1226,4 @@ MonoBehaviour:
   _duration: 0.15
   _disableDuringKnockback:
   - {fileID: 8557419963232160952}
---- !u!114 &3118165053820105909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8232643813525639276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610c59f5174578542b0208713438601c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBodyController
-  _bodyRenderer: {fileID: 3858102962967013598}
-  _bodyUp: {fileID: 447287058598398315, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
-  _bodyDown: {fileID: -8077052530050016984, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
-  _bodySide: {fileID: 8092599274614522597, guid: f9c1363a1ad9a9d41a475a80c072d246, type: 3}
-  _headController: {fileID: 9068332210729767383}
-  _headPivot: {fileID: 1645416840526916346}
+>>>>>>> d8626a6158c889468b0b099fc26a53d4b220b0cf
