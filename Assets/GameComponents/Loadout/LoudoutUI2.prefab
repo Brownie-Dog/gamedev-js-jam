@@ -3256,7 +3256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35.9, y: -16.9}
+  m_AnchoredPosition: {x: 37.9, y: -25.8}
   m_SizeDelta: {x: 128.5049, y: 32.5635}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6470940523474881250
@@ -5834,9 +5834,9 @@ RectTransform:
   m_Father: {fileID: 5006327011271462296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3.9996948}
-  m_SizeDelta: {x: 0, y: -7.9994}
+  m_AnchorMax: {x: 1, y: 0.97}
+  m_AnchoredPosition: {x: 0, y: 0.63360596}
+  m_SizeDelta: {x: 0, y: 1.2672005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5246252330297972111
 CanvasRenderer:
@@ -6056,9 +6056,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -17, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &2717456337258763077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6141,7 +6141,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 8929243067964943139}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3317754
+  m_Size: 0.47610322
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6604,7 +6604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Loadout.LoadoutUI
   _playerEquipment: {fileID: 0}
   _playerInventory: {fileID: 0}
-  _slotContainer: {fileID: 513658016907040050}
+  _slotContainer: {fileID: 5006327011271462296}
   _inventoryContainer: {fileID: 5556681499171284042}
   _slotUIPrefab: {fileID: 3489671289883452160, guid: 68c92471f439de44c948d6303cca3f64, type: 3}
   _inventoryItemPrefab: {fileID: 7456772356796427550, guid: ad4db647a985b8c4287c2b3799fc7157, type: 3}
@@ -9435,7 +9435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9843137}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9466,7 +9466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
     m_Left: 20
-    m_Right: 19
+    m_Right: 22
     m_Top: 40
     m_Bottom: 20
   m_ChildAlignment: 0
