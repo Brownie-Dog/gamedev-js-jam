@@ -15,6 +15,7 @@ public class PlayerBodyController : MonoBehaviour
     [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
     [SerializeField] private PlayerHeadController _headController;
     [SerializeField] private Transform _headPivot;
+    [SerializeField] private SpriteRenderer _headRenderer;
 
     private enum Direction
     {
@@ -27,20 +28,7 @@ public class PlayerBodyController : MonoBehaviour
     private Vector2 _moveInput;
     private Vector2 _mouseInput;
     private Direction _currentDir = Direction.Right;
-    private SpriteRenderer _headRenderer;
     private Vector3 _leftHeadOffset => new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
-
-    private void Awake()
-    {
-        _headRenderer = _headPivot.GetComponentInChildren<SpriteRenderer>();
-        Assert.IsNotNull(_headRenderer);
-        Assert.IsNotNull(_bodyRenderer);
-        Assert.IsNotNull(_bodyUp);
-        Assert.IsNotNull(_bodyDown);
-        Assert.IsNotNull(_bodySide);
-        Assert.IsNotNull(_headController);
-        Assert.IsNotNull(_headPivot);
-    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -51,7 +39,18 @@ public class PlayerBodyController : MonoBehaviour
     {
         _mouseInput = context.ReadValue<Vector2>();
     }
-
+    
+    private void Awake()
+    {
+        Assert.IsNotNull(_headRenderer);
+        Assert.IsNotNull(_bodyRenderer);
+        Assert.IsNotNull(_bodyUp);
+        Assert.IsNotNull(_bodyDown);
+        Assert.IsNotNull(_bodySide);
+        Assert.IsNotNull(_headController);
+        Assert.IsNotNull(_headPivot);
+    }
+    
     private void Update()
     {
         var aimAngle = GetAngleToMouse();
