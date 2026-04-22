@@ -3,7 +3,6 @@ using System.Linq;
 using Player;
 using UnityEngine;
 using UnityEngine.Assertions;
-using Weapons;
 
 namespace ItemDrops
 {
@@ -11,13 +10,7 @@ namespace ItemDrops
     public class LootTable : ScriptableObject
     {
         [SerializeField]
-        private List<LootEntry> _rarePool = new();
-
-        [SerializeField]
-        private List<LootEntry> _epicPool = new();
-
-        [SerializeField]
-        private List<LootEntry> _legendaryPool = new();
+        private List<LootEntry> _items = new();
 
         [SerializeField]
         private float _rareWeight = 70.0f;
@@ -30,11 +23,7 @@ namespace ItemDrops
 
         public int RollCount => 3;
 
-        public ItemData[] Roll(
-            bool guaranteeLegendary,
-            PlayerEquipment equipment,
-            PlayerInventory inventory
-        )
+        public ItemData[] Roll(PlayerEquipment equipment, PlayerInventory inventory)
         {
             Assert.IsNotNull(equipment);
             Assert.IsNotNull(inventory);
@@ -43,16 +32,14 @@ namespace ItemDrops
 
             for (int i = 0; i < RollCount; i++)
             {
-                var rarity = guaranteeLegendary ? Rarity.Legendary : RollRarity();
+                var rarity = RollRarity();
 
-                var pool = GetPool(rarity);
-                var filteredPool = FilterPool(pool, equipment, inventory, rarity);
+                var filteredPool = FilterPool(_items, equipment, inventory, rarity);
 
                 var fallbackRarity = GetFallbackRarity(rarity);
                 while (filteredPool.Count == 0 && fallbackRarity != Rarity.Rare)
                 {
-                    pool = GetPool(fallbackRarity);
-                    filteredPool = FilterPool(pool, equipment, inventory, fallbackRarity);
+                    filteredPool = FilterPool(_items, equipment, inventory, fallbackRarity);
                     fallbackRarity = GetFallbackRarity(fallbackRarity);
                 }
 
@@ -60,10 +47,6 @@ namespace ItemDrops
                 {
                     var item = RollFromPool(filteredPool);
                     results.Add(item);
-                }
-                else if (guaranteeLegendary)
-                {
-                    results.Add(null);
                 }
             }
 
@@ -88,16 +71,6 @@ namespace ItemDrops
             return Rarity.Rare;
         }
 
-        private List<LootEntry> GetPool(Rarity rarity)
-        {
-            return rarity switch
-            {
-                Rarity.Legendary => _legendaryPool,
-                Rarity.Epic => _epicPool,
-                _ => _rarePool,
-            };
-        }
-
         private List<LootEntry> FilterPool(
             List<LootEntry> pool,
             PlayerEquipment equipment,
@@ -106,9 +79,6 @@ namespace ItemDrops
         )
         {
             var filtered = new List<LootEntry>();
-
-            var ownedWeapons = equipment.GetAllOwnedWeapons();
-            var inventoryWeapons = inventory.GetAllWeapons();
 
             foreach (var entry in pool)
             {
@@ -122,15 +92,9 @@ namespace ItemDrops
                     continue;
                 }
 
-                if (entry.Item is WeaponUpgradeItemData upgrade)
+                if (!entry.Item.CanDrop(equipment, inventory))
                 {
-                    if (
-                        !ownedWeapons.Contains(upgrade.TargetWeapon)
-                        && !inventoryWeapons.Contains(upgrade.TargetWeapon)
-                    )
-                    {
-                        continue;
-                    }
+                    continue;
                 }
 
                 filtered.Add(entry);

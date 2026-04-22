@@ -2,36 +2,37 @@ using System;
 using Player;
 using UnityEngine;
 using UnityEngine.Assertions;
-using Weapons;
+using Random = UnityEngine.Random;
 
 namespace ItemDrops
 {
     public class ItemDropManager : MonoBehaviour
     {
-        [SerializeField]
-        private ItemChoiceScreen _chooseItemScreen;
+        public static ItemDropManager Instance { get; private set; }
 
-        [SerializeField]
-        private GameObject _itemDropPrefab;
+        [SerializeField] private ItemChoiceScreen _chooseItemScreen;
 
-        [SerializeField]
-        private LootTable _lootTable;
+        [SerializeField] private GameObject _itemDropPrefab;
 
-        [SerializeField]
-        private PlayerEquipment _playerEquipment;
+        [SerializeField] private LootTable _lootTable;
 
-        [SerializeField]
-        private PlayerInventory _playerInventory;
+        [SerializeField] private PlayerEquipment _playerEquipment;
 
-        private bool _guaranteeLegendary;
+        [SerializeField] private PlayerInventory _playerInventory;
+
+        [SerializeField] private PlayerStatsSo _playerStats;
 
         private void Awake()
         {
+            Assert.IsNull(Instance);
+            Instance = this;
+
             Assert.IsNotNull(_chooseItemScreen);
             Assert.IsNotNull(_itemDropPrefab);
             Assert.IsNotNull(_lootTable);
             Assert.IsNotNull(_playerEquipment);
             Assert.IsNotNull(_playerInventory);
+            Assert.IsNotNull(_playerStats);
         }
 
         private void OnEnable()
@@ -46,27 +47,33 @@ namespace ItemDrops
             _chooseItemScreen.RerollRequested -= HandleRerollRequested;
         }
 
-        public void SpawnItemDropObject(Vector2 worldPosition, bool guaranteeLegendary = false)
+        private void OnDestroy()
         {
-            _guaranteeLegendary = guaranteeLegendary;
+            if (Instance == this)
+            {
+                Instance = null;
+            }
+        }
 
-            var droppedItem = Instantiate(
-                _itemDropPrefab,
-                worldPosition,
-                Quaternion.identity,
-                gameObject.transform
-            );
+        public void SpawnItemDropObject(Vector2 worldPosition, ItemData guaranteedItem = null)
+        {
+            var droppedItem = Instantiate(_itemDropPrefab, worldPosition, Quaternion.identity, gameObject.transform);
 
             var droppedItemComponent = droppedItem.GetComponent<DroppedItem>();
             Assert.IsNotNull(droppedItemComponent);
-            droppedItemComponent.GuaranteeLegendary = guaranteeLegendary;
+            droppedItemComponent.GuaranteedItem = guaranteedItem;
         }
 
-        public void OnItemPickup(GameObject droppedItem, bool guaranteeLegendary)
+        public void OnItemPickup(GameObject droppedItem, ItemData guaranteedItem)
         {
-            _guaranteeLegendary = guaranteeLegendary;
+            var items = _lootTable.Roll(_playerEquipment, _playerInventory);
 
-            var items = _lootTable.Roll(_guaranteeLegendary, _playerEquipment, _playerInventory);
+            if (guaranteedItem != null && items.Length > 0)
+            {
+                var slot = Random.Range(0, items.Length);
+                items[slot] = guaranteedItem;
+            }
+
             _chooseItemScreen.Show(items);
 
             Destroy(droppedItem);
@@ -74,17 +81,12 @@ namespace ItemDrops
 
         private void HandleItemPicked(object sender, ItemPickedEventArgs e)
         {
-            e.Item.Apply(_playerEquipment, _playerInventory);
+            e.Item.Apply(_playerEquipment, _playerInventory, _playerStats);
         }
 
         private void HandleRerollRequested(object sender, EventArgs e)
         {
-            ItemData[] items = _lootTable.Roll(
-                _guaranteeLegendary,
-                _playerEquipment,
-                _playerInventory
-            );
-
+            var items = _lootTable.Roll(_playerEquipment, _playerInventory);
             _chooseItemScreen.Reroll(items);
         }
     }

@@ -1,14 +1,79 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+namespace Player
 {
-    [SerializeField]
-    private int _damageAmount = 1;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    [RequireComponent(typeof(Collider2D))]
+    public class DamageDealer : MonoBehaviour
     {
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        target?.TakeDamage(_damageAmount);
+        [SerializeField] private LayerMask _targetLayerMask;
+
+        private int _damageAmount;
+        private float _knockbackForce;
+        private bool _active;
+        private readonly HashSet<Collider2D> _hitTargets = new();
+
+        public event Action OnHit;
+
+        private void Awake()
+        {
+            if (_targetLayerMask == LayerMask.NameToLayer(GlobalConstants.DEFAULT_LAYER))
+            {
+                _targetLayerMask = LayerMask.GetMask(GlobalConstants.ENEMY_LAYER);
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            // TryDealDamage(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            TryDealDamage(other);
+        }
+
+        public void Activate(DamageInfo damageInfo)
+        {
+            _damageAmount = damageInfo.Damage;
+            _knockbackForce = damageInfo.Knockback.magnitude;
+            _active = true;
+            _hitTargets.Clear();
+        }
+
+        public void Deactivate()
+        {
+            _active = false;
+        }
+
+
+        private void TryDealDamage(Collider2D other)
+        {
+            if (!_active)
+            {
+                return;
+            }
+
+            if (((1 << other.gameObject.layer) & _targetLayerMask) == 0)
+            {
+                return;
+            }
+
+            if (_hitTargets.Contains(other))
+            {
+                return;
+            }
+
+            var target = other.gameObject.GetComponent<IDamageable>();
+            if (target != null)
+            {
+                var direction = ((Vector2)(other.transform.position - transform.position)).normalized;
+                var info = new DamageInfo(_damageAmount, direction * _knockbackForce);
+                target.TakeDamage(info);
+                _hitTargets.Add(other);
+                OnHit?.Invoke();
+            }
+        }
     }
-    
 }

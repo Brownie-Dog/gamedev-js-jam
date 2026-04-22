@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b873f4c23dde04c842799a1f37d06e, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  MovementSpeed: 12
-  MaxHealth: 5
-  CurrentHealth: 3
+  _initialMovementSpeed: 20
+  _initialMaxHealth: 10
+  MovementSpeed: 20
+  MaxHealth: 10
+  CurrentHealth: 10

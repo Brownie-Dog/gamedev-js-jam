@@ -117,5 +117,5 @@ namespace ItemDrops
                 _ => _rareCardPrefab,
             };
         }
-}
+    }
 }
