@@ -6499,7 +6499,7 @@ GameObject:
   - component: {fileID: 4613186102493111374}
   - component: {fileID: 111483476082563346}
   m_Layer: 0
-  m_Name: LoudoutUI2
+  m_Name: LoadoutUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
