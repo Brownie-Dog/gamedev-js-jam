@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e86373140cac040419845116ed7e8070
+guid: 7740dd71f98a3ea44aeaf5cf11922010
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: drone-Sheet
+  - name: Roomba
     originalName: 
-    pivot: {x: 0.5, y: -0.037037037}
+    pivot: {x: 0.5, y: -0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 27
-    spriteID: 9820147c82473c341ae1fa57e460a7e5
+      width: 118
+      height: 12
+    spriteID: 157d61b301edc4849b6167cd7f3ee1a3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,31 +147,31 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 3}
+    uvTransform: {x: -1, y: -5}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 4048199878
+      value0: 2450000088
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: drone-Sheet
+    name: Roomba
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: drone-Sheet
+    - name: Roomba
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 64
+        width: 128
         height: 32
-      spriteId: 9820147c82473c341ae1fa57e460a7e5
+      spriteId: 157d61b301edc4849b6167cd7f3ee1a3
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 32}
-  previousTextureSize: {x: 128, y: 64}
+  canvasSize: {x: 128, y: 32}
+  previousTextureSize: {x: 128, y: 32}

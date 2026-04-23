@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e6703eb1b8641247aaf28b1c496cadd
+guid: dd0429fd821a7434989c2da2b4ca7666
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Frame_0
+  - name: slicer bot
     originalName: 
-    pivot: {x: 0.5, y: -0.037037037}
+    pivot: {x: 0.44117647, y: -0.033333335}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 27
-    spriteID: 103d95f8750893b40a730772b396a943
+      width: 34
+      height: 30
+    spriteID: fb271d8e1c54be3479baa59fc8aef676
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,61 +147,31 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
-  - name: Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: -0.037037037}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 39
-      width: 32
-      height: 27
-    spriteID: 4976c160c17789940bed8e5226ccc54a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 39}
+    uvTransform: {x: -13, y: 3}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1588492232
+      value0: 662020827
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: drone
+    name: slicer bot
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: slicer bot
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 1
-        width: 32
-        height: 27
-      spriteId: 103d95f8750893b40a730772b396a943
-    - name: Frame_1
-      frameIndex: 1
-      additiveSortOrder: 0
-      cellRect:
-        x: 0
-        y: 1
-        width: 32
-        height: 27
-      spriteId: 4976c160c17789940bed8e5226ccc54a
+        y: 0
+        width: 64
+        height: 32
+      spriteId: fb271d8e1c54be3479baa59fc8aef676
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -211,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
-  previousTextureSize: {x: 64, y: 128}
+  canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 64, y: 64}
