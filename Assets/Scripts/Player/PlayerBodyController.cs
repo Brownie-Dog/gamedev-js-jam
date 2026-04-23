@@ -5,17 +5,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerBodyController : MonoBehaviour
 {
-    [Header("Head Pivot Offsets")]
-    [SerializeField] private Vector3 _upHeadOffset = new Vector3(0, 0.8f, 0);
+    [Header("Head Pivot Offsets")] [SerializeField]
+    private Vector3 _upHeadOffset = new Vector3(0, 0.8f, 0);
+
     [SerializeField] private Vector3 _downHeadOffset = new Vector3(0, -0.5f, 0);
     [SerializeField] private Vector3 _rightHeadOffset = new Vector3(0.8f, 0.5f, 0);
-    
-    [Header("References")]
-    [SerializeField] private SpriteRenderer _bodyRenderer;
+
+    [Header("References")] [SerializeField]
+    private SpriteRenderer _bodyRenderer;
+
     [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
     [SerializeField] private PlayerHeadController _headController;
     [SerializeField] private Transform _headPivot;
     [SerializeField] private SpriteRenderer _headRenderer;
+
+    [Header("Preference")] [SerializeField]
+    private Animator _bodyAnimator;
+
+    [SerializeField] private RuntimeAnimatorController _walkDown;
+    [SerializeField] private RuntimeAnimatorController _walkRight;
+    [SerializeField] private RuntimeAnimatorController _walkUp;
+    [SerializeField] private RuntimeAnimatorController _walkLeft;
 
     private enum Direction
     {
@@ -29,6 +39,8 @@ public class PlayerBodyController : MonoBehaviour
     private Vector2 _mouseInput;
     private Direction _currentDir = Direction.Right;
     private Vector3 _leftHeadOffset => new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
+    private static readonly int Moving = Animator.StringToHash("isMoving");
+    private Camera _camera;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -39,9 +51,11 @@ public class PlayerBodyController : MonoBehaviour
     {
         _mouseInput = context.ReadValue<Vector2>();
     }
-    
+
     private void Awake()
     {
+        _camera = Camera.main;
+        Assert.IsNotNull(_camera);
         Assert.IsNotNull(_headRenderer);
         Assert.IsNotNull(_bodyRenderer);
         Assert.IsNotNull(_bodyUp);
@@ -49,8 +63,13 @@ public class PlayerBodyController : MonoBehaviour
         Assert.IsNotNull(_bodySide);
         Assert.IsNotNull(_headController);
         Assert.IsNotNull(_headPivot);
+        Assert.IsNotNull(_bodyAnimator);
+        Assert.IsNotNull(_walkDown);
+        Assert.IsNotNull(_walkRight);
+        Assert.IsNotNull(_walkUp);
+        Assert.IsNotNull(_walkLeft);
     }
-    
+
     private void Update()
     {
         var aimAngle = GetAngleToMouse();
@@ -60,9 +79,17 @@ public class PlayerBodyController : MonoBehaviour
 
     private float GetAngleToMouse()
     {
-        var mouseWorldPos = Camera.main.ScreenToWorldPoint(new Vector3(_mouseInput.x, _mouseInput.y, 10f));
+        var isMoving = this.IsMoving();
+        _bodyAnimator.SetBool(Moving, isMoving);
+
+        var mouseWorldPos = _camera.ScreenToWorldPoint(new Vector3(_mouseInput.x, _mouseInput.y, 10f));
         var direction = (Vector2)mouseWorldPos - (Vector2)transform.position;
         return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    }
+
+    private bool IsMoving()
+    {
+        return _moveInput.sqrMagnitude > 0.01f;
     }
 
     private void UpdateBodyVisuals(float angle)
@@ -71,15 +98,19 @@ public class PlayerBodyController : MonoBehaviour
         switch (_currentDir)
         {
             case Direction.Right:
+                _bodyAnimator.runtimeAnimatorController = _walkRight;
                 SetBodySpriteDirection(_bodySide, false, 8, _rightHeadOffset);
                 break;
             case Direction.Up:
+                _bodyAnimator.runtimeAnimatorController = _walkUp;
                 SetBodySpriteDirection(_bodyUp, false, 8, _upHeadOffset);
                 break;
             case Direction.Down:
+                _bodyAnimator.runtimeAnimatorController = _walkDown;
                 SetBodySpriteDirection(_bodyDown, false, 8, _downHeadOffset);
                 break;
             case Direction.Left:
+                _bodyAnimator.runtimeAnimatorController = _walkLeft;
                 SetBodySpriteDirection(_bodySide, true, 8, _leftHeadOffset);
                 break;
             default:
