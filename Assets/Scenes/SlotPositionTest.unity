@@ -1027,10 +1027,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5054733166407384460, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8232643813525639276, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1660,6 +1656,10 @@ PrefabInstance:
     - target: {fileID: 3286768317614962600, guid: 5f90903442d2456488a1db91c356c374, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426210876580807020, guid: 5f90903442d2456488a1db91c356c374, type: 3}
+      propertyPath: m_fontSize
+      value: 63.2
       objectReference: {fileID: 0}
     - target: {fileID: 3787294709275045932, guid: 5f90903442d2456488a1db91c356c374, type: 3}
       propertyPath: m_AnchorMax.y
