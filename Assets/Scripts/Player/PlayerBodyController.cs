@@ -38,6 +38,7 @@ public class PlayerBodyController : MonoBehaviour
     private Direction _currentDir = Direction.Right;
     private static readonly int Moving = Animator.StringToHash("isMoving");
     private Camera _camera;
+    private const int HeadLayer = 8;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -66,15 +67,13 @@ public class PlayerBodyController : MonoBehaviour
     private void Update()
     {
         var aimAngle = GetAngleToMouse();
+        _bodyAnimator.SetBool(Moving, IsMoving());
         _headController.LookAtMouse(aimAngle);
         UpdateBodyVisuals(aimAngle);
     }
 
     private float GetAngleToMouse()
     {
-        var isMoving = IsMoving();
-        _bodyAnimator.SetBool(Moving, isMoving);
-
         var mouseWorldPos = _camera.ScreenToWorldPoint(new Vector3(_mouseInput.x, _mouseInput.y, 10f));
         var direction = (Vector2)mouseWorldPos - (Vector2)transform.position;
         return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -88,24 +87,25 @@ public class PlayerBodyController : MonoBehaviour
     private void UpdateBodyVisuals(float angle)
     {
         _currentDir = GetCardinalDirection(angle);
+        var leftHeadOffset = new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
+
         switch (_currentDir)
         {
             case Direction.Right:
                 _bodyAnimator.runtimeAnimatorController = _walkRight;
-                SetBodySpriteDirection(8, _rightHeadOffset);
+                SetBodySpriteDirection(HeadLayer, _rightHeadOffset);
                 break;
             case Direction.Up:
                 _bodyAnimator.runtimeAnimatorController = _walkUp;
-                SetBodySpriteDirection(8, _upHeadOffset);
+                SetBodySpriteDirection(HeadLayer, _upHeadOffset);
                 break;
             case Direction.Down:
                 _bodyAnimator.runtimeAnimatorController = _walkDown;
-                SetBodySpriteDirection(8, _downHeadOffset);
+                SetBodySpriteDirection(HeadLayer, _downHeadOffset);
                 break;
             case Direction.Left:
                 _bodyAnimator.runtimeAnimatorController = _walkLeft;
-                var leftHeadOffset = new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
-                SetBodySpriteDirection(8, leftHeadOffset);
+                SetBodySpriteDirection(HeadLayer, leftHeadOffset);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
