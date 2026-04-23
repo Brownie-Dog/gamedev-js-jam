@@ -11,7 +11,8 @@ namespace ItemDrops
     {
         public override bool CanDrop(PlayerEquipment equipment, PlayerInventory inventory)
         {
-            return equipment.FirstEmptySlot(this) >= 0;
+            // return equipment.FirstEmptySlot(this) >= 0;
+            return true;
         }
 
         public override void Apply(

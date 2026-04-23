@@ -16,6 +16,7 @@ public class PlayerBodyController : MonoBehaviour
 
     [SerializeField] private Transform _headPivot;
     [SerializeField] private SpriteRenderer _headRenderer;
+    [SerializeField] private PlayerItemSlotPosition _itemSlotPosition;
 
     [Header("Preference")] [SerializeField]
     private Animator _bodyAnimator;
@@ -93,18 +94,22 @@ public class PlayerBodyController : MonoBehaviour
         {
             case Direction.Right:
                 _bodyAnimator.runtimeAnimatorController = _walkRight;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.right, false);
                 SetBodySpriteDirection(HeadLayer, _rightHeadOffset);
                 break;
             case Direction.Up:
                 _bodyAnimator.runtimeAnimatorController = _walkUp;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.up, false);
                 SetBodySpriteDirection(HeadLayer, _upHeadOffset);
                 break;
             case Direction.Down:
                 _bodyAnimator.runtimeAnimatorController = _walkDown;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.down, false);
                 SetBodySpriteDirection(HeadLayer, _downHeadOffset);
                 break;
             case Direction.Left:
                 _bodyAnimator.runtimeAnimatorController = _walkLeft;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.left, true);
                 SetBodySpriteDirection(HeadLayer, leftHeadOffset);
                 break;
             default:
