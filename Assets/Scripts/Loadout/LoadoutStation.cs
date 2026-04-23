@@ -1,5 +1,6 @@
 using Player;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Loadout
 {
@@ -8,6 +9,12 @@ namespace Loadout
         [SerializeField] private CameraController _cameraController;
 
         [SerializeField] private LoadoutUI _loadoutUI;
+
+        private void Awake()
+        {
+            Assert.IsNotNull(_cameraController);
+            Assert.IsNotNull(_loadoutUI);
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {

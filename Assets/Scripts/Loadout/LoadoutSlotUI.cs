@@ -26,8 +26,12 @@ namespace Loadout
         private void Awake()
         {
             RectTransform = (RectTransform)transform;
+            
             _dragHandler = GetComponentInParent<LoadoutDragHandler>();
             Assert.IsNotNull(_dragHandler);
+            
+            Assert.IsNotNull(_backgroundImage);
+            Assert.IsNotNull(_iconImage);
         }
 
         public void Initialize(int slotId, WeaponItemData weapon, Color emptyColor, Color occupiedColor)

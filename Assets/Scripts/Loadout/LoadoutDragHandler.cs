@@ -1,6 +1,7 @@
 using ItemDrops;
 using Player;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -8,6 +9,9 @@ namespace Loadout
 {
     public class LoadoutDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
+        public bool IsDragging { get; private set; }
+        public WeaponItemData DraggedWeapon { get; private set; }
+
         [SerializeField] private Image _dragIcon;
 
         [SerializeField] private LoadoutUI _loadoutUI;
@@ -15,9 +19,14 @@ namespace Loadout
         [SerializeField] private PlayerEquipment _playerEquipment;
 
         [SerializeField] private PlayerInventory _playerInventory;
-
-        public bool IsDragging { get; private set; }
-        public WeaponItemData DraggedWeapon { get; private set; }
+        
+        private void Awake()
+        {
+            Assert.IsNotNull(_dragIcon);
+            Assert.IsNotNull(_loadoutUI);
+            Assert.IsNotNull(_playerEquipment);
+            Assert.IsNotNull(_playerInventory);
+        }
 
         private int _sourceSlotId = -1;
         private int _sourceInventoryIndex = -1;

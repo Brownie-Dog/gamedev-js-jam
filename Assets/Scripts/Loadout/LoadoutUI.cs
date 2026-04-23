@@ -36,6 +36,13 @@ namespace Loadout
 
         private void Awake()
         {
+            Assert.IsNotNull(_playerEquipment);
+            Assert.IsNotNull(_playerInventory);
+            Assert.IsNotNull(_slotContainer);
+            Assert.IsNotNull(_inventoryContainer);
+            Assert.IsNotNull(_slotUIPrefab);
+            Assert.IsNotNull(_inventoryItemPrefab);
+            Assert.IsNotNull(_canvasRoot);
             Assert.IsNotNull(_mainCamera);
             _canvasRoot.SetActive(false);
         }
@@ -66,22 +73,12 @@ namespace Loadout
 
         public void Show()
         {
-            if (_canvasRoot == null)
-            {
-                return;
-            }
-
             _canvasRoot.SetActive(true);
             RefreshAll();
         }
 
         public void Hide()
         {
-            if (_canvasRoot == null)
-            {
-                return;
-            }
-
             _canvasRoot.SetActive(false);
             ClearAll();
         }
