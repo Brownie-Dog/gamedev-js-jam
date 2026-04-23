@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &3616495144376049722
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &6262974115984253989
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7077a51e77b7a458a1cfa540eae5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.HookPoint
+  <SlotType>k__BackingField: 0
 --- !u!1 &8907648602986796793
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +182,7 @@ GameObject:
   - component: {fileID: 280844976823369410}
   - component: {fileID: 627711255167529573}
   - component: {fileID: 9135592286066295771}
+  - component: {fileID: 8715092859662857608}
   m_Layer: 0
   m_Name: ExtensionPole
   m_TagString: Untagged
@@ -332,3 +336,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c0087e68ebb5049a8bf2f464c0ab99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.NoOpWeaponBehaviour
+--- !u!114 &8715092859662857608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8907648602986796793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3404395cb440ae488a85e8abf935a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Loadout.IncludeInCameraBounds
