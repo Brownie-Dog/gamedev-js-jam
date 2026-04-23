@@ -23,3 +23,6 @@ MonoBehaviour:
   MaxHealth: 10
   DropChance: 1
   GuaranteedItem: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}
+  CoinDropChance: 1
+  MinCoinDrop: 50
+  MaxCoinDrop: 100
