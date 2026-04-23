@@ -558,6 +558,7 @@ MonoBehaviour:
   _zoomPadding: 6
   _loadoutCenterOffsetX: 3
   _playerEquipment: {fileID: 2810164907020316400}
+  _shopFocusZoomMultiplier: 0.85
 --- !u!1 &6488873578817156798
 GameObject:
   m_ObjectHideFlags: 0
