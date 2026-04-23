@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: breadslicer
     originalName: 
-    pivot: {x: 0.48387095, y: -0.032258064}
+    pivot: {x: 0.12903225, y: 0.09677419}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

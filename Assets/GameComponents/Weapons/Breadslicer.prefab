@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5248293819892827410
+--- !u!1001 &843319061781921313
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,18 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -60,103 +48,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7594039743211267909, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7594039743211267909, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
+      value: 0.12903225
       objectReference: {fileID: 0}
     - target: {fileID: 7594039743211267909, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0
+      value: 0.09677419
       objectReference: {fileID: 0}
     - target: {fileID: 7594039743211267909, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 7594039743211267909, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.32
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 7780139244437715635, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 726713346485446800, guid: 62975e4eb2944c84a8a65f2d741c45d6, type: 3}
+      objectReference: {fileID: -1390420585723827316, guid: f08f49f56736a7741ab3194180cf2106, type: 3}
     - target: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_Name
-      value: Paddle
+      value: Breadslicer
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7594039743211267909, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5810562779938748244}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
---- !u!1 &3696325380628501483 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
-  m_PrefabInstance: {fileID: 5248293819892827410}
-  m_PrefabAsset: {fileID: 0}
---- !u!60 &5810562779938748244
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3696325380628501483}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.125, y: 0.09375}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1.6, y: 1.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.17, y: 0.29}
-      - {x: -0.04, y: 0.049999997}
-      - {x: -0.04, y: -0.03}
-      - {x: 0.04, y: -0.03}
-      - {x: 0.28, y: 0.17999999}
-      - {x: 0.28, y: 0.26}
-      - {x: 0.26999998, y: 0.29}
-  m_UseDelaunayMesh: 1

@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 7089281253156675974}
   - component: {fileID: 2968463696357547614}
   - component: {fileID: 1462373941423661093}
-  - component: {fileID: 1990040660572534148}
+  - component: {fileID: 3241562643019666670}
   m_Layer: 0
   m_Name: AimController
   m_TagString: Untagged
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColliderVisualiser
   _collider: {fileID: 7089281253156675974}
   _color: {r: 1, g: 0.008883749, b: 0, a: 1}
---- !u!114 &1990040660572534148
+--- !u!114 &3241562643019666670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,3 +321,4 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3189316879295589563, guid: f0d6493407047f546973a98dcd3a9e5e, type: 3}
   _poolSize: 50
   _firePoint: {fileID: 7307795380562453035}
+  _penetrationCount: 1
