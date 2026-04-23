@@ -36,10 +36,12 @@ namespace Loadout
 
         public void OnDrag(PointerEventData eventData)
         {
+            _dragHandler.OnDrag(eventData);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            _dragHandler.OnEndDrag(eventData);
         }
     }
 }

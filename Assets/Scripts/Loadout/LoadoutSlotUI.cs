@@ -7,7 +7,7 @@ using Weapons;
 
 namespace Loadout
 {
-    public class LoadoutSlotUI : MonoBehaviour, IDropHandler, IPointerDownHandler
+    public class LoadoutSlotUI : MonoBehaviour, IDropHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         public RectTransform RectTransform { get; private set; }
 
@@ -56,12 +56,22 @@ namespace Loadout
             }
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void OnBeginDrag(PointerEventData eventData)
         {
             if (_weapon != null)
             {
                 _dragHandler.StartDragFromSlot(_weapon, SlotId, eventData.position);
             }
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            _dragHandler.OnDrag(eventData);
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            _dragHandler.OnEndDrag(eventData);
         }
 
         public void OnDrop(PointerEventData eventData)
