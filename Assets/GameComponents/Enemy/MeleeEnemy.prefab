@@ -507,6 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   _health: {fileID: 4842946735691736961}
+  _itemDropManager: {fileID: 0}
+  _stats: {fileID: 11400000, guid: 7f6353e43230d9640b72d6ea232e62c5, type: 2}
 --- !u!114 &4842946735691736961
 MonoBehaviour:
   m_ObjectHideFlags: 0
