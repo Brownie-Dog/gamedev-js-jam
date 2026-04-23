@@ -193,8 +193,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: dog_head_left
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.44719347, y: 0.48066872}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -256,8 +256,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: dog_head_front
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5335806, y: 0.5031276}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -319,8 +319,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: dog_head_right
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.27664056, y: 0.10339424}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -382,8 +382,8 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: dog_head_back
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.38570997, y: 0.1654768}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
