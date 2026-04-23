@@ -12,10 +12,8 @@ public class PlayerBodyController : MonoBehaviour
     [SerializeField] private Vector3 _rightHeadOffset = new Vector3(0.8f, 0.5f, 0);
 
     [Header("References")] [SerializeField]
-    private SpriteRenderer _bodyRenderer;
+    private PlayerHeadController _headController;
 
-    [SerializeField] private Sprite _bodyUp, _bodyDown, _bodySide;
-    [SerializeField] private PlayerHeadController _headController;
     [SerializeField] private Transform _headPivot;
     [SerializeField] private SpriteRenderer _headRenderer;
 
@@ -38,7 +36,6 @@ public class PlayerBodyController : MonoBehaviour
     private Vector2 _moveInput;
     private Vector2 _mouseInput;
     private Direction _currentDir = Direction.Right;
-    private Vector3 _leftHeadOffset => new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
     private static readonly int Moving = Animator.StringToHash("isMoving");
     private Camera _camera;
 
@@ -57,10 +54,6 @@ public class PlayerBodyController : MonoBehaviour
         _camera = Camera.main;
         Assert.IsNotNull(_camera);
         Assert.IsNotNull(_headRenderer);
-        Assert.IsNotNull(_bodyRenderer);
-        Assert.IsNotNull(_bodyUp);
-        Assert.IsNotNull(_bodyDown);
-        Assert.IsNotNull(_bodySide);
         Assert.IsNotNull(_headController);
         Assert.IsNotNull(_headPivot);
         Assert.IsNotNull(_bodyAnimator);
@@ -79,7 +72,7 @@ public class PlayerBodyController : MonoBehaviour
 
     private float GetAngleToMouse()
     {
-        var isMoving = this.IsMoving();
+        var isMoving = IsMoving();
         _bodyAnimator.SetBool(Moving, isMoving);
 
         var mouseWorldPos = _camera.ScreenToWorldPoint(new Vector3(_mouseInput.x, _mouseInput.y, 10f));
@@ -99,29 +92,28 @@ public class PlayerBodyController : MonoBehaviour
         {
             case Direction.Right:
                 _bodyAnimator.runtimeAnimatorController = _walkRight;
-                SetBodySpriteDirection(_bodySide, false, 8, _rightHeadOffset);
+                SetBodySpriteDirection(8, _rightHeadOffset);
                 break;
             case Direction.Up:
                 _bodyAnimator.runtimeAnimatorController = _walkUp;
-                SetBodySpriteDirection(_bodyUp, false, 8, _upHeadOffset);
+                SetBodySpriteDirection(8, _upHeadOffset);
                 break;
             case Direction.Down:
                 _bodyAnimator.runtimeAnimatorController = _walkDown;
-                SetBodySpriteDirection(_bodyDown, false, 8, _downHeadOffset);
+                SetBodySpriteDirection(8, _downHeadOffset);
                 break;
             case Direction.Left:
                 _bodyAnimator.runtimeAnimatorController = _walkLeft;
-                SetBodySpriteDirection(_bodySide, true, 8, _leftHeadOffset);
+                var leftHeadOffset = new Vector3(-_rightHeadOffset.x, _rightHeadOffset.y, _rightHeadOffset.z);
+                SetBodySpriteDirection(8, leftHeadOffset);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
     }
 
-    private void SetBodySpriteDirection(Sprite sprite, bool flipX, int headOrder, Vector3 headPos)
+    private void SetBodySpriteDirection(int headOrder, Vector3 headPos)
     {
-        _bodyRenderer.sprite = sprite;
-        _bodyRenderer.flipX = flipX;
         UpdateHeadAnchor(headPos, headOrder);
     }
 
