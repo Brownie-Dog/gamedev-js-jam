@@ -9,4 +9,6 @@ public static class GlobalConstants
     public const string ENEMY_LAYER = "Enemy";
 
     public const string DEFAULT_LAYER = "Default";
+
+    public const string LOADOUT_STATION_TAG = "LoadoutStation";
 }
