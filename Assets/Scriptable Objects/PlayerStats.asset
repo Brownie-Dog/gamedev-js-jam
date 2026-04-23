@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   _initialMovementSpeed: 20
   _initialMaxHealth: 10
-  MovementSpeed: 20
+  MovementSpeed: 30
   MaxHealth: 10
   CurrentHealth: 10
+  Currency: 146
