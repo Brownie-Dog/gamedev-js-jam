@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3600518316144484368, guid: 1cd8f774ad3795a41ab16a1a269956ca, type: 3}
       propertyPath: _weaponType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4993099062623775115, guid: 1cd8f774ad3795a41ab16a1a269956ca, type: 3}
       propertyPath: m_IsTrigger

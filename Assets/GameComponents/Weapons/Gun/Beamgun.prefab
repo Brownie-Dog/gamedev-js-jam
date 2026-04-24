@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.42261827
+      value: -0.38268325
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.x
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9063079
+      value: 0.9238796
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -58,11 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 230
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968463696357547614, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
+      propertyPath: _rotationOffset
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 4158817338976130329, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.w
@@ -127,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 8446891031811390757, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: _bulletPrefab
       value: 
-      objectReference: {fileID: 6263432565121266464, guid: 14e4d26164df5544eb0476af0366154c, type: 3}
+      objectReference: {fileID: 3189316879295589563, guid: f0d6493407047f546973a98dcd3a9e5e, type: 3}
     - target: {fileID: 8446891031811390757, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: _penetrationCount
       value: 3
