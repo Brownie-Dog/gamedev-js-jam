@@ -144,7 +144,7 @@ MonoBehaviour:
   _defaultSegmentCount: 3
   _segmentSpacing: 2
   _handOffset: 1
-  _extendSpeed: 0.025
+  _extendSpeed: 0.01
   _retractSpeed: 0.05
   _maxExtraSegments: 20
 --- !u!1 &7817658982473331452
