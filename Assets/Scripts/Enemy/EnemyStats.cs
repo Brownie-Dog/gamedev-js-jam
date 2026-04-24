@@ -8,6 +8,8 @@ public class EnemyStats : ScriptableObject, IWeaponData
     
     public float MovementSpeed = 5f;
     public float StoppingDistance = 0.5f;
+    public float WanderSpeed = 2f;
+    public float WanderDirectionChangeInterval = 2f;
 
     [Header("Detection")] 
     
