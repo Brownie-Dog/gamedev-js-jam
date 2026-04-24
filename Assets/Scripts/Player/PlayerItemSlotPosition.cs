@@ -16,8 +16,27 @@ public class PlayerItemSlotPosition : MonoBehaviour
     [SerializeField] private Transform _tailSlot;
     [SerializeField] private Transform _middleSlot;
 
+    private SortingGroup _frontLeftSorting;
+    private SortingGroup _frontRightSorting;
+    private SortingGroup _backLeftSorting;
+    private SortingGroup _backRightSorting;
+    private SortingGroup _tailSorting;
+    private SortingGroup _middleSorting;
+
     private void Awake()
     {
+        _frontLeftSorting = _frontLeftSlot.GetComponent<SortingGroup>();
+        _frontRightSorting = _frontRightSlot.GetComponent<SortingGroup>();
+        _backLeftSorting = _backLeftSlot.GetComponent<SortingGroup>();
+        _backRightSorting = _backRightSlot.GetComponent<SortingGroup>();
+        _tailSorting = _tailSlot.GetComponent<SortingGroup>();
+        _middleSorting = _middleSlot.GetComponent<SortingGroup>();
+        Assert.IsNotNull(_frontLeftSorting);
+        Assert.IsNotNull(_frontRightSorting);
+        Assert.IsNotNull(_backLeftSorting);
+        Assert.IsNotNull(_backRightSorting);
+        Assert.IsNotNull(_tailSorting);
+        Assert.IsNotNull(_middleSorting);
         Assert.IsNotNull(_formationData);
         Assert.IsNotNull(_frontLeftSlot);
         Assert.IsNotNull(_frontRightSlot);
@@ -39,13 +58,13 @@ public class PlayerItemSlotPosition : MonoBehaviour
             ApplyPositions(_formationData.LeftPositions);
     }
 
-    private void ApplyPositions(ItemFormationData.SlotGroup group)
+    private void ApplyPositions(in ItemFormationData.SlotGroup group)
     {
         UpdatePhysicalLayout(group);
         UpdateVisualDepth(group);
     }
 
-    private void UpdatePhysicalLayout(ItemFormationData.SlotGroup group)
+    private void UpdatePhysicalLayout(in ItemFormationData.SlotGroup group)
     {
         SetTransform(_frontLeftSlot, group.FrontLeft, group.FrontLeftRot);
         SetTransform(_frontRightSlot, group.FrontRight, group.FrontRightRot);
@@ -55,14 +74,14 @@ public class PlayerItemSlotPosition : MonoBehaviour
         SetTransform(_middleSlot, group.Middle, group.MiddleRot);
     }
 
-    private void UpdateVisualDepth(ItemFormationData.SlotGroup group)
+    private void UpdateVisualDepth(in ItemFormationData.SlotGroup group)
     {
-        SetSlotSortingGroup(_frontLeftSlot, group.FrontLeftLayer);
-        SetSlotSortingGroup(_frontRightSlot, group.FrontRightLayer);
-        SetSlotSortingGroup(_backLeftSlot, group.BackLeftLayer);
-        SetSlotSortingGroup(_backRightSlot, group.BackRightLayer);
-        SetSlotSortingGroup(_tailSlot, group.TailLayer);
-        SetSlotSortingGroup(_middleSlot, group.MiddleLayer);
+        SetOrder(_frontLeftSorting, group.FrontLeftLayer);
+        SetOrder(_frontRightSorting, group.FrontRightLayer);
+        SetOrder(_backLeftSorting, group.BackLeftLayer);
+        SetOrder(_backRightSorting, group.BackRightLayer);
+        SetOrder(_tailSorting, group.TailLayer);
+        SetOrder(_middleSorting, group.MiddleLayer);
     }
 
     private static void SetTransform(Transform slot, Vector2 pos, float rot)
@@ -71,12 +90,8 @@ public class PlayerItemSlotPosition : MonoBehaviour
         slot.localRotation = Quaternion.Euler(0, 0, rot);
     }
 
-    private static void SetSlotSortingGroup(Transform slot, int order)
+    private static void SetOrder(SortingGroup group, int order)
     {
-        var sortingGroup = slot.GetComponent<SortingGroup>();
-        if (sortingGroup)
-        {
-            sortingGroup.sortingOrder = order;
-        }
+        group.sortingOrder = order;
     }
 }
