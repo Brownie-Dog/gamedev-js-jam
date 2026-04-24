@@ -23,7 +23,7 @@ public class MonoBehaviourPool<T> where T : MonoBehaviour
 
     private T Create(T prefab, Transform parent)
     {
-        T obj = UnityEngine.Object.Instantiate(prefab, parent);
+        T obj = UnityEngine.Object.Instantiate(prefab);
         obj.gameObject.SetActive(false);
         _onCreate?.Invoke(obj);
         return obj;

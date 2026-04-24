@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ExtensionWeaponItemData
   <ItemName>k__BackingField: Extension Pole
   <Description>k__BackingField: +3 Slots??
-  <Icon>k__BackingField: {fileID: -1929834416523346238, guid: 3d47010ffa62d5b4d84a8d7bb3800841, type: 3}
+  <Icon>k__BackingField: {fileID: -1929834416523346238, guid: 20866d93719b27d44a4f95c39961c847, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: f46b9e20e711eea44ac9c24c28bdfc9a, type: 3}
   <Damage>k__BackingField: 0
