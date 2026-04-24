@@ -151,7 +151,7 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: paddle_0
     originalName: 
-    pivot: {x: 0.14782532, y: 0.12434704}
+    pivot: {x: 0.19444445, y: 0.19444445}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

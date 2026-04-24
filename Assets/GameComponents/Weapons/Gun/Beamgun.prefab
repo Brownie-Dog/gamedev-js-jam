@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,39 +66,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4158817338976130329, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4158817338976130329, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4158817338976130329, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 7115586464288355915, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7115586464288355915, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
+      propertyPath: m_Size.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115586464288355915, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115586464288355915, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1511921916722927226, guid: 15b1f3a23d6d4b04e869c54bf8508fe5, type: 3}
+      objectReference: {fileID: -8273678674243828189, guid: 15b1f3a23d6d4b04e869c54bf8508fe5, type: 3}
+    - target: {fileID: 7115586464288355915, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: -0.474
       objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7536208
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.y
@@ -106,11 +118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6573095
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7307795380562453035, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -277.81
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8446891031811390757, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: _bulletPrefab

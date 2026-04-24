@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_LocalScale.z
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1751083775469928399, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_LocalPosition.x
@@ -85,9 +85,21 @@ PrefabInstance:
       value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 7780139244437715635, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+      propertyPath: m_Size.x
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780139244437715635, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+      propertyPath: m_Size.y
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7780139244437715635, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 726713346485446800, guid: 62975e4eb2944c84a8a65f2d741c45d6, type: 3}
+      objectReference: {fileID: 1697626239774236345, guid: 62975e4eb2944c84a8a65f2d741c45d6, type: 3}
+    - target: {fileID: 7780139244437715635, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8907648602986796793, guid: fb2f180ac0dcfdb4792295238590ea11, type: 3}
       propertyPath: m_Name
       value: Paddle
@@ -136,27 +148,27 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.125, y: 0.09375}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1.6, y: 1.6}
+    pivot: {x: 0.14782532, y: 0.12434704}
+    oldSize: {x: 1.125, y: 1.125}
+    newSize: {x: 1.125, y: 1.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.17, y: 0.29}
-      - {x: -0.04, y: 0.049999997}
-      - {x: -0.04, y: -0.03}
-      - {x: 0.04, y: -0.03}
-      - {x: 0.28, y: 0.17999999}
-      - {x: 0.28, y: 0.26}
-      - {x: 0.26999998, y: 0.29}
+    - - {x: 0.5211965, y: 0.92260957}
+      - {x: -0.103803486, y: 0.17260957}
+      - {x: -0.103803486, y: -0.07739043}
+      - {x: 0.114946514, y: -0.07739043}
+      - {x: 0.8961965, y: 0.42260957}
+      - {x: 0.8961965, y: 0.86010957}
+      - {x: 0.8024465, y: 0.92260957}
   m_UseDelaunayMesh: 1
