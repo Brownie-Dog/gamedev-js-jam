@@ -12,7 +12,7 @@ namespace Player
         private int _damageAmount;
         private float _knockbackForce;
         private bool _active;
-        private readonly HashSet<Collider2D> _hitTargets = new();
+        private readonly HashSet<GameObject> _hitTargets = new();
 
         public event Action OnHit;
 
@@ -22,11 +22,6 @@ namespace Player
             {
                 _targetLayerMask = LayerMask.GetMask(GlobalConstants.ENEMY_LAYER);
             }
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            // TryDealDamage(other);
         }
 
         private void OnTriggerStay2D(Collider2D other)
@@ -60,7 +55,7 @@ namespace Player
                 return;
             }
 
-            if (_hitTargets.Contains(other))
+            if (_hitTargets.Contains(other.gameObject))
             {
                 return;
             }
@@ -71,7 +66,7 @@ namespace Player
                 var direction = ((Vector2)(other.transform.position - transform.position)).normalized;
                 var info = new DamageInfo(_damageAmount, direction * _knockbackForce);
                 target.TakeDamage(info);
-                _hitTargets.Add(other);
+                _hitTargets.Add(other.gameObject);
                 OnHit?.Invoke();
             }
         }
