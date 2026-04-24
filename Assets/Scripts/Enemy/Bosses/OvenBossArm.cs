@@ -16,6 +16,7 @@ namespace Enemy.Bosses
         [SerializeField] private float _handOffset = -1f;
         [SerializeField] private float _extendSpeed = 0.05f;
         [SerializeField] private float _retractSpeed = 0.03f;
+        [SerializeField] private int _maxExtraSegments = 15;
 
         private readonly List<GameObject> _segments = new List<GameObject>();
         private GameObject _hand;
@@ -27,8 +28,6 @@ namespace Enemy.Bosses
         public bool IsMoving => IsExtending || IsRetracting;
         public int SegmentCount => _segments.Count;
         public Transform HandPosition => _hand != null ? _hand.transform : null;
-        public int DefaultSegmentCount => _defaultSegmentCount;
-        public GameObject DefaultHandPrefab => _defaultHandPrefab;
 
         private void Start()
         {
@@ -40,8 +39,15 @@ namespace Enemy.Bosses
             Initialize(_defaultSegmentCount, _defaultHandPrefab);
         }
 
+        public void Initialize()
+        {
+            Initialize(_defaultSegmentCount, _defaultHandPrefab);
+        }
+
         public void Initialize(int segmentCount, GameObject handPrefab)
         {
+            Assert.IsNotNull(handPrefab);
+
             ClearArm();
 
             for (int i = 0; i < segmentCount; i++)
@@ -55,7 +61,7 @@ namespace Enemy.Bosses
 
         public void SetDirection(Vector2 direction)
         {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
 
@@ -67,6 +73,12 @@ namespace Enemy.Bosses
             }
 
             _extendRoutine = StartCoroutine(ExtendRoutine(targetCount));
+        }
+
+        public int CalculateTargetSegments(float distance)
+        {
+            int additionalSegments = Mathf.CeilToInt(distance / _segmentSpacing);
+            return Mathf.Clamp(_defaultSegmentCount + additionalSegments, _defaultSegmentCount, _defaultSegmentCount + _maxExtraSegments);
         }
 
         public void RetractToDefault()
@@ -87,6 +99,16 @@ namespace Enemy.Bosses
             Destroy(_hand);
             _hand = Instantiate(newHandPrefab, _segmentsRoot);
             _hand.transform.localPosition = position;
+        }
+
+        public void SwapToDefaultHand()
+        {
+            SwapHand(_defaultHandPrefab);
+        }
+
+        public T GetHandComponent<T>() where T : Component
+        {
+            return _hand != null ? _hand.GetComponent<T>() : null;
         }
 
         private void SpawnSegment()

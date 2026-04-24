@@ -144,8 +144,9 @@ MonoBehaviour:
   _defaultSegmentCount: 3
   _segmentSpacing: 2
   _handOffset: 1
-  _extendSpeed: 0.05
+  _extendSpeed: 0.025
   _retractSpeed: 0.05
+  _maxExtraSegments: 20
 --- !u!1 &7817658982473331452
 GameObject:
   m_ObjectHideFlags: 0

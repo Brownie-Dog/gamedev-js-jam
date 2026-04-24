@@ -26,12 +26,14 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_bossAttack);
             Assert.IsNotNull(_enemyDetection);
             Assert.IsNotNull(_stats);
+            Debug.Log("[OvenBossAI] Awake - bossAttack, enemyDetection, stats all valid");
         }
 
         private void OnEnable()
         {
             _enemyDetection.OnPlayerDetected += HandlePlayerDetected;
             _enemyDetection.OnPlayerLost += HandlePlayerLost;
+            Debug.Log("[OvenBossAI] OnEnable - subscribed to detection events");
         }
 
         private void OnDisable()
@@ -47,6 +49,7 @@ namespace Enemy.Bosses
                 case BossState.Idle:
                     if (_playerInRange)
                     {
+                        Debug.Log("[OvenBossAI] Player in range, executing attack");
                         _bossAttack.ExecuteAttack();
                         _state = BossState.Attacking;
                     }
@@ -55,6 +58,7 @@ namespace Enemy.Bosses
                 case BossState.Attacking:
                     if (_bossAttack.IsMoveComplete)
                     {
+                        Debug.Log("[OvenBossAI] Move complete, entering cooldown");
                         _cooldownTimer = _stats.AttackCooldown;
                         _state = BossState.Cooldown;
                     }
@@ -64,6 +68,7 @@ namespace Enemy.Bosses
                     _cooldownTimer -= Time.deltaTime;
                     if (_cooldownTimer <= 0f)
                     {
+                        Debug.Log("[OvenBossAI] Cooldown finished, returning to idle");
                         _state = BossState.Idle;
                     }
                     break;
@@ -75,11 +80,13 @@ namespace Enemy.Bosses
         private void HandlePlayerDetected(object sender, System.EventArgs e)
         {
             _playerInRange = true;
+            Debug.Log("[OvenBossAI] Player detected");
         }
 
         private void HandlePlayerLost(object sender, System.EventArgs e)
         {
             _playerInRange = false;
+            Debug.Log("[OvenBossAI] Player lost");
         }
     }
 }

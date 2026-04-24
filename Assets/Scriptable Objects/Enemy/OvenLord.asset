@@ -20,12 +20,12 @@ MonoBehaviour:
   WallLayer:
     serializedVersion: 2
     m_Bits: 256
-  DetectionRadius: 0
+  DetectionRadius: 10
   ChasingRadius: 0
-  AttackCooldown: 10
-  AttackRange: 0
+  AttackCooldown: 1
+  AttackRange: 5
   Damage: 2
-  KnockbackForce: 0
+  KnockbackForce: 5
   MaxHealth: 1000
   DropChance: 1
   GuaranteedItem: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}

@@ -19,8 +19,8 @@ namespace Enemy.Bosses
 
         public void RefreshArms()
         {
-            _leftArm.Initialize(_leftArm.DefaultSegmentCount, _leftArm.DefaultHandPrefab);
-            _rightArm.Initialize(_rightArm.DefaultSegmentCount, _rightArm.DefaultHandPrefab);
+            _leftArm.Initialize();
+            _rightArm.Initialize();
         }
     }
 }
