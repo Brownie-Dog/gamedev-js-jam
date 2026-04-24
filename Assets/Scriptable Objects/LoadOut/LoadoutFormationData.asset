@@ -19,16 +19,18 @@ MonoBehaviour:
     backRight: {x: 0.5, y: -0.3}
     tail: {x: 0, y: -0.6}
     middle: {x: 0, y: 0.2}
-    frontLeftRot: 0
-    frontRightRot: 0
-    backLeftRot: 0
-    backRightRot: 0
-    tailRot: 0
-    middleRot: 0
-    leftLegsLayer: 10
-    rightLegsLayer: 10
-    tailLayer: 10
-    middleLayer: 10
+    frontLeftRot: -315
+    frontRightRot: -315
+    backLeftRot: 135
+    backRightRot: -45
+    tailRot: -135
+    middleRot: 45
+    frontLeftLayer: 11
+    frontRightLayer: 11
+    backLeftLayer: 15
+    backRightLayer: 15
+    tailLayer: 13
+    middleLayer: 13
   downPositions:
     frontLeft: {x: 0.6, y: 0.06}
     frontRight: {x: -0.6, y: 0.06}
@@ -36,16 +38,18 @@ MonoBehaviour:
     backRight: {x: -0.5, y: 1}
     tail: {x: 0, y: 1.3}
     middle: {x: 0, y: 0.7}
-    frontLeftRot: 0
-    frontRightRot: 0
-    backLeftRot: 0
-    backRightRot: 0
-    tailRot: 0
-    middleRot: 0
-    leftLegsLayer: 10
-    rightLegsLayer: 10
-    tailLayer: 10
-    middleLayer: 10
+    frontLeftRot: -135
+    frontRightRot: -135
+    backLeftRot: -45
+    backRightRot: 135
+    tailRot: 45
+    middleRot: -135
+    frontLeftLayer: 13
+    frontRightLayer: 13
+    backLeftLayer: 13
+    backRightLayer: 13
+    tailLayer: 13
+    middleLayer: 13
   leftPositions:
     frontLeft: {x: -0.5, y: 0.1}
     frontRight: {x: -0.5, y: 0.7}
@@ -53,16 +57,18 @@ MonoBehaviour:
     backRight: {x: 0.65, y: 0.75}
     tail: {x: 1, y: 0.5}
     middle: {x: 0.1, y: 0.5}
-    frontLeftRot: 0
-    frontRightRot: 0
-    backLeftRot: 0
-    backRightRot: 0
-    tailRot: 0
-    middleRot: 0
-    leftLegsLayer: 10
-    rightLegsLayer: 10
-    tailLayer: 10
-    middleLayer: 10
+    frontLeftRot: -225
+    frontRightRot: -225
+    backLeftRot: -135
+    backRightRot: 45
+    tailRot: -45
+    middleRot: 135
+    frontLeftLayer: 15
+    frontRightLayer: 11
+    backLeftLayer: 15
+    backRightLayer: 11
+    tailLayer: 13
+    middleLayer: 13
   rightPositions:
     frontLeft: {x: 0.5, y: 0.7}
     frontRight: {x: 0.5, y: 0.1}
@@ -70,13 +76,15 @@ MonoBehaviour:
     backRight: {x: -0.65, y: 0.15}
     tail: {x: -1, y: 0.5}
     middle: {x: -0.1, y: 0.5}
-    frontLeftRot: 0
-    frontRightRot: 0
-    backLeftRot: 0
-    backRightRot: 0
-    tailRot: 0
-    middleRot: 0
-    leftLegsLayer: 10
-    rightLegsLayer: 10
-    tailLayer: 10
-    middleLayer: 10
+    frontLeftRot: -45
+    frontRightRot: -45
+    backLeftRot: 45
+    backRightRot: -135
+    tailRot: 135
+    middleRot: -45
+    frontLeftLayer: 11
+    frontRightLayer: 15
+    backLeftLayer: 11
+    backRightLayer: 15
+    tailLayer: 13
+    middleLayer: 13
