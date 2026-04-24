@@ -58,10 +58,10 @@ public class PlayerItemSlotPosition : MonoBehaviour
 
     private void UpdateVisualDepth(ItemFormationData.SlotGroup group)
     {
-        SetSlotSortingGroup(_frontLeftSlot, group.leftLegsLayer);
-        SetSlotSortingGroup(_backLeftSlot, group.leftLegsLayer);
-        SetSlotSortingGroup(_frontRightSlot, group.rightLegsLayer);
-        SetSlotSortingGroup(_backRightSlot, group.rightLegsLayer);
+        SetSlotSortingGroup(_frontLeftSlot, group.frontLeftLayer);
+        SetSlotSortingGroup(_frontRightSlot, group.frontRightLayer);
+        SetSlotSortingGroup(_backLeftSlot, group.backLeftLayer);
+        SetSlotSortingGroup(_backRightSlot, group.backRightLayer);
         SetSlotSortingGroup(_tailSlot, group.tailLayer);
         SetSlotSortingGroup(_middleSlot, group.middleLayer);
     }

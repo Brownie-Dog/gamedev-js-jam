@@ -6,7 +6,8 @@ public class ItemFormationData : ScriptableObject
     [System.Serializable]
     public class SlotGroup
     {
-        [Header("Positions")] public Vector2 frontLeft;
+        [Header("Positions")] 
+        public Vector2 frontLeft;
         public Vector2 frontRight;
         public Vector2 backLeft;
         public Vector2 backRight;
@@ -22,8 +23,10 @@ public class ItemFormationData : ScriptableObject
         [Range(-360, 360)] public float tailRot;
         [Range(-360, 360)] public float middleRot;
 
-        [Header("Sorting Layers")] public int leftLegsLayer;
-        public int rightLegsLayer;
+        [Header("Sorting Layers")] public int frontLeftLayer;
+        public int frontRightLayer;
+        public int backLeftLayer;
+        public int backRightLayer;
         public int tailLayer;
         public int middleLayer;
 
@@ -35,7 +38,7 @@ public class ItemFormationData : ScriptableObject
             backRight = br;
             tail = t;
             middle = m;
-            leftLegsLayer = rightLegsLayer = tailLayer = middleLayer = layer;
+            frontLeftLayer = frontRightLayer = backLeftLayer = backRightLayer = tailLayer = middleLayer = layer;
             frontLeftRot = frontRightRot = backLeftRot = backRightRot = tailRot = middleRot = 0;
         }
     }
