@@ -1220,14 +1220,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadoutStation
       objectReference: {fileID: 0}
-    - target: {fileID: 146934127300130504, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
-      propertyPath: m_TagString
-      value: LoadoutStation
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699365820656741325, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
-      propertyPath: m_SortingOrder
-      value: -99
-      objectReference: {fileID: 0}
     - target: {fileID: 3305947836669768113, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
       propertyPath: _loadoutUI
       value: 
@@ -1279,10 +1271,6 @@ PrefabInstance:
     - target: {fileID: 4605044595432442103, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7445331929308128933, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -63,7 +63,7 @@ public class ItemFormationData : ScriptableObject
         );
 
         DownPositions = new SlotGroup(
-            new Vector2(-0.6f, 0.06f), new Vector2(0.6f, 0.06f),
+            new Vector2(0.6f, -0.06f), new Vector2(0.6f, 0.06f),
             new Vector2(-0.5f, 1f), new Vector2(0.5f, 1f),
             new Vector2(0f, 1.3f), new Vector2(0f, 0.7f)
         );
