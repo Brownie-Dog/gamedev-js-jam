@@ -151,8 +151,8 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: extension pole - two slot_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.87878346, y: 0.11965145}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
