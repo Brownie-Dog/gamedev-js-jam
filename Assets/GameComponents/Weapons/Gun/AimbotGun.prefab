@@ -269,7 +269,6 @@ GameObject:
   - component: {fileID: 1751083775469928399}
   - component: {fileID: 3600518316144484368}
   - component: {fileID: 8446891031811390757}
-  - component: {fileID: 8193059226578586623}
   m_Layer: 0
   m_Name: AimbotGun
   m_TagString: Untagged
@@ -322,15 +321,4 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3189316879295589563, guid: f0d6493407047f546973a98dcd3a9e5e, type: 3}
   _poolSize: 50
   _firePoint: {fileID: 7307795380562453035}
---- !u!114 &8193059226578586623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8907648602986796793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3404395cb440ae488a85e8abf935a89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Loadout.IncludeInCameraBounds
+  _penetrationCount: 1
