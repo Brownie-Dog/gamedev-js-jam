@@ -15,7 +15,7 @@ namespace Weapons
         private Weapon _weapon;
         private PlayerWeaponController _weaponController;
         private AimMode _aimMode;
-        private Vector2 _manualAimDirection;
+        private Vector3 _manualAimTargetPosition;
 
         public AimMode Mode
         {
@@ -54,7 +54,7 @@ namespace Weapons
 
         private void OnAimDirectionUpdated(object sender, AimDirectionArgs args)
         {
-            _manualAimDirection = args.Direction;
+            _manualAimTargetPosition = args.TargetPosition;
         }
 
         private void LateUpdate()
@@ -62,11 +62,20 @@ namespace Weapons
             switch (_aimMode)
             {
                 case AimMode.Manual:
-                    RotateTowards(_manualAimDirection);
+                    Vector2 individualDirection = (_manualAimTargetPosition - transform.position).normalized;
+                    RotateTowards(individualDirection);
                     break;
                 case AimMode.AutoAim:
                     var enemyDir = FindNearestEnemyDirection();
-                    RotateTowards(enemyDir.HasValue ? enemyDir.Value : _manualAimDirection);
+                    if (enemyDir.HasValue)
+                    {
+                        RotateTowards(enemyDir.Value);
+                    }
+                    else
+                    {
+                        Vector2 fallbackDir = (_manualAimTargetPosition - transform.position).normalized;
+                        RotateTowards(fallbackDir);
+                    }
                     break;
                 case AimMode.Directional:
                 default:
