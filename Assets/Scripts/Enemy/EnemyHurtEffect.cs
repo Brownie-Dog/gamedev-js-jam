@@ -1,15 +1,23 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class EnemyHurtEffect : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private EnemyHealth _enemyHealth;
     [SerializeField] private float _flashDuration = 0.15f;
     [SerializeField] private Color _flashColor = Color.red;
 
+    private SpriteRenderer[] _spriteRenderers;
     private Coroutine _hurtCoroutine;
+
+    private void Awake()
+    {
+        Assert.IsNotNull(_enemyHealth);
+        RefreshSpriteRenderers();
+    }
 
     private void OnEnable()
     {
@@ -19,6 +27,11 @@ public class EnemyHurtEffect : MonoBehaviour
     private void OnDisable()
     {
         _enemyHealth.OnHealthChanged -= HandleHit;
+    }
+
+    public void RefreshSpriteRenderers()
+    {
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void HandleHit(object sender, EventArgs e)
@@ -33,17 +46,26 @@ public class EnemyHurtEffect : MonoBehaviour
 
     private IEnumerator HurtRoutine()
     {
-        float elapsed = 0f;
+        var elapsed = 0f;
 
         while (elapsed < _flashDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / _flashDuration;
-            _spriteRenderer.color = Color.Lerp(_flashColor, Color.white, t);
+
+            foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+            {
+                spriteRenderer.color = Color.Lerp(_flashColor, Color.white, t);
+            }
+
             yield return null;
         }
 
-        _spriteRenderer.color = Color.white;
+        foreach (SpriteRenderer spriteRenderer in _spriteRenderers)
+        {
+            spriteRenderer.color = Color.white;
+        }
+
         _hurtCoroutine = null;
     }
 }

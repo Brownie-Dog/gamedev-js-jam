@@ -5,22 +5,22 @@ using Random = UnityEngine.Random;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] protected Rigidbody2D _rb;
     [SerializeField] private EnemyDetection _enemyDetection;
-    [SerializeField] private EnemyStats _stats;
+    [SerializeField] protected EnemyStats _stats;
 
-    private enum WanderState
+    protected enum WanderState
     {
         Moving,
         Idling
     }
 
-    private Transform _player;
-    private bool _isChasing = false;
-    private Vector2 _wanderDirection;
-    private float _wanderMoveTimer;
-    private float _wanderIdleTimer;
-    private WanderState _wanderState = WanderState.Moving;
+    protected Transform _player;
+    protected bool _isChasing = false;
+    protected Vector2 _wanderDirection;
+    protected float _wanderMoveTimer;
+    protected float _wanderIdleTimer;
+    protected WanderState _wanderState = WanderState.Moving;
 
     private void Awake()
     {
@@ -117,7 +117,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void PickNewWanderDirection()
+    protected virtual void PickNewWanderDirection()
     {
         _wanderDirection = Random.insideUnitCircle.normalized;
         _wanderMoveTimer = _stats.WanderMoveDuration;

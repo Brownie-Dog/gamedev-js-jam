@@ -10,6 +10,7 @@ public class SimpleEnemyMovementAnimation : MonoBehaviour
     [SerializeField] private AnimationClip _idleClip;
     [SerializeField] private AnimationClip _walkClip;
     [SerializeField] private float _moveThreshold = 0.1f;
+    [SerializeField] private bool _flipSprite = true;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Animator _animator;
@@ -55,7 +56,7 @@ public class SimpleEnemyMovementAnimation : MonoBehaviour
         _animator.SetBool(IsMovingHash, isMoving);
         _animator.SetFloat(MoveXHash, velocity.x);
 
-        if (Mathf.Abs(velocity.x) > 0.01f)
+        if (_flipSprite && Mathf.Abs(velocity.x) > 0.01f)
         {
             _spriteRenderer.flipX = velocity.x < 0;
         }
