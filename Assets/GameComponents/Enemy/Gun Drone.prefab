@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 2445589922022252830}
   - component: {fileID: 4319481131635950785}
   - component: {fileID: 5438647903590852024}
+  - component: {fileID: 6173245498894754189}
   m_Layer: 6
   m_Name: Gun Drone
   m_TagString: Untagged
@@ -487,7 +488,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0050000027, y: 0.15}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -497,7 +498,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.17, y: 0.28000003}
+  m_Size: {x: 0.9, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &2051412630511906519
 MonoBehaviour:
@@ -648,3 +649,19 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3285378652751197902, guid: e2230b045c729544fb06537d661d89ef, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
+--- !u!114 &6173245498894754189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121619632632392292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecbcb667aa647944b9132cfe5d21d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtEffect
+  _spriteRenderer: {fileID: 8046599812600565566}
+  _enemyHealth: {fileID: 4842946735691736961}
+  _flashDuration: 0.15
+  _flashColor: {r: 1, g: 0, b: 0, a: 1}
