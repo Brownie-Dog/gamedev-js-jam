@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9932a91cef306e341be3d17b5c3a0b3e, type: 3}
   m_Name: LoadoutFormationData
   m_EditorClassIdentifier: Assembly-CSharp::ItemFormationData
-  UpPositions:
+  <UpPositions>k__BackingField:
     FrontLeft: {x: -0.5, y: 0.6}
     FrontRight: {x: 0.5, y: 0.6}
     BackLeft: {x: -0.5, y: -0.3}
@@ -31,8 +31,8 @@ MonoBehaviour:
     BackRightLayer: 15
     TailLayer: 13
     MiddleLayer: 13
-  DownPositions:
-    FrontLeft: {x: 0.6, y: 0.06}
+  <DownPositions>k__BackingField:
+    FrontLeft: {x: 0.6, y: -0.06}
     FrontRight: {x: -0.6, y: 0.06}
     BackLeft: {x: 0.5, y: 1}
     BackRight: {x: -0.5, y: 1}
@@ -50,7 +50,7 @@ MonoBehaviour:
     BackRightLayer: 13
     TailLayer: 13
     MiddleLayer: 13
-  LeftPositions:
+  <LeftPositions>k__BackingField:
     FrontLeft: {x: -0.5, y: 0.1}
     FrontRight: {x: -0.5, y: 0.7}
     BackLeft: {x: 0.65, y: 0.15}
@@ -59,8 +59,8 @@ MonoBehaviour:
     Middle: {x: 0.1, y: 0.5}
     FrontLeftRot: -225
     FrontRightRot: -225
-    BackLeftRot: -135
-    BackRightRot: 45
+    BackLeftRot: 45
+    BackRightRot: -45
     TailRot: -45
     MiddleRot: 135
     FrontLeftLayer: 15
@@ -69,7 +69,7 @@ MonoBehaviour:
     BackRightLayer: 11
     TailLayer: 13
     MiddleLayer: 13
-  RightPositions:
+  <RightPositions>k__BackingField:
     FrontLeft: {x: 0.5, y: 0.7}
     FrontRight: {x: 0.5, y: 0.1}
     BackLeft: {x: -0.65, y: 0.75}
