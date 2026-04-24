@@ -32,7 +32,7 @@ MonoBehaviour:
     TailLayer: 13
     MiddleLayer: 13
   <DownPositions>k__BackingField:
-    FrontLeft: {x: 0.6, y: -0.06}
+    FrontLeft: {x: 0.6, y: 0.06}
     FrontRight: {x: -0.6, y: 0.06}
     BackLeft: {x: 0.5, y: 1}
     BackRight: {x: -0.5, y: 1}
@@ -59,8 +59,8 @@ MonoBehaviour:
     Middle: {x: 0.1, y: 0.5}
     FrontLeftRot: -225
     FrontRightRot: -225
-    BackLeftRot: 45
-    BackRightRot: -45
+    BackLeftRot: -135
+    BackRightRot: 45
     TailRot: -45
     MiddleRot: 135
     FrontLeftLayer: 15
