@@ -16,6 +16,7 @@ public class PlayerBodyController : MonoBehaviour
 
     [SerializeField] private Transform _headPivot;
     [SerializeField] private SpriteRenderer _headRenderer;
+    [SerializeField] private PlayerItemSlotPosition _itemSlotPosition;
 
     [Header("Preference")] [SerializeField]
     private Animator _bodyAnimator;
@@ -38,7 +39,7 @@ public class PlayerBodyController : MonoBehaviour
     private Direction _currentDir = Direction.Right;
     private static readonly int Moving = Animator.StringToHash("isMoving");
     private Camera _camera;
-    private const int HeadLayer = 8;
+    private const int HeadLayer = 14;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -93,18 +94,22 @@ public class PlayerBodyController : MonoBehaviour
         {
             case Direction.Right:
                 _bodyAnimator.runtimeAnimatorController = _walkRight;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.right);
                 SetBodySpriteDirection(HeadLayer, _rightHeadOffset);
                 break;
             case Direction.Up:
                 _bodyAnimator.runtimeAnimatorController = _walkUp;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.up);
                 SetBodySpriteDirection(HeadLayer, _upHeadOffset);
                 break;
             case Direction.Down:
                 _bodyAnimator.runtimeAnimatorController = _walkDown;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.down);
                 SetBodySpriteDirection(HeadLayer, _downHeadOffset);
                 break;
             case Direction.Left:
                 _bodyAnimator.runtimeAnimatorController = _walkLeft;
+                _itemSlotPosition.UpdateSlotLayout(Vector2.left);
                 SetBodySpriteDirection(HeadLayer, leftHeadOffset);
                 break;
             default:

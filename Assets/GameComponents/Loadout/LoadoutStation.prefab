@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3305947836669768113}
   m_Layer: 0
   m_Name: LoadoutStation
-  m_TagString: Untagged
+  m_TagString: LoadoutStation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Loadout.LoadoutStation
   _cameraController: {fileID: 0}
   _loadoutUI: {fileID: 0}
+  _playerBody: {fileID: 0}
 --- !u!1 &2315310145290425169
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -99
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

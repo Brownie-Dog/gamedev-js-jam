@@ -5,11 +5,11 @@ namespace Weapons
 {
     public class AimDirectionArgs : EventArgs
     {
-        public readonly Vector2 Direction;
+        public readonly Vector3 TargetPosition;
 
-        public AimDirectionArgs(Vector2 direction)
+        public AimDirectionArgs(Vector3 targetPosition)
         {
-            Direction = direction;
+            TargetPosition = targetPosition;
         }
     }
 }

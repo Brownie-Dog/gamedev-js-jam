@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9932a91cef306e341be3d17b5c3a0b3e, type: 3}
+  m_Name: LoadoutFormationData
+  m_EditorClassIdentifier: Assembly-CSharp::ItemFormationData
+  <UpPositions>k__BackingField:
+    FrontLeft: {x: -0.5, y: 0.6}
+    FrontRight: {x: 0.5, y: 0.6}
+    BackLeft: {x: -0.5, y: -0.3}
+    BackRight: {x: 0.5, y: -0.3}
+    Tail: {x: 0, y: -0.6}
+    Middle: {x: 0, y: 0.2}
+    FrontLeftRot: -315
+    FrontRightRot: -315
+    BackLeftRot: 135
+    BackRightRot: -45
+    TailRot: -135
+    MiddleRot: 45
+    FrontLeftLayer: 11
+    FrontRightLayer: 11
+    BackLeftLayer: 15
+    BackRightLayer: 15
+    TailLayer: 13
+    MiddleLayer: 13
+  <DownPositions>k__BackingField:
+    FrontLeft: {x: 0.6, y: 0.06}
+    FrontRight: {x: -0.6, y: 0.06}
+    BackLeft: {x: 0.5, y: 1}
+    BackRight: {x: -0.5, y: 1}
+    Tail: {x: 0, y: 1.3}
+    Middle: {x: 0, y: 0.7}
+    FrontLeftRot: -135
+    FrontRightRot: -135
+    BackLeftRot: -45
+    BackRightRot: 135
+    TailRot: 45
+    MiddleRot: -135
+    FrontLeftLayer: 13
+    FrontRightLayer: 13
+    BackLeftLayer: 13
+    BackRightLayer: 13
+    TailLayer: 13
+    MiddleLayer: 13
+  <LeftPositions>k__BackingField:
+    FrontLeft: {x: -0.5, y: 0.1}
+    FrontRight: {x: -0.5, y: 0.7}
+    BackLeft: {x: 0.65, y: 0.15}
+    BackRight: {x: 0.65, y: 0.75}
+    Tail: {x: 1, y: 0.5}
+    Middle: {x: 0.1, y: 0.5}
+    FrontLeftRot: -225
+    FrontRightRot: -225
+    BackLeftRot: -135
+    BackRightRot: 45
+    TailRot: -45
+    MiddleRot: 135
+    FrontLeftLayer: 15
+    FrontRightLayer: 11
+    BackLeftLayer: 15
+    BackRightLayer: 11
+    TailLayer: 13
+    MiddleLayer: 13
+  <RightPositions>k__BackingField:
+    FrontLeft: {x: 0.5, y: 0.7}
+    FrontRight: {x: 0.5, y: 0.1}
+    BackLeft: {x: -0.65, y: 0.75}
+    BackRight: {x: -0.65, y: 0.15}
+    Tail: {x: -1, y: 0.5}
+    Middle: {x: -0.1, y: 0.5}
+    FrontLeftRot: -45
+    FrontRightRot: -45
+    BackLeftRot: 45
+    BackRightRot: -135
+    TailRot: 135
+    MiddleRot: -45
+    FrontLeftLayer: 11
+    FrontRightLayer: 15
+    BackLeftLayer: 11
+    BackRightLayer: 15
+    TailLayer: 13
+    MiddleLayer: 13
