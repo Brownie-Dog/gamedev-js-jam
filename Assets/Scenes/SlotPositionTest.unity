@@ -1069,6 +1069,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc62c66411ef374ea49cf444306e0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Loadout.CameraController
+--- !u!114 &1620523752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3118165053820105909, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+  m_PrefabInstance: {fileID: 1620523745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610c59f5174578542b0208713438601c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBodyController
 --- !u!1001 &1747930084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1221,6 +1232,10 @@ PrefabInstance:
       propertyPath: _loadoutUI
       value: 
       objectReference: {fileID: 2230902604196397753}
+    - target: {fileID: 3305947836669768113, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
+      propertyPath: _playerBody
+      value: 
+      objectReference: {fileID: 1620523752}
     - target: {fileID: 3305947836669768113, guid: af3c70b26b798984bbca4ce4aa32752f, type: 3}
       propertyPath: _cameraController
       value: 
