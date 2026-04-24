@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   MovementSpeed: 10
   StoppingDistance: 0.5
+  WanderSpeed: 2
+  WanderMoveDuration: 2
+  WanderIdleDuration: 1
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 256
   DetectionRadius: 7
   ChasingRadius: 15
   AttackCooldown: 1

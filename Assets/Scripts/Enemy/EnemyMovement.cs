@@ -9,10 +9,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private EnemyDetection _enemyDetection;
     [SerializeField] private EnemyStats _stats;
 
+    private enum WanderState
+    {
+        Moving,
+        Idling
+    }
+
     private Transform _player;
     private bool _isChasing = false;
     private Vector2 _wanderDirection;
-    private float _wanderTimer;
+    private float _wanderMoveTimer;
+    private float _wanderIdleTimer;
+    private WanderState _wanderState = WanderState.Moving;
 
     private void Awake()
     {
@@ -54,6 +62,15 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if ((_stats.WallLayer & (1 << col.gameObject.layer)) != 0 && !_isChasing)
+        {
+            PickNewWanderDirection();
+            _wanderState = WanderState.Moving;
+        }
+    }
+
     private void HandlePlayerDetected(object sender, EventArgs e)
     {
         _isChasing = true;
@@ -73,19 +90,36 @@ public class EnemyMovement : MonoBehaviour
 
     protected virtual void Wander()
     {
-        _wanderTimer -= Time.fixedDeltaTime;
-
-        if (_wanderTimer <= 0f)
+        switch (_wanderState)
         {
-            PickNewWanderDirection();
-        }
+            case WanderState.Moving:
+                _wanderMoveTimer -= Time.fixedDeltaTime;
+                _rb.linearVelocity = _wanderDirection * _stats.WanderSpeed;
 
-        _rb.linearVelocity = _wanderDirection * _stats.WanderSpeed;
+                if (_wanderMoveTimer <= 0f)
+                {
+                    _wanderState = WanderState.Idling;
+                    _wanderIdleTimer = _stats.WanderIdleDuration;
+                    _rb.linearVelocity = Vector2.zero;
+                }
+                break;
+
+            case WanderState.Idling:
+                _wanderIdleTimer -= Time.fixedDeltaTime;
+                _rb.linearVelocity = Vector2.zero;
+
+                if (_wanderIdleTimer <= 0f)
+                {
+                    PickNewWanderDirection();
+                    _wanderState = WanderState.Moving;
+                }
+                break;
+        }
     }
 
     private void PickNewWanderDirection()
     {
         _wanderDirection = Random.insideUnitCircle.normalized;
-        _wanderTimer = _stats.WanderDirectionChangeInterval;
+        _wanderMoveTimer = _stats.WanderMoveDuration;
     }
 }

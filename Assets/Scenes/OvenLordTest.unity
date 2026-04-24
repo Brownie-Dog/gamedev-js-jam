@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 331539698}
   - component: {fileID: 331539697}
   - component: {fileID: 331539696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 706448264}
   - component: {fileID: 706448263}
   - component: {fileID: 706448262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 809300698}
   - component: {fileID: 809300697}
   - component: {fileID: 809300696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1577,7 +1577,7 @@ GameObject:
   - component: {fileID: 1826956993}
   - component: {fileID: 1826956992}
   - component: {fileID: 1826956991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1750,7 +1750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2127099168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
