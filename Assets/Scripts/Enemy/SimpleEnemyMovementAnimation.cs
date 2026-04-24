@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -6,6 +5,8 @@ using UnityEngine.Assertions;
 public class SimpleEnemyMovementAnimation : MonoBehaviour
 {
     [SerializeField] private RuntimeAnimatorController _baseController;
+    [SerializeField] private AnimationClip _baseIdleClip;
+    [SerializeField] private AnimationClip _baseWalkClip;
     [SerializeField] private AnimationClip _idleClip;
     [SerializeField] private AnimationClip _walkClip;
     [SerializeField] private float _moveThreshold = 0.1f;
@@ -19,6 +20,8 @@ public class SimpleEnemyMovementAnimation : MonoBehaviour
     private void Awake()
     {
         Assert.IsNotNull(_baseController);
+        Assert.IsNotNull(_baseIdleClip);
+        Assert.IsNotNull(_baseWalkClip);
         Assert.IsNotNull(_rb);
         Assert.IsNotNull(_animator);
         Assert.IsNotNull(_spriteRenderer);
@@ -27,19 +30,16 @@ public class SimpleEnemyMovementAnimation : MonoBehaviour
         var overrides = new List<KeyValuePair<AnimationClip, AnimationClip>>();
         overrideController.GetOverrides(overrides);
 
-        overrides.Sort((a, b) =>
-            string.Compare(a.Key ? a.Key.name : "", b.Key ? b.Key.name : "", StringComparison.Ordinal)
-        );
-
         for (int i = 0; i < overrides.Count; i++)
         {
-            if (i == 0 && _idleClip != null && overrides[i].Key != null)
+            var original = overrides[i].Key;
+            if (original == _baseIdleClip && _idleClip != null)
             {
-                overrides[i] = new KeyValuePair<AnimationClip, AnimationClip>(overrides[i].Key, _idleClip);
+                overrides[i] = new KeyValuePair<AnimationClip, AnimationClip>(original, _idleClip);
             }
-            else if (i == 1 && _walkClip != null && overrides[i].Key != null)
+            else if (original == _baseWalkClip && _walkClip != null)
             {
-                overrides[i] = new KeyValuePair<AnimationClip, AnimationClip>(overrides[i].Key, _walkClip);
+                overrides[i] = new KeyValuePair<AnimationClip, AnimationClip>(original, _walkClip);
             }
         }
 
