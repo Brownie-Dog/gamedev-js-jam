@@ -39,7 +39,7 @@ public class PlayerBodyController : MonoBehaviour
     private Direction _currentDir = Direction.Right;
     private static readonly int Moving = Animator.StringToHash("isMoving");
     private Camera _camera;
-    private const int HeadLayer = 8;
+    private const int HeadLayer = 14;
 
     public void OnMove(InputAction.CallbackContext context)
     {
