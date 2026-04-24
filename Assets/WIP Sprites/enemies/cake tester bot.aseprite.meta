@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fb574a1a74e6c84c8507838012fab21
+guid: 1c1c856c132bd8945a1595ac5dd91248
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: enemeytest
+  - name: cake tester bot
     originalName: 
-    pivot: {x: 0.5294118, y: -0.035714287}
+    pivot: {x: 0.44117647, y: -0.032258064}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 17
-      height: 28
-    spriteID: 107e15055808f184b94bcb545f1b3679
+      width: 34
+      height: 31
+    spriteID: 484f4df75c25e9644aa11e943e8c5415
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,31 +147,31 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: -13, y: 3}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2071698221
+      value0: 216696692
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: enemeytest
+    name: cake tester bot
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: enemeytest
+    - name: cake tester bot
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 7
-        y: 1
-        width: 17
-        height: 28
-      spriteId: 107e15055808f184b94bcb545f1b3679
+        x: 0
+        y: 0
+        width: 64
+        height: 32
+      spriteId: 484f4df75c25e9644aa11e943e8c5415
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -181,5 +181,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
-  previousTextureSize: {x: 32, y: 64}
+  canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 64, y: 64}

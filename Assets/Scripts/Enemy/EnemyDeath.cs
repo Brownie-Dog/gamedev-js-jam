@@ -1,4 +1,5 @@
 using System;
+using Currency;
 using ItemDrops;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -30,11 +31,15 @@ public class EnemyDeath : MonoBehaviour
 
     private void HandleDeath(object sender, EventArgs e)
     {
-        if (Random.value > _stats.DropChance)
+        if (Random.value <= _stats.DropChance)
         {
-            return;
+            ItemDropManager.Instance.SpawnItemDropObject(transform.position, _stats.GuaranteedItem);
         }
 
-        ItemDropManager.Instance.SpawnItemDropObject(transform.position, _stats.GuaranteedItem);
+        if (_stats.CoinDropChance > 0 && Random.value <= _stats.CoinDropChance)
+        {
+            int amount = Random.Range(_stats.MinCoinDrop, _stats.MaxCoinDrop + 1);
+            CurrencyManager.Instance.SpawnCurrency(transform.position, amount);
+        }
     }
 }
