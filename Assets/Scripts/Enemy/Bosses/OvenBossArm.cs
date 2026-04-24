@@ -12,11 +12,10 @@ namespace Enemy.Bosses
         [SerializeField] private GameObject _segmentPrefab;
         [SerializeField] private GameObject _defaultHandPrefab;
         [SerializeField] private int _defaultSegmentCount = 3;
-        [SerializeField] private float _segmentSpacing = 1.87f;
-        [SerializeField] private float _handOffset = -1f;
-        [SerializeField] private float _extendSpeed = 0.05f;
-        [SerializeField] private float _retractSpeed = 0.03f;
-        [SerializeField] private int _maxExtraSegments = 15;
+        [SerializeField] private float _segmentSpacing;
+        [SerializeField] private float _handOffset;
+        [SerializeField] private float _extendSpeed;
+        [SerializeField] private float _retractSpeed;
 
         private readonly List<GameObject> _segments = new List<GameObject>();
         private GameObject _hand;
@@ -25,9 +24,11 @@ namespace Enemy.Bosses
 
         public bool IsExtending => _extendRoutine != null;
         public bool IsRetracting => _retractRoutine != null;
-        public bool IsMoving => IsExtending || IsRetracting;
+        public bool CanRetract => _segments.Count > _defaultSegmentCount;
+        public bool CanExtend => true;
         public int SegmentCount => _segments.Count;
         public Transform HandPosition => _hand != null ? _hand.transform : null;
+        public Transform Pivot => _elbow;
 
         private void Start()
         {
@@ -75,10 +76,13 @@ namespace Enemy.Bosses
             _extendRoutine = StartCoroutine(ExtendRoutine(targetCount));
         }
 
-        public int CalculateTargetSegments(float distance)
+        public int CalculateTargetSegments(float distanceFromPivot)
         {
-            int additionalSegments = Mathf.CeilToInt(distance / _segmentSpacing);
-            return Mathf.Clamp(_defaultSegmentCount + additionalSegments, _defaultSegmentCount, _defaultSegmentCount + _maxExtraSegments);
+            float worldScale = _segmentsRoot.lossyScale.y;
+            float worldSpacing = _segmentSpacing * worldScale;
+            float worldOffset = _handOffset * worldScale;
+            float exactSegments = (distanceFromPivot - worldOffset) / worldSpacing;
+            return Mathf.Max(Mathf.CeilToInt(exactSegments), _defaultSegmentCount);
         }
 
         public void RetractToDefault()
@@ -89,6 +93,23 @@ namespace Enemy.Bosses
             }
 
             _retractRoutine = StartCoroutine(RetractRoutine(_defaultSegmentCount));
+        }
+
+        public void RetractByOne()
+        {
+            if (_segments.Count > _defaultSegmentCount)
+            {
+                GameObject last = _segments[_segments.Count - 1];
+                _segments.RemoveAt(_segments.Count - 1);
+                Destroy(last);
+                RepositionHand();
+            }
+        }
+
+        public void ExtendByOne()
+        {
+            SpawnSegment();
+            RepositionHand();
         }
 
         public void SwapHand(GameObject newHandPrefab)

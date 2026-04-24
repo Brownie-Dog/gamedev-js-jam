@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
 
     protected Transform _player;
     protected bool _isChasing = false;
+    protected bool _isMovementPaused = false;
     protected Vector2 _wanderDirection;
     protected float _wanderMoveTimer;
     protected float _wanderIdleTimer;
@@ -44,6 +45,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isMovementPaused)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         if (_isChasing)
         {
             float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
@@ -80,6 +87,16 @@ public class EnemyMovement : MonoBehaviour
     {
         _isChasing = false;
         PickNewWanderDirection();
+    }
+
+    public void PauseMovement()
+    {
+        _isMovementPaused = true;
+    }
+
+    public void ResumeMovement()
+    {
+        _isMovementPaused = false;
     }
 
     protected virtual void ChasePlayer()

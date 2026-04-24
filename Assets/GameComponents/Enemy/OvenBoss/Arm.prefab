@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2313138660781486661}
   - component: {fileID: 4444810764698486869}
+  - component: {fileID: 5658972022319345754}
   m_Layer: 6
   m_Name: Arm
   m_TagString: Untagged
@@ -116,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7050880406805358528}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b69d93dfb7c6f46b5d73a9a6c8bc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossArm
-  _elbow: {fileID: 328014049592362425}
+  _elbow: {fileID: 9107059914219983088}
   _segmentsRoot: {fileID: 9107059914219983088}
   _segmentPrefab: {fileID: 2142481108377636327, guid: 5a8a352589f139c449672eb66450dea6, type: 3}
   _defaultHandPrefab: {fileID: 2142481108377636327, guid: a60994d597112fd46a17517a4c0554e2, type: 3}
@@ -147,6 +148,22 @@ MonoBehaviour:
   _extendSpeed: 0.01
   _retractSpeed: 0.05
   _maxExtraSegments: 40
+--- !u!114 &5658972022319345754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050880406805358528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9d1d2c1b0480340a943f2a6b39140c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossArmController
+  _grabPauseDuration: 1
+  _pivotSpeed: 50
+  _retractPauseDuration: 1
+  _handGrabOffset: 2.25
 --- !u!1 &7817658982473331452
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,8 +191,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2313138660781486661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

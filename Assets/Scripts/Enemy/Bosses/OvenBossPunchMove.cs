@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -10,28 +11,29 @@ namespace Enemy.Bosses
         [SerializeField] private OvenBossArmSpawner _armSpawner;
         [SerializeField] private GameObject _closedClawHandPrefab;
         [SerializeField] private EnemyStats _stats;
+        [SerializeField] private EnemyMovement _bossMovement;
         [SerializeField] private float _aimDurationMin = 2f;
         [SerializeField] private float _aimDurationMax = 5f;
-        [SerializeField] private int _extraSegments = 3;
         [SerializeField] private float _hitPauseDuration = 0.2f;
 
         private Player.DamageDealer _damageDealer;
         private Coroutine _punchRoutine;
 
         public bool IsComplete { get; private set; }
+        public event Action OnMoveComplete;
 
         private void Awake()
         {
             Assert.IsNotNull(_armSpawner);
             Assert.IsNotNull(_closedClawHandPrefab);
             Assert.IsNotNull(_stats);
+            Assert.IsNotNull(_bossMovement);
         }
 
         public void Execute(Transform boss, Transform player)
         {
             IsComplete = false;
-
-            Debug.Log("[OvenBossPunchMove] Execute called");
+            _bossMovement.PauseMovement();
 
             if (_punchRoutine != null)
             {
@@ -44,64 +46,32 @@ namespace Enemy.Bosses
         private IEnumerator PunchRoutine(Transform boss, Transform player)
         {
             OvenBossArm arm = Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm;
+            var armController = arm.GetComponent<OvenBossArmController>();
+            armController.SetPlayer(player);
 
             arm.SwapHand(_closedClawHandPrefab);
             _damageDealer = arm.GetHandComponent<Player.DamageDealer>();
             Assert.IsNotNull(_damageDealer, "ClosedClawHand prefab must have a DamageDealer component");
 
-            yield return AimPhase(arm, player);
-
             var damageInfo = new DamageInfo(_stats.Damage, Vector2.one * _stats.KnockbackForce);
+
+            yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
+
             _damageDealer.Activate(damageInfo);
 
-            yield return LaunchPhase(arm, player);
+            yield return armController.LaunchTowardPlayer();
             yield return new WaitForSeconds(_hitPauseDuration);
 
             _damageDealer.Deactivate();
             _damageDealer = null;
 
-            yield return RetractPhase(arm);
+            yield return armController.RetractToDefault();
 
             arm.SwapToDefaultHand();
             IsComplete = true;
+            _bossMovement.ResumeMovement();
+            OnMoveComplete?.Invoke();
             _punchRoutine = null;
-        }
-
-        private IEnumerator AimPhase(OvenBossArm arm, Transform player)
-        {
-            float aimDuration = Random.Range(_aimDurationMin, _aimDurationMax);
-            float timer = 0f;
-
-            while (timer < aimDuration)
-            {
-                timer += Time.deltaTime;
-                Vector2 direction = (Vector2)(player.position - arm.HandPosition.position).normalized;
-                arm.SetDirection(direction);
-                yield return null;
-            }
-        }
-
-        private IEnumerator LaunchPhase(OvenBossArm arm, Transform player)
-        {
-            float distanceToPlayer = Vector2.Distance(arm.HandPosition.position, player.position);
-            int targetSegments = arm.CalculateTargetSegments(distanceToPlayer) + _extraSegments;
-
-            arm.ExtendTo(targetSegments);
-
-            while (arm.IsExtending)
-            {
-                yield return null;
-            }
-        }
-
-        private IEnumerator RetractPhase(OvenBossArm arm)
-        {
-            arm.RetractToDefault();
-
-            while (arm.IsRetracting)
-            {
-                yield return null;
-            }
         }
     }
 }

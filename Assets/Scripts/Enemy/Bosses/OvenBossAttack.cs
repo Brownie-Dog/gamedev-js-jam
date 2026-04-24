@@ -34,8 +34,13 @@ namespace Enemy.Bosses
         protected override void Attack()
         {
             _currentMove = _moves[Random.Range(0, _moves.Count)];
-            Debug.Log($"[OvenBossAttack]Executing move: {_currentMove.GetType().Name}");
+            _currentMove.OnMoveComplete += OnCurrentMoveComplete;
             _currentMove.Execute(_bossTransform, _playerTransform);
+        }
+
+        private void OnCurrentMoveComplete()
+        {
+            _currentMove.OnMoveComplete -= OnCurrentMoveComplete;
         }
     }
 }

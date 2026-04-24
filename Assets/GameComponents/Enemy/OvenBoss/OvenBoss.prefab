@@ -91,50 +91,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &3405735742929068420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 936375752256495747}
-  - component: {fileID: 327250453463902545}
-  m_Layer: 0
-  m_Name: Move3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &936375752256495747
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405735742929068420}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6891224407612589117}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &327250453463902545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405735742929068420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77114241caad4f747831cd7ac30aa9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossMove3
 --- !u!1 &3514105724944607953
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,9 +418,10 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
   _attackSound: {fileID: 6054483510963262215}
   _moveBehaviours:
-  - {fileID: 1505263450924332166}
+  - {fileID: 8979542939887364253}
   _bossTransform: {fileID: 7891938784662909269}
   _playerTransform: {fileID: 0}
+  _enemyMovement: {fileID: 6598089395193418422}
 --- !u!114 &4885681163285851727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +467,6 @@ Transform:
   m_Children:
   - {fileID: 7863758855759518860}
   - {fileID: 1456448832820449967}
-  - {fileID: 936375752256495747}
   - {fileID: 6418759566042221312}
   m_Father: {fileID: 7891938784662909269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -523,7 +479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456448832820449967}
-  - component: {fileID: 3553695083607860683}
+  - component: {fileID: 8979542939887364253}
   m_Layer: 0
   m_Name: Move2
   m_TagString: Untagged
@@ -546,7 +502,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6891224407612589117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3553695083607860683
+--- !u!114 &8979542939887364253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -555,9 +511,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7378694290774990160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d029fd35edf3449a172213910ffc93, type: 3}
+  m_Script: {fileID: 11500000, guid: 2071ee749885ad74c8fdb5a07b8a9afd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossMove2
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossGrabMove
+  _armSpawner: {fileID: 4885681163285851727}
+  _openClawHandPrefab: {fileID: 2142481108377636327, guid: 0018e92568c49124695aaf12857e294d, type: 3}
+  _stats: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
+  _dragTarget: {fileID: 0}
+  _aimDurationMin: 2
+  _aimDurationMax: 5
+  _dragMoveInterval: 0.3
+  _playerLerpSpeed: 10
+  _grabDamage: 1
+  _enemyMovement: {fileID: 6598089395193418422}
 --- !u!1 &7739672090812684932
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,8 +781,8 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
   _aimDurationMin: 2
   _aimDurationMax: 5
-  _extraSegments: 3
   _hitPauseDuration: 0.2
+  _bossMovement: {fileID: 6598089395193418422}
 --- !u!1 &8370719550974549849
 GameObject:
   m_ObjectHideFlags: 0

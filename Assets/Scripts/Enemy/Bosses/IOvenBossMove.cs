@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace Enemy.Bosses
 {
@@ -6,5 +7,6 @@ namespace Enemy.Bosses
     {
         void Execute(Transform boss, Transform player);
         bool IsComplete { get; }
+        event Action OnMoveComplete;
     }
 }
