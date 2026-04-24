@@ -16,21 +16,16 @@ public class PlayerItemSlotPosition : MonoBehaviour
     [SerializeField] private Transform _tailSlot;
     [SerializeField] private Transform _middleSlot;
 
-    private SortingGroup _frontLeftSorting;
-    private SortingGroup _frontRightSorting;
-    private SortingGroup _backLeftSorting;
-    private SortingGroup _backRightSorting;
-    private SortingGroup _tailSorting;
-    private SortingGroup _middleSorting;
+    [Header("Sorting Group References")] 
+    [SerializeField] private SortingGroup _frontLeftSorting;
+    [SerializeField] private SortingGroup _frontRightSorting;
+    [SerializeField] private SortingGroup _backLeftSorting;
+    [SerializeField] private SortingGroup _backRightSorting;
+    [SerializeField] private SortingGroup _tailSorting;
+    [SerializeField] private SortingGroup _middleSorting;
 
     private void Awake()
     {
-        _frontLeftSorting = _frontLeftSlot.GetComponent<SortingGroup>();
-        _frontRightSorting = _frontRightSlot.GetComponent<SortingGroup>();
-        _backLeftSorting = _backLeftSlot.GetComponent<SortingGroup>();
-        _backRightSorting = _backRightSlot.GetComponent<SortingGroup>();
-        _tailSorting = _tailSlot.GetComponent<SortingGroup>();
-        _middleSorting = _middleSlot.GetComponent<SortingGroup>();
         Assert.IsNotNull(_frontLeftSorting);
         Assert.IsNotNull(_frontRightSorting);
         Assert.IsNotNull(_backLeftSorting);

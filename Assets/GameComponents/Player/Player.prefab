@@ -197,6 +197,12 @@ MonoBehaviour:
   _backRightSlot: {fileID: 3709717588362197419}
   _tailSlot: {fileID: 8108281533649607938}
   _middleSlot: {fileID: 8256113402825924984}
+  _frontLeftSorting: {fileID: 4510492549719505195}
+  _frontRightSorting: {fileID: 291075037575602817}
+  _backLeftSorting: {fileID: 6306823553078355873}
+  _backRightSorting: {fileID: 7525362513600477078}
+  _tailSorting: {fileID: 6247348416748931534}
+  _middleSorting: {fileID: 1429832125107838534}
 --- !u!1 &2694049974398730191
 GameObject:
   m_ObjectHideFlags: 0
