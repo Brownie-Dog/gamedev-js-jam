@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a83fedc677e0542ac2288e851943b2, type: 3}
   m_Name: Sentry
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
-  <ItemName>k__BackingField: 
-  <Description>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 0}
+  <ItemName>k__BackingField: Sentry
+  <Description>k__BackingField: Hmm, it's smaller than the diagram
+  <Icon>k__BackingField: {fileID: 1347734055300931125, guid: 0ebd332783f98ac4896ef06016de87b1, type: 3}
   <Rarity>k__BackingField: 0
-  <WeaponPrefab>k__BackingField: {fileID: 0}
+  <WeaponPrefab>k__BackingField: {fileID: 7713632468997198027, guid: b7f91d988bcb0b44084ab372c5e465bb, type: 3}
   <Damage>k__BackingField: 1
-  <CooldownTime>k__BackingField: 0
-  <DefaultAimMode>k__BackingField: 0
-  <AutoFire>k__BackingField: 0
-  <KnockbackForce>k__BackingField: 0
-  <CompatibleSlotTypes>k__BackingField: 00000000
+  <CooldownTime>k__BackingField: 0.1
+  <DefaultAimMode>k__BackingField: 3
+  <AutoFire>k__BackingField: 1
+  <KnockbackForce>k__BackingField: 2
+  <CompatibleSlotTypes>k__BackingField: 01000000
