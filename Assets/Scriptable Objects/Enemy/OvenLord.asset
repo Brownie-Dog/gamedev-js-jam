@@ -24,8 +24,8 @@ MonoBehaviour:
   ChasingRadius: 0
   AttackCooldown: 1
   AttackRange: 5
-  Damage: 2
-  KnockbackForce: 5
+  Damage: 1
+  KnockbackForce: 50
   MaxHealth: 1000
   DropChance: 1
   GuaranteedItem: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}

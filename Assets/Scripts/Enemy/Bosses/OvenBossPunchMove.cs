@@ -9,11 +9,10 @@ namespace Enemy.Bosses
     {
         [SerializeField] private OvenBossArmSpawner _armSpawner;
         [SerializeField] private GameObject _closedClawHandPrefab;
+        [SerializeField] private EnemyStats _stats;
         [SerializeField] private float _aimDurationMin = 2f;
         [SerializeField] private float _aimDurationMax = 5f;
         [SerializeField] private int _extraSegments = 3;
-        [SerializeField] private int _damage = 2;
-        [SerializeField] private float _knockbackForce = 10f;
         [SerializeField] private float _hitPauseDuration = 0.2f;
 
         private Player.DamageDealer _damageDealer;
@@ -25,6 +24,7 @@ namespace Enemy.Bosses
         {
             Assert.IsNotNull(_armSpawner);
             Assert.IsNotNull(_closedClawHandPrefab);
+            Assert.IsNotNull(_stats);
         }
 
         public void Execute(Transform boss, Transform player)
@@ -49,16 +49,18 @@ namespace Enemy.Bosses
             _damageDealer = arm.GetHandComponent<Player.DamageDealer>();
             Assert.IsNotNull(_damageDealer, "ClosedClawHand prefab must have a DamageDealer component");
 
-            var damageInfo = new DamageInfo(_damage, Vector2.one * _knockbackForce);
+            yield return AimPhase(arm, player);
+
+            var damageInfo = new DamageInfo(_stats.Damage, Vector2.one * _stats.KnockbackForce);
             _damageDealer.Activate(damageInfo);
 
-            yield return AimPhase(arm, player);
             yield return LaunchPhase(arm, player);
             yield return new WaitForSeconds(_hitPauseDuration);
-            yield return RetractPhase(arm);
 
             _damageDealer.Deactivate();
             _damageDealer = null;
+
+            yield return RetractPhase(arm);
 
             arm.SwapToDefaultHand();
             IsComplete = true;

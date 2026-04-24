@@ -196,7 +196,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 131.25
+  m_Mass: 49.606388
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -245,7 +245,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.030239105, y: 4.051979}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -255,7 +255,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 60, y: 35}
+  m_Size: {x: 35.965446, y: 22.068466}
   m_EdgeRadius: 0
 --- !u!95 &3777475257440075541
 Animator:
@@ -812,11 +812,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossMove1
   _armSpawner: {fileID: 4885681163285851727}
   _closedClawHandPrefab: {fileID: 2142481108377636327, guid: fb2abd1dc25cd5143a17bb73cfc251fe, type: 3}
+  _stats: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
   _aimDurationMin: 2
   _aimDurationMax: 5
   _extraSegments: 3
-  _damage: 2
-  _knockbackForce: 10
   _hitPauseDuration: 0.2
 --- !u!1 &8370719550974549849
 GameObject:

@@ -3896,6 +3896,10 @@ PrefabInstance:
       propertyPath: m_Distance
       value: 45.223488
       objectReference: {fileID: 0}
+    - target: {fileID: 1505263450924332166, guid: bf7bf32d0a429654c9ac4de4be6d75ac, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
     - target: {fileID: 1895454059141620583, guid: bf7bf32d0a429654c9ac4de4be6d75ac, type: 3}
       propertyPath: m_Target.x
       value: 34.38801
@@ -3914,7 +3918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4656836062278977084, guid: bf7bf32d0a429654c9ac4de4be6d75ac, type: 3}
       propertyPath: m_Mass
-      value: 131.25
+      value: 49.606388
       objectReference: {fileID: 0}
     - target: {fileID: 7094861492592203892, guid: bf7bf32d0a429654c9ac4de4be6d75ac, type: 3}
       propertyPath: _playerTransform
