@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: weapontesting
     originalName: 
-    pivot: {x: 0.48387095, y: -0.032258064}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,8 +137,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 31
-      height: 31
+      width: 32
+      height: 32
     spriteID: 34fc6e9c41c678b4bbdee6f78fb06ac6
     spriteBone: []
     spriteOutline: []
@@ -167,10 +167,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 1
-        width: 31
-        height: 31
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       spriteId: 34fc6e9c41c678b4bbdee6f78fb06ac6
     linkedCells: []
     tileCells: []

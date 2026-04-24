@@ -83,18 +83,17 @@ namespace Loadout
             _dragIcon.enabled = false;
 
             var dropTarget = eventData.pointerCurrentRaycast.gameObject;
-            if (dropTarget == null)
-            {
-                return;
-            }
 
-            var slotUI = dropTarget.GetComponentInParent<LoadoutSlotUI>();
-            if (slotUI != null)
+            if (dropTarget != null)
             {
-                _loadoutUI.HandleDropOnSlot(DraggedWeapon, _dragFromEquipment, _sourceSlotId, _sourceInventoryIndex,
-                    slotUI.SlotId
-                );
-                return;
+                var slotUI = dropTarget.GetComponentInParent<LoadoutSlotUI>();
+                if (slotUI != null)
+                {
+                    _loadoutUI.HandleDropOnSlot(DraggedWeapon, _dragFromEquipment, _sourceSlotId, _sourceInventoryIndex,
+                        slotUI.SlotId
+                    );
+                    return;
+                }
             }
 
             _loadoutUI.HandleDropOnInventory(DraggedWeapon, _dragFromEquipment, _sourceSlotId);

@@ -29,6 +29,9 @@ public class EnemyStats : ScriptableObject, IWeaponData
 
     public float DropChance = 0.05f;
     public ItemData GuaranteedItem;
+    public float CoinDropChance = 0.5f;
+    public int MinCoinDrop = 1;
+    public int MaxCoinDrop = 3;
 
     int IWeaponData.Damage => Damage;
     float IWeaponData.KnockbackForce => KnockbackForce;
