@@ -40,11 +40,10 @@ public class ItemFormationData : ScriptableObject
         }
     }
 
-    [Space(10)] [Header("Directional Formation")]
-    public SlotGroup upPositions;
-
-    [Space(5)] public SlotGroup downPositions;
-    [Space(5)] public SlotGroup sidePositions;
+    [Header("Directional Formations")] public SlotGroup upPositions;
+    public SlotGroup downPositions;
+    public SlotGroup leftPositions;
+    public SlotGroup rightPositions;
 
     private void Reset()
     {
@@ -66,10 +65,16 @@ public class ItemFormationData : ScriptableObject
             new Vector2(0f, 1.3f), new Vector2(0f, 0.7f)
         );
 
-        sidePositions = new SlotGroup(
+        rightPositions = new SlotGroup(
             new Vector2(0.5f, 0.7f), new Vector2(0.5f, 0.1f),
             new Vector2(-0.65f, 0.75f), new Vector2(-0.65f, 0.15f),
             new Vector2(-1f, 0.5f), new Vector2(-0.1f, 0.5f)
+        );
+
+        leftPositions = new SlotGroup(
+            new Vector2(-0.5f, 0.7f), new Vector2(-0.5f, 0.1f),
+            new Vector2(0.65f, 0.75f), new Vector2(0.65f, 0.15f),
+            new Vector2(1f, 0.5f), new Vector2(0.1f, 0.5f)
         );
     }
 }

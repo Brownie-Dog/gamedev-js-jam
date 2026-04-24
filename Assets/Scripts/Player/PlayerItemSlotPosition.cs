@@ -29,13 +29,15 @@ public class PlayerItemSlotPosition : MonoBehaviour
 
     public void UpdateSlotLayout(Vector2 direction, bool isLeft)
     {
-        transform.localScale = new Vector3(isLeft ? -1f : 1f, 1f, 1f);
+        // transform.localScale = new Vector3(isLeft ? -1f : 1f, 1f, 1f);
         if (direction == Vector2.up)
             ApplyPositions(_formationData.upPositions);
         else if (direction == Vector2.down)
             ApplyPositions(_formationData.downPositions);
+        else if (direction == Vector2.right)
+            ApplyPositions(_formationData.rightPositions);
         else
-            ApplyPositions(_formationData.sidePositions);
+            ApplyPositions(_formationData.leftPositions);
     }
 
     private void ApplyPositions(ItemFormationData.SlotGroup group)
