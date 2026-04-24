@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Loadout.CameraController
   _zoomSpeed: 3
-  _zoomPadding: 6
+  _zoomPadding: 3
   _loadoutCenterOffsetX: 3
   _playerEquipment: {fileID: 2810164907020316400}
   _shopFocusZoomMultiplier: 0.75
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d39e15c866854daf029b5bb3a334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
-  _initialUnlockedSlots: 3
+  _initialUnlockedSlots: 6
   _defaultWeapons:
   - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
   _inventory: {fileID: 7002355511745351319}
