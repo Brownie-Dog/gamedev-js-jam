@@ -23,6 +23,7 @@ namespace Loadout
                 return;
             }
 
+            DisableBodyController(other.GetComponent<PlayerBodyController>());
             _cameraController.SetLoadoutOffset(true);
             _loadoutUI.Show();
         }
@@ -34,8 +35,19 @@ namespace Loadout
                 return;
             }
 
+            EnableBodyController(other.GetComponent<PlayerBodyController>());
             _cameraController.SetLoadoutOffset(false);
             _loadoutUI.Hide();
+        }
+
+        private static void DisableBodyController(PlayerBodyController bodyController)
+        {
+            bodyController.enabled = false;
+        }
+
+        private static void EnableBodyController(PlayerBodyController bodyController)
+        {
+            bodyController.enabled = true;
         }
     }
 }
