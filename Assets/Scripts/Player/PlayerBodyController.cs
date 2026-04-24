@@ -94,22 +94,22 @@ public class PlayerBodyController : MonoBehaviour
         {
             case Direction.Right:
                 _bodyAnimator.runtimeAnimatorController = _walkRight;
-                _itemSlotPosition.UpdateSlotLayout(Vector2.right, false);
+                _itemSlotPosition.UpdateSlotLayout(Vector2.right);
                 SetBodySpriteDirection(HeadLayer, _rightHeadOffset);
                 break;
             case Direction.Up:
                 _bodyAnimator.runtimeAnimatorController = _walkUp;
-                _itemSlotPosition.UpdateSlotLayout(Vector2.up, false);
+                _itemSlotPosition.UpdateSlotLayout(Vector2.up);
                 SetBodySpriteDirection(HeadLayer, _upHeadOffset);
                 break;
             case Direction.Down:
                 _bodyAnimator.runtimeAnimatorController = _walkDown;
-                _itemSlotPosition.UpdateSlotLayout(Vector2.down, false);
+                _itemSlotPosition.UpdateSlotLayout(Vector2.down);
                 SetBodySpriteDirection(HeadLayer, _downHeadOffset);
                 break;
             case Direction.Left:
                 _bodyAnimator.runtimeAnimatorController = _walkLeft;
-                _itemSlotPosition.UpdateSlotLayout(Vector2.left, true);
+                _itemSlotPosition.UpdateSlotLayout(Vector2.left);
                 SetBodySpriteDirection(HeadLayer, leftHeadOffset);
                 break;
             default:

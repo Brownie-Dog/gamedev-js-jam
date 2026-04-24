@@ -27,17 +27,16 @@ public class PlayerItemSlotPosition : MonoBehaviour
         Assert.IsNotNull(_middleSlot);
     }
 
-    public void UpdateSlotLayout(Vector2 direction, bool isLeft)
+    public void UpdateSlotLayout(Vector2 direction)
     {
-        // transform.localScale = new Vector3(isLeft ? -1f : 1f, 1f, 1f);
         if (direction == Vector2.up)
-            ApplyPositions(_formationData.upPositions);
+            ApplyPositions(_formationData.UpPositions);
         else if (direction == Vector2.down)
-            ApplyPositions(_formationData.downPositions);
+            ApplyPositions(_formationData.DownPositions);
         else if (direction == Vector2.right)
-            ApplyPositions(_formationData.rightPositions);
+            ApplyPositions(_formationData.RightPositions);
         else
-            ApplyPositions(_formationData.leftPositions);
+            ApplyPositions(_formationData.LeftPositions);
     }
 
     private void ApplyPositions(ItemFormationData.SlotGroup group)
@@ -48,22 +47,22 @@ public class PlayerItemSlotPosition : MonoBehaviour
 
     private void UpdatePhysicalLayout(ItemFormationData.SlotGroup group)
     {
-        SetTransform(_frontLeftSlot, group.frontLeft, group.frontLeftRot);
-        SetTransform(_frontRightSlot, group.frontRight, group.frontRightRot);
-        SetTransform(_backLeftSlot, group.backLeft, group.backLeftRot);
-        SetTransform(_backRightSlot, group.backRight, group.backRightRot);
-        SetTransform(_tailSlot, group.tail, group.tailRot);
-        SetTransform(_middleSlot, group.middle, group.middleRot);
+        SetTransform(_frontLeftSlot, group.FrontLeft, group.FrontLeftRot);
+        SetTransform(_frontRightSlot, group.FrontRight, group.FrontRightRot);
+        SetTransform(_backLeftSlot, group.BackLeft, group.BackLeftRot);
+        SetTransform(_backRightSlot, group.BackRight, group.BackRightRot);
+        SetTransform(_tailSlot, group.Tail, group.TailRot);
+        SetTransform(_middleSlot, group.Middle, group.MiddleRot);
     }
 
     private void UpdateVisualDepth(ItemFormationData.SlotGroup group)
     {
-        SetSlotSortingGroup(_frontLeftSlot, group.frontLeftLayer);
-        SetSlotSortingGroup(_frontRightSlot, group.frontRightLayer);
-        SetSlotSortingGroup(_backLeftSlot, group.backLeftLayer);
-        SetSlotSortingGroup(_backRightSlot, group.backRightLayer);
-        SetSlotSortingGroup(_tailSlot, group.tailLayer);
-        SetSlotSortingGroup(_middleSlot, group.middleLayer);
+        SetSlotSortingGroup(_frontLeftSlot, group.FrontLeftLayer);
+        SetSlotSortingGroup(_frontRightSlot, group.FrontRightLayer);
+        SetSlotSortingGroup(_backLeftSlot, group.BackLeftLayer);
+        SetSlotSortingGroup(_backRightSlot, group.BackRightLayer);
+        SetSlotSortingGroup(_tailSlot, group.TailLayer);
+        SetSlotSortingGroup(_middleSlot, group.MiddleLayer);
     }
 
     private static void SetTransform(Transform slot, Vector2 pos, float rot)
