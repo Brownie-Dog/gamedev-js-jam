@@ -27,9 +27,13 @@ namespace Loadout
 
         [SerializeField] private Camera _mainCamera;
 
-        [SerializeField] private Color _emptySlotColor = new Color(0.2f, 0.8f, 0.2f, 0.5f);
+        [SerializeField] private Color _emptyGeneralSlotColor = new Color(0.2f, 0.8f, 0.2f, 0.5f);
 
-        [SerializeField] private Color _occupiedSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.7f);
+        [SerializeField] private Color _occupiedGeneralSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.7f);
+        
+        [SerializeField] private Color _emptyBackSlotColor = new Color(0.04f, 0.94f, 0.93f, 0.5f);
+        
+        [SerializeField] private Color _occupiedBackSlotColor = new Color(0.53f, 0.34f, 0.85f, 0.5f);
 
         private readonly Dictionary<int, LoadoutSlotUI> _slotUIs = new();
         private readonly List<LoadoutInventoryItemUI> _inventoryItemUIs = new();
@@ -202,8 +206,11 @@ namespace Loadout
             {
                 var slotUI = Instantiate(_slotUIPrefab, _slotContainer);
                 var weapon = _playerEquipment.GetWeaponInSlot(slotId);
-
-                slotUI.Initialize(slotId, weapon, _emptySlotColor, _occupiedSlotColor);
+                
+                var slotType = _playerEquipment.GetSlotType(slotId);
+                var emptySlotColor = slotType == SlotType.Back ? _emptyBackSlotColor : _emptyGeneralSlotColor;
+                var occupiedSlotColor = slotType == SlotType.Back ? _occupiedBackSlotColor : _occupiedGeneralSlotColor;
+                slotUI.Initialize(slotId, weapon, emptySlotColor, occupiedSlotColor, slotType);
                 _slotUIs[slotId] = slotUI;
             }
         }

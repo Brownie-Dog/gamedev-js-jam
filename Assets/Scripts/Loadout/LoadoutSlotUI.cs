@@ -18,9 +18,12 @@ namespace Loadout
         private LoadoutDragHandler _dragHandler;
 
         public int SlotId { get; private set; }
+        public SlotType SlotType { get; private set; }
 
         private Color _emptyColor;
         private Color _occupiedColor;
+        private Color _emptyBackColor;
+        private Color _occupiedBackColor;
         private WeaponItemData _weapon;
 
         private void Awake()
@@ -34,9 +37,10 @@ namespace Loadout
             Assert.IsNotNull(_iconImage);
         }
 
-        public void Initialize(int slotId, WeaponItemData weapon, Color emptyColor, Color occupiedColor)
+        public void Initialize(int slotId, WeaponItemData weapon, Color emptyColor, Color occupiedColor, SlotType slotType)
         {
             SlotId = slotId;
+            SlotType = slotType;
             _emptyColor = emptyColor;
             _occupiedColor = occupiedColor;
             Refresh(weapon);
