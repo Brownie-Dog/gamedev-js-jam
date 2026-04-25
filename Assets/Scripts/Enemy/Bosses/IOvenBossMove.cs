@@ -7,6 +7,7 @@ namespace Enemy.Bosses
     {
         void Execute(Transform boss, Transform player);
         bool IsComplete { get; }
+        bool IsLaunched { get; }
         event Action OnMoveComplete;
     }
 }

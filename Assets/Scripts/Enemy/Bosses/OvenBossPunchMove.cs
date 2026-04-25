@@ -18,8 +18,10 @@ namespace Enemy.Bosses
 
         private Player.DamageDealer _damageDealer;
         private Coroutine _punchRoutine;
+        private bool _isLaunched;
 
         public bool IsComplete { get; private set; }
+        public bool IsLaunched => _isLaunched;
         public event Action OnMoveComplete;
 
         private void Awake()
@@ -33,7 +35,7 @@ namespace Enemy.Bosses
         public void Execute(Transform boss, Transform player)
         {
             IsComplete = false;
-            _bossMovement.PauseMovement();
+            _isLaunched = false;
 
             if (_punchRoutine != null)
             {
@@ -54,6 +56,11 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_damageDealer, "ClosedClawHand prefab must have a DamageDealer component");
 
             var damageInfo = new DamageInfo(_stats.Damage, new Vector2(_stats.KnockbackForce, 0f));
+
+            yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
+
+            _isLaunched = true;
+            _bossMovement.PauseMovement();
             _damageDealer.Activate(damageInfo, false);
 
             yield return armController.LaunchTowardPlayer();
@@ -65,6 +72,7 @@ namespace Enemy.Bosses
             yield return armController.RetractToDefault();
 
             arm.SwapToDefaultHand();
+            _isLaunched = false;
             IsComplete = true;
             _bossMovement.ResumeMovement();
             OnMoveComplete?.Invoke();

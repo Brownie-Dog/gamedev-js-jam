@@ -26,9 +26,11 @@ namespace Enemy.Bosses
         private GrabHand _grabHand;
         private Coroutine _grabRoutine;
         private bool _grabBroken;
+        private bool _isLaunched;
         private Transform _player;
 
         public bool IsComplete { get; private set; }
+        public bool IsLaunched => _isLaunched;
         public event Action OnMoveComplete;
 
         private void Awake()
@@ -43,7 +45,7 @@ namespace Enemy.Bosses
         public void Execute(Transform boss, Transform player)
         {
             IsComplete = false;
-            _enemyMovement.PauseMovement();
+            _isLaunched = false;
 
             if (_grabRoutine != null)
             {
@@ -74,6 +76,9 @@ namespace Enemy.Bosses
 
             yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
 
+            _isLaunched = true;
+            _enemyMovement.PauseMovement();
+
             var damageInfo = new DamageInfo(_grabDamage, Vector2.zero);
             _damageDealer.Activate(damageInfo);
             _grabHand.Activate();
@@ -99,6 +104,7 @@ namespace Enemy.Bosses
                 yield return armController.RetractToDefault();
 
                 arm.SwapToDefaultHand();
+                _isLaunched = false;
                 IsComplete = true;
                 _enemyMovement.ResumeMovement();
                 OnMoveComplete?.Invoke();
@@ -126,6 +132,7 @@ namespace Enemy.Bosses
             yield return armController.RetractToDefault();
 
             arm.SwapToDefaultHand();
+            _isLaunched = false;
             IsComplete = true;
             _enemyMovement.ResumeMovement();
             OnMoveComplete?.Invoke();

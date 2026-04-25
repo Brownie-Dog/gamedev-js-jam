@@ -23,8 +23,10 @@ namespace Enemy.Bosses
 
         private Player.DamageDealer _damageDealer;
         private Coroutine _swordRoutine;
+        private bool _isLaunched;
 
         public bool IsComplete { get; private set; }
+        public bool IsLaunched => _isLaunched;
         public event Action OnMoveComplete;
 
         private static readonly Vector2 West = Vector2.left;
@@ -41,7 +43,7 @@ namespace Enemy.Bosses
         public void Execute(Transform boss, Transform player)
         {
             IsComplete = false;
-            _enemyMovement.PauseMovement();
+            _isLaunched = false;
 
             if (_swordRoutine != null)
             {
@@ -71,6 +73,8 @@ namespace Enemy.Bosses
 
             yield return armController.TelegraphPhase(startDirection, Random.Range(_telegraphDurationMin, _telegraphDurationMax));
 
+            _isLaunched = true;
+            _enemyMovement.PauseMovement();
             _damageDealer.Activate(damageInfo);
 
             yield return armController.SweepPhase(startDirection, sweepAngle, _swingSpeed);
@@ -81,6 +85,7 @@ namespace Enemy.Bosses
             yield return new WaitForSeconds(_hitPauseDuration);
 
             arm.SwapToDefaultHand();
+            _isLaunched = false;
             IsComplete = true;
             _enemyMovement.ResumeMovement();
             OnMoveComplete?.Invoke();
