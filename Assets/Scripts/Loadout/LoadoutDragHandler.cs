@@ -19,7 +19,7 @@ namespace Loadout
         [SerializeField] private PlayerEquipment _playerEquipment;
 
         [SerializeField] private PlayerInventory _playerInventory;
-        
+
         private void Awake()
         {
             Assert.IsNotNull(_dragIcon);
@@ -41,6 +41,7 @@ namespace Loadout
             _dragFromEquipment = false;
             _lastPointerPosition = pointerPosition;
             ShowDragIcon(weapon);
+            _loadoutUI.SetDraggingWeapon(weapon);
         }
 
         public void StartDragFromSlot(WeaponItemData weapon, int slotId, Vector2 pointerPosition)
@@ -51,6 +52,7 @@ namespace Loadout
             _dragFromEquipment = true;
             _lastPointerPosition = pointerPosition;
             ShowDragIcon(weapon);
+            _loadoutUI.SetDraggingWeapon(weapon);
         }
 
         private void ShowDragIcon(WeaponItemData weapon)
@@ -80,6 +82,7 @@ namespace Loadout
             }
 
             IsDragging = false;
+            _loadoutUI.ClearDraggingWeapon();
             _dragIcon.enabled = false;
 
             var dropTarget = eventData.pointerCurrentRaycast.gameObject;
