@@ -147,7 +147,6 @@ MonoBehaviour:
   _handOffset: 1
   _extendSpeed: 0.01
   _retractSpeed: 0.05
-  _maxExtraSegments: 40
 --- !u!114 &5658972022319345754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,9 +160,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossArmController
   _grabPauseDuration: 1
-  _pivotSpeed: 50
+  _pivotSpeed: 75
   _retractPauseDuration: 1
   _handGrabOffset: 2.25
+  _moveStopDistance: 1
 --- !u!1 &7817658982473331452
 GameObject:
   m_ObjectHideFlags: 0

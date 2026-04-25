@@ -15,8 +15,9 @@ namespace Enemy.Bosses
         [SerializeField] private EnemyMovement _enemyMovement;
         [SerializeField] private float _aimDurationMin = 2f;
         [SerializeField] private float _aimDurationMax = 5f;
-        [SerializeField] private float _dragMoveInterval = 0.3f;
+        [SerializeField] private float _dragMoveInterval = 0.05f;
         [SerializeField] private float _playerLerpSpeed = 10f;
+        [SerializeField] private float _grabDetectionWindow = 0.5f;
         [SerializeField] private int _grabDamage = 1;
 
         private Player.DamageDealer _damageDealer;
@@ -73,17 +74,41 @@ namespace Enemy.Bosses
 
             yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
 
-            _playerMovement.enabled = false;
-            _playerRb.linearVelocity = Vector2.zero;
-
             var damageInfo = new DamageInfo(_grabDamage, Vector2.zero);
             _damageDealer.Activate(damageInfo);
+            _grabHand.Activate();
 
             yield return armController.LaunchTowardPlayer();
 
             _damageDealer.Deactivate();
 
-            _grabHand.Activate();
+            float detectionTimer = 0f;
+            while (detectionTimer < _grabDetectionWindow && !_grabHand.IsPlayerInReach)
+            {
+                detectionTimer += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!_grabHand.IsPlayerInReach)
+            {
+                _grabHand.Deactivate();
+                _damageDealer = null;
+                _grabHand = null;
+                _player = null;
+
+                yield return armController.RetractToDefault();
+
+                arm.SwapToDefaultHand();
+                IsComplete = true;
+                _enemyMovement.ResumeMovement();
+                OnMoveComplete?.Invoke();
+                _grabRoutine = null;
+                yield break;
+            }
+
+            _playerMovement.enabled = false;
+            _playerRb.linearVelocity = Vector2.zero;
+
             _grabHand.OnGrabBroken += OnGrabBroken;
 
             yield return armController.DragTowardTarget(_dragTarget, _dragMoveInterval, _playerLerpSpeed,

@@ -421,7 +421,6 @@ MonoBehaviour:
   - {fileID: 8979542939887364253}
   _bossTransform: {fileID: 7891938784662909269}
   _playerTransform: {fileID: 0}
-  _enemyMovement: {fileID: 6598089395193418422}
 --- !u!114 &4885681163285851727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,12 +517,13 @@ MonoBehaviour:
   _openClawHandPrefab: {fileID: 2142481108377636327, guid: 0018e92568c49124695aaf12857e294d, type: 3}
   _stats: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
   _dragTarget: {fileID: 0}
+  _enemyMovement: {fileID: 6598089395193418422}
   _aimDurationMin: 2
   _aimDurationMax: 5
-  _dragMoveInterval: 0.3
+  _dragMoveInterval: 0.15
   _playerLerpSpeed: 10
+  _grabDetectionWindow: 0.5
   _grabDamage: 1
-  _enemyMovement: {fileID: 6598089395193418422}
 --- !u!1 &7739672090812684932
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,10 +779,10 @@ MonoBehaviour:
   _armSpawner: {fileID: 4885681163285851727}
   _closedClawHandPrefab: {fileID: 2142481108377636327, guid: fb2abd1dc25cd5143a17bb73cfc251fe, type: 3}
   _stats: {fileID: 11400000, guid: 106b6dcb4f679d441bbddcca2917d4d0, type: 2}
+  _bossMovement: {fileID: 6598089395193418422}
   _aimDurationMin: 2
   _aimDurationMax: 5
   _hitPauseDuration: 0.2
-  _bossMovement: {fileID: 6598089395193418422}
 --- !u!1 &8370719550974549849
 GameObject:
   m_ObjectHideFlags: 0

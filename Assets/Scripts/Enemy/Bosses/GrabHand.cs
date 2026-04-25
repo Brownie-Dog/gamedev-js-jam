@@ -7,23 +7,52 @@ public class GrabHand : MonoBehaviour, IDamageable
 
     private int _currentHealth;
     private bool _isActive;
+    private int _playerLayer;
 
+    public bool IsPlayerInReach { get; private set; }
     public event EventHandler OnGrabBroken;
 
     private void Awake()
     {
         _currentHealth = _maxHealth;
+        _playerLayer = LayerMask.NameToLayer(GlobalConstants.PLAYER_LAYER);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_isActive && other.gameObject.layer == _playerLayer)
+        {
+            IsPlayerInReach = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (_isActive && other.gameObject.layer == _playerLayer)
+        {
+            IsPlayerInReach = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == _playerLayer)
+        {
+            IsPlayerInReach = false;
+        }
     }
 
     public void Activate()
     {
         _currentHealth = _maxHealth;
         _isActive = true;
+        IsPlayerInReach = false;
     }
 
     public void Deactivate()
     {
         _isActive = false;
+        IsPlayerInReach = false;
     }
 
     public void TakeDamage(DamageInfo info)

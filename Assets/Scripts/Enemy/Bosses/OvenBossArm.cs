@@ -92,7 +92,17 @@ namespace Enemy.Bosses
                 StopCoroutine(_retractRoutine);
             }
 
-            _retractRoutine = StartCoroutine(RetractRoutine(_defaultSegmentCount));
+            _retractRoutine = StartCoroutine(RetractRoutine(_defaultSegmentCount, _retractSpeed));
+        }
+
+        public void RetractToDefault(float speed)
+        {
+            if (_retractRoutine != null)
+            {
+                StopCoroutine(_retractRoutine);
+            }
+
+            _retractRoutine = StartCoroutine(RetractRoutine(_defaultSegmentCount, speed));
         }
 
         public void RetractByOne()
@@ -173,7 +183,7 @@ namespace Enemy.Bosses
             _extendRoutine = null;
         }
 
-        private IEnumerator RetractRoutine(int targetCount)
+        private IEnumerator RetractRoutine(int targetCount, float speed)
         {
             while (_segments.Count > targetCount)
             {
@@ -181,7 +191,7 @@ namespace Enemy.Bosses
                 _segments.RemoveAt(_segments.Count - 1);
                 Destroy(last);
                 RepositionHand();
-                yield return new WaitForSeconds(_retractSpeed);
+                yield return new WaitForSeconds(speed);
             }
 
             _retractRoutine = null;

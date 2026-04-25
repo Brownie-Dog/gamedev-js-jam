@@ -63,6 +63,16 @@ namespace Enemy.Bosses
             }
         }
 
+        public IEnumerator RetractToDefault(float speed)
+        {
+            _arm.RetractToDefault(speed);
+
+            while (_arm.IsRetracting)
+            {
+                yield return null;
+            }
+        }
+
         public IEnumerator DragTowardTarget(Transform target, float moveInterval, float playerLerpSpeed,
             Func<bool> shouldStop, Action onTargetReached)
         {
