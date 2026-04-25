@@ -283,6 +283,8 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  _axisToTrack: 1
+  _positiveIsArena: 1
 --- !u!1 &5256404186367625104
 GameObject:
   m_ObjectHideFlags: 0
