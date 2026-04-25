@@ -121,14 +121,16 @@ namespace Enemy.Bosses
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 
+            Vector2 startDirection = isLeftArm ? West : East;
+            float sweepAngle = isLeftArm ? _sweepAngle : -_sweepAngle;
+            Vector2 knockback = isLeftArm ? East : West;
+
+            yield return armController.PivotToDirection(startDirection);
+
             arm.SwapHand(_swordHandPrefab);
 
             var damageDealer = arm.GetHandComponent<Player.DamageDealer>();
             Assert.IsNotNull(damageDealer, "SwordHand prefab must have a DamageDealer component");
-
-            Vector2 startDirection = isLeftArm ? West : East;
-            float sweepAngle = isLeftArm ? _sweepAngle : -_sweepAngle;
-            Vector2 knockback = isLeftArm ? East : West;
 
             var damageInfo = new DamageInfo(_swordDamage, knockback * _swordKnockbackForce, _swordKnockbackDuration);
 

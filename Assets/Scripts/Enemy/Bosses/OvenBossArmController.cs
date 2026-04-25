@@ -240,6 +240,26 @@ namespace Enemy.Bosses
             _rb.MoveRotation(endAngle);
         }
 
+        public IEnumerator PivotToDirection(Vector2 direction)
+        {
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+            float startAngle = _rb.rotation;
+            float angleDiff = Mathf.Abs(Mathf.DeltaAngle(startAngle, targetAngle));
+            float duration = angleDiff / _pivotSpeed;
+            float timer = 0f;
+
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float t = timer / duration;
+                float angle = Mathf.LerpAngle(startAngle, targetAngle, t);
+                _rb.MoveRotation(angle);
+                yield return null;
+            }
+
+            _rb.MoveRotation(targetAngle);
+        }
+
         public IEnumerator TelegraphPhase(Vector2 direction, float duration)
         {
             _arm.SetDirection(direction);
