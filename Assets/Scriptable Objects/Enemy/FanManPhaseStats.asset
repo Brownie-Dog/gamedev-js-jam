@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea6f6d3c9b9d994386f632fc4b84186, type: 3}
+  m_Name: FanManPhaseStats
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.FanManPhaseStats
+  Phase1:
+    MoveCooldown: 4
+    AimDurationMin: 2
+    AimDurationMax: 5
+    MovementSpeedMultiplier: 1
+    FanPushDuration: 2
+    FanPushSlowMultiplier: 0.5
+    NormalGunShotMin: 2
+    NormalGunShotMax: 3
+    NormalGunShotInterval: 0.2
+    RailgunTelegraphDuration: 2
+    RailgunLingerDuration: 1.5
+    RailgunMaxRange: 30
+    FanPushWeight: 0.5
+    NormalGunWeight: 0.5
+    RailgunWeight: 0
+  Phase2:
+    MoveCooldown: 2.5
+    AimDurationMin: 1.5
+    AimDurationMax: 3.5
+    MovementSpeedMultiplier: 1.2
+    FanPushDuration: 2
+    FanPushSlowMultiplier: 0.5
+    NormalGunShotMin: 3
+    NormalGunShotMax: 4
+    NormalGunShotInterval: 0.2
+    RailgunTelegraphDuration: 1.5
+    RailgunLingerDuration: 1.5
+    RailgunMaxRange: 30
+    FanPushWeight: 0.45
+    NormalGunWeight: 0.4
+    RailgunWeight: 0.15
+  Phase3:
+    MoveCooldown: 1.5
+    AimDurationMin: 1
+    AimDurationMax: 2.5
+    MovementSpeedMultiplier: 1.5
+    FanPushDuration: 2
+    FanPushSlowMultiplier: 0.5
+    NormalGunShotMin: 4
+    NormalGunShotMax: 5
+    NormalGunShotInterval: 0.15
+    RailgunTelegraphDuration: 1
+    RailgunLingerDuration: 2
+    RailgunMaxRange: 30
+    FanPushWeight: 0.35
+    NormalGunWeight: 0.3
+    RailgunWeight: 0.35

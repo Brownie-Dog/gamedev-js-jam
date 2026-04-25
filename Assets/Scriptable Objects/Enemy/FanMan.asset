@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9af0f47f874e4204c88a0d3a4c2ca3ce, type: 3}
-  m_Name: OvenLord
+  m_Name: FanMan
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
   MovementSpeed: 10
   StoppingDistance: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   KnockbackForce: 50
   MaxHealth: 1000
   DropChance: 1
-  GuaranteedItem: {fileID: 0}
+  GuaranteedItem: {fileID: 11400000, guid: 8dc77e72b5829d143ab9d64fdb471d34, type: 2}
   CoinDropChance: 1
   MinCoinDrop: 50
   MaxCoinDrop: 100
