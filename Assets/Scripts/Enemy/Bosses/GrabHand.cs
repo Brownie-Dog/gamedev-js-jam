@@ -10,6 +10,7 @@ public class GrabHand : MonoBehaviour, IDamageable
     private int _playerLayer;
 
     public bool IsPlayerInReach { get; private set; }
+    public event EventHandler OnHit;
     public event EventHandler OnGrabBroken;
 
     private void Awake()
@@ -61,6 +62,8 @@ public class GrabHand : MonoBehaviour, IDamageable
         {
             return;
         }
+
+        OnHit?.Invoke(this, EventArgs.Empty);
 
         _currentHealth -= info.Damage;
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,8 @@ namespace Enemy.Bosses
         private GameObject _hand;
         private Coroutine _extendRoutine;
         private Coroutine _retractRoutine;
+
+        public event EventHandler OnHandSwapped;
 
         public bool IsExtending => _extendRoutine != null;
         public bool IsRetracting => _retractRoutine != null;
@@ -130,6 +133,7 @@ namespace Enemy.Bosses
             Destroy(_hand);
             _hand = Instantiate(newHandPrefab, _segmentsRoot);
             _hand.transform.localPosition = position;
+            OnHandSwapped?.Invoke(this, EventArgs.Empty);
         }
 
         public void SwapToDefaultHand()
