@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9af0f47f874e4204c88a0d3a4c2ca3ce, type: 3}
-  m_Name: Sprinkler Bot
+  m_Name: Gun Bot
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  MovementSpeed: 6
+  MovementSpeed: 9
   StoppingDistance: 11
   WanderSpeed: 2
   WanderMoveDuration: 2
@@ -20,13 +20,13 @@ MonoBehaviour:
   WallLayer:
     serializedVersion: 2
     m_Bits: 256
-  DetectionRadius: 15
-  ChasingRadius: 18
-  AttackCooldown: 0.3
-  AttackRange: 15
+  DetectionRadius: 13
+  ChasingRadius: 17
+  AttackCooldown: 0.7
+  AttackRange: 12
   Damage: 1
   KnockbackForce: 10
-  MaxHealth: 5
+  MaxHealth: 6
   DropChance: 0.05
   GuaranteedItem: {fileID: 0}
   CoinDropChance: 0.5
