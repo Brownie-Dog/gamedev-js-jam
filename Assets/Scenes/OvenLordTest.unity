@@ -721,6 +721,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4715618198221690433, guid: 63733d282f183374ba0977bfc1aea003, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24.099976
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4141,6 +4145,10 @@ PrefabInstance:
       propertyPath: m_Target.y
       value: 27.87054
       objectReference: {fileID: 0}
+    - target: {fileID: 2811599696780566803, guid: bf7bf32d0a429654c9ac4de4be6d75ac, type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 1620523749}
     - target: {fileID: 2877437871028278605, guid: bf7bf32d0a429654c9ac4de4be6d75ac, type: 3}
       propertyPath: m_Resource
       value: 

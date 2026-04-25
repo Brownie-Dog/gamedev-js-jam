@@ -28,6 +28,7 @@ namespace Enemy.Bosses
         private bool _grabBroken;
         private bool _isLaunched;
         private Transform _player;
+        private OvenBossArm _forcedArm;
 
         public bool IsComplete { get; private set; }
         public bool IsLaunched => _isLaunched;
@@ -40,6 +41,11 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_stats);
             Assert.IsNotNull(_dragTarget);
             Assert.IsNotNull(_enemyMovement);
+        }
+
+        public void SetArmOverride(OvenBossArm arm)
+        {
+            _forcedArm = arm;
         }
 
         public void Execute(Transform boss, Transform player)
@@ -62,7 +68,8 @@ namespace Enemy.Bosses
             _playerRb = player.GetComponent<Rigidbody2D>();
             _grabBroken = false;
 
-            OvenBossArm arm = Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm;
+            OvenBossArm arm = _forcedArm ?? (Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm);
+            _forcedArm = null;
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 

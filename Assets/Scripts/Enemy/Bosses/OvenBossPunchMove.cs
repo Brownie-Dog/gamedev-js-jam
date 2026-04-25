@@ -19,6 +19,7 @@ namespace Enemy.Bosses
         private Player.DamageDealer _damageDealer;
         private Coroutine _punchRoutine;
         private bool _isLaunched;
+        private OvenBossArm _forcedArm;
 
         public bool IsComplete { get; private set; }
         public bool IsLaunched => _isLaunched;
@@ -30,6 +31,11 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_closedClawHandPrefab);
             Assert.IsNotNull(_stats);
             Assert.IsNotNull(_bossMovement);
+        }
+
+        public void SetArmOverride(OvenBossArm arm)
+        {
+            _forcedArm = arm;
         }
 
         public void Execute(Transform boss, Transform player)
@@ -47,7 +53,8 @@ namespace Enemy.Bosses
 
         private IEnumerator PunchRoutine(Transform boss, Transform player)
         {
-            OvenBossArm arm = Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm;
+            OvenBossArm arm = _forcedArm ?? (Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm);
+            _forcedArm = null;
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 
