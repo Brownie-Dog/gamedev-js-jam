@@ -11,6 +11,9 @@ public class OvenBossPhaseStats : ScriptableObject
         AimDurationMax = 5f,
         ArmSpeedMultiplier = 1f,
         MovementSpeedMultiplier = 1f,
+        FlameBurstCount = 2,
+        FlameBurstCooldown = 6f,
+        FlameShotInterval = 0.3f,
         PunchWeight = 0.4f,
         GrabWeight = 0.3f,
         SwordWeight = 0.3f,
@@ -27,6 +30,9 @@ public class OvenBossPhaseStats : ScriptableObject
         AimDurationMax = 3.5f,
         ArmSpeedMultiplier = 1.5f,
         MovementSpeedMultiplier = 1.2f,
+        FlameBurstCount = 4,
+        FlameBurstCooldown = 5f,
+        FlameShotInterval = 0.2f,
         PunchWeight = 0.35f,
         GrabWeight = 0.3f,
         SwordWeight = 0.35f,
@@ -43,6 +49,9 @@ public class OvenBossPhaseStats : ScriptableObject
         AimDurationMax = 2.5f,
         ArmSpeedMultiplier = 2f,
         MovementSpeedMultiplier = 1.5f,
+        FlameBurstCount = 6,
+        FlameBurstCooldown = 4f,
+        FlameShotInterval = 0.15f,
         PunchWeight = 0.3f,
         GrabWeight = 0.25f,
         SwordWeight = 0.3f,
@@ -60,6 +69,9 @@ public class OvenBossPhaseStats : ScriptableObject
         public float AimDurationMax;
         public float ArmSpeedMultiplier = 1f;
         public float MovementSpeedMultiplier = 1f;
+        public int FlameBurstCount = 2;
+        public float FlameBurstCooldown = 6f;
+        public float FlameShotInterval = 0.3f;
         [Range(0f, 1f)] public float PunchWeight;
         [Range(0f, 1f)] public float GrabWeight;
         [Range(0f, 1f)] public float SwordWeight;

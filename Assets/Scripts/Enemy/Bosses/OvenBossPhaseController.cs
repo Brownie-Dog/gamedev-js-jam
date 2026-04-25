@@ -55,6 +55,8 @@ namespace Enemy.Bosses
         private bool _phaseForced;
         private IOvenBossMove _currentSpecialMove;
 
+        public Phase CurrentPhase => _currentPhase;
+
         private void Awake()
         {
             Assert.IsNotNull(_armSpawner);
