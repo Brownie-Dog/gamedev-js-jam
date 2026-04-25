@@ -45,6 +45,7 @@ namespace Enemy.Bosses
         private ArmSlot _leftSlot;
         private ArmSlot _rightSlot;
         private Phase _currentPhase;
+        private Phase _lastAppliedPhase;
         private bool _playerInRange;
         private bool _phaseForced;
         private IOvenBossMove _currentSpecialMove;
@@ -69,6 +70,12 @@ namespace Enemy.Bosses
             {
                 Arm = _armSpawner.RightArm, Controller = _armSpawner.RightArm.GetComponent<OvenBossArmController>()
             };
+        }
+
+        private void Start()
+        {
+            ApplyPhaseSettings();
+            _lastAppliedPhase = _currentPhase;
         }
 
         private void OnEnable()
@@ -122,21 +129,39 @@ namespace Enemy.Bosses
 
         private void UpdatePhase()
         {
-            if (_phaseForced) return;
+            if (!_phaseForced)
+            {
+                float healthPercent = _bossHealth.HealthPercent;
+                if (healthPercent > 0.66f)
+                {
+                    _currentPhase = Phase.One;
+                }
+                else if (healthPercent > 0.33f)
+                {
+                    _currentPhase = Phase.Two;
+                }
+                else
+                {
+                    _currentPhase = Phase.Three;
+                }
+            }
 
-            float healthPercent = _bossHealth.HealthPercent;
-            if (healthPercent > 0.66f)
+            if (_currentPhase != _lastAppliedPhase)
             {
-                _currentPhase = Phase.One;
+                ApplyPhaseSettings();
+                _lastAppliedPhase = _currentPhase;
             }
-            else if (healthPercent > 0.33f)
-            {
-                _currentPhase = Phase.Two;
-            }
-            else
-            {
-                _currentPhase = Phase.Three;
-            }
+        }
+
+        private void ApplyPhaseSettings()
+        {
+            var stats = GetCurrentPhaseStats();
+            _leftSlot.Controller.SetSpeedMultiplier(stats.ArmSpeedMultiplier);
+            _rightSlot.Controller.SetSpeedMultiplier(stats.ArmSpeedMultiplier);
+            _bossMovement.SetMovementSpeedMultiplier(stats.MovementSpeedMultiplier);
+            _punchMove.SetAimDurationRange(stats.AimDurationMin, stats.AimDurationMax);
+            _grabMove.SetAimDurationRange(stats.AimDurationMin, stats.AimDurationMax);
+            _swordMove.SetTelegraphDurationRange(stats.AimDurationMin, stats.AimDurationMax);
         }
 
         private void UpdateMovementFreeze()
@@ -267,14 +292,17 @@ namespace Enemy.Bosses
             if (move is OvenBossPunchMove punch)
             {
                 punch.SetArmOverride(slot.Arm);
+                punch.SetAimDurationRange(phaseStats.AimDurationMin, phaseStats.AimDurationMax);
             }
             else if (move is OvenBossGrabMove grab)
             {
                 grab.SetArmOverride(slot.Arm);
+                grab.SetAimDurationRange(phaseStats.AimDurationMin, phaseStats.AimDurationMax);
             }
             else if (move is OvenBossSwordMove sword)
             {
                 sword.SetArmOverride(slot.Arm);
+                sword.SetTelegraphDurationRange(phaseStats.AimDurationMin, phaseStats.AimDurationMax);
             }
 
             move.Execute(transform, _playerTransform);
@@ -403,6 +431,8 @@ namespace Enemy.Bosses
         {
             _currentPhase = phase;
             _phaseForced = true;
+            ApplyPhaseSettings();
+            _lastAppliedPhase = phase;
         }
 
         public void UnlockPhase()

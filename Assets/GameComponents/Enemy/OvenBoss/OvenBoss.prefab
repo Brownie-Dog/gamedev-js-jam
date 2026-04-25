@@ -239,10 +239,10 @@ MonoBehaviour:
   _enemyMovement: {fileID: 6598089395193418422}
   _telegraphDurationMin: 2
   _telegraphDurationMax: 3
-  _swingSpeed: 400
-  _sweepAngle: 115
+  _swingSpeed: 200
+  _sweepAngle: 105
   _swordDamage: 2
-  _swordKnockbackForce: 200
+  _swordKnockbackForce: 100
   _swordKnockbackDuration: 1
   _hitPauseDuration: 0.2
 --- !u!1 &3514105724944607953

@@ -29,6 +29,8 @@ namespace Enemy.Bosses
 
         private OvenBossArm _forcedArm;
         private Func<bool> _attackGate;
+        private float _telegraphMinOverride = -1f;
+        private float _telegraphMaxOverride = -1f;
 
         public bool IsComplete => !_armComplete.ContainsValue(false);
         public bool IsLaunched => _armLaunched.ContainsValue(true);
@@ -59,6 +61,15 @@ namespace Enemy.Bosses
         {
             _attackGate = gate;
         }
+
+        public void SetTelegraphDurationRange(float min, float max)
+        {
+            _telegraphMinOverride = min;
+            _telegraphMaxOverride = max;
+        }
+
+        private float GetTelegraphMin() => _telegraphMinOverride >= 0f ? _telegraphMinOverride : _telegraphDurationMin;
+        private float GetTelegraphMax() => _telegraphMaxOverride >= 0f ? _telegraphMaxOverride : _telegraphDurationMax;
 
         public void Execute(Transform boss, Transform player)
         {
@@ -121,7 +132,7 @@ namespace Enemy.Bosses
 
             var damageInfo = new DamageInfo(_swordDamage, knockback * _swordKnockbackForce, _swordKnockbackDuration);
 
-            yield return armController.TelegraphPhase(startDirection, Random.Range(_telegraphDurationMin, _telegraphDurationMax));
+            yield return armController.TelegraphPhase(startDirection, Random.Range(GetTelegraphMin(), GetTelegraphMax()));
 
             if (_attackGate != null)
             {

@@ -15,8 +15,6 @@ namespace Enemy.Bosses
         [SerializeField] private int _defaultSegmentCount = 3;
         [SerializeField] private float _segmentSpacing;
         [SerializeField] private float _handOffset;
-        [SerializeField] private float _extendSpeed;
-        [SerializeField] private float _retractSpeed;
 
         private readonly List<GameObject> _segments = new List<GameObject>();
         private GameObject _hand;
@@ -30,6 +28,7 @@ namespace Enemy.Bosses
         public bool CanRetract => _segments.Count > _defaultSegmentCount;
         public bool CanExtend => true;
         public int SegmentCount => _segments.Count;
+        public int DefaultSegmentCount => _defaultSegmentCount;
         public Transform HandPosition => _hand != null ? _hand.transform : null;
         public Transform Pivot => _elbow;
 
@@ -69,14 +68,14 @@ namespace Enemy.Bosses
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
 
-        public void ExtendTo(int targetCount)
+        public void ExtendTo(int targetCount, float speed)
         {
             if (_extendRoutine != null)
             {
                 StopCoroutine(_extendRoutine);
             }
 
-            _extendRoutine = StartCoroutine(ExtendRoutine(targetCount));
+            _extendRoutine = StartCoroutine(ExtendRoutine(targetCount, speed));
         }
 
         public int CalculateTargetSegments(float distanceFromPivot)
@@ -86,16 +85,6 @@ namespace Enemy.Bosses
             float worldOffset = _handOffset * worldScale;
             float exactSegments = (distanceFromPivot - worldOffset) / worldSpacing;
             return Mathf.Max(Mathf.CeilToInt(exactSegments), _defaultSegmentCount);
-        }
-
-        public void RetractToDefault()
-        {
-            if (_retractRoutine != null)
-            {
-                StopCoroutine(_retractRoutine);
-            }
-
-            _retractRoutine = StartCoroutine(RetractRoutine(_defaultSegmentCount, _retractSpeed));
         }
 
         public void RetractToDefault(float speed)
@@ -175,13 +164,13 @@ namespace Enemy.Bosses
             }
         }
 
-        private IEnumerator ExtendRoutine(int targetCount)
+        private IEnumerator ExtendRoutine(int targetCount, float speed)
         {
             while (_segments.Count < targetCount)
             {
                 SpawnSegment();
                 RepositionHand();
-                yield return new WaitForSeconds(_extendSpeed);
+                yield return new WaitForSeconds(speed);
             }
 
             _extendRoutine = null;
