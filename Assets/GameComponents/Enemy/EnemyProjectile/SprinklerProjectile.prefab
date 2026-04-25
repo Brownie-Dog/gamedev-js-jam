@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7729389339553513010}
   - component: {fileID: 5442161242388031772}
   - component: {fileID: 4827543062457733671}
-  - component: {fileID: 3285378652751197902}
-  - component: {fileID: 4421752857716011144}
+  - component: {fileID: 3185376593752433458}
+  - component: {fileID: 7520195917468111178}
   m_Layer: 0
-  m_Name: BatterProjectile
+  m_Name: SprinklerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6551558350049260517, guid: 56ce6fe33a3c11f42ba9018ac39689d8, type: 3}
+  m_Sprite: {fileID: 1486895521073495062, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,7 +174,30 @@ MonoBehaviour:
   _targetLayerMask:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &3285378652751197902
+--- !u!114 &3185376593752433458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3730379951702473993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09520de26ab373d46b6bbbc2ca886b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.SprinklerBullet
+  _speed: 25
+  _lifetime: 3
+  _renderer: {fileID: 8230461480171691232}
+  _possibleSprites:
+  - {fileID: -5091685921343274754, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+  - {fileID: -7934189955732519211, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+  - {fileID: -7103995977175503097, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+  - {fileID: 2538168556230043599, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+  - {fileID: 1030024799247472290, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+  - {fileID: 1486895521073495062, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+  - {fileID: 1665151997355059501, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
+--- !u!114 &7520195917468111178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,27 +209,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e136767957fbb67468fbd2b9946c53cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.Bullet
-  _speed: 20
+  _speed: 25
   _lifetime: 3
---- !u!95 &4421752857716011144
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3730379951702473993}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca70146e63ad6d541be66de1a6d35ea1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
