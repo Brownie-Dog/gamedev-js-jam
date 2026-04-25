@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef812e746843c794486e83be6cbb725b, type: 3}
+  m_Name: OvenLordPhaseStats
+  m_EditorClassIdentifier: Assembly-CSharp::OvenBossPhaseStats
+  Phase1:
+    ArmCooldown: 4
+    AimDurationMin: 2
+    AimDurationMax: 5
+    PunchWeight: 0.4
+    GrabWeight: 0.3
+    SwordWeight: 0.3
+    SpecialMoveWeight: 0
+    DoublePunchWeight: 0
+    DoubleGrabWeight: 0
+    ComboWeight: 0
+  Phase2:
+    ArmCooldown: 2.5
+    AimDurationMin: 1.5
+    AimDurationMax: 3.5
+    PunchWeight: 0.35
+    GrabWeight: 0.3
+    SwordWeight: 0.35
+    SpecialMoveWeight: 0
+    DoublePunchWeight: 0
+    DoubleGrabWeight: 0
+    ComboWeight: 0
+  Phase3:
+    ArmCooldown: 1.5
+    AimDurationMin: 1
+    AimDurationMax: 2.5
+    PunchWeight: 0.3
+    GrabWeight: 0.25
+    SwordWeight: 0.3
+    SpecialMoveWeight: 0.25
+    DoublePunchWeight: 0.35
+    DoubleGrabWeight: 0.3
+    ComboWeight: 0.35
