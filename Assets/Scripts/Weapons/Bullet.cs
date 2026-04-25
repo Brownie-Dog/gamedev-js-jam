@@ -15,7 +15,7 @@ namespace Weapons
         private DamageDealer _damageDealer;
         private IObjectPool<Bullet> _pool;
         private float _lifetimeTimer;
-
+        private int _currentPenetration;
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -24,23 +24,34 @@ namespace Weapons
 
         private void OnEnable()
         {
-            _damageDealer.OnHit += ReturnToPool;
+            _damageDealer.OnHit += HandleHit;
         }
 
         private void OnDisable()
         {
-            _damageDealer.OnHit -= ReturnToPool;
+            _damageDealer.OnHit -= HandleHit;
         }
 
-        public void Activate(Vector2 position, Vector2 direction, DamageInfo damageInfo)
+        public void Activate(Vector2 position, Vector2 direction, DamageInfo damageInfo, int penetrationCount)
         {
             transform.position = position;
             transform.up = direction;
+            _currentPenetration = penetrationCount;
             _damageDealer.Activate(damageInfo);
             _rb.linearVelocity = direction.normalized * _speed;
             _lifetimeTimer = _lifetime;
         }
 
+        private void HandleHit()
+        {
+            _currentPenetration--;
+
+            if (_currentPenetration <= 0)
+            {
+                ReturnToPool();
+            }
+        }
+        
         public void Deactivate()
         {
             _damageDealer.Deactivate();
