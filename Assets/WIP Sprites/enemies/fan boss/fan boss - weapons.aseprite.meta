@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 1
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639126756846692936
+  platformSettingsDirtyTick: 639127801045142389
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -151,16 +151,16 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: fan boss - weapons_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.8235294}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 3
-      y: 42
-      width: 13
-      height: 19
+      x: 4
+      y: 43
+      width: 11
+      height: 17
     spriteID: 0b2cf45a33fd74a41b4460a1198cab79
     spriteBone: []
     spriteOutline: []
@@ -172,16 +172,16 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: fan boss - weapons_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.8181819}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 2
-      y: 24
-      width: 14
-      height: 13
+      x: 3
+      y: 25
+      width: 12
+      height: 11
     spriteID: d6116b66713f4814b9d6b5192852ab52
     spriteBone: []
     spriteOutline: []
@@ -193,16 +193,16 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: fan boss - weapons_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0.8571429}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 2
-      width: 11
-      height: 16
+      x: 5
+      y: 3
+      width: 9
+      height: 14
     spriteID: 66f29aeafa2167940a20b01cc44ea769
     spriteBone: []
     spriteOutline: []
@@ -266,6 +266,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 16384
