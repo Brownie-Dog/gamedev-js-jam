@@ -24,7 +24,7 @@ namespace Enemy.Bosses
         [SerializeField] private OvenBossComboMove _swordPunchComboMove;
         [SerializeField] private OvenBossComboMove _swordGrabComboMove;
 
-        private enum Phase
+        public enum Phase
         {
             One,
             Two,
@@ -37,14 +37,16 @@ namespace Enemy.Bosses
             public OvenBossArmController Controller;
             public IOvenBossMove CurrentMove;
             public float CooldownTimer;
+            public OvenBossMoveType? PendingMoveType;
 
-            public bool IsActive => CurrentMove != null && !CurrentMove.IsComplete;
+            public bool IsActive => CurrentMove != null && !CurrentMove.IsArmComplete(Arm);
         }
 
         private ArmSlot _leftSlot;
         private ArmSlot _rightSlot;
         private Phase _currentPhase;
         private bool _playerInRange;
+        private bool _phaseForced;
         private IOvenBossMove _currentSpecialMove;
 
         private void Awake()
@@ -120,6 +122,8 @@ namespace Enemy.Bosses
 
         private void UpdatePhase()
         {
+            if (_phaseForced) return;
+
             float healthPercent = _bossHealth.HealthPercent;
             if (healthPercent > 0.66f)
             {
@@ -137,8 +141,8 @@ namespace Enemy.Bosses
 
         private void UpdateMovementFreeze()
         {
-            bool anyLaunched = (_leftSlot.CurrentMove?.IsLaunched ?? false) ||
-                               (_rightSlot.CurrentMove?.IsLaunched ?? false) ||
+            bool anyLaunched = (_leftSlot.CurrentMove?.IsArmLaunched(_leftSlot.Arm) ?? false) ||
+                               (_rightSlot.CurrentMove?.IsArmLaunched(_rightSlot.Arm) ?? false) ||
                                (_currentSpecialMove?.IsLaunched ?? false);
 
             if (anyLaunched)
@@ -153,7 +157,7 @@ namespace Enemy.Bosses
 
         private void CheckArmCompletion(ArmSlot slot)
         {
-            if (slot.CurrentMove == null || !slot.CurrentMove.IsComplete)
+            if (slot.CurrentMove == null || !slot.CurrentMove.IsArmComplete(slot.Arm))
             {
                 return;
             }
@@ -175,6 +179,9 @@ namespace Enemy.Bosses
             {
                 return;
             }
+
+            _leftSlot.CooldownTimer -= Time.deltaTime;
+            _rightSlot.CooldownTimer -= Time.deltaTime;
 
             if (_leftSlot.CooldownTimer > 0f || _rightSlot.CooldownTimer > 0f)
             {
@@ -229,7 +236,26 @@ namespace Enemy.Bosses
         private void ExecuteSingleMove(ArmSlot slot)
         {
             var phaseStats = GetCurrentPhaseStats();
-            var moveType = PickMoveType(phaseStats);
+            OvenBossMoveType moveType;
+
+            if (slot.PendingMoveType.HasValue)
+            {
+                moveType = slot.PendingMoveType.Value;
+            }
+            else
+            {
+                moveType = PickMoveType(phaseStats);
+            }
+
+            var other = slot == _leftSlot ? _rightSlot : _leftSlot;
+            if (moveType == OvenBossMoveType.Sword && other.CurrentMove is OvenBossSwordMove)
+            {
+                slot.PendingMoveType = OvenBossMoveType.Sword;
+                return;
+            }
+
+            slot.PendingMoveType = null;
+
             IOvenBossMove move = moveType switch
             {
                 OvenBossMoveType.Punch => _punchMove,
@@ -371,6 +397,17 @@ namespace Enemy.Bosses
         private void HandlePlayerLost(object sender, EventArgs e)
         {
             _playerInRange = false;
+        }
+
+        public void ForcePhase(Phase phase)
+        {
+            _currentPhase = phase;
+            _phaseForced = true;
+        }
+
+        public void UnlockPhase()
+        {
+            _phaseForced = false;
         }
     }
 }

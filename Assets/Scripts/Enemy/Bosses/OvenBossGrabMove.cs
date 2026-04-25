@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
@@ -20,18 +21,18 @@ namespace Enemy.Bosses
         [SerializeField] private float _grabDetectionWindow = 0.5f;
         [SerializeField] private int _grabDamage = 1;
 
-        private Player.DamageDealer _damageDealer;
-        private PlayerMovementController _playerMovement;
-        private Rigidbody2D _playerRb;
-        private GrabHand _grabHand;
-        private Coroutine _grabRoutine;
-        private bool _grabBroken;
-        private bool _isLaunched;
-        private Transform _player;
-        private OvenBossArm _forcedArm;
+        private readonly Dictionary<OvenBossArm, Coroutine> _routines = new Dictionary<OvenBossArm, Coroutine>();
+        private readonly Dictionary<OvenBossArm, bool> _armComplete = new Dictionary<OvenBossArm, bool>();
+        private readonly Dictionary<OvenBossArm, bool> _armLaunched = new Dictionary<OvenBossArm, bool>();
+        private readonly Dictionary<OvenBossArm, bool> _armAttacking = new Dictionary<OvenBossArm, bool>();
 
-        public bool IsComplete { get; private set; }
-        public bool IsLaunched => _isLaunched;
+        private OvenBossArm _forcedArm;
+        private Func<bool> _attackGate;
+        private bool _anyGrabActive;
+
+        public bool IsComplete => !_armComplete.ContainsValue(false);
+        public bool IsLaunched => _armLaunched.ContainsValue(true);
+        public bool IsAttacking => _armAttacking.ContainsValue(true);
         public event Action OnMoveComplete;
 
         private void Awake()
@@ -43,117 +44,137 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_enemyMovement);
         }
 
+        public bool IsArmComplete(OvenBossArm arm) => _armComplete.GetValueOrDefault(arm, true);
+        public bool IsArmLaunched(OvenBossArm arm) => _armLaunched.GetValueOrDefault(arm, false);
+        public bool IsArmAttacking(OvenBossArm arm) => _armAttacking.GetValueOrDefault(arm, false);
+
         public void SetArmOverride(OvenBossArm arm)
         {
             _forcedArm = arm;
         }
 
-        public void Execute(Transform boss, Transform player)
+        public void SetAttackGate(Func<bool> gate)
         {
-            IsComplete = false;
-            _isLaunched = false;
-
-            if (_grabRoutine != null)
-            {
-                StopCoroutine(_grabRoutine);
-            }
-
-            _grabRoutine = StartCoroutine(GrabRoutine(boss, player));
+            _attackGate = gate;
         }
 
-        private IEnumerator GrabRoutine(Transform boss, Transform player)
+        public void ResetGrabState()
         {
-            _player = player;
-            _playerMovement = player.GetComponent<PlayerMovementController>();
-            _playerRb = player.GetComponent<Rigidbody2D>();
-            _grabBroken = false;
+            _anyGrabActive = false;
+        }
 
+        public void Execute(Transform boss, Transform player)
+        {
             OvenBossArm arm = _forcedArm ?? (Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm);
             _forcedArm = null;
+
+            _armComplete[arm] = false;
+            _armLaunched[arm] = false;
+            _armAttacking[arm] = false;
+
+            if (_routines.TryGetValue(arm, out var existing))
+            {
+                if (existing != null) StopCoroutine(existing);
+            }
+
+            _routines[arm] = StartCoroutine(WrappedCore(arm, player));
+        }
+
+        private IEnumerator WrappedCore(OvenBossArm arm, Transform player)
+        {
+            _enemyMovement.PauseMovement();
+            yield return ExecuteCore(arm, player);
+            _enemyMovement.ResumeMovement();
+            _armComplete[arm] = true;
+            OnMoveComplete?.Invoke();
+            _routines.Remove(arm);
+        }
+
+        public IEnumerator ExecuteCore(OvenBossArm arm, Transform player)
+        {
+            var playerMovement = player.GetComponent<PlayerMovementController>();
+            var playerRb = player.GetComponent<Rigidbody2D>();
+
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 
             arm.SwapHand(_openClawHandPrefab);
 
-            _damageDealer = arm.GetHandComponent<Player.DamageDealer>();
-            Assert.IsNotNull(_damageDealer, "OpenClawHand prefab must have a DamageDealer component");
+            var damageDealer = arm.GetHandComponent<Player.DamageDealer>();
+            Assert.IsNotNull(damageDealer, "OpenClawHand prefab must have a DamageDealer component");
 
-            _grabHand = arm.GetHandComponent<GrabHand>();
-            Assert.IsNotNull(_grabHand, "OpenClawHand prefab must have a GrabHand component");
+            var grabHand = arm.GetHandComponent<GrabHand>();
+            Assert.IsNotNull(grabHand, "OpenClawHand prefab must have a GrabHand component");
 
             yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
 
-            _isLaunched = true;
-            _enemyMovement.PauseMovement();
+            if (_attackGate != null)
+            {
+                yield return new WaitUntil(() => _attackGate());
+                _attackGate = null;
+            }
+
+            _armLaunched[arm] = true;
+            _armAttacking[arm] = true;
 
             var damageInfo = new DamageInfo(_grabDamage, Vector2.zero);
-            _damageDealer.Activate(damageInfo);
-            _grabHand.Activate();
+            damageDealer.Activate(damageInfo);
+            grabHand.Activate();
 
             yield return armController.LaunchTowardPlayer();
 
-            _damageDealer.Deactivate();
+            damageDealer.Deactivate();
 
             float detectionTimer = 0f;
-            while (detectionTimer < _grabDetectionWindow && !_grabHand.IsPlayerInReach)
+            bool grabbed = false;
+            while (detectionTimer < _grabDetectionWindow && !grabbed)
             {
                 detectionTimer += Time.deltaTime;
+                grabbed = grabHand.IsPlayerInReach;
                 yield return null;
             }
 
-            if (!_grabHand.IsPlayerInReach)
+            if (!grabbed)
             {
-                _grabHand.Deactivate();
-                _damageDealer = null;
-                _grabHand = null;
-                _player = null;
-
+                grabHand.Deactivate();
+                _armAttacking[arm] = false;
                 yield return armController.RetractToDefault();
-
                 arm.SwapToDefaultHand();
-                _isLaunched = false;
-                IsComplete = true;
-                _enemyMovement.ResumeMovement();
-                OnMoveComplete?.Invoke();
-                _grabRoutine = null;
+                _armLaunched[arm] = false;
                 yield break;
             }
 
-            _playerMovement.enabled = false;
-            _playerRb.linearVelocity = Vector2.zero;
+            if (_anyGrabActive)
+            {
+                grabHand.Deactivate();
+                _armAttacking[arm] = false;
+                yield return armController.RetractToDefault();
+                arm.SwapToDefaultHand();
+                _armLaunched[arm] = false;
+                yield break;
+            }
 
-            _grabHand.OnGrabBroken += OnGrabBroken;
+            _anyGrabActive = true;
+
+            playerMovement.enabled = false;
+            playerRb.linearVelocity = Vector2.zero;
+
+            bool grabBroken = false;
+            EventHandler onGrabBroken = (_, _) => grabBroken = true;
+            grabHand.OnGrabBroken += onGrabBroken;
 
             yield return armController.DragTowardTarget(_dragTarget, _dragMoveInterval, _playerLerpSpeed,
-                () => _grabBroken, OnTargetReached
-            );
+                () => grabBroken, () => grabBroken = true);
 
-            _playerMovement.enabled = true;
-            _grabHand.OnGrabBroken -= OnGrabBroken;
-            _grabHand.Deactivate();
+            playerMovement.enabled = true;
+            grabHand.OnGrabBroken -= onGrabBroken;
+            grabHand.Deactivate();
 
-            _damageDealer = null;
-            _grabHand = null;
-            _player = null;
-
+            _armAttacking[arm] = false;
             yield return armController.RetractToDefault();
-
             arm.SwapToDefaultHand();
-            _isLaunched = false;
-            IsComplete = true;
-            _enemyMovement.ResumeMovement();
-            OnMoveComplete?.Invoke();
-            _grabRoutine = null;
-        }
-
-        private void OnGrabBroken(object sender, EventArgs e)
-        {
-            _grabBroken = true;
-        }
-
-        private void OnTargetReached()
-        {
-            _grabBroken = true;
+            _armLaunched[arm] = false;
+            _anyGrabActive = false;
         }
     }
 }

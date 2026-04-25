@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
@@ -16,13 +17,17 @@ namespace Enemy.Bosses
         [SerializeField] private float _aimDurationMax = 5f;
         [SerializeField] private float _hitPauseDuration = 0.2f;
 
-        private Player.DamageDealer _damageDealer;
-        private Coroutine _punchRoutine;
-        private bool _isLaunched;
-        private OvenBossArm _forcedArm;
+        private readonly Dictionary<OvenBossArm, Coroutine> _routines = new Dictionary<OvenBossArm, Coroutine>();
+        private readonly Dictionary<OvenBossArm, bool> _armComplete = new Dictionary<OvenBossArm, bool>();
+        private readonly Dictionary<OvenBossArm, bool> _armLaunched = new Dictionary<OvenBossArm, bool>();
+        private readonly Dictionary<OvenBossArm, bool> _armAttacking = new Dictionary<OvenBossArm, bool>();
 
-        public bool IsComplete { get; private set; }
-        public bool IsLaunched => _isLaunched;
+        private OvenBossArm _forcedArm;
+        private Func<bool> _attackGate;
+
+        public bool IsComplete => !_armComplete.ContainsValue(false);
+        public bool IsLaunched => _armLaunched.ContainsValue(true);
+        public bool IsAttacking => _armAttacking.ContainsValue(true);
         public event Action OnMoveComplete;
 
         private void Awake()
@@ -33,57 +38,80 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_bossMovement);
         }
 
+        public bool IsArmComplete(OvenBossArm arm) => _armComplete.GetValueOrDefault(arm, true);
+        public bool IsArmLaunched(OvenBossArm arm) => _armLaunched.GetValueOrDefault(arm, false);
+        public bool IsArmAttacking(OvenBossArm arm) => _armAttacking.GetValueOrDefault(arm, false);
+
         public void SetArmOverride(OvenBossArm arm)
         {
             _forcedArm = arm;
         }
 
-        public void Execute(Transform boss, Transform player)
+        public void SetAttackGate(Func<bool> gate)
         {
-            IsComplete = false;
-            _isLaunched = false;
-
-            if (_punchRoutine != null)
-            {
-                StopCoroutine(_punchRoutine);
-            }
-
-            _punchRoutine = StartCoroutine(PunchRoutine(boss, player));
+            _attackGate = gate;
         }
 
-        private IEnumerator PunchRoutine(Transform boss, Transform player)
+        public void Execute(Transform boss, Transform player)
         {
             OvenBossArm arm = _forcedArm ?? (Random.value < 0.5f ? _armSpawner.LeftArm : _armSpawner.RightArm);
             _forcedArm = null;
+
+            _armComplete[arm] = false;
+            _armLaunched[arm] = false;
+            _armAttacking[arm] = false;
+
+            if (_routines.TryGetValue(arm, out var existing))
+            {
+                if (existing != null) StopCoroutine(existing);
+            }
+
+            _routines[arm] = StartCoroutine(WrappedCore(arm, player));
+        }
+
+        private IEnumerator WrappedCore(OvenBossArm arm, Transform player)
+        {
+            _bossMovement.PauseMovement();
+            yield return ExecuteCore(arm, player);
+            _bossMovement.ResumeMovement();
+            _armComplete[arm] = true;
+            OnMoveComplete?.Invoke();
+            _routines.Remove(arm);
+        }
+
+        public IEnumerator ExecuteCore(OvenBossArm arm, Transform player)
+        {
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 
             arm.SwapHand(_closedClawHandPrefab);
-            _damageDealer = arm.GetHandComponent<Player.DamageDealer>();
-            Assert.IsNotNull(_damageDealer, "ClosedClawHand prefab must have a DamageDealer component");
+            var damageDealer = arm.GetHandComponent<Player.DamageDealer>();
+            Assert.IsNotNull(damageDealer, "ClosedClawHand prefab must have a DamageDealer component");
 
             var damageInfo = new DamageInfo(_stats.Damage, new Vector2(_stats.KnockbackForce, 0f));
 
             yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
 
-            _isLaunched = true;
-            _bossMovement.PauseMovement();
-            _damageDealer.Activate(damageInfo, false);
+            if (_attackGate != null)
+            {
+                yield return new WaitUntil(() => _attackGate());
+                _attackGate = null;
+            }
+
+            _armLaunched[arm] = true;
+            _armAttacking[arm] = true;
+            damageDealer.Activate(damageInfo, false);
 
             yield return armController.LaunchTowardPlayer();
             yield return new WaitForSeconds(_hitPauseDuration);
 
-            _damageDealer.Deactivate();
-            _damageDealer = null;
+            damageDealer.Deactivate();
 
+            _armAttacking[arm] = false;
             yield return armController.RetractToDefault();
 
             arm.SwapToDefaultHand();
-            _isLaunched = false;
-            IsComplete = true;
-            _bossMovement.ResumeMovement();
-            OnMoveComplete?.Invoke();
-            _punchRoutine = null;
+            _armLaunched[arm] = false;
         }
     }
 }

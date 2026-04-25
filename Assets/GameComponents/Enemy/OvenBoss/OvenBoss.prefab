@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &864929208737579515
+--- !u!1 &2173197173671410041
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7181373211284101493}
-  - component: {fileID: 1213163910914161630}
+  - component: {fileID: 52357013699323528}
+  - component: {fileID: 7495552765157784334}
   m_Layer: 0
-  m_Name: Move7
+  m_Name: SwordGrab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7181373211284101493
+--- !u!4 &52357013699323528
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864929208737579515}
+  m_GameObject: {fileID: 2173197173671410041}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,18 +32,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6891224407612589117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1213163910914161630
+--- !u!114 &7495552765157784334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864929208737579515}
+  m_GameObject: {fileID: 2173197173671410041}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fcac9249284c5247b09ca91eee848b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossComboMove
+  _armSpawner: {fileID: 4885681163285851727}
+  _punchMove: {fileID: 1505263450924332166}
+  _grabMove: {fileID: 8979542939887364253}
+  _swordMove: {fileID: 198016040562302532}
+  _bossMovement: {fileID: 6598089395193418422}
+  _firstMove: 1
+  _secondMove: 2
 --- !u!1 &2227146403934563376
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599ae51048ee6d1429ea27516c14b2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossDoubleGrabMove
+  _armSpawner: {fileID: 4885681163285851727}
+  _grabMove: {fileID: 8979542939887364253}
+  _bossMovement: {fileID: 6598089395193418422}
 --- !u!1 &2763958833678284791
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,50 +189,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &2939503252062594661
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3936729447881141414}
-  - component: {fileID: 5496981559390870712}
-  m_Layer: 0
-  m_Name: Move8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3936729447881141414
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2939503252062594661}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6891224407612589117}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5496981559390870712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2939503252062594661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fcac9249284c5247b09ca91eee848b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossComboMove
 --- !u!1 &3224749784999611937
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,53 +578,9 @@ MonoBehaviour:
   _swordMove: {fileID: 198016040562302532}
   _doublePunchMove: {fileID: 1024109324556116262}
   _doubleGrabMove: {fileID: 8571284167025422559}
-  _punchSwordComboMove: {fileID: 2302793018278704102}
-  _swordPunchComboMove: {fileID: 1213163910914161630}
-  _swordGrabComboMove: {fileID: 5496981559390870712}
---- !u!1 &4778386718716815029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6237093345240545782}
-  - component: {fileID: 2302793018278704102}
-  m_Layer: 0
-  m_Name: Move6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6237093345240545782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4778386718716815029}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6891224407612589117}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2302793018278704102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4778386718716815029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fcac9249284c5247b09ca91eee848b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossComboMove
+  _punchSwordComboMove: {fileID: 380430070513296842}
+  _swordPunchComboMove: {fileID: 5379277234011757300}
+  _swordGrabComboMove: {fileID: 7495552765157784334}
 --- !u!1 &4893946786629520698
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,12 +615,114 @@ Transform:
   - {fileID: 7413407655946552735}
   - {fileID: 2513499188711703760}
   - {fileID: 3183149339799315020}
-  - {fileID: 6237093345240545782}
-  - {fileID: 7181373211284101493}
-  - {fileID: 3936729447881141414}
+  - {fileID: 7438990364941015948}
+  - {fileID: 5510108134647416808}
+  - {fileID: 52357013699323528}
   - {fileID: 6418759566042221312}
   m_Father: {fileID: 7891938784662909269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5936665750556046356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7438990364941015948}
+  - component: {fileID: 380430070513296842}
+  m_Layer: 0
+  m_Name: PunchSword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7438990364941015948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936665750556046356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6891224407612589117}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &380430070513296842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936665750556046356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcac9249284c5247b09ca91eee848b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossComboMove
+  _armSpawner: {fileID: 4885681163285851727}
+  _punchMove: {fileID: 1505263450924332166}
+  _grabMove: {fileID: 8979542939887364253}
+  _swordMove: {fileID: 198016040562302532}
+  _bossMovement: {fileID: 6598089395193418422}
+  _firstMove: 0
+  _secondMove: 1
+--- !u!1 &6309905615886897894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5510108134647416808}
+  - component: {fileID: 5379277234011757300}
+  m_Layer: 0
+  m_Name: SwordPunch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5510108134647416808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309905615886897894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6891224407612589117}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5379277234011757300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309905615886897894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcac9249284c5247b09ca91eee848b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossComboMove
+  _armSpawner: {fileID: 4885681163285851727}
+  _punchMove: {fileID: 1505263450924332166}
+  _grabMove: {fileID: 8979542939887364253}
+  _swordMove: {fileID: 198016040562302532}
+  _bossMovement: {fileID: 6598089395193418422}
+  _firstMove: 1
+  _secondMove: 0
 --- !u!1 &6618908731971424693
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a625e96dcc87904e8f7a5c6640e2390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.OvenBossDoublePunchMove
+  _armSpawner: {fileID: 4885681163285851727}
+  _punchMove: {fileID: 1505263450924332166}
+  _bossMovement: {fileID: 6598089395193418422}
 --- !u!1 &7378694290774990160
 GameObject:
   m_ObjectHideFlags: 0
