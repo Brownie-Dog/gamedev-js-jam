@@ -53,11 +53,8 @@ namespace Enemy.Bosses
             _damageDealer = arm.GetHandComponent<Player.DamageDealer>();
             Assert.IsNotNull(_damageDealer, "ClosedClawHand prefab must have a DamageDealer component");
 
-            var damageInfo = new DamageInfo(_stats.Damage, Vector2.one * _stats.KnockbackForce);
-
-            yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
-
-            _damageDealer.Activate(damageInfo);
+            var damageInfo = new DamageInfo(_stats.Damage, new Vector2(_stats.KnockbackForce, 0f));
+            _damageDealer.Activate(damageInfo, false);
 
             yield return armController.LaunchTowardPlayer();
             yield return new WaitForSeconds(_hitPauseDuration);

@@ -14,12 +14,15 @@ namespace Enemy.Bosses
         [SerializeField] private float _moveStopDistance = 1.0f;
 
         private OvenBossArm _arm;
+        private Rigidbody2D _rb;
         private Transform _player;
 
         private void Awake()
         {
             _arm = GetComponent<OvenBossArm>();
+            _rb = GetComponent<Rigidbody2D>();
             Assert.IsNotNull(_arm);
+            Assert.IsNotNull(_rb);
         }
 
         public void SetPlayer(Transform player)
@@ -121,7 +124,7 @@ namespace Enemy.Bosses
         {
             Vector2 directionToTarget = (Vector2)(target.position - _arm.Pivot.position).normalized;
             float targetAngle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg + 90f;
-            float startAngle = transform.rotation.eulerAngles.z;
+            float startAngle = _rb.rotation;
             float angleDiff = Mathf.Abs(Mathf.DeltaAngle(startAngle, targetAngle));
             float pivotDuration = angleDiff / _pivotSpeed;
             float timer = 0f;
@@ -136,12 +139,12 @@ namespace Enemy.Bosses
                 timer += Time.deltaTime;
                 float t = timer / pivotDuration;
                 float angle = Mathf.LerpAngle(startAngle, targetAngle, t);
-                transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                _rb.MoveRotation(angle);
                 SetPlayerToGrabPoint();
                 yield return null;
             }
 
-            transform.rotation = Quaternion.Euler(0f, 0f, targetAngle);
+            _rb.MoveRotation(targetAngle);
             SetPlayerToGrabPoint();
         }
 
@@ -198,6 +201,39 @@ namespace Enemy.Bosses
                 }
 
                 SetPlayerToGrabPoint();
+                yield return null;
+            }
+        }
+
+        public IEnumerator SweepPhase(Vector2 startDirection, float sweepAngle, float speed)
+        {
+            _arm.SetDirection(startDirection);
+            float startAngle = _rb.rotation;
+            float endAngle = startAngle + sweepAngle;
+            float duration = Mathf.Abs(sweepAngle) / speed;
+            float timer = 0f;
+
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float linearT = timer / duration;
+                float t = linearT * linearT;
+                float angle = startAngle + sweepAngle * t;
+                _rb.MoveRotation(angle);
+                yield return null;
+            }
+
+            _rb.MoveRotation(endAngle);
+        }
+
+        public IEnumerator TelegraphPhase(Vector2 direction, float duration)
+        {
+            _arm.SetDirection(direction);
+
+            float timer = 0f;
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
                 yield return null;
             }
         }
