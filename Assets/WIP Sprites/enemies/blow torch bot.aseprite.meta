@@ -172,7 +172,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: blow torch bot_1
     originalName: 
-    pivot: {x: 0.850246, y: 0.17407644}
+    pivot: {x: 0.8333333, y: 0.1875}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
