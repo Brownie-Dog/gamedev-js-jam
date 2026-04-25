@@ -18,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
     protected Transform _player;
     protected bool _isChasing = false;
     protected bool _isMovementPaused = false;
+    protected float _movementSpeedMultiplier = 1f;
     protected Vector2 _wanderDirection;
     protected float _wanderMoveTimer;
     protected float _wanderIdleTimer;
@@ -99,10 +100,15 @@ public class EnemyMovement : MonoBehaviour
         _isMovementPaused = false;
     }
 
+    public void SetMovementSpeedMultiplier(float multiplier)
+    {
+        _movementSpeedMultiplier = multiplier;
+    }
+
     protected virtual void ChasePlayer()
     {
         Vector2 direction = ((Vector2)_player.position - (Vector2)transform.position).normalized;
-        _rb.linearVelocity = direction * _stats.MovementSpeed;
+        _rb.linearVelocity = direction * _stats.MovementSpeed * _movementSpeedMultiplier;
     }
 
     protected virtual void Wander()
@@ -111,7 +117,7 @@ public class EnemyMovement : MonoBehaviour
         {
             case WanderState.Moving:
                 _wanderMoveTimer -= Time.fixedDeltaTime;
-                _rb.linearVelocity = _wanderDirection * _stats.WanderSpeed;
+                _rb.linearVelocity = _wanderDirection * _stats.WanderSpeed * _movementSpeedMultiplier;
 
                 if (_wanderMoveTimer <= 0f)
                 {
