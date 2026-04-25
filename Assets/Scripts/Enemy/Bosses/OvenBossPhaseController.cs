@@ -24,6 +24,9 @@ namespace Enemy.Bosses
         [SerializeField] private OvenBossComboMove _swordPunchComboMove;
         [SerializeField] private OvenBossComboMove _swordGrabComboMove;
 
+        [SerializeField] private GameObject[] _idleHandPrefabs;
+        [SerializeField] private float _idleHandSwapInterval = 3f;
+
         public enum Phase
         {
             One,
@@ -38,6 +41,8 @@ namespace Enemy.Bosses
             public IOvenBossMove CurrentMove;
             public float CooldownTimer;
             public OvenBossMoveType? PendingMoveType;
+            public float IdleHandTimer;
+            public int IdleHandIndex;
 
             public bool IsActive => CurrentMove != null && !CurrentMove.IsArmComplete(Arm);
         }
@@ -94,6 +99,9 @@ namespace Enemy.Bosses
         {
             UpdatePhase();
             UpdateMovementFreeze();
+
+            UpdateIdleHands(_leftSlot);
+            UpdateIdleHands(_rightSlot);
 
             if (!_playerInRange)
             {
@@ -190,11 +198,13 @@ namespace Enemy.Bosses
             slot.CurrentMove = null;
             var phaseStats = GetCurrentPhaseStats();
             slot.CooldownTimer = phaseStats.ArmCooldown;
+            slot.IdleHandTimer = Mathf.Max(_idleHandSwapInterval + Random.Range(-0.5f, 0.5f), 0.1f);
 
             if (_currentPhase == Phase.One)
             {
                 var other = slot == _leftSlot ? _rightSlot : _leftSlot;
                 other.CooldownTimer = phaseStats.ArmCooldown;
+                other.IdleHandTimer = Mathf.Max(_idleHandSwapInterval + Random.Range(-0.5f, 0.5f), 0.1f);
             }
         }
 
@@ -438,6 +448,30 @@ namespace Enemy.Bosses
         public void UnlockPhase()
         {
             _phaseForced = false;
+        }
+
+        private void UpdateIdleHands(ArmSlot slot)
+        {
+            if (_idleHandPrefabs == null || _idleHandPrefabs.Length == 0)
+            {
+                return;
+            }
+
+            if (slot.IsActive || slot.CooldownTimer > 0f)
+            {
+                slot.IdleHandTimer = 0f;
+                return;
+            }
+
+            slot.IdleHandTimer -= Time.deltaTime;
+            if (slot.IdleHandTimer > 0f)
+            {
+                return;
+            }
+
+            slot.IdleHandTimer = Mathf.Max(_idleHandSwapInterval + Random.Range(-0.5f, 0.5f), 0.1f);
+            slot.IdleHandIndex = (slot.IdleHandIndex + 1) % _idleHandPrefabs.Length;
+            slot.Arm.SwapHand(_idleHandPrefabs[slot.IdleHandIndex]);
         }
     }
 }

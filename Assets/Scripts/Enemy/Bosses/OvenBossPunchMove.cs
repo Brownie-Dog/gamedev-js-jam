@@ -92,6 +92,8 @@ namespace Enemy.Bosses
 
         public IEnumerator ExecuteCore(OvenBossArm arm, Transform player)
         {
+            arm.SwapToDefaultHand();
+
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 

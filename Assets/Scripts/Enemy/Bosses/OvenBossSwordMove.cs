@@ -118,6 +118,8 @@ namespace Enemy.Bosses
 
         private IEnumerator ExecuteCore(OvenBossArm arm, Transform player, bool isLeftArm)
         {
+            arm.SwapToDefaultHand();
+
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 

@@ -103,6 +103,8 @@ namespace Enemy.Bosses
 
         public IEnumerator ExecuteCore(OvenBossArm arm, Transform player)
         {
+            arm.SwapToDefaultHand();
+
             var playerMovement = player.GetComponent<PlayerMovementController>();
             var playerRb = player.GetComponent<Rigidbody2D>();
 
