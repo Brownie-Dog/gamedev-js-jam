@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af0f47f874e4204c88a0d3a4c2ca3ce, type: 3}
+  m_Name: GunDrone
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
+  MovementSpeed: 8
+  StoppingDistance: 11
+  WanderSpeed: 2
+  WanderMoveDuration: 2
+  WanderIdleDuration: 1
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  DetectionRadius: 12
+  ChasingRadius: 17
+  AttackCooldown: 0.6
+  AttackRange: 11
+  Damage: 1
+  KnockbackForce: 10
+  MaxHealth: 7
+  DropChance: 0.05
+  GuaranteedItem: {fileID: 0}
+  CoinDropChance: 0.5
+  MinCoinDrop: 1
+  MaxCoinDrop: 3
