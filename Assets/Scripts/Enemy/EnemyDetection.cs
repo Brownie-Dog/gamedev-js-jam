@@ -4,7 +4,6 @@ using UnityEngine.Assertions;
 
 public class EnemyDetection : MonoBehaviour
 {
-    [SerializeField] private SoundEffect _detectionSound;
     [SerializeField] private EnemyStats _stats;
 
     private Transform _player;
@@ -28,10 +27,6 @@ public class EnemyDetection : MonoBehaviour
             if (!_isDetectingPlayer)
             {
                 _isDetectingPlayer = true;
-                if (_detectionSound)
-                {
-                    _detectionSound.Play();
-                }
 
                 OnPlayerDetected?.Invoke(this, EventArgs.Empty);
             }
@@ -39,10 +34,6 @@ public class EnemyDetection : MonoBehaviour
         else if (IsPlayerOutsideChaseRadius(distanceToPlayer) && _isDetectingPlayer)
         {
             _isDetectingPlayer = false;
-            if (_detectionSound)
-            {
-                _detectionSound.Stop();
-            }
 
             OnPlayerLost?.Invoke(this, EventArgs.Empty);
         }

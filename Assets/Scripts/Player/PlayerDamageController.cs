@@ -21,7 +21,7 @@ public class PlayerDamageController : MonoBehaviour, IDamageable
 
         if (info.Knockback.sqrMagnitude > 0.001f)
         {
-            _knockbackReceiver.Apply(info.Knockback);
+            _knockbackReceiver.Apply(info.Knockback, info.KnockbackDuration);
         }
 
         if (newHealth <= 0)

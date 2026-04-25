@@ -37,10 +37,10 @@ public class KnockbackReceiver : MonoBehaviour
         }
     }
 
-    public void Apply(Vector2 force)
+    public void Apply(Vector2 force, float duration = -1f)
     {
         _velocity = force;
-        _timer = _duration;
+        _timer = duration > 0f ? duration : _duration;
         _rb.linearVelocity = _velocity;
         SetComponentsEnabled(false);
     }
