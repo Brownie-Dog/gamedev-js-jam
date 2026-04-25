@@ -78,12 +78,12 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void HandlePlayerDetected(object sender, EventArgs e)
+    protected virtual void HandlePlayerDetected(object sender, EventArgs e)
     {
         _isChasing = true;
     }
 
-    private void HandlePlayerLost(object sender, EventArgs e)
+    protected virtual void HandlePlayerLost(object sender, EventArgs e)
     {
         _isChasing = false;
         PickNewWanderDirection();
