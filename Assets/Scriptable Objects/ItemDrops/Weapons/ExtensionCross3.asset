@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d94ab1f33d88f74896d8f9a9e9fd530, type: 3}
-  m_Name: ExtensionLL2
+  m_Name: ExtensionCross3
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ExtensionWeaponItemData
-  <ItemName>k__BackingField: L-Shaped Extension Pole
+  <ItemName>k__BackingField: T-Shaped Extension Pole
   <Description>k__BackingField: someone think of something
-  <Icon>k__BackingField: {fileID: -1679634444501232196, guid: fb431b55984ce8b4ea76655256dd9488, type: 3}
+  <Icon>k__BackingField: {fileID: -5320886451755688278, guid: 20d73bc86e5b80244b2b326113d38c60, type: 3}
   <Rarity>k__BackingField: 0
-  <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: fe1993dbb7c7a164d853d350d9e8456f, type: 3}
+  <WeaponPrefab>k__BackingField: {fileID: 9098203002191176863, guid: 43fcddb94eb4ab84fa5ad7f528c101bc, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0
   <DefaultAimMode>k__BackingField: 0
