@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d94ab1f33d88f74896d8f9a9e9fd530, type: 3}
-  m_Name: ExtensionPole
+  m_Name: ExtensionStraight1
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ExtensionWeaponItemData
-  <ItemName>k__BackingField: 
-  <Description>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 0}
+  <ItemName>k__BackingField: Extension Pole
+  <Description>k__BackingField: For when you need some range
+  <Icon>k__BackingField: {fileID: -259633946179243362, guid: e44d74ba3cbdd024d904eddfe8ccde5b, type: 3}
   <Rarity>k__BackingField: 0
-  <WeaponPrefab>k__BackingField: {fileID: 0}
+  <WeaponPrefab>k__BackingField: {fileID: 404794586113978664, guid: 307c30f71c307844bb03ca17f1db580d, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0
   <DefaultAimMode>k__BackingField: 0

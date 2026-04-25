@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d94ab1f33d88f74896d8f9a9e9fd530, type: 3}
-  m_Name: ExtensionArrow
+  m_Name: ExtensionLL2
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ExtensionWeaponItemData
-  <ItemName>k__BackingField: Gold Extension Pole
-  <Description>k__BackingField: +3 Slots??
-  <Icon>k__BackingField: {fileID: -1929834416523346238, guid: 20866d93719b27d44a4f95c39961c847, type: 3}
+  <ItemName>k__BackingField: T-Shaped Extension Pole
+  <Description>k__BackingField: someone think of something
+  <Icon>k__BackingField: {fileID: 2335856564773569293, guid: 0ead0fd0d68ed524d8cbe782c5f6499a, type: 3}
   <Rarity>k__BackingField: 0
-  <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: f46b9e20e711eea44ac9c24c28bdfc9a, type: 3}
-  <Damage>k__BackingField: 0
+  <WeaponPrefab>k__BackingField: {fileID: 9098203002191176863, guid: 43fcddb94eb4ab84fa5ad7f528c101bc, type: 3}
+  <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0
-  <DefaultAimMode>k__BackingField: 1
+  <DefaultAimMode>k__BackingField: 0
   <AutoFire>k__BackingField: 0
   <KnockbackForce>k__BackingField: 0
   <CompatibleSlotTypes>k__BackingField: 00000000
