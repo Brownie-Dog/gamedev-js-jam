@@ -458,7 +458,7 @@ MonoBehaviour:
   _baseIdleClip: {fileID: 7400000, guid: fefa766b97d883344aeb9423d2d83222, type: 2}
   _baseWalkClip: {fileID: 7400000, guid: f949e09b78f18dd4082547f132358b81, type: 2}
   _idleClip: {fileID: -7486565773662334586, guid: 502fad237d5f99c47a443bf6743d52ab, type: 2}
-  _walkClip: {fileID: -7486565773662334586, guid: 502fad237d5f99c47a443bf6743d52ab, type: 2}
+  _walkClip: {fileID: -4381993568202294068, guid: 30ace1a000771a74c9193d41cf9ae34f, type: 2}
   _moveThreshold: 0.1
   _flipSprite: 1
   _spriteRenderer: {fileID: 8046599812600565566}
