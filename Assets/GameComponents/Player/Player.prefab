@@ -663,6 +663,7 @@ MonoBehaviour:
   _loadoutCenterOffsetX: 3
   _playerEquipment: {fileID: 2810164907020316400}
   _shopFocusZoomMultiplier: 0.75
+  _loadoutFocusZoomMultiplier: 0.75
 --- !u!114 &837830959801875611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50cc68acc32e7943a3902fe96970458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShakeFallback
-  _cameraTransform: {fileID: 0}
+  _cameraTransform: {fileID: 5988356853382580324}
   _defaultShakeDuration: 0.15
   _defaultShakeMagnitude: 0.25
 --- !u!1 &6488873578817156798
@@ -1031,7 +1032,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0687834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1041,7 +1042,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.45, y: 1.44}
+  m_Size: {x: 2.45, y: 3.320077}
   m_EdgeRadius: 0
 --- !u!61 &7489397724563928781
 BoxCollider2D:
@@ -1077,7 +1078,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.39157927}
+  m_Offset: {x: 0, y: 0.06697607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1087,7 +1088,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.45, y: 0.6568415}
+  m_Size: {x: 2.45, y: 3.3164625}
   m_EdgeRadius: 0
 --- !u!114 &1985227060345300915
 MonoBehaviour:
@@ -1311,7 +1312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
   _initialUnlockedSlots: 6
   _defaultWeapons:
-  - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
+  - {fileID: 11400000, guid: da2729fa90be3044987e977bd4031fae, type: 2}
   _inventory: {fileID: 7002355511745351319}
 --- !u!114 &7002355511745351319
 MonoBehaviour:

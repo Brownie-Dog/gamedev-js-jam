@@ -151,38 +151,17 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: ovenboss - hand_0
     originalName: 
-    pivot: {x: 0.5, y: 0.7}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 7
-      y: 22
-      width: 6
-      height: 10
-    spriteID: 1158191819d13ef4698d2d53811d8f5e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: ovenboss - hand_1
-    originalName: 
-    pivot: {x: 0.5, y: 1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 22
-      y: 20
+      x: 6
+      y: 25
       width: 8
-      height: 11
-    spriteID: f4969d79aace4b84dad0e018cb8ed4f7
+      height: 8
+    spriteID: 1158191819d13ef4698d2d53811d8f5e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -199,53 +178,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 40
+      x: 39
       y: 23
-      width: 4
+      width: 6
       height: 4
     spriteID: 285d3edab1b79a64ca1b9f9becc44aa8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: ovenboss - hand_3
-    originalName: 
-    pivot: {x: 0.5, y: 1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 12
-      height: 11
-    spriteID: 7cdbf719bfd690a44a05ca710220c24b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: ovenboss - hand_4
-    originalName: 
-    pivot: {x: 0.5, y: 1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 22
-      y: 5
-      width: 8
-      height: 10
-    spriteID: 1a803e57be2f24c45af52ce585584464
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -262,10 +199,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 22
-      y: 20
-      width: 8
-      height: 11
+      x: 21
+      y: 19
+      width: 10
+      height: 12
     spriteID: d9085e9a4b3c4da4aaddea6c13a4a3e8
     spriteBone: []
     spriteOutline: []
@@ -283,10 +220,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 22
-      y: 5
-      width: 8
-      height: 10
+      x: 21
+      y: 4
+      width: 10
+      height: 11
     spriteID: dcc2fe2d5afe71b44bc2c3c32873b56e
     spriteBone: []
     spriteOutline: []
@@ -304,10 +241,10 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 12
-      height: 11
+      x: 3
+      y: 3
+      width: 14
+      height: 12
     spriteID: a330db5b14910434da572927d2224b93
     spriteBone: []
     spriteOutline: []

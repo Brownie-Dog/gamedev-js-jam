@@ -20,7 +20,7 @@ MonoBehaviour:
   WallLayer:
     serializedVersion: 2
     m_Bits: 256
-  DetectionRadius: 40
+  DetectionRadius: 80
   ChasingRadius: 0
   AttackCooldown: 1
   AttackRange: 5
