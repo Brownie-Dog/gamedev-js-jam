@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50cc68acc32e7943a3902fe96970458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraShakeFallback
-  _cameraTransform: {fileID: 0}
+  _cameraTransform: {fileID: 5988356853382580324}
   _defaultShakeDuration: 0.15
   _defaultShakeMagnitude: 0.25
 --- !u!1 &6488873578817156798
