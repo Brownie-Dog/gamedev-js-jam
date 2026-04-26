@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace EndlessMode
 {
@@ -14,6 +15,11 @@ namespace EndlessMode
         [Tooltip("If true, exiting towards positive (Right/Up) starts wave. If false, negative (Left/Down) starts it.")]
         [SerializeField] private bool _positiveIsArena = true;
 
+        private void Awake()
+        {
+            Assert.IsNotNull(_manager);
+        }
+        
         private void OnTriggerExit2D(Collider2D other)
         {
             if (((1 << other.gameObject.layer) & _playerLayer) != 0)

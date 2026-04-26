@@ -2,12 +2,18 @@ using UnityEngine;
 using UnityEngine.UI; // Change to 'using TMPro;' if using TextMeshPro
 using EndlessMode;
 using TMPro;
+using UnityEngine.Assertions;
 
 public class EndlessUIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _waveText; // Change to 'private TMP_Text' for TextMeshPro
     [SerializeField] private GameObject _intermissionBanner; // Optional: A "Shop Open" banner
 
+    private void Awake()
+    {
+        Assert.IsNotNull(_waveText);
+    }
+    
     private void OnEnable()
     {
         // Subscribe to the manager's events

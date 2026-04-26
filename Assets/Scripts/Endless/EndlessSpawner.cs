@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Assertions;
 
 namespace EndlessMode
 {
@@ -24,6 +25,14 @@ namespace EndlessMode
         private List<GameObject> _activeEnemies = new List<GameObject>();
         private bool _isSpawning = false;
 
+        private void Awake()
+        {
+            Assert.IsNotNull(_manager);
+            Assert.IsNotNull(_enemyPrefabs);
+            Assert.IsNotNull(_spawnArea);
+            Assert.IsNotNull(_playerTransform);
+        }
+        
         private void OnEnable() => EndlessModeManager.OnWaveStarted += StartWave;
         private void OnDisable() => EndlessModeManager.OnWaveStarted -= StartWave;
 
