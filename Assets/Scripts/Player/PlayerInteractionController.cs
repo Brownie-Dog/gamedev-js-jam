@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -15,11 +16,24 @@ public class PlayerInteractionController : MonoBehaviour
     private Collider2D _detectionCollider;
 
     private readonly List<Collider2D> _overlapResults = new();
+    private IInteractable _currentInteractable;
+
+    public event Action<bool> OnInteractableInRange;
 
     private void Awake()
     {
         Assert.IsNotNull(_statsSo);
         Assert.IsNotNull(_rigidBody);
+    }
+
+    private void Update()
+    {
+        var closest = GetClosestInteractable();
+        if (closest != _currentInteractable)
+        {
+            _currentInteractable = closest;
+            OnInteractableInRange?.Invoke(_currentInteractable != null);
+        }
     }
 
     public void InputEvent_OnInteract(InputAction.CallbackContext context)
@@ -28,7 +42,7 @@ public class PlayerInteractionController : MonoBehaviour
         {
             return;
         }
-        GetClosestInteractable()?.Interact();
+        _currentInteractable?.Interact();
     }
 
     private IInteractable GetClosestInteractable()

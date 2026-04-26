@@ -74,9 +74,9 @@ namespace ItemDrops
             Time.timeScale = 1;
         }
 
-        public void OnChoicePicked(ItemData item)
+        public void OnChoicePicked(ItemData item, Sprite iconSprite, Vector2 iconScreenPosition)
         {
-            ItemPicked?.Invoke(this, new ItemPickedEventArgs(item));
+            ItemPicked?.Invoke(this, new ItemPickedEventArgs(item, iconSprite, iconScreenPosition));
             Hide();
         }
 
