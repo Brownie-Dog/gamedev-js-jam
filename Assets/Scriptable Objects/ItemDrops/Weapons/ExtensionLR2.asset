@@ -15,7 +15,7 @@ MonoBehaviour:
   <ItemName>k__BackingField: L-Shaped Extension Pole
   <Description>k__BackingField: someone think of something
   <Icon>k__BackingField: {fileID: 2335856564773569293, guid: 0ead0fd0d68ed524d8cbe782c5f6499a, type: 3}
-  <Rarity>k__BackingField: 0
+  <Rarity>k__BackingField: 1
   <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: fbd14fad9202ac74e8a8c9e91a211274, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0
