@@ -16,6 +16,11 @@ MonoBehaviour:
     ArmCooldown: 4
     AimDurationMin: 2
     AimDurationMax: 5
+    ArmSpeedMultiplier: 1
+    MovementSpeedMultiplier: 1
+    FlameBurstCount: 2
+    FlameBurstCooldown: 15
+    FlameShotInterval: 0.5
     PunchWeight: 0.4
     GrabWeight: 0.3
     SwordWeight: 0.3
@@ -27,6 +32,11 @@ MonoBehaviour:
     ArmCooldown: 2.5
     AimDurationMin: 1.5
     AimDurationMax: 3.5
+    ArmSpeedMultiplier: 1.5
+    MovementSpeedMultiplier: 1.2
+    FlameBurstCount: 4
+    FlameBurstCooldown: 10
+    FlameShotInterval: 0.35
     PunchWeight: 0.35
     GrabWeight: 0.3
     SwordWeight: 0.35
@@ -38,6 +48,11 @@ MonoBehaviour:
     ArmCooldown: 1.5
     AimDurationMin: 1
     AimDurationMax: 2.5
+    ArmSpeedMultiplier: 2
+    MovementSpeedMultiplier: 1.5
+    FlameBurstCount: 6
+    FlameBurstCooldown: 8
+    FlameShotInterval: 0.2
     PunchWeight: 0.3
     GrabWeight: 0.25
     SwordWeight: 0.3

@@ -239,10 +239,10 @@ MonoBehaviour:
   _enemyMovement: {fileID: 6598089395193418422}
   _telegraphDurationMin: 2
   _telegraphDurationMax: 3
-  _swingSpeed: 400
-  _sweepAngle: 115
+  _swingSpeed: 200
+  _sweepAngle: 105
   _swordDamage: 2
-  _swordKnockbackForce: 200
+  _swordKnockbackForce: 100
   _swordKnockbackDuration: 1
   _hitPauseDuration: 0.2
 --- !u!1 &3514105724944607953
@@ -581,6 +581,12 @@ MonoBehaviour:
   _punchSwordComboMove: {fileID: 380430070513296842}
   _swordPunchComboMove: {fileID: 5379277234011757300}
   _swordGrabComboMove: {fileID: 7495552765157784334}
+  _idleHandPrefabs:
+  - {fileID: 2142481108377636327, guid: 9430fdba025a17f47a63a1a712613919, type: 3}
+  - {fileID: 2142481108377636327, guid: 51206246ca08369488de29ec9b4fb63c, type: 3}
+  - {fileID: 2142481108377636327, guid: 4f9d025217d8778418797a5a5062027c, type: 3}
+  - {fileID: 2142481108377636327, guid: 51206246ca08369488de29ec9b4fb63c, type: 3}
+  _idleHandSwapInterval: 1
 --- !u!1 &4893946786629520698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,7 +1149,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 64717a9934cbee743a67fa33361b78f1, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7b823a932bdf5f44caf6b5cf03f83b36, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.309
   m_Pitch: 1

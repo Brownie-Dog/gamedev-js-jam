@@ -12,13 +12,17 @@ namespace Enemy.Bosses
         [SerializeField] private float _retractPauseDuration = 0.3f;
         [SerializeField] private float _handGrabOffset = 0.5f;
         [SerializeField] private float _moveStopDistance = 1.0f;
+        [SerializeField] private float _baseExtensionTime = 0.3f;
+        [SerializeField] private float _baseRetractionTime = 0.3f;
 
         private OvenBossArm _arm;
         private Rigidbody2D _rb;
         private Transform _player;
+        private float _speedMultiplier = 1f;
 
         private void Awake()
         {
+            _speedMultiplier = 1f;
             _arm = GetComponent<OvenBossArm>();
             _rb = GetComponent<Rigidbody2D>();
             Assert.IsNotNull(_arm);
@@ -28,6 +32,11 @@ namespace Enemy.Bosses
         public void SetPlayer(Transform player)
         {
             _player = player;
+        }
+
+        public void SetSpeedMultiplier(float multiplier)
+        {
+            _speedMultiplier = multiplier;
         }
 
         public IEnumerator AimPhase(float duration)
@@ -47,8 +56,10 @@ namespace Enemy.Bosses
         {
             float distanceToPlayer = Vector2.Distance(_arm.Pivot.position, _player.position);
             int targetSegments = _arm.CalculateTargetSegments(distanceToPlayer);
+            int extraSegments = Mathf.Max(targetSegments - _arm.SegmentCount, 1);
+            float perSegmentDelay = _baseExtensionTime / extraSegments / _speedMultiplier;
 
-            _arm.ExtendTo(targetSegments);
+            _arm.ExtendTo(targetSegments, perSegmentDelay);
 
             while (_arm.IsExtending)
             {
@@ -58,7 +69,10 @@ namespace Enemy.Bosses
 
         public IEnumerator RetractToDefault()
         {
-            _arm.RetractToDefault();
+            int extraSegments = Mathf.Max(_arm.SegmentCount - _arm.DefaultSegmentCount, 1);
+            float perSegmentDelay = _baseRetractionTime / extraSegments / _speedMultiplier;
+
+            _arm.RetractToDefault(perSegmentDelay);
 
             while (_arm.IsRetracting)
             {
@@ -208,7 +222,7 @@ namespace Enemy.Bosses
         public IEnumerator SweepPhase(Vector2 startDirection, float sweepAngle, float speed)
         {
             _arm.SetDirection(startDirection);
-            float startAngle = _rb.rotation;
+            float startAngle = transform.rotation.eulerAngles.z;
             float endAngle = startAngle + sweepAngle;
             float duration = Mathf.Abs(sweepAngle) / speed;
             float timer = 0f;
@@ -224,6 +238,26 @@ namespace Enemy.Bosses
             }
 
             _rb.MoveRotation(endAngle);
+        }
+
+        public IEnumerator PivotToDirection(Vector2 direction)
+        {
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+            float startAngle = _rb.rotation;
+            float angleDiff = Mathf.Abs(Mathf.DeltaAngle(startAngle, targetAngle));
+            float duration = angleDiff / _pivotSpeed;
+            float timer = 0f;
+
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                float t = timer / duration;
+                float angle = Mathf.LerpAngle(startAngle, targetAngle, t);
+                _rb.MoveRotation(angle);
+                yield return null;
+            }
+
+            _rb.MoveRotation(targetAngle);
         }
 
         public IEnumerator TelegraphPhase(Vector2 direction, float duration)

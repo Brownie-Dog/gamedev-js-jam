@@ -19,8 +19,8 @@ namespace Player
         {
             var mouseScreenPos = Mouse.current.position.ReadValue();
             var mouseWorldPos = _mainCamera.ScreenToWorldPoint(mouseScreenPos);
-            var direction = ((Vector2)mouseWorldPos - (Vector2)transform.position).normalized;
-            AimDirectionUpdated?.Invoke(this, new AimDirectionArgs(direction));
+            mouseWorldPos.z = 0;
+            AimDirectionUpdated?.Invoke(this, new AimDirectionArgs(mouseWorldPos));
         }
 
         public void InputEvent_OnPrimaryFire(InputAction.CallbackContext context)

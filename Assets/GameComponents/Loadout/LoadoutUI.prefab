@@ -820,11 +820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 680, y: 1180}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -868,8 +868,10 @@ MonoBehaviour:
   _inventoryItemPrefab: {fileID: 7456772356796427550, guid: ad4db647a985b8c4287c2b3799fc7157, type: 3}
   _canvasRoot: {fileID: 6512222569268189596}
   _mainCamera: {fileID: 0}
-  _emptySlotColor: {r: 0.2, g: 0.8, b: 0.2, a: 0.5}
-  _occupiedSlotColor: {r: 0.8, g: 0.2, b: 0.2, a: 0.7}
+  _emptyGeneralSlotColor: {r: 0.10346207, g: 0.802588, b: 0.8773585, a: 0.5}
+  _occupiedGeneralSlotColor: {r: 0.8, g: 0.2, b: 0.2, a: 0.7}
+  _emptyBackSlotColor: {r: 0.75734866, g: 0.36779106, b: 0.8962264, a: 0.5}
+  _occupiedBackSlotColor: {r: 0.8301887, g: 0.07440368, b: 0.11296133, a: 0.5}
 --- !u!114 &111483476082563346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,7 +962,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 19.88
+  m_PixelsPerUnitMultiplier: 32
 --- !u!1 &7253641693832238227
 GameObject:
   m_ObjectHideFlags: 0

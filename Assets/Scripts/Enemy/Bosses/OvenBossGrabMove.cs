@@ -29,6 +29,8 @@ namespace Enemy.Bosses
         private OvenBossArm _forcedArm;
         private Func<bool> _attackGate;
         private bool _anyGrabActive;
+        private float _aimMinOverride = -1f;
+        private float _aimMaxOverride = -1f;
 
         public bool IsComplete => !_armComplete.ContainsValue(false);
         public bool IsLaunched => _armLaunched.ContainsValue(true);
@@ -57,6 +59,15 @@ namespace Enemy.Bosses
         {
             _attackGate = gate;
         }
+
+        public void SetAimDurationRange(float min, float max)
+        {
+            _aimMinOverride = min;
+            _aimMaxOverride = max;
+        }
+
+        private float GetAimMin() => _aimMinOverride >= 0f ? _aimMinOverride : _aimDurationMin;
+        private float GetAimMax() => _aimMaxOverride >= 0f ? _aimMaxOverride : _aimDurationMax;
 
         public void ResetGrabState()
         {
@@ -92,6 +103,8 @@ namespace Enemy.Bosses
 
         public IEnumerator ExecuteCore(OvenBossArm arm, Transform player)
         {
+            arm.SwapToDefaultHand();
+
             var playerMovement = player.GetComponent<PlayerMovementController>();
             var playerRb = player.GetComponent<Rigidbody2D>();
 
@@ -106,7 +119,7 @@ namespace Enemy.Bosses
             var grabHand = arm.GetHandComponent<GrabHand>();
             Assert.IsNotNull(grabHand, "OpenClawHand prefab must have a GrabHand component");
 
-            yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
+            yield return armController.AimPhase(Random.Range(GetAimMin(), GetAimMax()));
 
             if (_attackGate != null)
             {

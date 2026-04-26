@@ -24,6 +24,8 @@ namespace Enemy.Bosses
 
         private OvenBossArm _forcedArm;
         private Func<bool> _attackGate;
+        private float _aimMinOverride = -1f;
+        private float _aimMaxOverride = -1f;
 
         public bool IsComplete => !_armComplete.ContainsValue(false);
         public bool IsLaunched => _armLaunched.ContainsValue(true);
@@ -51,6 +53,15 @@ namespace Enemy.Bosses
         {
             _attackGate = gate;
         }
+
+        public void SetAimDurationRange(float min, float max)
+        {
+            _aimMinOverride = min;
+            _aimMaxOverride = max;
+        }
+
+        private float GetAimMin() => _aimMinOverride >= 0f ? _aimMinOverride : _aimDurationMin;
+        private float GetAimMax() => _aimMaxOverride >= 0f ? _aimMaxOverride : _aimDurationMax;
 
         public void Execute(Transform boss, Transform player)
         {
@@ -81,6 +92,8 @@ namespace Enemy.Bosses
 
         public IEnumerator ExecuteCore(OvenBossArm arm, Transform player)
         {
+            arm.SwapToDefaultHand();
+
             var armController = arm.GetComponent<OvenBossArmController>();
             armController.SetPlayer(player);
 
@@ -90,7 +103,7 @@ namespace Enemy.Bosses
 
             var damageInfo = new DamageInfo(_stats.Damage, new Vector2(_stats.KnockbackForce, 0f));
 
-            yield return armController.AimPhase(Random.Range(_aimDurationMin, _aimDurationMax));
+            yield return armController.AimPhase(Random.Range(GetAimMin(), GetAimMax()));
 
             if (_attackGate != null)
             {

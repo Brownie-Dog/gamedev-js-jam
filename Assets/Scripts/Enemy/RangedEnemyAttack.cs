@@ -7,6 +7,8 @@ public class RangedEnemyAttack : EnemyAttack
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private int _poolSize = 15;
     [SerializeField] private Transform _firePoint;
+    [SerializeField] private int _penetrationCount = 1;
+
 
     private Transform _player;
     private MonoBehaviourPool<Bullet> _bulletPool;
@@ -38,6 +40,6 @@ public class RangedEnemyAttack : EnemyAttack
         Vector2 direction = ((Vector2)(_player.position - _firePoint.position)).normalized;
         var damageInfo = new DamageInfo(_stats.Damage, direction * _stats.KnockbackForce);
         Bullet bullet = _bulletPool.Get();
-        bullet.Activate(_firePoint.position, direction, damageInfo);
+        bullet.Activate(_firePoint.position, direction, damageInfo, _penetrationCount);
     }
 }

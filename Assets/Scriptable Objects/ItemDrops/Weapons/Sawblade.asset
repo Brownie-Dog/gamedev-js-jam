@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a83fedc677e0542ac2288e851943b2, type: 3}
+  m_Name: Sawblade
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
+  <ItemName>k__BackingField: Sawblade
+  <Description>k__BackingField: Watch your fingers!
+  <Icon>k__BackingField: {fileID: -3491535641950164880, guid: 69c55a2474d14b1428b6c2fbbe6467a3, type: 3}
+  <Rarity>k__BackingField: 0
+  <WeaponPrefab>k__BackingField: {fileID: 1598624845947114235, guid: 1921feabbb7bdb74ca0e7c8d013d6960, type: 3}
+  <Damage>k__BackingField: 1
+  <CooldownTime>k__BackingField: 0
+  <DefaultAimMode>k__BackingField: 1
+  <AutoFire>k__BackingField: 1
+  <KnockbackForce>k__BackingField: 5
+  <CompatibleSlotTypes>k__BackingField: 00000000

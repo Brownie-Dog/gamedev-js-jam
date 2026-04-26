@@ -24,6 +24,9 @@ namespace Enemy.Bosses
         [SerializeField] private OvenBossComboMove _swordPunchComboMove;
         [SerializeField] private OvenBossComboMove _swordGrabComboMove;
 
+        [SerializeField] private GameObject[] _idleHandPrefabs;
+        [SerializeField] private float _idleHandSwapInterval = 3f;
+
         public enum Phase
         {
             One,
@@ -38,6 +41,8 @@ namespace Enemy.Bosses
             public IOvenBossMove CurrentMove;
             public float CooldownTimer;
             public OvenBossMoveType? PendingMoveType;
+            public float IdleHandTimer;
+            public int IdleHandIndex;
 
             public bool IsActive => CurrentMove != null && !CurrentMove.IsArmComplete(Arm);
         }
@@ -45,9 +50,12 @@ namespace Enemy.Bosses
         private ArmSlot _leftSlot;
         private ArmSlot _rightSlot;
         private Phase _currentPhase;
+        private Phase _lastAppliedPhase;
         private bool _playerInRange;
         private bool _phaseForced;
         private IOvenBossMove _currentSpecialMove;
+
+        public Phase CurrentPhase => _currentPhase;
 
         private void Awake()
         {
@@ -71,6 +79,12 @@ namespace Enemy.Bosses
             };
         }
 
+        private void Start()
+        {
+            ApplyPhaseSettings();
+            _lastAppliedPhase = _currentPhase;
+        }
+
         private void OnEnable()
         {
             _enemyDetection.OnPlayerDetected += HandlePlayerDetected;
@@ -87,6 +101,9 @@ namespace Enemy.Bosses
         {
             UpdatePhase();
             UpdateMovementFreeze();
+
+            UpdateIdleHands(_leftSlot);
+            UpdateIdleHands(_rightSlot);
 
             if (!_playerInRange)
             {
@@ -122,21 +139,39 @@ namespace Enemy.Bosses
 
         private void UpdatePhase()
         {
-            if (_phaseForced) return;
+            if (!_phaseForced)
+            {
+                float healthPercent = _bossHealth.HealthPercent;
+                if (healthPercent > 0.66f)
+                {
+                    _currentPhase = Phase.One;
+                }
+                else if (healthPercent > 0.33f)
+                {
+                    _currentPhase = Phase.Two;
+                }
+                else
+                {
+                    _currentPhase = Phase.Three;
+                }
+            }
 
-            float healthPercent = _bossHealth.HealthPercent;
-            if (healthPercent > 0.66f)
+            if (_currentPhase != _lastAppliedPhase)
             {
-                _currentPhase = Phase.One;
+                ApplyPhaseSettings();
+                _lastAppliedPhase = _currentPhase;
             }
-            else if (healthPercent > 0.33f)
-            {
-                _currentPhase = Phase.Two;
-            }
-            else
-            {
-                _currentPhase = Phase.Three;
-            }
+        }
+
+        private void ApplyPhaseSettings()
+        {
+            var stats = GetCurrentPhaseStats();
+            _leftSlot.Controller.SetSpeedMultiplier(stats.ArmSpeedMultiplier);
+            _rightSlot.Controller.SetSpeedMultiplier(stats.ArmSpeedMultiplier);
+            _bossMovement.SetMovementSpeedMultiplier(stats.MovementSpeedMultiplier);
+            _punchMove.SetAimDurationRange(stats.AimDurationMin, stats.AimDurationMax);
+            _grabMove.SetAimDurationRange(stats.AimDurationMin, stats.AimDurationMax);
+            _swordMove.SetTelegraphDurationRange(stats.AimDurationMin, stats.AimDurationMax);
         }
 
         private void UpdateMovementFreeze()
@@ -165,11 +200,13 @@ namespace Enemy.Bosses
             slot.CurrentMove = null;
             var phaseStats = GetCurrentPhaseStats();
             slot.CooldownTimer = phaseStats.ArmCooldown;
+            slot.IdleHandTimer = Mathf.Max(_idleHandSwapInterval + Random.Range(-0.5f, 0.5f), 0.1f);
 
             if (_currentPhase == Phase.One)
             {
                 var other = slot == _leftSlot ? _rightSlot : _leftSlot;
                 other.CooldownTimer = phaseStats.ArmCooldown;
+                other.IdleHandTimer = Mathf.Max(_idleHandSwapInterval + Random.Range(-0.5f, 0.5f), 0.1f);
             }
         }
 
@@ -267,14 +304,17 @@ namespace Enemy.Bosses
             if (move is OvenBossPunchMove punch)
             {
                 punch.SetArmOverride(slot.Arm);
+                punch.SetAimDurationRange(phaseStats.AimDurationMin, phaseStats.AimDurationMax);
             }
             else if (move is OvenBossGrabMove grab)
             {
                 grab.SetArmOverride(slot.Arm);
+                grab.SetAimDurationRange(phaseStats.AimDurationMin, phaseStats.AimDurationMax);
             }
             else if (move is OvenBossSwordMove sword)
             {
                 sword.SetArmOverride(slot.Arm);
+                sword.SetTelegraphDurationRange(phaseStats.AimDurationMin, phaseStats.AimDurationMax);
             }
 
             move.Execute(transform, _playerTransform);
@@ -403,11 +443,37 @@ namespace Enemy.Bosses
         {
             _currentPhase = phase;
             _phaseForced = true;
+            ApplyPhaseSettings();
+            _lastAppliedPhase = phase;
         }
 
         public void UnlockPhase()
         {
             _phaseForced = false;
+        }
+
+        private void UpdateIdleHands(ArmSlot slot)
+        {
+            if (_idleHandPrefabs == null || _idleHandPrefabs.Length == 0)
+            {
+                return;
+            }
+
+            if (slot.IsActive || slot.CooldownTimer > 0f)
+            {
+                slot.IdleHandTimer = 0f;
+                return;
+            }
+
+            slot.IdleHandTimer -= Time.deltaTime;
+            if (slot.IdleHandTimer > 0f)
+            {
+                return;
+            }
+
+            slot.IdleHandTimer = Mathf.Max(_idleHandSwapInterval + Random.Range(-0.5f, 0.5f), 0.1f);
+            slot.IdleHandIndex = (slot.IdleHandIndex + 1) % _idleHandPrefabs.Length;
+            slot.Arm.SwapHand(_idleHandPrefabs[slot.IdleHandIndex]);
         }
     }
 }

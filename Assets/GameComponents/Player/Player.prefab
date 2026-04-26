@@ -737,8 +737,8 @@ Camera:
   m_GameObject: {fileID: 5495760148684320693}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Loadout.CameraController
   _zoomSpeed: 3
-  _zoomPadding: 6
+  _zoomPadding: 3
   _loadoutCenterOffsetX: 3
   _playerEquipment: {fileID: 2810164907020316400}
   _shopFocusZoomMultiplier: 0.75
@@ -1389,7 +1389,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2.7}
+    oldSize: {x: 1.875, y: 3.375}
     newSize: {x: 0.3, y: 0.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1435,7 +1435,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 2.7}
+    oldSize: {x: 1.875, y: 3.375}
     newSize: {x: 0.3, y: 0.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d39e15c866854daf029b5bb3a334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
-  _initialUnlockedSlots: 3
+  _initialUnlockedSlots: 6
   _defaultWeapons:
   - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
   _inventory: {fileID: 7002355511745351319}
