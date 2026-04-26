@@ -1,0 +1,2106 @@
+fileFormatVersion: 2
+guid: ada0438e3abb6164492b24add4df3d35
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2591253156188337329
+    second: tileset_modern_rpg_characters_0
+  - first:
+      213: -5734880976229310402
+    second: tileset_modern_rpg_characters_1
+  - first:
+      213: 2922508141103684493
+    second: tileset_modern_rpg_characters_2
+  - first:
+      213: 5762686956341618310
+    second: tileset_modern_rpg_characters_3
+  - first:
+      213: -5138302250064231612
+    second: tileset_modern_rpg_characters_4
+  - first:
+      213: 3995429726376265975
+    second: tileset_modern_rpg_characters_5
+  - first:
+      213: -5692080106098826144
+    second: tileset_modern_rpg_characters_6
+  - first:
+      213: -4406107919747762292
+    second: tileset_modern_rpg_characters_7
+  - first:
+      213: 8219358676585617410
+    second: tileset_modern_rpg_characters_8
+  - first:
+      213: 79650032946627239
+    second: tileset_modern_rpg_characters_9
+  - first:
+      213: 3342629433750088285
+    second: tileset_modern_rpg_characters_10
+  - first:
+      213: 6036013463576236418
+    second: tileset_modern_rpg_characters_11
+  - first:
+      213: -8354354205459837174
+    second: tileset_modern_rpg_characters_12
+  - first:
+      213: -6437105883042485723
+    second: tileset_modern_rpg_characters_13
+  - first:
+      213: 3962000563324581168
+    second: tileset_modern_rpg_characters_14
+  - first:
+      213: 1789971188044548694
+    second: tileset_modern_rpg_characters_15
+  - first:
+      213: -7330615751416560001
+    second: tileset_modern_rpg_characters_16
+  - first:
+      213: 4649258412236642186
+    second: tileset_modern_rpg_characters_17
+  - first:
+      213: 4088362536536092556
+    second: tileset_modern_rpg_characters_18
+  - first:
+      213: 8524140041728310582
+    second: tileset_modern_rpg_characters_19
+  - first:
+      213: 2647738558575483207
+    second: tileset_modern_rpg_characters_20
+  - first:
+      213: -1230289764573759262
+    second: tileset_modern_rpg_characters_21
+  - first:
+      213: -7500542374412283066
+    second: tileset_modern_rpg_characters_22
+  - first:
+      213: -4126612947055038780
+    second: tileset_modern_rpg_characters_23
+  - first:
+      213: 8864988525996034991
+    second: tileset_modern_rpg_characters_24
+  - first:
+      213: -6012409725359159739
+    second: tileset_modern_rpg_characters_25
+  - first:
+      213: -5652634017628122970
+    second: tileset_modern_rpg_characters_26
+  - first:
+      213: -7424039246293129675
+    second: tileset_modern_rpg_characters_27
+  - first:
+      213: -1064163805191354836
+    second: tileset_modern_rpg_characters_28
+  - first:
+      213: 6848516455250978734
+    second: tileset_modern_rpg_characters_29
+  - first:
+      213: -6168224317888890922
+    second: tileset_modern_rpg_characters_30
+  - first:
+      213: -715987076120250834
+    second: tileset_modern_rpg_characters_31
+  - first:
+      213: 4155778894352674896
+    second: tileset_modern_rpg_characters_32
+  - first:
+      213: 8872839568462934071
+    second: tileset_modern_rpg_characters_33
+  - first:
+      213: -1201919485745074923
+    second: tileset_modern_rpg_characters_34
+  - first:
+      213: 1343656877596800667
+    second: tileset_modern_rpg_characters_35
+  - first:
+      213: -1460932547956129329
+    second: tileset_modern_rpg_characters_36
+  - first:
+      213: -6594821821584612827
+    second: tileset_modern_rpg_characters_37
+  - first:
+      213: 7283645244056929274
+    second: tileset_modern_rpg_characters_38
+  - first:
+      213: 6681471224326296344
+    second: tileset_modern_rpg_characters_39
+  - first:
+      213: -59769972544251280
+    second: tileset_modern_rpg_characters_40
+  - first:
+      213: 7658284321681650410
+    second: tileset_modern_rpg_characters_41
+  - first:
+      213: -1048510817779483573
+    second: tileset_modern_rpg_characters_42
+  - first:
+      213: 4178916810147955053
+    second: tileset_modern_rpg_characters_43
+  - first:
+      213: 6480255340417433077
+    second: tileset_modern_rpg_characters_44
+  - first:
+      213: 488780633446341037
+    second: tileset_modern_rpg_characters_45
+  - first:
+      213: 8588649197348500645
+    second: tileset_modern_rpg_characters_46
+  - first:
+      213: 1406027283598053597
+    second: tileset_modern_rpg_characters_47
+  - first:
+      213: -3175892624481439131
+    second: tileset_modern_rpg_characters_48
+  - first:
+      213: 8106033240749626113
+    second: tileset_modern_rpg_characters_49
+  - first:
+      213: 1450737124301147405
+    second: tileset_modern_rpg_characters_50
+  - first:
+      213: -4073072402472971596
+    second: tileset_modern_rpg_characters_51
+  - first:
+      213: -6200107787350999676
+    second: tileset_modern_rpg_characters_52
+  - first:
+      213: -9048940056787238158
+    second: tileset_modern_rpg_characters_53
+  - first:
+      213: -6273052456438500061
+    second: tileset_modern_rpg_characters_54
+  - first:
+      213: -351634830674646151
+    second: tileset_modern_rpg_characters_55
+  - first:
+      213: 8211957510985070631
+    second: tileset_modern_rpg_characters_56
+  - first:
+      213: -6905901606889989638
+    second: tileset_modern_rpg_characters_57
+  - first:
+      213: 4483854425540232165
+    second: tileset_modern_rpg_characters_58
+  - first:
+      213: -6353041791021477834
+    second: tileset_modern_rpg_characters_59
+  - first:
+      213: 8545561470187134599
+    second: tileset_modern_rpg_characters_60
+  - first:
+      213: 8186335081373228145
+    second: tileset_modern_rpg_characters_61
+  - first:
+      213: -5008740852315072416
+    second: tileset_modern_rpg_characters_62
+  - first:
+      213: -2178665105638098577
+    second: tileset_modern_rpg_characters_63
+  - first:
+      213: -5966949219322861245
+    second: tileset_modern_rpg_characters_64
+  - first:
+      213: 790379843899632810
+    second: tileset_modern_rpg_characters_65
+  - first:
+      213: -8626258531837643944
+    second: tileset_modern_rpg_characters_66
+  - first:
+      213: 5744089434783710199
+    second: tileset_modern_rpg_characters_67
+  - first:
+      213: 5212936441605397898
+    second: tileset_modern_rpg_characters_68
+  - first:
+      213: 6473449078021103097
+    second: tileset_modern_rpg_characters_69
+  - first:
+      213: 3530803480898805797
+    second: tileset_modern_rpg_characters_70
+  - first:
+      213: -4700559548013431288
+    second: tileset_modern_rpg_characters_71
+  - first:
+      213: 5869553946078167490
+    second: tileset_modern_rpg_characters_72
+  - first:
+      213: 7313679449390219736
+    second: tileset_modern_rpg_characters_73
+  - first:
+      213: -603243906374648630
+    second: tileset_modern_rpg_characters_74
+  - first:
+      213: -3104888460626296512
+    second: tileset_modern_rpg_characters_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b437b9340bf5f320800000000000000
+      internalID: 2591253156188337329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 223
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30e4b6032c9960b0800000000000000
+      internalID: -5734880976229310402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 191
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b1ca39ba5de8820800000000000000
+      internalID: 2922508141103684493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 223
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686e488314d29ff40800000000000000
+      internalID: 5762686956341618310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 223
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443c454d35511b8b0800000000000000
+      internalID: -5138302250064231612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_5
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 191
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f881bdda2e927730800000000000000
+      internalID: 3995429726376265975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 223
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06469ea2d4ba101b0800000000000000
+      internalID: -5692080106098826144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_7
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 191
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c873669013c5ad2c0800000000000000
+      internalID: -4406107919747762292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 191
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20819671b27011270800000000000000
+      internalID: 8219358676585617410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 223
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2c1207849fa1100800000000000000
+      internalID: 79650032946627239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 191
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a607e82c7636e20800000000000000
+      internalID: 3342629433750088285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_11
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 223
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281dfe3d34a34c350800000000000000
+      internalID: 6036013463576236418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 191
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f86c70d1f5f0c80800000000000000
+      internalID: -8354354205459837174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_13
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 223
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52aecabfd4ecaa6a0800000000000000
+      internalID: -6437105883042485723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_14
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 191
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035fbd0558adbf630800000000000000
+      internalID: 3962000563324581168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_15
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 223
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a4495df4147d810800000000000000
+      internalID: 1789971188044548694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_16
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 191
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76cee730db644a90800000000000000
+      internalID: -7330615751416560001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_17
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 223
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a879c52a4eb758040800000000000000
+      internalID: 4649258412236642186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_18
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 223
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8faf3fd018ccb830800000000000000
+      internalID: 4088362536536092556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_19
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 191
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d36e28434db4670800000000000000
+      internalID: 8524140041728310582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 191
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7491ff1d038aeb420800000000000000
+      internalID: 2647738558575483207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_21
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 223
+        width: 11
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e838cb3af12deee0800000000000000
+      internalID: -1230289764573759262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_22
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 191
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64314663378b8e790800000000000000
+      internalID: -7500542374412283066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_23
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 223
+        width: 11
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cea14d63635bb6c0800000000000000
+      internalID: -4126612947055038780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 191
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab48ed7814c60b70800000000000000
+      internalID: 8864988525996034991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_25
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 223
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5460ddbb531af8ca0800000000000000
+      internalID: -6012409725359159739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_26
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 191
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a09cf55f4fcd81b0800000000000000
+      internalID: -5652634017628122970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_27
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 223
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536a326c3a388f890800000000000000
+      internalID: -7424039246293129675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_28
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 191
+        width: 16
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26cdb848a45b31f0800000000000000
+      internalID: -1064163805191354836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_29
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 191
+        width: 16
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7e6a95e61da0f50800000000000000
+      internalID: 6848516455250978734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d77e4dd9a0166aa0800000000000000
+      internalID: -6168224317888890922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26f4183c8d4016f0800000000000000
+      internalID: -715987076120250834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_32
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 159
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050f4fad2ea4ca930800000000000000
+      internalID: 4155778894352674896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_33
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 127
+        width: 11
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7307343c398a22b70800000000000000
+      internalID: 8872839568462934071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_34
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 159
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d6b83889ce15fe0800000000000000
+      internalID: -1201919485745074923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 159
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96fa29afc0a5a210800000000000000
+      internalID: 1343656877596800667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_36
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 159
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1c4468699b9bbe0800000000000000
+      internalID: -1460932547956129329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_37
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522647f7e7c7a74a0800000000000000
+      internalID: -6594821821584612827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 159
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af30af152c4b41560800000000000000
+      internalID: 7283645244056929274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 159
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81396f6bdaa59bc50800000000000000
+      internalID: 6681471224326296344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_40
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 127
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ad342d687ab2ff0800000000000000
+      internalID: -59769972544251280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_41
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 127
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae237c6e301b74a60800000000000000
+      internalID: 7658284321681650410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c791b67f0f271f0800000000000000
+      internalID: -1048510817779483573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_43
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 127
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6107cea2be7ef930800000000000000
+      internalID: 4178916810147955053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_44
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 95
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fdb863f5ed7ee950800000000000000
+      internalID: 6480255340417433077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_45
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 127
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9d8ad756f78c600800000000000000
+      internalID: 488780633446341037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_46
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 127
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4b66cb0f2013770800000000000000
+      internalID: 8588649197348500645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 127
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd09e5f6d56338310800000000000000
+      internalID: 1406027283598053597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_48
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 127
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56230011c76fce3d0800000000000000
+      internalID: -3175892624481439131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_49
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 127
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103d36ce84a6e7070800000000000000
+      internalID: 8106033240749626113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_50
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 127
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d017c6abd022410800000000000000
+      internalID: 1450737124301147405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_51
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 127
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2d622ea3a8977c0800000000000000
+      internalID: -4073072402472971596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_52
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 127
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d7fc521dac4f9a0800000000000000
+      internalID: -6200107787350999676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_53
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 95
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2c46136f4bb6280800000000000000
+      internalID: -9048940056787238158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_54
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 111
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3257794e604a1f8a0800000000000000
+      internalID: -6273052456438500061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_55
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 111
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97babfa0cfdbe1bf0800000000000000
+      internalID: -351634830674646151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_56
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 95
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728bdd0f8dbb6f170800000000000000
+      internalID: 8211957510985070631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_57
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 63
+        width: 13
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af9d58bd31f4920a0800000000000000
+      internalID: -6905901606889989638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_58
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 63
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e383e2f7d9d93e30800000000000000
+      internalID: 4483854425540232165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_59
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 95
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63014f2a62675d7a0800000000000000
+      internalID: -6353041791021477834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ed4cc71eee79670800000000000000
+      internalID: 8545561470187134599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_61
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 31
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17cd1992264bb9170800000000000000
+      internalID: 8186335081373228145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_62
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 63
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068d5c57bb06d7ab0800000000000000
+      internalID: -5008740852315072416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_63
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 31
+        width: 18
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69f6e521a3d3c1e0800000000000000
+      internalID: -2178665105638098577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_64
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 63
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349677d9c43213da0800000000000000
+      internalID: -5966949219322861245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_65
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 31
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac2449c74ef7fa00800000000000000
+      internalID: 790379843899632810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_66
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 63
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8537225b19f594880800000000000000
+      internalID: -8626258531837643944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_67
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 31
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb7b5e48ea17bf40800000000000000
+      internalID: 5744089434783710199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_68
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 31
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d14960312185840800000000000000
+      internalID: 5212936441605397898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_69
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 31
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd170f73af46d950800000000000000
+      internalID: 6473449078021103097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_70
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 31
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520afa21f0feff030800000000000000
+      internalID: 3530803480898805797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_71
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 63
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806b617eef144ceb0800000000000000
+      internalID: -4700559548013431288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_72
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 31
+        width: 13
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c14bf93738d47150800000000000000
+      internalID: 5869553946078167490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 31
+        width: 13
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d18afda5b86f7560800000000000000
+      internalID: 7313679449390219736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 31
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: accbe9ffcd8d0a7f0800000000000000
+      internalID: -603243906374648630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_modern_rpg_characters_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 041092d356839e4d0800000000000000
+      internalID: -3104888460626296512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tileset_modern_rpg_characters_0: 2591253156188337329
+      tileset_modern_rpg_characters_1: -5734880976229310402
+      tileset_modern_rpg_characters_10: 3342629433750088285
+      tileset_modern_rpg_characters_11: 6036013463576236418
+      tileset_modern_rpg_characters_12: -8354354205459837174
+      tileset_modern_rpg_characters_13: -6437105883042485723
+      tileset_modern_rpg_characters_14: 3962000563324581168
+      tileset_modern_rpg_characters_15: 1789971188044548694
+      tileset_modern_rpg_characters_16: -7330615751416560001
+      tileset_modern_rpg_characters_17: 4649258412236642186
+      tileset_modern_rpg_characters_18: 4088362536536092556
+      tileset_modern_rpg_characters_19: 8524140041728310582
+      tileset_modern_rpg_characters_2: 2922508141103684493
+      tileset_modern_rpg_characters_20: 2647738558575483207
+      tileset_modern_rpg_characters_21: -1230289764573759262
+      tileset_modern_rpg_characters_22: -7500542374412283066
+      tileset_modern_rpg_characters_23: -4126612947055038780
+      tileset_modern_rpg_characters_24: 8864988525996034991
+      tileset_modern_rpg_characters_25: -6012409725359159739
+      tileset_modern_rpg_characters_26: -5652634017628122970
+      tileset_modern_rpg_characters_27: -7424039246293129675
+      tileset_modern_rpg_characters_28: -1064163805191354836
+      tileset_modern_rpg_characters_29: 6848516455250978734
+      tileset_modern_rpg_characters_3: 5762686956341618310
+      tileset_modern_rpg_characters_30: -6168224317888890922
+      tileset_modern_rpg_characters_31: -715987076120250834
+      tileset_modern_rpg_characters_32: 4155778894352674896
+      tileset_modern_rpg_characters_33: 8872839568462934071
+      tileset_modern_rpg_characters_34: -1201919485745074923
+      tileset_modern_rpg_characters_35: 1343656877596800667
+      tileset_modern_rpg_characters_36: -1460932547956129329
+      tileset_modern_rpg_characters_37: -6594821821584612827
+      tileset_modern_rpg_characters_38: 7283645244056929274
+      tileset_modern_rpg_characters_39: 6681471224326296344
+      tileset_modern_rpg_characters_4: -5138302250064231612
+      tileset_modern_rpg_characters_40: -59769972544251280
+      tileset_modern_rpg_characters_41: 7658284321681650410
+      tileset_modern_rpg_characters_42: -1048510817779483573
+      tileset_modern_rpg_characters_43: 4178916810147955053
+      tileset_modern_rpg_characters_44: 6480255340417433077
+      tileset_modern_rpg_characters_45: 488780633446341037
+      tileset_modern_rpg_characters_46: 8588649197348500645
+      tileset_modern_rpg_characters_47: 1406027283598053597
+      tileset_modern_rpg_characters_48: -3175892624481439131
+      tileset_modern_rpg_characters_49: 8106033240749626113
+      tileset_modern_rpg_characters_5: 3995429726376265975
+      tileset_modern_rpg_characters_50: 1450737124301147405
+      tileset_modern_rpg_characters_51: -4073072402472971596
+      tileset_modern_rpg_characters_52: -6200107787350999676
+      tileset_modern_rpg_characters_53: -9048940056787238158
+      tileset_modern_rpg_characters_54: -6273052456438500061
+      tileset_modern_rpg_characters_55: -351634830674646151
+      tileset_modern_rpg_characters_56: 8211957510985070631
+      tileset_modern_rpg_characters_57: -6905901606889989638
+      tileset_modern_rpg_characters_58: 4483854425540232165
+      tileset_modern_rpg_characters_59: -6353041791021477834
+      tileset_modern_rpg_characters_6: -5692080106098826144
+      tileset_modern_rpg_characters_60: 8545561470187134599
+      tileset_modern_rpg_characters_61: 8186335081373228145
+      tileset_modern_rpg_characters_62: -5008740852315072416
+      tileset_modern_rpg_characters_63: -2178665105638098577
+      tileset_modern_rpg_characters_64: -5966949219322861245
+      tileset_modern_rpg_characters_65: 790379843899632810
+      tileset_modern_rpg_characters_66: -8626258531837643944
+      tileset_modern_rpg_characters_67: 5744089434783710199
+      tileset_modern_rpg_characters_68: 5212936441605397898
+      tileset_modern_rpg_characters_69: 6473449078021103097
+      tileset_modern_rpg_characters_7: -4406107919747762292
+      tileset_modern_rpg_characters_70: 3530803480898805797
+      tileset_modern_rpg_characters_71: -4700559548013431288
+      tileset_modern_rpg_characters_72: 5869553946078167490
+      tileset_modern_rpg_characters_73: 7313679449390219736
+      tileset_modern_rpg_characters_74: -603243906374648630
+      tileset_modern_rpg_characters_75: -3104888460626296512
+      tileset_modern_rpg_characters_8: 8219358676585617410
+      tileset_modern_rpg_characters_9: 79650032946627239
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

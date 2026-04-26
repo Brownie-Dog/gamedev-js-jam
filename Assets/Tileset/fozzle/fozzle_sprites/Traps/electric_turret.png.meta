@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: 264c1493502a9264fb570b7bc4b59978
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4290917670762974922
+    second: electric_turret_0
+  - first:
+      213: 5716217351907241777
+    second: electric_turret_1
+  - first:
+      213: -8173043143343967893
+    second: electric_turret_2
+  - first:
+      213: -454720683015034482
+    second: electric_turret_3
+  - first:
+      213: 4083433931146768840
+    second: electric_turret_4
+  - first:
+      213: -5698494869995660913
+    second: electric_turret_5
+  - first:
+      213: -6559995205204633730
+    second: electric_turret_6
+  - first:
+      213: -7458139727609657848
+    second: electric_turret_7
+  - first:
+      213: 2615062223617126199
+    second: electric_turret_8
+  - first:
+      213: 3277322632366742675
+    second: electric_turret_9
+  - first:
+      213: -6513258196898786719
+    second: electric_turret_10
+  - first:
+      213: -7514511856400588124
+    second: electric_turret_11
+  - first:
+      213: 9099014144261803628
+    second: electric_turret_12
+  - first:
+      213: 2024268203624450017
+    second: electric_turret_13
+  - first:
+      213: -8971765019120054284
+    second: electric_turret_14
+  - first:
+      213: 595054799623719047
+    second: electric_turret_15
+  - first:
+      213: -2500708265370126081
+    second: electric_turret_16
+  - first:
+      213: 1048517727330368406
+    second: electric_turret_17
+  - first:
+      213: 4140838045748975342
+    second: electric_turret_18
+  - first:
+      213: -2539853051261475192
+    second: electric_turret_19
+  - first:
+      213: -6825283335829157880
+    second: electric_turret_20
+  - first:
+      213: -9213866651182945247
+    second: electric_turret_21
+  - first:
+      213: -5826615131248334021
+    second: electric_turret_22
+  - first:
+      213: 4167064952182849179
+    second: electric_turret_23
+  - first:
+      213: 2710147774784370051
+    second: electric_turret_24
+  - first:
+      213: -1415104395308727889
+    second: electric_turret_25
+  - first:
+      213: 883339754970386415
+    second: electric_turret_26
+  - first:
+      213: 1152847634146724450
+    second: electric_turret_27
+  - first:
+      213: 8182920150228191485
+    second: electric_turret_28
+  - first:
+      213: -2095425241373413675
+    second: electric_turret_29
+  - first:
+      213: 6611513683657395542
+    second: electric_turret_30
+  - first:
+      213: 8238484934444511850
+    second: electric_turret_31
+  - first:
+      213: -2276940599590321382
+    second: electric_turret_32
+  - first:
+      213: -2682093132794425639
+    second: electric_turret_33
+  - first:
+      213: 5392147416729988632
+    second: electric_turret_34
+  - first:
+      213: 350091198298486447
+    second: electric_turret_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: electric_turret_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace064623e66c8b30800000000000000
+      internalID: 4290917670762974922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fea5f4565145f40800000000000000
+      internalID: 5716217351907241777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b617a035094839e80800000000000000
+      internalID: -8173043143343967893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89add0b2f180b9f0800000000000000
+      internalID: -454720683015034482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1b7c186854ba830800000000000000
+      internalID: 4083433931146768840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_5
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89d58f8b11eae0b0800000000000000
+      internalID: -5698494869995660913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_6
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7713810e1736f4a0800000000000000
+      internalID: -6559995205204633730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_7
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 0
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8060992ce6d5f7890800000000000000
+      internalID: -7458139727609657848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_8
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 0
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fed38bc319a4420800000000000000
+      internalID: 2615062223617126199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_9
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c5194f1936b7d20800000000000000
+      internalID: 3277322632366742675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_10
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162527bbd224c95a0800000000000000
+      internalID: -6513258196898786719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_11
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 0
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a228cab74717b790800000000000000
+      internalID: -7514511856400588124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_12
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 0
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ecaf2d721364e70800000000000000
+      internalID: 9099014144261803628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_13
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 15
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e74727c435a71c10800000000000000
+      internalID: 2024268203624450017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_14
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 0
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ffc213ef33ed7380800000000000000
+      internalID: -8971765019120054284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_15
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 0
+        width: 40
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7888671003f024800800000000000000
+      internalID: 595054799623719047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_16
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 24
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8fabbf413bb4dd0800000000000000
+      internalID: -2500708265370126081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_17
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 0
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69bf93651551d8e00800000000000000
+      internalID: 1048517727330368406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_18
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee65a457346377930800000000000000
+      internalID: 4140838045748975342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_19
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 0
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8862ed94b11a0ccd0800000000000000
+      internalID: -2539853051261475192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_20
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 12
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 808828cc7f8b741a0800000000000000
+      internalID: -6825283335829157880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_21
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12c2c601915c12080800000000000000
+      internalID: -9213866651182945247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_22
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 9
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3be60ba864b32fa0800000000000000
+      internalID: -5826615131248334021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_23
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 0
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9eb6d6fe7364d930800000000000000
+      internalID: 4167064952182849179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_24
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 12
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38576dcca016c9520800000000000000
+      internalID: 2710147774784370051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_25
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 22
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1878dcc0a8c5ce0800000000000000
+      internalID: -1415104395308727889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_26
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 15
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef8df6b3d0424c00800000000000000
+      internalID: 883339754970386415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_27
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 0
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a0771b0dcbfff00800000000000000
+      internalID: 1152847634146724450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_28
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 0
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8ccbb85829f8170800000000000000
+      internalID: 8182920150228191485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_29
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 20
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5deec8258dd8be2e0800000000000000
+      internalID: -2095425241373413675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_30
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 14
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65d880e7aa0d0cb50800000000000000
+      internalID: 6611513683657395542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_31
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62f8f4066af45270800000000000000
+      internalID: 8238484934444511850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_32
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 15
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1301c2a69ea660e0800000000000000
+      internalID: -2276940599590321382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_33
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 0
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9de064d818a47cad0800000000000000
+      internalID: -2682093132794425639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_34
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e2bb6b181c4da40800000000000000
+      internalID: 5392147416729988632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electric_turret_35
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 10
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa672990716cbd400800000000000000
+      internalID: 350091198298486447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      electric_turret_0: 4290917670762974922
+      electric_turret_1: 5716217351907241777
+      electric_turret_10: -6513258196898786719
+      electric_turret_11: -7514511856400588124
+      electric_turret_12: 9099014144261803628
+      electric_turret_13: 2024268203624450017
+      electric_turret_14: -8971765019120054284
+      electric_turret_15: 595054799623719047
+      electric_turret_16: -2500708265370126081
+      electric_turret_17: 1048517727330368406
+      electric_turret_18: 4140838045748975342
+      electric_turret_19: -2539853051261475192
+      electric_turret_2: -8173043143343967893
+      electric_turret_20: -6825283335829157880
+      electric_turret_21: -9213866651182945247
+      electric_turret_22: -5826615131248334021
+      electric_turret_23: 4167064952182849179
+      electric_turret_24: 2710147774784370051
+      electric_turret_25: -1415104395308727889
+      electric_turret_26: 883339754970386415
+      electric_turret_27: 1152847634146724450
+      electric_turret_28: 8182920150228191485
+      electric_turret_29: -2095425241373413675
+      electric_turret_3: -454720683015034482
+      electric_turret_30: 6611513683657395542
+      electric_turret_31: 8238484934444511850
+      electric_turret_32: -2276940599590321382
+      electric_turret_33: -2682093132794425639
+      electric_turret_34: 5392147416729988632
+      electric_turret_35: 350091198298486447
+      electric_turret_4: 4083433931146768840
+      electric_turret_5: -5698494869995660913
+      electric_turret_6: -6559995205204633730
+      electric_turret_7: -7458139727609657848
+      electric_turret_8: 2615062223617126199
+      electric_turret_9: 3277322632366742675
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
