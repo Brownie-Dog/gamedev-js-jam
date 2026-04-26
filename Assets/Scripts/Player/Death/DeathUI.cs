@@ -18,7 +18,6 @@ public class DeathUI : MonoBehaviour
     [SerializeField] private VideoEffect _videoEffect;
     [SerializeField] private Transform _defaultRespawnPoint;
 
-    public static bool IsEndlessMode { get; set; } = false;
     public static Transform CurrentRespawnPoint { get; set; }
 
     private void Awake()
@@ -59,13 +58,14 @@ public class DeathUI : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        if (IsEndlessMode)
+        var respawnPoint = CurrentRespawnPoint ?? _defaultRespawnPoint;
+
+        if (respawnPoint != null && respawnPoint.GetComponent<EndlessModeMarker>() != null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             return;
         }
 
-        var respawnPoint = CurrentRespawnPoint ?? _defaultRespawnPoint;
         if (respawnPoint != null)
         {
             var player = GameObject.FindGameObjectWithTag(GlobalConstants.PLAYER_TAG);
