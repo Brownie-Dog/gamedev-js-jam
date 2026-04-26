@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using CameraFeedback;
 
-// Bridge that listens to health changes and triggers camera shake and vignette feedback
 public class HitFeedbackBridge : MonoBehaviour
 {
     [SerializeField] private PlayerStatsSo _statsSo;

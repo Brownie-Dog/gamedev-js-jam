@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using CameraFeedback;
+using UnityEngine.Assertions;
 
-// Lightweight camera shake fallback (no Cinemachine required)
 public class CameraShakeFallback : MonoBehaviour, ICameraShake
 {
     [SerializeField] private Transform _cameraTransform;
@@ -14,6 +14,7 @@ public class CameraShakeFallback : MonoBehaviour, ICameraShake
 
     private void Awake()
     {
+        Assert.IsNotNull(_cameraTransform);
         if (_cameraTransform == null)
         {
             if (Camera.main != null)
@@ -25,7 +26,6 @@ public class CameraShakeFallback : MonoBehaviour, ICameraShake
 
     public void TriggerShake(float duration, float magnitude)
     {
-        // Use provided duration/magnitude or fall back to defaults
         if (duration <= 0f) duration = _defaultShakeDuration;
         if (magnitude <= 0f) magnitude = _defaultShakeMagnitude;
 

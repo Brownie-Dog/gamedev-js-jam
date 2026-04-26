@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// ScriptableObject to configure hit feedback effects (camera shake and vignette)
 [CreateAssetMenu(fileName = "HitFeedbackSettings", menuName = "ScriptableObjects/Camera/HitFeedbackSettings")]
 public class HitFeedbackSettings : ScriptableObject
 {
@@ -15,5 +14,5 @@ public class HitFeedbackSettings : ScriptableObject
     public float vignetteFallTime = 0.2f;
 
     [Header("Paths")]
-    public bool useCinemachineImpulseIfAvailable = true; // reserved for future CM integration
+    public bool useCinemachineImpulseIfAvailable = true; 
 }

@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-// Controller for a URP Vignette effect, triggered on hit
 public class VignetteController : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
@@ -12,10 +12,12 @@ public class VignetteController : MonoBehaviour
 
     private void Awake()
     {
+        Assert.IsNotNull(_volume);
         if (_volume != null && _volume.profile != null)
         {
             _volume.profile.TryGet<Vignette>(out _vignette);
         }
+        Assert.IsNotNull(_vignette);
     }
 
     public void TriggerHit(float peakIntensity, float riseTime, float fallTime)
@@ -36,9 +38,7 @@ public class VignetteController : MonoBehaviour
             yield return null;
         }
         _vignette.intensity.value = peak;
-        // Tiny hold to ensure visibility
         yield return new WaitForSeconds(0.05f);
-        // Fall
         t = 0f;
         while (t < fall)
         {
