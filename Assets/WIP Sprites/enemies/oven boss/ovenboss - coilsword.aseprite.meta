@@ -151,15 +151,15 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: ovenboss - coilsword_0
     originalName: 
-    pivot: {x: 0.047255598, y: 0.5000001}
+    pivot: {x: 0.016393442, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 2
+      x: 4
       y: 2
-      width: 63
+      width: 61
       height: 10
     spriteID: 201fdfdb868e67e46b995c3cdfcc1beb
     spriteBone: []

@@ -1,150 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &93096453680907341
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2624460070896879580}
-  - component: {fileID: 6479148936055645565}
-  - component: {fileID: 7441747276852027691}
-  m_Layer: 0
-  m_Name: MeleeDetectionSound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2624460070896879580
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93096453680907341}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7093467785123234993}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &6479148936055645565
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93096453680907341}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 7b823a932bdf5f44caf6b5cf03f83b36, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &7441747276852027691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93096453680907341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab618d559eb0d4747a4ebbd4bb120f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SoundEffect
-  _startTime: 0.26
-  _volume: 0.166
-  _audioSource: {fileID: 6479148936055645565}
 --- !u!1 &7918732300222870622
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +12,7 @@ GameObject:
   - component: {fileID: 7722489204504560379}
   - component: {fileID: 4732265239066672068}
   m_Layer: 0
-  m_Name: MeleeAttackSound
+  m_Name: AttackSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,7 +218,6 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2624460070896879580}
   - {fileID: 3931068551668805190}
   - {fileID: 4272555410845204861}
   m_Father: {fileID: 0}
@@ -394,7 +248,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 34b0e9adb6f7d7847980f420c310d191, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -470,7 +324,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -514,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _rb: {fileID: 9018996356509810046}
   _enemyDetection: {fileID: 2878589271078668269}
-  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
+  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
 --- !u!114 &2878589271078668269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,8 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a1bf182bb648418390be1d5425582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  _detectionSound: {fileID: 7441747276852027691}
-  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
+  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
 --- !u!114 &1181787906555729627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   _health: {fileID: 4842946735691736961}
-  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
+  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
 --- !u!114 &4842946735691736961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630fa3b3850e74e42971d505483e2485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
+  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
   _currentHealth: 0
   _knockbackReceiver: {fileID: 4912147470288581682}
 --- !u!114 &4912147470288581682
@@ -607,6 +460,7 @@ MonoBehaviour:
   _idleClip: {fileID: 7400000, guid: ad4dcdba45b2af549b2a518d9f519a5d, type: 2}
   _walkClip: {fileID: 7400000, guid: ad4dcdba45b2af549b2a518d9f519a5d, type: 2}
   _moveThreshold: 0.1
+  _flipSprite: 1
   _spriteRenderer: {fileID: 8046599812600565566}
   _rb: {fileID: 9018996356509810046}
   _animator: {fileID: 4319481131635950785}
@@ -644,11 +498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee12fce8e881a143bf635e710f73b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyAttack
-  _stats: {fileID: 11400000, guid: 33092f9350f828f489ab02c7cb8d200a, type: 2}
+  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
   _attackSound: {fileID: 4732265239066672068}
-  _bulletPrefab: {fileID: 3285378652751197902, guid: e2230b045c729544fb06537d661d89ef, type: 3}
+  _bulletPrefab: {fileID: 3285378652751197902, guid: d711b7e021aecf449881366b76f807a1, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
+  _penetrationCount: 1
 --- !u!114 &6173245498894754189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecbcb667aa647944b9132cfe5d21d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtEffect
-  _spriteRenderer: {fileID: 8046599812600565566}
   _enemyHealth: {fileID: 4842946735691736961}
   _flashDuration: 0.15
   _flashColor: {r: 1, g: 0, b: 0, a: 1}

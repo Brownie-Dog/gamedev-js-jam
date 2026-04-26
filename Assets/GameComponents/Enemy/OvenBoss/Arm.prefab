@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 34b0e9adb6f7d7847980f420c310d191, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,8 +147,6 @@ MonoBehaviour:
   _defaultSegmentCount: 3
   _segmentSpacing: 2
   _handOffset: 1
-  _extendSpeed: 0.01
-  _retractSpeed: 0.05
 --- !u!114 &5658972022319345754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +164,8 @@ MonoBehaviour:
   _retractPauseDuration: 1
   _handGrabOffset: 2.25
   _moveStopDistance: 1
+  _baseExtensionTime: 0.3
+  _baseRetractionTime: 0.3
 --- !u!114 &6099945425524738626
 MonoBehaviour:
   m_ObjectHideFlags: 0
