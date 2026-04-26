@@ -15,7 +15,7 @@ MonoBehaviour:
   <ItemName>k__BackingField: Sentry
   <Description>k__BackingField: Hmm, it's smaller than the diagram
   <Icon>k__BackingField: {fileID: 2246094899704501764, guid: 8b1e8f43b631592458679c09119119f5, type: 3}
-  <Rarity>k__BackingField: 0
+  <Rarity>k__BackingField: 1
   <WeaponPrefab>k__BackingField: {fileID: 344882311192147465, guid: b7f91d988bcb0b44084ab372c5e465bb, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0.1
