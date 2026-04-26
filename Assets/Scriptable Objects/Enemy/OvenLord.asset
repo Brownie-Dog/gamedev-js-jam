@@ -20,7 +20,7 @@ MonoBehaviour:
   WallLayer:
     serializedVersion: 2
     m_Bits: 256
-  DetectionRadius: 10
+  DetectionRadius: 20
   ChasingRadius: 0
   AttackCooldown: 1
   AttackRange: 5
@@ -28,7 +28,7 @@ MonoBehaviour:
   KnockbackForce: 50
   MaxHealth: 1000
   DropChance: 1
-  GuaranteedItem: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}
+  GuaranteedItem: {fileID: 0}
   CoinDropChance: 1
   MinCoinDrop: 50
   MaxCoinDrop: 100
