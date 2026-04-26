@@ -9,6 +9,7 @@ namespace Enemy.Bosses
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private GameObject _fanPushZone;
+        [SerializeField] private FanPushParticleController _particleController;
         [SerializeField] private EnemyStats _stats;
         [SerializeField] private float _startupDuration = 0.5f;
         [SerializeField] private float _pushForce = 20f;
@@ -81,6 +82,11 @@ namespace Enemy.Bosses
             {
                 continuous.Deactivate();
             }
+            if (_particleController != null)
+            {
+                _particleController.Stop();
+                _particleController.Clear();
+            }
         }
 
         public void SetDuration(float duration)
@@ -116,6 +122,14 @@ namespace Enemy.Bosses
             {
                 Debug.LogWarning($"[FanPush] Animator missing or trigger name empty! animator={_animator}, trigger={_startupTrigger}");
             }
+            // Startup particles (low emission telegraph cue)
+            var zoneCollider = _fanPushZone != null ? _fanPushZone.GetComponent<BoxCollider2D>() : null;
+            if (_particleController != null)
+            {
+                _particleController.Configure(zoneCollider);
+                _particleController.PlayStartup();
+            }
+
             yield return new WaitForSeconds(_startupDuration);
 
             if (_animator != null && !string.IsNullOrEmpty(_pushBoolName))
@@ -142,6 +156,12 @@ namespace Enemy.Bosses
                 continuous.Activate();
             }
 
+            // Switch to full push particles
+            if (_particleController != null)
+            {
+                _particleController.PlayPush();
+            }
+
             yield return new WaitForSeconds(duration);
 
             // Deactivate
@@ -149,6 +169,10 @@ namespace Enemy.Bosses
             if (continuous != null)
             {
                 continuous.Deactivate();
+            }
+            if (_particleController != null)
+            {
+                _particleController.Stop();
             }
 
             if (!string.IsNullOrEmpty(_pushBoolName) && _animator != null)
