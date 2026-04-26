@@ -48,6 +48,7 @@ namespace ItemDrops
 
         private void OnCardButtonPressed()
         {
+            _itemChoiceScreen.PlayClickSound();
             Assert.IsNotNull(_itemData);
             Sprite sprite = _iconImage.sprite;
             Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, _iconImage.rectTransform.position);
