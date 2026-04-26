@@ -663,6 +663,7 @@ MonoBehaviour:
   _loadoutCenterOffsetX: 3
   _playerEquipment: {fileID: 2810164907020316400}
   _shopFocusZoomMultiplier: 0.75
+  _loadoutFocusZoomMultiplier: 0.75
 --- !u!114 &837830959801875611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,7 +1032,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0687834}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1041,7 +1042,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.45, y: 1.44}
+  m_Size: {x: 2.45, y: 3.320077}
   m_EdgeRadius: 0
 --- !u!61 &7489397724563928781
 BoxCollider2D:
@@ -1077,7 +1078,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.39157927}
+  m_Offset: {x: 0, y: 0.06697607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1087,7 +1088,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.45, y: 0.6568415}
+  m_Size: {x: 2.45, y: 3.3164625}
   m_EdgeRadius: 0
 --- !u!114 &1985227060345300915
 MonoBehaviour:
