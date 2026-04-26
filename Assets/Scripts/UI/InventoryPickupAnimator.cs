@@ -41,7 +41,12 @@ namespace UI
             Image flyingItemImage = flyingItemObj.AddComponent<Image>();
             flyingItemImage.sprite = sprite;
 
-            flyingItemRect.anchoredPosition = startScreenPosition;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _canvas.transform as RectTransform,
+                startScreenPosition,
+                null,
+                out Vector2 localStart);
+            flyingItemRect.localPosition = new Vector3(localStart.x, localStart.y, 0f);
             flyingItemRect.localScale = Vector3.one;
 
             StartCoroutine(FlyAndHide(flyingItemRect));
@@ -49,8 +54,8 @@ namespace UI
 
         private IEnumerator FlyAndHide(RectTransform flyingItem)
         {
-            Vector2 startPos = flyingItem.anchoredPosition;
-            Vector2 endPos = _backpackIcon.anchoredPosition;
+            Vector3 startPos = flyingItem.localPosition;
+            Vector3 endPos = _backpackIcon.localPosition;
 
             float elapsed = 0f;
 
@@ -59,7 +64,7 @@ namespace UI
                 elapsed += Time.unscaledDeltaTime;
                 float t = elapsed / _duration;
 
-                flyingItem.anchoredPosition = Vector2.Lerp(startPos, endPos, _positionCurve.Evaluate(t));
+                flyingItem.localPosition = Vector3.Lerp(startPos, endPos, _positionCurve.Evaluate(t));
                 float scale = Mathf.Lerp(1f, 0.2f, _scaleCurve.Evaluate(t));
                 flyingItem.localScale = Vector3.one * scale;
 
