@@ -1,40 +1,10 @@
 fileFormatVersion: 2
-guid: 46dfdfbf7a132ba429018725ff20b762
+guid: 8f3d80e46e42ee84b919c89b8445bd47
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8502161148217017227
     second: JustBox-AllBox2_0
-  - first:
-      213: 816336711015043277
-    second: JustBox-AllBox2_1
-  - first:
-      213: 4033865901172967973
-    second: JustBox-AllBox2_2
-  - first:
-      213: 14684025318063757
-    second: JustBox-AllBox2_3
-  - first:
-      213: 5292006860947387941
-    second: JustBox-AllBox2_4
-  - first:
-      213: -5437360485855077201
-    second: JustBox-AllBox2_5
-  - first:
-      213: 4396220247798863596
-    second: JustBox-AllBox2_6
-  - first:
-      213: 267733423070742729
-    second: JustBox-AllBox2_7
-  - first:
-      213: 2788073457656306662
-    second: JustBox-AllBox2_8
-  - first:
-      213: 4115683295959299435
-    second: JustBox-AllBox2_9
-  - first:
-      213: -6413563913931612077
-    second: JustBox-AllBox2_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -76,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,19 +109,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -159,12 +116,12 @@ TextureImporter:
       name: JustBox-AllBox2_0
       rect:
         serializedVersion: 2
-        x: 189
-        y: 1639
-        width: 102
-        height: 92
+        x: 2
+        y: 2
+        width: 60
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,231 +134,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_1
-      rect:
-        serializedVersion: 2
-        x: 669
-        y: 1639
-        width: 102
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc0992dd9e5345b00800000000000000
-      internalID: 816336711015043277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_2
-      rect:
-        serializedVersion: 2
-        x: 1049
-        y: 1529
-        width: 302
-        height: 342
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52ac9fe2aab2bf730800000000000000
-      internalID: 4033865901172967973
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_3
-      rect:
-        serializedVersion: 2
-        x: 1529
-        y: 1529
-        width: 252
-        height: 342
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8eb4f01b0b243000800000000000000
-      internalID: 14684025318063757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_4
-      rect:
-        serializedVersion: 2
-        x: 2032
-        y: 1547
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 526f2b7a33cf07940800000000000000
-      internalID: 5292006860947387941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_5
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 1089
-        width: 202
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: facdcdc427d9a84b0800000000000000
-      internalID: -5437360485855077201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_6
-      rect:
-        serializedVersion: 2
-        x: 619
-        y: 1059
-        width: 202
-        height: 282
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce65e60f503820d30800000000000000
-      internalID: 4396220247798863596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_7
-      rect:
-        serializedVersion: 2
-        x: 1099
-        y: 1059
-        width: 202
-        height: 282
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c881a8312e27b300800000000000000
-      internalID: 267733423070742729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_8
-      rect:
-        serializedVersion: 2
-        x: 1609
-        y: 1069
-        width: 182
-        height: 262
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6eb9c43b90a31b620800000000000000
-      internalID: 2788073457656306662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_9
-      rect:
-        serializedVersion: 2
-        x: 2059
-        y: 1069
-        width: 202
-        height: 282
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b65b9afd628dd1930800000000000000
-      internalID: 4115683295959299435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JustBox-AllBox2_10
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 569
-        width: 272
-        height: 272
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 350a7ddc9917ef6a0800000000000000
-      internalID: -6413563913931612077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bbd49d9cd69994e448a4b9349e31cc21
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -412,16 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       JustBox-AllBox2_0: 8502161148217017227
-      JustBox-AllBox2_1: 816336711015043277
-      JustBox-AllBox2_10: -6413563913931612077
-      JustBox-AllBox2_2: 4033865901172967973
-      JustBox-AllBox2_3: 14684025318063757
-      JustBox-AllBox2_4: 5292006860947387941
-      JustBox-AllBox2_5: -5437360485855077201
-      JustBox-AllBox2_6: 4396220247798863596
-      JustBox-AllBox2_7: 267733423070742729
-      JustBox-AllBox2_8: 2788073457656306662
-      JustBox-AllBox2_9: 4115683295959299435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
