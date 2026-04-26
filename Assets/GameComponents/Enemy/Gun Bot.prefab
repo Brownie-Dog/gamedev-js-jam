@@ -170,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 8739929093759069329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -500,9 +500,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyAttack
   _stats: {fileID: 11400000, guid: f40ee43e64a2cac4791939fa34a9c10b, type: 2}
   _attackSound: {fileID: 4732265239066672068}
-  _bulletPrefab: {fileID: 3285378652751197902, guid: e2230b045c729544fb06537d661d89ef, type: 3}
+  _bulletPrefab: {fileID: 3285378652751197902, guid: 57acdb50a21cca94387ea6b088d846a1, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
+  _penetrationCount: 1
 --- !u!114 &6173245498894754189
 MonoBehaviour:
   m_ObjectHideFlags: 0

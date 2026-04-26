@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -186,8 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09520de26ab373d46b6bbbc2ca886b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.SprinklerBullet
-  _speed: 25
-  _lifetime: 3
   _renderer: {fileID: 8230461480171691232}
   _possibleSprites:
   - {fileID: -5091685921343274754, guid: a4b2dfdccf8ba544dbd9bdf8b2206ab8, type: 3}
