@@ -33,6 +33,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1492140280387224733, guid: 9d5c539993c7a444a9fc75f273941fda, type: 3}
     - target: {fileID: 1259890024476239181, guid: 8a0126c9156936d4ba15b5efa9d1cd66, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 3285378652751197902, guid: 616e415d34ea8e24f80c144d7fe9fabc, type: 3}
+    - target: {fileID: 1259890024476239181, guid: 8a0126c9156936d4ba15b5efa9d1cd66, type: 3}
       propertyPath: _penetrationCount
       value: 10
       objectReference: {fileID: 0}

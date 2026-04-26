@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8446891031811390757, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 3285378652751197902, guid: 358e17c6663dcf04186a7aa3c6018d36, type: 3}
     - target: {fileID: 8907648602986796793, guid: 6b9e72048ea261a42afce4579f6c7a04, type: 3}
       propertyPath: m_Name
       value: Turret

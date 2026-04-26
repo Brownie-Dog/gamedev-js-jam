@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8446891031811390757, guid: 44d3004a751fe9b4c84dc18c6d5d3b6f, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 3285378652751197902, guid: 7db61c5a8abe14e43bf71d4263d3ced8, type: 3}
     - target: {fileID: 8907648602986796793, guid: 44d3004a751fe9b4c84dc18c6d5d3b6f, type: 3}
       propertyPath: m_Name
       value: Sentry
