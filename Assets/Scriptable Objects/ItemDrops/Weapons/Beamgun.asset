@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
   <ItemName>k__BackingField: Beamgun
   <Description>k__BackingField: A high-powered solution to your problems
-  <Icon>k__BackingField: {fileID: 1347734055300931125, guid: 0ebd332783f98ac4896ef06016de87b1, type: 3}
+  <Icon>k__BackingField: {fileID: -8273678674243828189, guid: 15b1f3a23d6d4b04e869c54bf8508fe5, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 2295488750214598289, guid: 8a0126c9156936d4ba15b5efa9d1cd66, type: 3}
   <Damage>k__BackingField: 5

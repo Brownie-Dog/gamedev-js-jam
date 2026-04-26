@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
   <ItemName>k__BackingField: Breadslicer
   <Description>k__BackingField: Cuts more than just bread
-  <Icon>k__BackingField: {fileID: -1390420585723827316, guid: f08f49f56736a7741ab3194180cf2106, type: 3}
+  <Icon>k__BackingField: {fileID: 8623073696581707868, guid: f08f49f56736a7741ab3194180cf2106, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 8082343959606323416, guid: f5b121178e11cbe4885d1c41f532921e, type: 3}
   <Damage>k__BackingField: 1

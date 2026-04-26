@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d94ab1f33d88f74896d8f9a9e9fd530, type: 3}
+  m_Name: ExtensionLR1
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.ExtensionWeaponItemData
+  <ItemName>k__BackingField: L-Shaped Extension Pole
+  <Description>k__BackingField: someone think of something
+  <Icon>k__BackingField: {fileID: 5614751336670357757, guid: 37978d3613762f0499aa27ffbc3d4906, type: 3}
+  <Rarity>k__BackingField: 0
+  <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: 6f6902916960b1943adafa8087a693df, type: 3}
+  <Damage>k__BackingField: 1
+  <CooldownTime>k__BackingField: 0
+  <DefaultAimMode>k__BackingField: 0
+  <AutoFire>k__BackingField: 0
+  <KnockbackForce>k__BackingField: 0
+  <CompatibleSlotTypes>k__BackingField: 00000000

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
   <ItemName>k__BackingField: Paddle
   <Description>k__BackingField: Perfect for social distancing!
-  <Icon>k__BackingField: {fileID: -3011869301351494817, guid: f44a7d1a89de8e543946315625802bc0, type: 3}
+  <Icon>k__BackingField: {fileID: 1697626239774236345, guid: 62975e4eb2944c84a8a65f2d741c45d6, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 3696325380628501483, guid: ca1522d4bf974664580b06daa9c8ef66, type: 3}
   <Damage>k__BackingField: 5
