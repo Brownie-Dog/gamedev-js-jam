@@ -32,6 +32,10 @@ namespace Enemy.Bosses
         [SerializeField] private GameObject _rightRailgun;
         [SerializeField] private Transform _rightRailgunFirePoint;
 
+        [Header("Hand Pivots")]
+        [SerializeField] private Transform _leftHandPivot;
+        [SerializeField] private Transform _rightHandPivot;
+
         private MonoBehaviourPool<Bullet> _bulletPool;
         private MonoBehaviourPool<FanManRailgunBeamSegment> _beamPool;
 
@@ -47,10 +51,10 @@ namespace Enemy.Bosses
         private int _railgunMultiShotMax = 1;
         private float _railgunTelegraphInterval = 0.5f;
         private float _railgunAimVarianceDeg = 0f;
-        private float _railgunAimVarianceThreshold = 1f;
         private float _normalGunWeight = 0.5f;
         private float _railgunWeight = 0f;
         private bool _useBothHands;
+        private const float PIVOT_SPEED = 360f;
 
         private Coroutine _routine;
         private readonly List<GameObject> _activeTelegraphs = new();
@@ -167,13 +171,12 @@ namespace Enemy.Bosses
             _railgunWeight = railgunWeight;
         }
 
-        public void SetMultiShotConfig(int min, int max, float interval, float varianceDeg, float varianceThreshold)
+        public void SetMultiShotConfig(int min, int max, float interval, float varianceDeg)
         {
             _railgunMultiShotMin = min;
             _railgunMultiShotMax = max;
             _railgunTelegraphInterval = interval;
             _railgunAimVarianceDeg = varianceDeg;
-            _railgunAimVarianceThreshold = varianceThreshold;
         }
 
         public void SetUseBothHands(bool useBoth)
@@ -250,6 +253,8 @@ namespace Enemy.Bosses
             GameObject rightGun = rightGun1 ? _rightNormalGun1 : _rightNormalGun2;
             Transform leftFire = leftGun1 ? _leftNormalGun1FirePoint : _leftNormalGun2FirePoint;
             Transform rightFire = rightGun1 ? _rightNormalGun1FirePoint : _rightNormalGun2FirePoint;
+            Transform leftPivot = _leftHandPivot;
+            Transform rightPivot = _rightHandPivot;
 
             if (dualHand)
             {
@@ -262,16 +267,27 @@ namespace Enemy.Bosses
                 ActivateGun(useLeft ? leftGun : rightGun);
             }
 
+            Transform activeFire = dualHand ? leftFire : (_activeGuns.Count > 0 && _activeGuns[0] == leftGun ? leftFire : rightFire);
+            Transform activePivot = dualHand ? leftPivot : (_activeGuns.Count > 0 && _activeGuns[0] == leftGun ? leftPivot : rightPivot);
+            Transform secondaryFire = dualHand ? rightFire : null;
+            Transform secondaryPivot = dualHand ? rightPivot : null;
+
+            if (!dualHand && activeFire == null)
+            {
+                activeFire = leftFire != null ? leftFire : rightFire;
+                activePivot = leftFire != null ? leftPivot : rightPivot;
+            }
+
             // Aim phase
             float aimDuration = Random.Range(_aimMin, _aimMax);
             float aimTimer = 0f;
             while (aimTimer < aimDuration)
             {
                 aimTimer += Time.deltaTime;
-                AimFirePoint(leftFire, player);
+                AimHandPivot(activePivot, player);
                 if (dualHand)
                 {
-                    AimFirePoint(rightFire, player);
+                    AimHandPivot(secondaryPivot, player);
                 }
 
                 yield return null;
@@ -288,36 +304,35 @@ namespace Enemy.Bosses
                     // Both hands fire together for each shot
                     for (int i = 0; i < shots; i++)
                     {
-                        FireBullet(leftFire, player);
-                        FireBullet(rightFire, player);
-                        yield return new WaitForSeconds(_shotInterval);
+                        FireBullet(activeFire, player);
+                        FireBullet(secondaryFire, player);
+                        yield return TrackDuringInterval(activePivot, secondaryPivot, player, _shotInterval);
                     }
                 }
                 else
                 {
                     // Alternating fire
                     bool leftFirst = Random.value < 0.5f;
+                    Transform firstFire = leftFirst ? leftFire : rightFire;
+                    Transform secondFire = leftFirst ? rightFire : leftFire;
+                    Transform firstPivot = leftFirst ? leftPivot : rightPivot;
+                    Transform secondPivot = leftFirst ? rightPivot : leftPivot;
                     for (int i = 0; i < shots; i++)
                     {
-                        FireBullet(leftFirst ? leftFire : rightFire, player);
-                        yield return new WaitForSeconds(_shotInterval);
-                        FireBullet(leftFirst ? rightFire : leftFire, player);
-                        yield return new WaitForSeconds(_shotInterval);
+                        FireBullet(firstFire, player);
+                        yield return TrackDuringInterval(firstPivot, secondPivot, player, _shotInterval);
+                        FireBullet(secondFire, player);
+                        yield return TrackDuringInterval(firstPivot, secondPivot, player, _shotInterval);
                     }
                 }
             }
             else
             {
                 // Single hand
-                Transform activeFire = _activeGuns.Count > 0 && _activeGuns[0] == leftGun ? leftFire : rightFire;
-                if (activeFire == null)
-                {
-                    activeFire = leftFire != null ? leftFire : rightFire;
-                }
                 for (int i = 0; i < shots; i++)
                 {
                     FireBullet(activeFire, player);
-                    yield return new WaitForSeconds(_shotInterval);
+                    yield return TrackDuringInterval(activePivot, null, player, _shotInterval);
                 }
             }
         }
@@ -326,6 +341,8 @@ namespace Enemy.Bosses
         {
             Transform activeFire;
             Transform secondaryFire = null;
+            Transform activePivot;
+            Transform secondaryPivot = null;
 
             if (dualHand)
             {
@@ -333,26 +350,26 @@ namespace Enemy.Bosses
                 ActivateGun(_rightRailgun);
                 activeFire = _leftRailgunFirePoint;
                 secondaryFire = _rightRailgunFirePoint;
+                activePivot = _leftHandPivot;
+                secondaryPivot = _rightHandPivot;
             }
             else
             {
                 bool useLeft = Random.value < 0.5f;
                 ActivateGun(useLeft ? _leftRailgun : _rightRailgun);
                 activeFire = useLeft ? _leftRailgunFirePoint : _rightRailgunFirePoint;
+                activePivot = useLeft ? _leftHandPivot : _rightHandPivot;
             }
 
             int shotCount = Mathf.Max(1, Random.Range(_railgunMultiShotMin, _railgunMultiShotMax + 1));
 
             // Initial aim phase
             float aimDuration = Random.Range(_aimMin, _aimMax);
-            yield return AimPhaseCoroutine(activeFire, secondaryFire, player, aimDuration);
+            yield return AimPhaseCoroutine(activePivot, secondaryPivot, player, aimDuration);
 
             // Collect locked shots per hand
             var activeShots = new List<(Vector2 start, Vector2 dir)>();
             var secondaryShots = new List<(Vector2 start, Vector2 dir)>();
-
-            Vector2 lastActiveCheck = player.position;
-            Vector2 lastSecondaryCheck = player.position;
 
             for (int shot = 0; shot < shotCount; shot++)
             {
@@ -360,17 +377,17 @@ namespace Enemy.Bosses
                 if (activeFire != null)
                 {
                     Vector2 start = activeFire.position;
-                    Vector2 dir = CalculateAimDirection(activeFire, player, lastActiveCheck, shot == 0);
-                    lastActiveCheck = player.position;
+                    Vector2 dir = CalculateAimDirection(activeFire, player, shot == 0);
                     activeShots.Add((start, dir));
+                    LockPivotAtDirection(activePivot, dir);
                     CreateTelegraph(start, dir);
                 }
                 if (secondaryFire != null)
                 {
                     Vector2 start = secondaryFire.position;
-                    Vector2 dir = CalculateAimDirection(secondaryFire, player, lastSecondaryCheck, shot == 0);
-                    lastSecondaryCheck = player.position;
+                    Vector2 dir = CalculateAimDirection(secondaryFire, player, shot == 0);
                     secondaryShots.Add((start, dir));
+                    LockPivotAtDirection(secondaryPivot, dir);
                     CreateTelegraph(start, dir);
                 }
 
@@ -379,71 +396,97 @@ namespace Enemy.Bosses
                 // Re-aim and wait interval before next telegraph (if not last shot)
                 if (shot < shotCount - 1)
                 {
-                    yield return AimPhaseCoroutine(activeFire, secondaryFire, player, _railgunTelegraphInterval);
+                    yield return AimPhaseCoroutine(activePivot, secondaryPivot, player, _railgunTelegraphInterval);
                 }
             }
 
             // Clear all telegraphs before firing
             ClearTelegraphs();
 
-            // Fire all shots in sequence with tiny delay
+            // Fire all shots in sequence with quick pivot + tiny delay
             for (int i = 0; i < activeShots.Count; i++)
             {
+                yield return QuickPivotToDirection(activePivot, activeShots[i].dir);
                 FireRailgun(activeShots[i].start, activeShots[i].dir);
                 if (dualHand && i < secondaryShots.Count)
                 {
+                    yield return QuickPivotToDirection(secondaryPivot, secondaryShots[i].dir);
                     FireRailgun(secondaryShots[i].start, secondaryShots[i].dir);
                 }
 
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
 
-        private IEnumerator AimPhaseCoroutine(Transform fireA, Transform fireB, Transform player, float duration)
+        private IEnumerator AimPhaseCoroutine(Transform pivotA, Transform pivotB, Transform player, float duration)
         {
             float timer = 0f;
             while (timer < duration)
             {
                 timer += Time.deltaTime;
-                if (fireA != null)
-                {
-                    AimFirePoint(fireA, player);
-                }
-
-                if (fireB != null)
-                {
-                    AimFirePoint(fireB, player);
-                }
-
+                AimHandPivot(pivotA, player);
+                AimHandPivot(pivotB, player);
                 yield return null;
             }
         }
 
-        private Vector2 CalculateAimDirection(Transform firePoint, Transform player, Vector2 lastCheckedPos, bool isFirstShot)
+        private IEnumerator TrackDuringInterval(Transform pivotA, Transform pivotB, Transform player, float duration)
+        {
+            float timer = 0f;
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                AimHandPivot(pivotA, player);
+                AimHandPivot(pivotB, player);
+                yield return null;
+            }
+        }
+
+        private static void AimHandPivot(Transform pivot, Transform player)
+        {
+            if (pivot == null || player == null) return;
+            Vector2 direction = ((Vector2)(player.position - pivot.position)).normalized;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+            float currentAngle = pivot.eulerAngles.z;
+            float newAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, PIVOT_SPEED * Time.deltaTime);
+            pivot.rotation = Quaternion.Euler(0, 0, newAngle);
+        }
+
+        private static void LockPivotAtDirection(Transform pivot, Vector2 direction)
+        {
+            if (pivot == null) return;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+            pivot.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        private static IEnumerator QuickPivotToDirection(Transform pivot, Vector2 direction)
+        {
+            if (pivot == null) yield break;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+            while (true)
+            {
+                float currentAngle = pivot.eulerAngles.z;
+                float newAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, PIVOT_SPEED * Time.deltaTime);
+                pivot.rotation = Quaternion.Euler(0, 0, newAngle);
+                if (Mathf.Abs(Mathf.DeltaAngle(newAngle, targetAngle)) < 2f)
+                    break;
+                yield return null;
+            }
+        }
+
+        private Vector2 CalculateAimDirection(Transform firePoint, Transform player, bool isFirstShot)
         {
             Vector2 rawDir = ((Vector2)(player.position - firePoint.position)).normalized;
 
-            // First shot is always accurate; variance only applies to follow-up shots
+            // First shot is always accurate; follow-up shots always get variance
             if (isFirstShot || _railgunAimVarianceDeg <= 0f)
             {
                 return rawDir;
             }
 
-            // Add random angular offset
+            // Guaranteed random angular offset for follow-up shots
             float offset = Random.Range(-_railgunAimVarianceDeg, _railgunAimVarianceDeg);
             return Quaternion.Euler(0, 0, offset) * rawDir;
-        }
-
-        private static void AimFirePoint(Transform firePoint, Transform player)
-        {
-            if (firePoint == null)
-            {
-                return;
-            }
-
-            Vector2 direction = ((Vector2)(player.position - firePoint.position)).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-            firePoint.rotation = Quaternion.Euler(0, 0, angle);
         }
 
         private void FireBullet(Transform firePoint, Transform player)

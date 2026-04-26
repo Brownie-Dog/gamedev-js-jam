@@ -61,6 +61,8 @@ MonoBehaviour:
   _rightNormalGun2FirePoint: {fileID: 3393942815924058732}
   _rightRailgun: {fileID: 4564858070751814446}
   _rightRailgunFirePoint: {fileID: 5256795679722441017}
+  _leftHandPivot: {fileID: 129328756254716610}
+  _rightHandPivot: {fileID: 279696738004080407}
 --- !u!1 &49504143768209655
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,10 +27,8 @@ MonoBehaviour:
     RailgunMaxRange: 60
     RailgunMultiShotMin: 1
     RailgunMultiShotMax: 1
-    RailgunTelegraphIntervalMin: 0.3
-    RailgunTelegraphIntervalMax: 0.6
+    RailgunTelegraphInterval: 0.5
     RailgunAimVarianceDeg: 0
-    RailgunAimVarianceThreshold: 1
     FanPushWeight: 0.5
     NormalGunWeight: 0.5
     RailgunWeight: 0
@@ -51,10 +49,8 @@ MonoBehaviour:
     RailgunMaxRange: 60
     RailgunMultiShotMin: 1
     RailgunMultiShotMax: 1
-    RailgunTelegraphIntervalMin: 0.3
-    RailgunTelegraphIntervalMax: 0.6
+    RailgunTelegraphInterval: 0.5
     RailgunAimVarianceDeg: 0
-    RailgunAimVarianceThreshold: 1
     FanPushWeight: 0.45
     NormalGunWeight: 0.4
     RailgunWeight: 0.15
@@ -72,13 +68,11 @@ MonoBehaviour:
     NormalGunShotInterval: 0.15
     RailgunTelegraphDuration: 1
     RailgunLingerDuration: 2
-    RailgunMaxRange: 80
-    RailgunMultiShotMin: 1
-    RailgunMultiShotMax: 3
-    RailgunTelegraphIntervalMin: 0.3
-    RailgunTelegraphIntervalMax: 0.6
-    RailgunAimVarianceDeg: 10
-    RailgunAimVarianceThreshold: 1
+    RailgunMaxRange: 100
+    RailgunMultiShotMin: 2
+    RailgunMultiShotMax: 5
+    RailgunTelegraphInterval: 0.5
+    RailgunAimVarianceDeg: 15
     FanPushWeight: 0.2
     NormalGunWeight: 0.3
     RailgunWeight: 0.35

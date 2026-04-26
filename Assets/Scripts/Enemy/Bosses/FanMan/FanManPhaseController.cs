@@ -142,7 +142,7 @@ namespace Enemy.Bosses
             _gunMove.SetRailgunStats(stats.RailgunTelegraphDuration, stats.RailgunLingerDuration, stats.RailgunMaxRange);
             _gunMove.SetMultiShotConfig(stats.RailgunMultiShotMin, stats.RailgunMultiShotMax,
                 stats.RailgunTelegraphInterval,
-                stats.RailgunAimVarianceDeg, stats.RailgunAimVarianceThreshold);
+                stats.RailgunAimVarianceDeg);
             _gunMove.SetGunWeights(stats.NormalGunWeight, stats.RailgunWeight);
         }
 

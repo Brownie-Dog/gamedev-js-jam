@@ -24,7 +24,6 @@ namespace Enemy.Bosses
             RailgunMultiShotMax = 1,
             RailgunTelegraphInterval = 0.5f,
             RailgunAimVarianceDeg = 0f,
-            RailgunAimVarianceThreshold = 1f,
             FanPushWeight = 0.5f,
             NormalGunWeight = 0.5f,
             RailgunWeight = 0f,
@@ -50,7 +49,6 @@ namespace Enemy.Bosses
             RailgunMultiShotMax = 1,
             RailgunTelegraphInterval = 0.5f,
             RailgunAimVarianceDeg = 0f,
-            RailgunAimVarianceThreshold = 1f,
             FanPushWeight = 0.45f,
             NormalGunWeight = 0.4f,
             RailgunWeight = 0.15f,
@@ -76,7 +74,6 @@ namespace Enemy.Bosses
             RailgunMultiShotMax = 3,
             RailgunTelegraphInterval = 0.5f,
             RailgunAimVarianceDeg = 10f,
-            RailgunAimVarianceThreshold = 1f,
             FanPushWeight = 0.35f,
             NormalGunWeight = 0.3f,
             RailgunWeight = 0.35f,
@@ -110,7 +107,6 @@ namespace Enemy.Bosses
             public int RailgunMultiShotMax = 1;
             public float RailgunTelegraphInterval = 0.5f;
             public float RailgunAimVarianceDeg = 0f;
-            public float RailgunAimVarianceThreshold = 1f;
 
             [Header("Move Weights")]
             [Range(0f, 1f)] public float FanPushWeight = 0.5f;
