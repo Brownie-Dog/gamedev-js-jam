@@ -94,6 +94,13 @@ namespace EndlessMode
 
             GameObject prefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
             GameObject enemy = Instantiate(prefab, spawnPos, Quaternion.identity);
+
+            var enemyDetection = enemy.GetComponent<EnemyDetection>();
+            if (enemyDetection != null)
+            {
+                enemyDetection.IncreaseDetectionRange(1000f);
+            }
+
             _activeEnemies.Add(enemy);
         }
 

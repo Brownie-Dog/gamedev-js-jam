@@ -8,6 +8,8 @@ public class EnemyDetection : MonoBehaviour
 
     private Transform _player;
     private bool _isDetectingPlayer = false;
+    private float _detectionRadiusOffset = 0f;
+    private float _chasingRadiusOffset = 0f;
 
     public event EventHandler OnPlayerDetected;
     public event EventHandler OnPlayerLost;
@@ -16,6 +18,12 @@ public class EnemyDetection : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         Assert.IsNotNull(_player);
+    }
+
+    public void IncreaseDetectionRange(float amount)
+    {
+        _detectionRadiusOffset += amount;
+        _chasingRadiusOffset += amount;
     }
 
     private void Update()
@@ -41,11 +49,11 @@ public class EnemyDetection : MonoBehaviour
 
     private bool IsPlayerInRange(float distanceToPlayer)
     {
-        return distanceToPlayer <= _stats.DetectionRadius;
+        return distanceToPlayer <= _stats.DetectionRadius + _detectionRadiusOffset;
     }
 
     private bool IsPlayerOutsideChaseRadius(float distanceToPlayer)
     {
-        return distanceToPlayer >= _stats.ChasingRadius;
+        return distanceToPlayer >= _stats.ChasingRadius + _chasingRadiusOffset;
     }
 }

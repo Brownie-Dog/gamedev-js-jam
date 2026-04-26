@@ -177,7 +177,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 15
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1934458373571130340, guid: a96efc9e914f78b449dcdd5e6af1a11a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -482,7 +482,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 14
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1522649943648045124, guid: 37e36cb6bedd55c489f4efd676c3eaae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -961,7 +961,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 15
   m_MaskInteraction: 0
   m_Sprite: {fileID: -866312212567841119, guid: 48982299518417245a2526602ab81c4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1015,7 +1015,7 @@ TargetJoint2D:
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_Anchor: {x: 0, y: 0}
-  m_Target: {x: 34.38801, y: 34.46}
+  m_Target: {x: 958.83563, y: 179.44}
   m_AutoConfigureTarget: 1
   m_MaxForce: 10000
   m_DampingRatio: 1
