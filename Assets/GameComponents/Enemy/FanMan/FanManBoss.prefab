@@ -674,13 +674,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d383811ec28cb65458cb484dc91e1c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.Bosses.FanManFanPushMove
-  _animator: {fileID: 0}
+  _animator: {fileID: 6016599902891820463}
   _fanPushZone: {fileID: 616813321563495152}
   _stats: {fileID: 11400000, guid: a368cf2d7dcfcbc42b29e39a74e5d9c8, type: 2}
-  _startupDuration: 0.5
+  _startupDuration: 1.583
   _pushForce: 20
   _pushDamage: 1
-  _knockbackDuration: 0.3
+  _knockbackDuration: 1
   _startupTrigger: FanStartup
   _pushBoolName: IsFanPushing
 --- !u!1001 &4741044181248740084

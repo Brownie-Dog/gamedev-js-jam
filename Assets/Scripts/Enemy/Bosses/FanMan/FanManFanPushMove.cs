@@ -27,6 +27,32 @@ namespace Enemy.Bosses
 
         public event Action OnMoveComplete;
 
+        public void ForceStartupTrigger()
+        {
+            if (_animator != null && !string.IsNullOrEmpty(_startupTrigger))
+            {
+                Debug.Log($"[FanPushEditor] Setting trigger '{_startupTrigger}' on '{_animator.name}'");
+                _animator.SetTrigger(_startupTrigger);
+            }
+            else
+            {
+                Debug.LogWarning("[FanPushEditor] No animator or trigger name configured.");
+            }
+        }
+
+        public void ForcePushBool(bool value)
+        {
+            if (_animator != null && !string.IsNullOrEmpty(_pushBoolName))
+            {
+                Debug.Log($"[FanPushEditor] Setting bool '{_pushBoolName}' = {value} on '{_animator.name}'");
+                _animator.SetBool(_pushBoolName, value);
+            }
+            else
+            {
+                Debug.LogWarning("[FanPushEditor] No animator or bool name configured.");
+            }
+        }
+
         private void Awake()
         {
             Assert.IsNotNull(_fanPushZone);
@@ -44,6 +70,10 @@ namespace Enemy.Bosses
             if (!string.IsNullOrEmpty(_pushBoolName) && _animator != null)
             {
                 _animator.SetBool(_pushBoolName, false);
+            }
+            if (_animator != null)
+            {
+                _animator.Play("Idle", 0, 0f);
             }
             _fanPushZone.SetActive(false);
             var continuous = _fanPushZone.GetComponent<ContinuousDamageZone>();
@@ -79,7 +109,12 @@ namespace Enemy.Bosses
             // Startup / telegraph animation
             if (_animator != null && !string.IsNullOrEmpty(_startupTrigger))
             {
+                Debug.Log($"[FanPush] Setting trigger '{_startupTrigger}' on animator '{_animator.name}'");
                 _animator.SetTrigger(_startupTrigger);
+            }
+            else
+            {
+                Debug.LogWarning($"[FanPush] Animator missing or trigger name empty! animator={_animator}, trigger={_startupTrigger}");
             }
             yield return new WaitForSeconds(_startupDuration);
 

@@ -80,6 +80,7 @@ namespace Enemy.Bosses
             {
                 if (_currentMove.IsComplete)
                 {
+                    Debug.Log("[FanMan] Move complete. Starting cooldown.");
                     _currentMove.OnMoveComplete -= OnMoveCompleteHandler;
                     _currentMove = null;
                     ApplyPhaseSettings();
@@ -146,10 +147,12 @@ namespace Enemy.Bosses
             if (roll < stats.FanPushWeight)
             {
                 move = _fanPushMove;
+                Debug.Log("[FanMan] Picked move: FanPush");
             }
             else
             {
                 move = _gunMove;
+                Debug.Log("[FanMan] Picked move: Gun");
             }
 
             move.OnMoveComplete += OnMoveCompleteHandler;
