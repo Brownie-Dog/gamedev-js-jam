@@ -16,6 +16,7 @@ namespace Weapons
         private IObjectPool<Bullet> _pool;
         private float _lifetimeTimer;
         private int _currentPenetration;
+        private bool _returnedToPool;
 
         private void Awake()
         {
@@ -35,6 +36,7 @@ namespace Weapons
 
         public void Activate(Vector2 position, Vector2 direction, DamageInfo damageInfo, int penetrationCount)
         {
+            _returnedToPool = false;
             transform.position = position;
             transform.up = direction;
             _currentPenetration = penetrationCount;
@@ -70,6 +72,8 @@ namespace Weapons
 
         private void ReturnToPool()
         {
+            if (_returnedToPool) return;
+            _returnedToPool = true;
             _pool.Release(this);
         }
 
