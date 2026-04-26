@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerEquipment
   _initialUnlockedSlots: 6
   _defaultWeapons:
-  - {fileID: 11400000, guid: 2af9c53c4109c2b42a744863d06fd427, type: 2}
+  - {fileID: 11400000, guid: da2729fa90be3044987e977bd4031fae, type: 2}
   _inventory: {fileID: 7002355511745351319}
 --- !u!114 &7002355511745351319
 MonoBehaviour:
