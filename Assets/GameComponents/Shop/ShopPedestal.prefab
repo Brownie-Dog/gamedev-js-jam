@@ -556,6 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6191607384280431198}
+  - component: {fileID: 8615021303648084424}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -580,6 +581,22 @@ Transform:
   - {fileID: 581946997351968504}
   m_Father: {fileID: 2710326131906815206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8615021303648084424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350277304240554778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b9c70bb028fab4e8ece75d223dbcec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Generic.FloatingBob
+  _visualTransform: {fileID: 2500890526304208522}
+  _amplitude: 0.15
+  _frequency: 1.5
+  _phaseOffset: 0
 --- !u!1 &8466609556862006447
 GameObject:
   m_ObjectHideFlags: 0
