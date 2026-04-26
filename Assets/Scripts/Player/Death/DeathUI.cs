@@ -16,6 +16,10 @@ public class DeathUI : MonoBehaviour
     [SerializeField] private GameObject _bsodLayer;
     [SerializeField] private StaticEffect _staticEffect;
     [SerializeField] private VideoEffect _videoEffect;
+    [SerializeField] private Transform _defaultRespawnPoint;
+
+    public static bool IsEndlessMode { get; set; } = false;
+    public static Transform CurrentRespawnPoint { get; set; }
 
     private void Awake()
     {
@@ -54,6 +58,21 @@ public class DeathUI : MonoBehaviour
     private void RestartLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if (IsEndlessMode)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            return;
+        }
+
+        var respawnPoint = CurrentRespawnPoint ?? _defaultRespawnPoint;
+        if (respawnPoint != null)
+        {
+            var player = GameObject.FindGameObjectWithTag(GlobalConstants.PLAYER_TAG);
+            if (player != null)
+            {
+                player.transform.position = respawnPoint.position;
+            }
+        }
     }
 }
