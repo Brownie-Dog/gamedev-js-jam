@@ -30,27 +30,17 @@ namespace Enemy.Bosses
 
         public void ForceStartupTrigger()
         {
-            if (_animator != null && !string.IsNullOrEmpty(_startupTrigger))
+            if (!string.IsNullOrEmpty(_startupTrigger))
             {
-                Debug.Log($"[FanPushEditor] Setting trigger '{_startupTrigger}' on '{_animator.name}'");
                 _animator.SetTrigger(_startupTrigger);
-            }
-            else
-            {
-                Debug.LogWarning("[FanPushEditor] No animator or trigger name configured.");
             }
         }
 
         public void ForcePushBool(bool value)
         {
-            if (_animator != null && !string.IsNullOrEmpty(_pushBoolName))
+            if (!string.IsNullOrEmpty(_pushBoolName))
             {
-                Debug.Log($"[FanPushEditor] Setting bool '{_pushBoolName}' = {value} on '{_animator.name}'");
                 _animator.SetBool(_pushBoolName, value);
-            }
-            else
-            {
-                Debug.LogWarning("[FanPushEditor] No animator or bool name configured.");
             }
         }
 
@@ -58,6 +48,8 @@ namespace Enemy.Bosses
         {
             Assert.IsNotNull(_fanPushZone);
             Assert.IsNotNull(_stats);
+            Assert.IsNotNull(_animator);
+            Assert.IsNotNull(_particleController);
             _fanPushZone.SetActive(false);
         }
 
@@ -68,25 +60,19 @@ namespace Enemy.Bosses
                 StopCoroutine(_routine);
                 _routine = null;
             }
-            if (!string.IsNullOrEmpty(_pushBoolName) && _animator != null)
+            if (!string.IsNullOrEmpty(_pushBoolName))
             {
                 _animator.SetBool(_pushBoolName, false);
             }
-            if (_animator != null)
-            {
-                _animator.Play("Idle", 0, 0f);
-            }
+            _animator.Play("Idle", 0, 0f);
             _fanPushZone.SetActive(false);
             var continuous = _fanPushZone.GetComponent<ContinuousDamageZone>();
             if (continuous != null)
             {
                 continuous.Deactivate();
             }
-            if (_particleController != null)
-            {
-                _particleController.Stop();
-                _particleController.Clear();
-            }
+            _particleController.Stop();
+            _particleController.Clear();
         }
 
         public void SetDuration(float duration)
@@ -112,27 +98,18 @@ namespace Enemy.Bosses
 
         private IEnumerator ExecuteCore(Transform boss, Transform player)
         {
-            // Startup / telegraph animation
-            if (_animator != null && !string.IsNullOrEmpty(_startupTrigger))
+            if (!string.IsNullOrEmpty(_startupTrigger))
             {
-                Debug.Log($"[FanPush] Setting trigger '{_startupTrigger}' on animator '{_animator.name}'");
                 _animator.SetTrigger(_startupTrigger);
             }
-            else
-            {
-                Debug.LogWarning($"[FanPush] Animator missing or trigger name empty! animator={_animator}, trigger={_startupTrigger}");
-            }
-            // Startup particles (low emission telegraph cue)
-            var zoneCollider = _fanPushZone != null ? _fanPushZone.GetComponent<BoxCollider2D>() : null;
-            if (_particleController != null)
-            {
-                _particleController.Configure(zoneCollider);
-                _particleController.PlayStartup();
-            }
+
+            var zoneCollider = _fanPushZone.GetComponent<BoxCollider2D>();
+            _particleController.Configure(zoneCollider);
+            _particleController.PlayStartup();
 
             yield return new WaitForSeconds(_startupDuration);
 
-            if (_animator != null && !string.IsNullOrEmpty(_pushBoolName))
+            if (!string.IsNullOrEmpty(_pushBoolName))
             {
                 _animator.SetBool(_pushBoolName, true);
             }
@@ -146,7 +123,6 @@ namespace Enemy.Bosses
                 movement.SetMovementSpeedMultiplier(slowMult);
             }
 
-            // Activate fan zone
             _fanPushZone.SetActive(true);
 
             var continuous = _fanPushZone.GetComponent<ContinuousDamageZone>();
@@ -156,33 +132,28 @@ namespace Enemy.Bosses
                 continuous.Activate();
             }
 
-            // Switch to full push particles
-            if (_particleController != null)
-            {
-                _particleController.PlayPush();
-            }
+            _particleController.PlayPush();
 
             yield return new WaitForSeconds(duration);
 
-            // Deactivate
             _fanPushZone.SetActive(false);
             if (continuous != null)
             {
                 continuous.Deactivate();
             }
-            if (_particleController != null)
-            {
-                _particleController.Stop();
-            }
+            _particleController.Stop();
 
-            if (!string.IsNullOrEmpty(_pushBoolName) && _animator != null)
+            if (!string.IsNullOrEmpty(_pushBoolName))
             {
                 _animator.SetBool(_pushBoolName, false);
             }
 
             IsActive = false;
             IsComplete = true;
-            OnMoveComplete?.Invoke();
+            if (OnMoveComplete != null)
+            {
+                OnMoveComplete.Invoke();
+            }
             _routine = null;
         }
     }

@@ -156,12 +156,10 @@ namespace Enemy.Bosses
             if (roll < stats.FanPushWeight)
             {
                 primaryMove = _fanPushMove;
-                Debug.Log("[FanMan] Picked move: FanPush");
             }
             else
             {
                 primaryMove = _gunMove;
-                Debug.Log("[FanMan] Picked move: Gun");
             }
 
             // Configure dual-hand for gun move BEFORE executing
@@ -171,12 +169,10 @@ namespace Enemy.Bosses
                 if (_currentPhase == Phase.Two && Random.value < stats.DualHandGunWeight)
                 {
                     dualHand = true;
-                    Debug.Log("[FanMan] Dual-hand gun mode (Phase 2)!");
                 }
                 else if (_currentPhase == Phase.Three && Random.value < stats.DualHandGunWeight)
                 {
                     dualHand = true;
-                    Debug.Log("[FanMan] Dual-hand gun mode (Phase 3)!");
                 }
                 _gunMove.SetUseBothHands(dualHand);
             }
@@ -186,9 +182,7 @@ namespace Enemy.Bosses
             // Phase 3: Concurrent moves
             if (_currentPhase == Phase.Three && Random.value < stats.ConcurrentMoveWeight)
             {
-                // Pick a secondary move that is different from primary
                 IFanManMove secondaryMove = primaryMove == _fanPushMove ? _gunMove : _fanPushMove;
-                Debug.Log($"[FanMan] Concurrent move: {secondaryMove.GetType().Name}");
                 ExecuteMove(secondaryMove);
             }
         }

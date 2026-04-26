@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Pool;
 
 namespace Enemy.Bosses
@@ -17,6 +18,9 @@ namespace Enemy.Bosses
 
         private void Awake()
         {
+            Assert.IsNotNull(_lineRenderer);
+            Assert.IsNotNull(_collider);
+            Assert.IsNotNull(_damageZone);
             _lineRenderer.useWorldSpace = true;
         }
 
@@ -79,8 +83,16 @@ namespace Enemy.Bosses
             _lineRenderer.startColor = Color.clear;
             _lineRenderer.endColor = Color.clear;
 
-            _onReleased?.Invoke();
-            _pool?.Release(this);
+            if (_onReleased != null)
+            {
+                _onReleased.Invoke();
+            }
+
+            if (_pool != null)
+            {
+                _pool.Release(this);
+            }
+
             _lingerRoutine = null;
         }
 
@@ -91,7 +103,8 @@ namespace Enemy.Bosses
                 StopCoroutine(_lingerRoutine);
                 _lingerRoutine = null;
             }
-            _damageZone?.Deactivate();
+
+            _damageZone.Deactivate();
         }
     }
 }

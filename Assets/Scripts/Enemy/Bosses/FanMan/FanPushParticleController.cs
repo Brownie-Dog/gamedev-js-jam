@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Enemy.Bosses
 {
@@ -20,35 +21,30 @@ namespace Enemy.Bosses
         private void Awake()
         {
             FindParticles();
+            Assert.IsNotNull(_particles);
 
-            if (_particles != null)
-            {
-                var main = _particles.main;
-                main.playOnAwake = false;
-                _particles.Stop(withChildren: true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
-            }
-            else
-            {
-                Debug.LogError($"[FanPushParticles] No ParticleSystem found on '{gameObject.name}' or its children.", this);
-            }
-
+            var main = _particles.main;
+            main.playOnAwake = false;
+            _particles.Stop(withChildren: true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
         private void OnDisable()
         {
-            if (_particles != null)
-            {
-                _particles.Stop(withChildren: true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
-            }
+            _particles.Stop(withChildren: true, stopBehavior: ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
         private void FindParticles()
         {
-            if (_particles != null) return;
+            if (_particles != null)
+            {
+                return;
+            }
 
             _particles = GetComponent<ParticleSystem>();
             if (_particles == null)
+            {
                 _particles = GetComponentInChildren<ParticleSystem>(true);
+            }
         }
 
         public void Configure(BoxCollider2D zoneCollider)
@@ -72,19 +68,11 @@ namespace Enemy.Bosses
         {
             FindParticles();
 
-            if (_particles == null)
-            {
-                Debug.LogWarning($"[FanPushParticles] PlayInternal: _particles is NULL", this);
-                return;
-            }
-
-            // Ensure the GameObject holding THIS script is active
             if (!gameObject.activeInHierarchy)
             {
                 gameObject.SetActive(true);
             }
 
-            // Ensure the GameObject holding the ParticleSystem is active
             GameObject psGO = _particles.gameObject;
             if (!psGO.activeInHierarchy)
             {
@@ -92,9 +80,10 @@ namespace Enemy.Bosses
             }
 
             if (!_isConfigured && _zoneCollider != null)
+            {
                 Configure(_zoneCollider);
+            }
 
-            // Apply emission rate
             var emission = _particles.emission;
             if (!emission.enabled)
             {
@@ -102,7 +91,6 @@ namespace Enemy.Bosses
             }
             emission.rateOverTime = rate;
 
-            // Apply velocity over lifetime (up for startup, down for push)
             var vel = _particles.velocityOverLifetime;
             if (!vel.enabled)
             {
@@ -116,13 +104,11 @@ namespace Enemy.Bosses
 
         public void Stop()
         {
-            if (_particles == null) return;
             _particles.Stop(withChildren: true, stopBehavior: ParticleSystemStopBehavior.StopEmitting);
         }
 
         public void Clear()
         {
-            if (_particles == null) return;
             _particles.Clear(withChildren: true);
         }
     }

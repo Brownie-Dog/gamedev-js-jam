@@ -72,6 +72,20 @@ namespace Enemy.Bosses
             Assert.IsNotNull(_bulletPrefab);
             Assert.IsNotNull(_stats);
             Assert.IsNotNull(_railgunBeamPrefab);
+            Assert.IsNotNull(_leftNormalGun1);
+            Assert.IsNotNull(_leftNormalGun1FirePoint);
+            Assert.IsNotNull(_leftNormalGun2);
+            Assert.IsNotNull(_leftNormalGun2FirePoint);
+            Assert.IsNotNull(_leftRailgun);
+            Assert.IsNotNull(_leftRailgunFirePoint);
+            Assert.IsNotNull(_rightNormalGun1);
+            Assert.IsNotNull(_rightNormalGun1FirePoint);
+            Assert.IsNotNull(_rightNormalGun2);
+            Assert.IsNotNull(_rightNormalGun2FirePoint);
+            Assert.IsNotNull(_rightRailgun);
+            Assert.IsNotNull(_rightRailgunFirePoint);
+            Assert.IsNotNull(_leftHandPivot);
+            Assert.IsNotNull(_rightHandPivot);
 
             _bulletPool = new MonoBehaviourPool<Bullet>(_bulletPrefab, _bulletPoolSize, _bulletPoolSize, transform,
                 b => b.SetPool(_bulletPool.Pool)
@@ -108,36 +122,12 @@ namespace Enemy.Bosses
 
         private void DisableAllGuns()
         {
-            if (_leftNormalGun1 != null)
-            {
-                _leftNormalGun1.SetActive(false);
-            }
-
-            if (_leftNormalGun2 != null)
-            {
-                _leftNormalGun2.SetActive(false);
-            }
-
-            if (_leftRailgun != null)
-            {
-                _leftRailgun.SetActive(false);
-            }
-
-            if (_rightNormalGun1 != null)
-            {
-                _rightNormalGun1.SetActive(false);
-            }
-
-            if (_rightNormalGun2 != null)
-            {
-                _rightNormalGun2.SetActive(false);
-            }
-
-            if (_rightRailgun != null)
-            {
-                _rightRailgun.SetActive(false);
-            }
-
+            _leftNormalGun1.SetActive(false);
+            _leftNormalGun2.SetActive(false);
+            _leftRailgun.SetActive(false);
+            _rightNormalGun1.SetActive(false);
+            _rightNormalGun2.SetActive(false);
+            _rightRailgun.SetActive(false);
             _activeGuns.Clear();
         }
 
@@ -230,17 +220,17 @@ namespace Enemy.Bosses
             DisableAllGuns();
             _isActive = false;
             _isComplete = true;
-            OnMoveComplete?.Invoke();
+            if (OnMoveComplete != null)
+            {
+                OnMoveComplete.Invoke();
+            }
             _routine = null;
         }
 
         private void ActivateGun(GameObject gun)
         {
-            if (gun != null)
-            {
-                gun.SetActive(true);
-                _activeGuns.Add(gun);
-            }
+            gun.SetActive(true);
+            _activeGuns.Add(gun);
         }
 
         private IEnumerator ExecuteNormalGun(Transform player, bool dualHand)
@@ -444,7 +434,11 @@ namespace Enemy.Bosses
 
         private static void AimHandPivot(Transform pivot, Transform player)
         {
-            if (pivot == null || player == null) return;
+            if (pivot == null || player == null)
+            {
+                return;
+            }
+
             Vector2 direction = ((Vector2)(player.position - pivot.position)).normalized;
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
             float currentAngle = pivot.eulerAngles.z;
@@ -454,14 +448,22 @@ namespace Enemy.Bosses
 
         private static void LockPivotAtDirection(Transform pivot, Vector2 direction)
         {
-            if (pivot == null) return;
+            if (pivot == null)
+            {
+                return;
+            }
+
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
             pivot.rotation = Quaternion.Euler(0, 0, angle);
         }
 
         private static IEnumerator QuickPivotToDirection(Transform pivot, Vector2 direction)
         {
-            if (pivot == null) yield break;
+            if (pivot == null)
+            {
+                yield break;
+            }
+
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
             while (true)
             {
@@ -469,7 +471,9 @@ namespace Enemy.Bosses
                 float newAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, PIVOT_SPEED * Time.deltaTime);
                 pivot.rotation = Quaternion.Euler(0, 0, newAngle);
                 if (Mathf.Abs(Mathf.DeltaAngle(newAngle, targetAngle)) < 2f)
+                {
                     break;
+                }
                 yield return null;
             }
         }
@@ -491,11 +495,6 @@ namespace Enemy.Bosses
 
         private void FireBullet(Transform firePoint, Transform player)
         {
-            if (firePoint == null)
-            {
-                return;
-            }
-
             Vector2 dir = ((Vector2)(player.position - firePoint.position)).normalized;
             var damageInfo = new DamageInfo(_stats.Damage, dir * _stats.KnockbackForce);
             Bullet bullet = _bulletPool.Get();
