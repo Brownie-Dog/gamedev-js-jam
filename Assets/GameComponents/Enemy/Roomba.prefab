@@ -143,39 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffect
   _startTime: 0.09
-  _volume: 0.189
+  _volume: 0.266
   _audioSource: {fileID: 7722489204504560379}
---- !u!1 &8739929093759069329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4272555410845204861}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4272555410845204861
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8739929093759069329}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7093467785123234993}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9121619632632392292
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,10 +165,11 @@ GameObject:
   - component: {fileID: 2023267622884030637}
   - component: {fileID: 2445589922022252830}
   - component: {fileID: 4319481131635950785}
-  - component: {fileID: 5438647903590852024}
   - component: {fileID: 6173245498894754189}
+  - component: {fileID: 2335198512698288641}
+  - component: {fileID: 6710102395566077247}
   m_Layer: 6
-  m_Name: Gun Drone
+  m_Name: Roomba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,7 +189,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3931068551668805190}
-  - {fileID: 4272555410845204861}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8046599812600565566
@@ -271,7 +240,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8343493023653201265, guid: b6e6807e87514c74683051894e2a9708, type: 3}
+  m_Sprite: {fileID: 6082058605937450141, guid: 7740dd71f98a3ea44aeaf5cf11922010, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,7 +293,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -338,7 +307,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -346,7 +315,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8125}
+    oldSize: {x: 0.8125, y: 0.5}
     newSize: {x: 1, y: 0.8125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -368,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _rb: {fileID: 9018996356509810046}
   _enemyDetection: {fileID: 2878589271078668269}
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: c079018c69799384bbabf1f165bfeea0, type: 2}
 --- !u!114 &2878589271078668269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a1bf182bb648418390be1d5425582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: c079018c69799384bbabf1f165bfeea0, type: 2}
 --- !u!114 &1181787906555729627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   _health: {fileID: 4842946735691736961}
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: c079018c69799384bbabf1f165bfeea0, type: 2}
 --- !u!114 &4842946735691736961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630fa3b3850e74e42971d505483e2485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: c079018c69799384bbabf1f165bfeea0, type: 2}
   _currentHealth: 0
   _knockbackReceiver: {fileID: 4912147470288581682}
 --- !u!114 &4912147470288581682
@@ -457,8 +426,8 @@ MonoBehaviour:
   _baseController: {fileID: 9100000, guid: 3b1221662d2ecbb4ba2a28b65bc62a79, type: 2}
   _baseIdleClip: {fileID: 7400000, guid: fefa766b97d883344aeb9423d2d83222, type: 2}
   _baseWalkClip: {fileID: 7400000, guid: f949e09b78f18dd4082547f132358b81, type: 2}
-  _idleClip: {fileID: 7400000, guid: ad4dcdba45b2af549b2a518d9f519a5d, type: 2}
-  _walkClip: {fileID: 7400000, guid: ad4dcdba45b2af549b2a518d9f519a5d, type: 2}
+  _idleClip: {fileID: 7400000, guid: 36085c5e2225b84479244b307a166246, type: 2}
+  _walkClip: {fileID: 7400000, guid: 36085c5e2225b84479244b307a166246, type: 2}
   _moveThreshold: 0.1
   _flipSprite: 1
   _spriteRenderer: {fileID: 8046599812600565566}
@@ -486,24 +455,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5438647903590852024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9121619632632392292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee12fce8e881a143bf635e710f73b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyAttack
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
-  _attackSound: {fileID: 4732265239066672068}
-  _bulletPrefab: {fileID: 3285378652751197902, guid: d711b7e021aecf449881366b76f807a1, type: 3}
-  _poolSize: 15
-  _firePoint: {fileID: 4272555410845204861}
-  _penetrationCount: 1
 --- !u!114 &6173245498894754189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,3 +470,63 @@ MonoBehaviour:
   _enemyHealth: {fileID: 4842946735691736961}
   _flashDuration: 0.15
   _flashColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &2335198512698288641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121619632632392292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3fe4c268b8624408483708bef9af17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoombaAttack
+  _stats: {fileID: 11400000, guid: c079018c69799384bbabf1f165bfeea0, type: 2}
+  _attackSound: {fileID: 4732265239066672068}
+--- !u!61 &6710102395566077247
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121619632632392292}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8125, y: 0.5}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.9, y: 0.7}
+  m_EdgeRadius: 0

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5438647903590852024}
   - component: {fileID: 6173245498894754189}
   m_Layer: 6
-  m_Name: Gun Drone
+  m_Name: Sprinkler Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8343493023653201265, guid: b6e6807e87514c74683051894e2a9708, type: 3}
+  m_Sprite: {fileID: 546539426717890583, guid: 9f81c92ff8678e94c88435cb8991250e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -346,7 +346,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8125}
+    oldSize: {x: 0.6875, y: 1.09375}
     newSize: {x: 1, y: 0.8125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _rb: {fileID: 9018996356509810046}
   _enemyDetection: {fileID: 2878589271078668269}
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: 9a231c18c26affa4b897650fa896f649, type: 2}
 --- !u!114 &2878589271078668269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3a1bf182bb648418390be1d5425582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDetection
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: 9a231c18c26affa4b897650fa896f649, type: 2}
 --- !u!114 &1181787906555729627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
   _health: {fileID: 4842946735691736961}
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: 9a231c18c26affa4b897650fa896f649, type: 2}
 --- !u!114 &4842946735691736961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630fa3b3850e74e42971d505483e2485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: 9a231c18c26affa4b897650fa896f649, type: 2}
   _currentHealth: 0
   _knockbackReceiver: {fileID: 4912147470288581682}
 --- !u!114 &4912147470288581682
@@ -457,8 +457,8 @@ MonoBehaviour:
   _baseController: {fileID: 9100000, guid: 3b1221662d2ecbb4ba2a28b65bc62a79, type: 2}
   _baseIdleClip: {fileID: 7400000, guid: fefa766b97d883344aeb9423d2d83222, type: 2}
   _baseWalkClip: {fileID: 7400000, guid: f949e09b78f18dd4082547f132358b81, type: 2}
-  _idleClip: {fileID: 7400000, guid: ad4dcdba45b2af549b2a518d9f519a5d, type: 2}
-  _walkClip: {fileID: 7400000, guid: ad4dcdba45b2af549b2a518d9f519a5d, type: 2}
+  _idleClip: {fileID: -7486565773662334586, guid: 502fad237d5f99c47a443bf6743d52ab, type: 2}
+  _walkClip: {fileID: -4381993568202294068, guid: 30ace1a000771a74c9193d41cf9ae34f, type: 2}
   _moveThreshold: 0.1
   _flipSprite: 1
   _spriteRenderer: {fileID: 8046599812600565566}
@@ -498,12 +498,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee12fce8e881a143bf635e710f73b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyAttack
-  _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
+  _stats: {fileID: 11400000, guid: 9a231c18c26affa4b897650fa896f649, type: 2}
   _attackSound: {fileID: 4732265239066672068}
-  _bulletPrefab: {fileID: 3285378652751197902, guid: d711b7e021aecf449881366b76f807a1, type: 3}
+  _bulletPrefab: {fileID: 7520195917468111178, guid: de8dce50ac27ca346b34c8af446b424f, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
-  _penetrationCount: 1
 --- !u!114 &6173245498894754189
 MonoBehaviour:
   m_ObjectHideFlags: 0
