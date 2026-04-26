@@ -500,9 +500,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyAttack
   _stats: {fileID: 11400000, guid: f32e874b8af6da043b973d7028ed8f73, type: 2}
   _attackSound: {fileID: 4732265239066672068}
-  _bulletPrefab: {fileID: 3285378652751197902, guid: e2230b045c729544fb06537d661d89ef, type: 3}
+  _bulletPrefab: {fileID: 3285378652751197902, guid: d711b7e021aecf449881366b76f807a1, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
+  _penetrationCount: 1
 --- !u!114 &6173245498894754189
 MonoBehaviour:
   m_ObjectHideFlags: 0
