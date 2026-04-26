@@ -6,15 +6,48 @@ public class MouseCrosshair : MonoBehaviour
 {
     [SerializeField] private RectTransform _rectTransform;
 
-    void Awake()
+    [SerializeField] private float _rotationSpeed = 90f;
+
+    private void Awake()
     {
-        Assert.IsNotNull(_rectTransform);
-        Assert.IsNotNull(Mouse.current);
-        Cursor.visible = false;
+        if (_rectTransform == null)
+        {
+            _rectTransform = GetComponent<RectTransform>();
+        }
     }
 
-    void Update()
+    private void OnEnable()
     {
-        _rectTransform.position = Mouse.current.position.ReadValue();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private void OnDisable()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void Update()
+    {
+        HandlePosition();
+        HandleRotation();
+    }
+
+    private void HandlePosition()
+    {
+        var mouse = Mouse.current;
+        if (mouse == null)
+        {
+            return;
+        }
+
+        _rectTransform.position = mouse.position.ReadValue();
+    }
+
+    private void HandleRotation()
+    {
+        // Rotate the crosshair over time around the Z axis
+        _rectTransform.Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
     }
 }
