@@ -11,15 +11,15 @@ namespace EndlessMode
         [SerializeField] private GameObject[] _enemyPrefabs;
         
         [Header("Spawn Zone")]
-        [SerializeField] private Collider2D _spawnArea; // Drag your 'Arena' collider here
+        [Tooltip("Drag the invisible 'SpawnBounds' object here.")]
+        [SerializeField] private Collider2D _spawnArea; 
 
         [Header("Settings")]
         [SerializeField] private float _timeBetweenSpawns = 1.0f;
 
         [Header("Safe Spawn Settings")]
-        [SerializeField] private Transform _playerTransform; // Drag Player here
+        [SerializeField] private Transform _playerTransform; 
         [SerializeField] private float _minSpawnDistance = 5f;
-        
         
         private List<GameObject> _activeEnemies = new List<GameObject>();
         private bool _isSpawning = false;
@@ -53,29 +53,35 @@ namespace EndlessMode
             bool validPosition = false;
             int attempts = 0;
 
-            // Try to find a spot away from the player
-            while (!validPosition && attempts < 10)
+            // The loop now checks if the point is INSIDE the collider shape
+            while (!validPosition && attempts < 30) // Increased attempts for precision
             {
                 float x = Random.Range(bounds.min.x, bounds.max.x);
                 float y = Random.Range(bounds.min.y, bounds.max.y);
                 spawnPos = new Vector2(x, y);
 
-                // If no player reference, any spot is valid
-                if (_playerTransform == null) 
+                // Check 1: Is it actually inside the painted tiles/shape?
+                bool isInside = _spawnArea.OverlapPoint(spawnPos);
+
+                // Check 2: Is it far from the player?
+                bool farFromPlayer = true;
+                if (_playerTransform != null)
+                {
+                    float distance = Vector2.Distance(spawnPos, (Vector2)_playerTransform.position);
+                    farFromPlayer = (distance >= _minSpawnDistance);
+                }
+
+                if (isInside && farFromPlayer)
                 {
                     validPosition = true;
                 }
-                else
-                {
-                    // Check distance between random spot and player
-                    float distance = Vector2.Distance(spawnPos, (Vector2)_playerTransform.position);
-                    if (distance >= _minSpawnDistance)
-                    {
-                        validPosition = true;
-                    }
-                }
+
                 attempts++;
             }
+
+            // Fallback: If we can't find a spot after 30 tries, spawn at the spawner's center
+            // to prevent the game from breaking.
+            if (!validPosition) spawnPos = transform.position;
 
             GameObject prefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
             GameObject enemy = Instantiate(prefab, spawnPos, Quaternion.identity);

@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23152d9960ae59249b2ef38124d653e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VignetteController
-  _volume: {fileID: 0}
+  _volume: {fileID: 2526847242461104252}
