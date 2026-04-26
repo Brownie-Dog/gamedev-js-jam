@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI; // Change to 'using TMPro;' if using TextMeshPro
 using EndlessMode;
+using TMPro;
 
 public class EndlessUIController : MonoBehaviour
 {
-    [SerializeField] private Text _waveText; // Change to 'private TMP_Text' for TextMeshPro
+    [SerializeField] private TMP_Text _waveText; // Change to 'private TMP_Text' for TextMeshPro
     [SerializeField] private GameObject _intermissionBanner; // Optional: A "Shop Open" banner
 
     private void OnEnable()
@@ -31,7 +32,7 @@ public class EndlessUIController : MonoBehaviour
 
     private void ShowIntermissionUI()
     {
-        _waveText.text = "CLEARED!";
+        _waveText.text = "Prepare yourself..";
         
         if (_intermissionBanner != null)
             _intermissionBanner.SetActive(true);
