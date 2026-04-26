@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
   <ItemName>k__BackingField: Railgun
   <Description>k__BackingField: Get railed
-  <Icon>k__BackingField: {fileID: 1347734055300931125, guid: 0ebd332783f98ac4896ef06016de87b1, type: 3}
+  <Icon>k__BackingField: {fileID: -5982428818339340050, guid: 9d5c539993c7a444a9fc75f273941fda, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 1500723003622204600, guid: 30b740bd94ab2d448bd8154a770d875c, type: 3}
   <Damage>k__BackingField: 10
