@@ -15,35 +15,49 @@ namespace Loadout
 
         [SerializeField] private Image _iconImage;
 
+        [SerializeField] private float _slotOpacity = 0.01f;
+
         private LoadoutDragHandler _dragHandler;
 
         public int SlotId { get; private set; }
+        public SlotType SlotType { get; private set; }
 
         private Color _emptyColor;
         private Color _occupiedColor;
+        private Color _emptyBackColor;
+        private Color _occupiedBackColor;
         private WeaponItemData _weapon;
+        private float _originalEmptyAlpha;
+        private float _originalOccupiedAlpha;
+        private bool _isOccupied;
 
         private void Awake()
         {
             RectTransform = (RectTransform)transform;
-            
+
             _dragHandler = GetComponentInParent<LoadoutDragHandler>();
             Assert.IsNotNull(_dragHandler);
-            
+
             Assert.IsNotNull(_backgroundImage);
             Assert.IsNotNull(_iconImage);
         }
 
-        public void Initialize(int slotId, WeaponItemData weapon, Color emptyColor, Color occupiedColor)
+        public void Initialize(int slotId, WeaponItemData weapon, Color emptyColor, Color occupiedColor,
+            SlotType slotType)
         {
             SlotId = slotId;
+            SlotType = slotType;
             _emptyColor = emptyColor;
             _occupiedColor = occupiedColor;
+            _originalEmptyAlpha = emptyColor.a;
+            _originalOccupiedAlpha = occupiedColor.a;
+            _isOccupied = weapon != null;
             Refresh(weapon);
         }
 
         public void Refresh(WeaponItemData weapon)
         {
+            _isOccupied = weapon != null;
             _weapon = weapon;
 
             if (weapon != null)
@@ -58,6 +72,22 @@ namespace Loadout
                 _iconImage.enabled = false;
                 _backgroundImage.color = _emptyColor;
             }
+        }
+
+        public void ShowCompatibleItemSlot(bool isCompatible, bool isDragging)
+        {
+            var color = _backgroundImage.color;
+
+            if (isDragging)
+            {
+                color.a = isCompatible ? 1f : _slotOpacity;
+            }
+            else
+            {
+                color.a = _isOccupied ? _originalOccupiedAlpha : _originalEmptyAlpha;
+            }
+
+            _backgroundImage.color = color;
         }
 
         public void OnBeginDrag(PointerEventData eventData)

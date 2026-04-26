@@ -7,7 +7,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
     private float _lastAttackTime = float.MinValue;
 
-    protected void ExecuteAttack()
+    public void ExecuteAttack()
     {
         if (CanAttack())
         {
