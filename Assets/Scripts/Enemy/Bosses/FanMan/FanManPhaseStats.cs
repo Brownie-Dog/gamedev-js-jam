@@ -22,7 +22,9 @@ namespace Enemy.Bosses
             RailgunMaxRange = 30f,
             FanPushWeight = 0.5f,
             NormalGunWeight = 0.5f,
-            RailgunWeight = 0f
+            RailgunWeight = 0f,
+            DualHandGunWeight = 0f,
+            ConcurrentMoveWeight = 0f
         };
 
         public PhaseStats Phase2 = new()
@@ -41,7 +43,9 @@ namespace Enemy.Bosses
             RailgunMaxRange = 30f,
             FanPushWeight = 0.45f,
             NormalGunWeight = 0.4f,
-            RailgunWeight = 0.15f
+            RailgunWeight = 0.15f,
+            DualHandGunWeight = 0.5f,
+            ConcurrentMoveWeight = 0f
         };
 
         public PhaseStats Phase3 = new()
@@ -60,7 +64,9 @@ namespace Enemy.Bosses
             RailgunMaxRange = 30f,
             FanPushWeight = 0.35f,
             NormalGunWeight = 0.3f,
-            RailgunWeight = 0.35f
+            RailgunWeight = 0.35f,
+            DualHandGunWeight = 0.75f,
+            ConcurrentMoveWeight = 0.35f
         };
 
         [Serializable]
@@ -90,6 +96,10 @@ namespace Enemy.Bosses
             [Range(0f, 1f)] public float FanPushWeight = 0.5f;
             [Range(0f, 1f)] public float NormalGunWeight = 0.5f;
             [Range(0f, 1f)] public float RailgunWeight = 0f;
+
+            [Header("Advanced")]
+            [Range(0f, 1f)] public float DualHandGunWeight = 0f;
+            [Range(0f, 1f)] public float ConcurrentMoveWeight = 0f;
         }
     }
 }

@@ -1,7 +1,8 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Random = UnityEngine.Random;
 
 namespace Enemy.Bosses
 {
@@ -27,7 +28,7 @@ namespace Enemy.Bosses
         private Phase _lastAppliedPhase;
         private bool _playerInRange;
         private bool _phaseForced;
-        private IFanManMove _currentMove;
+        private readonly List<IFanManMove> _activeMoves = new();
         private float _cooldownTimer;
 
         public Phase CurrentPhase => _currentPhase;
@@ -60,11 +61,11 @@ namespace Enemy.Bosses
             _enemyDetection.OnPlayerDetected -= HandlePlayerDetected;
             _enemyDetection.OnPlayerLost -= HandlePlayerLost;
 
-            if (_currentMove != null)
+            foreach (var move in _activeMoves)
             {
-                _currentMove.OnMoveComplete -= OnMoveCompleteHandler;
-                _currentMove = null;
+                move.OnMoveComplete -= OnMoveCompleteHandler;
             }
+            _activeMoves.Clear();
         }
 
         private void Update()
@@ -76,24 +77,29 @@ namespace Enemy.Bosses
                 return;
             }
 
-            if (_currentMove != null)
+            // Check for completed moves
+            for (int i = _activeMoves.Count - 1; i >= 0; i--)
             {
-                if (_currentMove.IsComplete)
+                if (_activeMoves[i].IsComplete)
                 {
-                    Debug.Log("[FanMan] Move complete. Starting cooldown.");
-                    _currentMove.OnMoveComplete -= OnMoveCompleteHandler;
-                    _currentMove = null;
-                    ApplyPhaseSettings();
-                    _cooldownTimer = GetCurrentPhaseStats().MoveCooldown;
+                    _activeMoves[i].OnMoveComplete -= OnMoveCompleteHandler;
+                    _activeMoves.RemoveAt(i);
                 }
             }
 
-            if (_currentMove == null)
+            // If all moves finished, start cooldown
+            if (_activeMoves.Count == 0 && _cooldownTimer <= 0f)
+            {
+                ApplyPhaseSettings();
+                _cooldownTimer = GetCurrentPhaseStats().MoveCooldown;
+            }
+
+            if (_activeMoves.Count == 0)
             {
                 _cooldownTimer -= Time.deltaTime;
                 if (_cooldownTimer <= 0f)
                 {
-                    PickAndExecuteMove();
+                    PickAndExecuteMoves();
                 }
             }
         }
@@ -137,27 +143,58 @@ namespace Enemy.Bosses
             _gunMove.SetGunWeights(stats.NormalGunWeight, stats.RailgunWeight);
         }
 
-        private void PickAndExecuteMove()
+        private void PickAndExecuteMoves()
         {
             var stats = GetCurrentPhaseStats();
             float totalWeight = stats.FanPushWeight + stats.NormalGunWeight + stats.RailgunWeight;
             float roll = UnityEngine.Random.value * totalWeight;
 
-            IFanManMove move;
+            IFanManMove primaryMove;
             if (roll < stats.FanPushWeight)
             {
-                move = _fanPushMove;
+                primaryMove = _fanPushMove;
                 Debug.Log("[FanMan] Picked move: FanPush");
             }
             else
             {
-                move = _gunMove;
+                primaryMove = _gunMove;
                 Debug.Log("[FanMan] Picked move: Gun");
             }
 
+            // Configure dual-hand for gun move BEFORE executing
+            if (primaryMove == _gunMove)
+            {
+                bool dualHand = false;
+                if (_currentPhase == Phase.Two && Random.value < stats.DualHandGunWeight)
+                {
+                    dualHand = true;
+                    Debug.Log("[FanMan] Dual-hand gun mode (Phase 2)!");
+                }
+                else if (_currentPhase == Phase.Three && Random.value < stats.DualHandGunWeight)
+                {
+                    dualHand = true;
+                    Debug.Log("[FanMan] Dual-hand gun mode (Phase 3)!");
+                }
+                _gunMove.SetUseBothHands(dualHand);
+            }
+
+            ExecuteMove(primaryMove);
+
+            // Phase 3: Concurrent moves
+            if (_currentPhase == Phase.Three && Random.value < stats.ConcurrentMoveWeight)
+            {
+                // Pick a secondary move that is different from primary
+                IFanManMove secondaryMove = primaryMove == _fanPushMove ? _gunMove : _fanPushMove;
+                Debug.Log($"[FanMan] Concurrent move: {secondaryMove.GetType().Name}");
+                ExecuteMove(secondaryMove);
+            }
+        }
+
+        private void ExecuteMove(IFanManMove move)
+        {
             move.OnMoveComplete += OnMoveCompleteHandler;
             move.Execute(transform, _playerTransform);
-            _currentMove = move;
+            _activeMoves.Add(move);
         }
 
         private void OnMoveCompleteHandler()
