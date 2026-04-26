@@ -290,7 +290,8 @@ GameObject:
   - component: {fileID: 4319481131635950785}
   - component: {fileID: 5438647903590852024}
   - component: {fileID: 6173245498894754189}
-  - component: {fileID: 5602121979318861656}
+  - component: {fileID: 1373323017103556954}
+  - component: {fileID: 3765491679693084723}
   m_Layer: 6
   m_Name: Blowtorch Bot
   m_TagString: Untagged
@@ -612,7 +613,7 @@ MonoBehaviour:
   _enemyHealth: {fileID: 4842946735691736961}
   _flashDuration: 0.15
   _flashColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &5602121979318861656
+--- !u!114 &1373323017103556954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -621,15 +622,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 9121619632632392292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07f6bf585183bf469e9baccd759e403, type: 3}
+  m_Script: {fileID: 11500000, guid: eee12fce8e881a143bf635e710f73b2d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlowtorchAttack
+  m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyAttack
   _stats: {fileID: 11400000, guid: 70a78692c5b397f40a7c3fb5be5c7382, type: 2}
   _attackSound: {fileID: 4732265239066672068}
   _bulletPrefab: {fileID: 3285378652751197902, guid: 71ab5bae3d00fab439736edb3f3e8fa0, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
   _penetrationCount: 1
+--- !u!114 &3765491679693084723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121619632632392292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600b2d75238945f419dc061ff697c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlowtorchAim
   _weaponTransform: {fileID: 7702968995891017913}
   _botRenderer: {fileID: 8046599812600565566}
   _weaponRenderer: {fileID: 1287487058459455541}
+  _attackScript: {fileID: 5438647903590852024}
