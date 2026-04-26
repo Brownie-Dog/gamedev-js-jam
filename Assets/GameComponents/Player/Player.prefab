@@ -706,6 +706,7 @@ GameObject:
   - component: {fileID: 2313973947408361796}
   - component: {fileID: 1628022931760623983}
   - component: {fileID: 3599423287212688177}
+  - component: {fileID: 837830959801875611}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -848,6 +849,21 @@ MonoBehaviour:
   _loadoutCenterOffsetX: 3
   _playerEquipment: {fileID: 2810164907020316400}
   _shopFocusZoomMultiplier: 0.75
+--- !u!114 &837830959801875611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5495760148684320693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50cc68acc32e7943a3902fe96970458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShakeFallback
+  _cameraTransform: {fileID: 0}
+  _defaultShakeDuration: 0.15
+  _defaultShakeMagnitude: 0.25
 --- !u!1 &6488873578817156798
 GameObject:
   m_ObjectHideFlags: 0
