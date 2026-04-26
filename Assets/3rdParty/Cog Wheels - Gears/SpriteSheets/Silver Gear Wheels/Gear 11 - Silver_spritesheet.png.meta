@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6197314afa9a3764bb15a3eee3711cfa
+guid: c8bf8c9a6f6893c46904de7640ef87c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9097281665673729154
-    second: crosshair 1_0
+      213: 7092953509969644297
+    second: Gear 11 - Silver_spritesheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crosshair 1_0
+      name: Gear 11 - Silver_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 236
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7be7d74686ffb180800000000000000
-      internalID: -9097281665673729154
+      spriteID: 90bc91223ab3f6260800000000000000
+      internalID: 7092953509969644297
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      crosshair 1_0: -9097281665673729154
+      Gear 11 - Silver_spritesheet_0: 7092953509969644297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
