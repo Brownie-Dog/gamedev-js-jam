@@ -1940,6 +1940,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 8137589601223373071, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
   m_PrefabInstance: {fileID: 921829922}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517085699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3599423287212688177, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+  m_PrefabInstance: {fileID: 921829922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc62c66411ef374ea49cf444306e0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Loadout.CameraController
 --- !u!1001 &1610990465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1997,6 +2008,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 305e7af1ee2879f4795379392feb2932, type: 3}
+--- !u!114 &1637153939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4613186102493111374, guid: 5f90903442d2456488a1db91c356c374, type: 3}
+  m_PrefabInstance: {fileID: 537051270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c506b96a2fe72444b877990c3f0f6f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Loadout.LoadoutUI
 --- !u!4 &1696529979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
@@ -2193,6 +2215,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9172307017573372260, guid: 03b3a8650b37918449e6ba96b629486b, type: 3}
+      propertyPath: _loadoutUI
+      value: 
+      objectReference: {fileID: 1637153939}
+    - target: {fileID: 9172307017573372260, guid: 03b3a8650b37918449e6ba96b629486b, type: 3}
+      propertyPath: _cameraController
+      value: 
+      objectReference: {fileID: 1517085699}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
