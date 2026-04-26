@@ -20,6 +20,8 @@ namespace Loadout
 
         [SerializeField] private PlayerInventory _playerInventory;
 
+        [SerializeField] private SoundEffect _dragSound;
+
         private void Awake()
         {
             Assert.IsNotNull(_dragIcon);
@@ -42,6 +44,7 @@ namespace Loadout
             _lastPointerPosition = pointerPosition;
             ShowDragIcon(weapon);
             _loadoutUI.SetDraggingWeapon(weapon);
+            _dragSound?.Play();
         }
 
         public void StartDragFromSlot(WeaponItemData weapon, int slotId, Vector2 pointerPosition)
@@ -53,6 +56,7 @@ namespace Loadout
             _lastPointerPosition = pointerPosition;
             ShowDragIcon(weapon);
             _loadoutUI.SetDraggingWeapon(weapon);
+            _dragSound?.Play();
         }
 
         private void ShowDragIcon(WeaponItemData weapon)

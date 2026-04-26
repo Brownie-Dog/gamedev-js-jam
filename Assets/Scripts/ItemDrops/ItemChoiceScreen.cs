@@ -28,6 +28,9 @@ namespace ItemDrops
         [SerializeField]
         private ItemCardButton _legendaryCardPrefab;
 
+        [SerializeField]
+        private SoundEffect _clickSound;
+
         public event EventHandler<ItemPickedEventArgs> ItemPicked;
         public event EventHandler RerollRequested;
 
@@ -46,8 +49,14 @@ namespace ItemDrops
 
         private void Start()
         {
-            _rerollButton.onClick.AddListener(() => RerollRequested?.Invoke(this, EventArgs.Empty));
+            _rerollButton.onClick.AddListener(() =>
+            {
+                _clickSound?.Play();
+                RerollRequested?.Invoke(this, EventArgs.Empty);
+            });
         }
+
+        public void PlayClickSound() => _clickSound?.Play();
 
         public void Show(ItemData[] items)
         {

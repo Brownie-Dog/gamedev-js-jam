@@ -27,6 +27,8 @@ namespace Loadout
 
         [SerializeField] private Camera _mainCamera;
 
+        [SerializeField] private SoundEffect _dropSound;
+
         [SerializeField] private Color _emptyGeneralSlotColor = new Color(0.04f, 0.94f, 0.93f, 0.5f);
 
         [SerializeField] private Color _occupiedGeneralSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.5f);
@@ -154,6 +156,7 @@ namespace Loadout
             if (unequipped != null)
             {
                 _playerInventory.AddItem(unequipped);
+                _dropSound?.Play();
             }
         }
 
@@ -184,6 +187,7 @@ namespace Loadout
             }
 
             _playerEquipment.TryEquip(weapon, targetSlotId);
+            _dropSound?.Play();
         }
 
         private void HandleInventoryToSlot(WeaponItemData weapon, int sourceInventoryIndex, int targetSlotId)
@@ -207,6 +211,7 @@ namespace Loadout
 
             _playerInventory.RemoveItem(weapon);
             _playerEquipment.TryEquip(weapon, targetSlotId);
+            _dropSound?.Play();
         }
 
         private void PositionSlotsOverHookPoints()

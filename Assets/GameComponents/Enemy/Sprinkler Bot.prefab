@@ -44,7 +44,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 64717a9934cbee743a67fa33361b78f1, type: 3}
+  m_Resource: {fileID: 8300000, guid: f55145df738601d4cb9e6f6ac724f3fa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab618d559eb0d4747a4ebbd4bb120f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffect
-  _startTime: 0.09
-  _volume: 0.189
+  _startTime: 0
+  _volume: 0.5
   _audioSource: {fileID: 7722489204504560379}
 --- !u!1 &8739929093759069329
 GameObject:
@@ -503,6 +503,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 7520195917468111178, guid: de8dce50ac27ca346b34c8af446b424f, type: 3}
   _poolSize: 15
   _firePoint: {fileID: 4272555410845204861}
+  _penetrationCount: 1
 --- !u!114 &6173245498894754189
 MonoBehaviour:
   m_ObjectHideFlags: 0
