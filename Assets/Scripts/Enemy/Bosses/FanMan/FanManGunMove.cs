@@ -43,6 +43,11 @@ namespace Enemy.Bosses
         private float _railgunTelegraph = 2f;
         private float _railgunLinger = 1.5f;
         private float _railgunMaxRange = 30f;
+        private int _railgunMultiShotMin = 1;
+        private int _railgunMultiShotMax = 1;
+        private float _railgunTelegraphInterval = 0.5f;
+        private float _railgunAimVarianceDeg = 0f;
+        private float _railgunAimVarianceThreshold = 1f;
         private float _normalGunWeight = 0.5f;
         private float _railgunWeight = 0f;
         private bool _useBothHands;
@@ -89,19 +94,46 @@ namespace Enemy.Bosses
         {
             foreach (var t in _activeTelegraphs)
             {
-                if (t != null) Destroy(t);
+                if (t != null)
+                {
+                    Destroy(t);
+                }
             }
             _activeTelegraphs.Clear();
         }
 
         private void DisableAllGuns()
         {
-            if (_leftNormalGun1 != null) _leftNormalGun1.SetActive(false);
-            if (_leftNormalGun2 != null) _leftNormalGun2.SetActive(false);
-            if (_leftRailgun != null) _leftRailgun.SetActive(false);
-            if (_rightNormalGun1 != null) _rightNormalGun1.SetActive(false);
-            if (_rightNormalGun2 != null) _rightNormalGun2.SetActive(false);
-            if (_rightRailgun != null) _rightRailgun.SetActive(false);
+            if (_leftNormalGun1 != null)
+            {
+                _leftNormalGun1.SetActive(false);
+            }
+
+            if (_leftNormalGun2 != null)
+            {
+                _leftNormalGun2.SetActive(false);
+            }
+
+            if (_leftRailgun != null)
+            {
+                _leftRailgun.SetActive(false);
+            }
+
+            if (_rightNormalGun1 != null)
+            {
+                _rightNormalGun1.SetActive(false);
+            }
+
+            if (_rightNormalGun2 != null)
+            {
+                _rightNormalGun2.SetActive(false);
+            }
+
+            if (_rightRailgun != null)
+            {
+                _rightRailgun.SetActive(false);
+            }
+
             _activeGuns.Clear();
         }
 
@@ -135,6 +167,15 @@ namespace Enemy.Bosses
             _railgunWeight = railgunWeight;
         }
 
+        public void SetMultiShotConfig(int min, int max, float interval, float varianceDeg, float varianceThreshold)
+        {
+            _railgunMultiShotMin = min;
+            _railgunMultiShotMax = max;
+            _railgunTelegraphInterval = interval;
+            _railgunAimVarianceDeg = varianceDeg;
+            _railgunAimVarianceThreshold = varianceThreshold;
+        }
+
         public void SetUseBothHands(bool useBoth)
         {
             _useBothHands = useBoth;
@@ -161,14 +202,22 @@ namespace Enemy.Bosses
             {
                 // Pause movement for the entire railgun sequence (aim + telegraph + fire + linger)
                 var movement = boss.GetComponent<EnemyMovement>();
-                if (movement != null) movement.PauseMovement();
+                if (movement != null)
+                {
+                    movement.PauseMovement();
+                }
 
                 yield return ExecuteRailgun(player, _useBothHands);
 
                 while (_activeBeamSegments > 0)
+                {
                     yield return null;
+                }
 
-                if (movement != null) movement.ResumeMovement();
+                if (movement != null)
+                {
+                    movement.ResumeMovement();
+                }
             }
             else
             {
@@ -220,7 +269,11 @@ namespace Enemy.Bosses
             {
                 aimTimer += Time.deltaTime;
                 AimFirePoint(leftFire, player);
-                if (dualHand) AimFirePoint(rightFire, player);
+                if (dualHand)
+                {
+                    AimFirePoint(rightFire, player);
+                }
+
                 yield return null;
             }
 
@@ -288,49 +341,106 @@ namespace Enemy.Bosses
                 activeFire = useLeft ? _leftRailgunFirePoint : _rightRailgunFirePoint;
             }
 
-            // Aim phase
+            int shotCount = Mathf.Max(1, Random.Range(_railgunMultiShotMin, _railgunMultiShotMax + 1));
+
+            // Initial aim phase
             float aimDuration = Random.Range(_aimMin, _aimMax);
-            float aimTimer = 0f;
-            while (aimTimer < aimDuration)
+            yield return AimPhaseCoroutine(activeFire, secondaryFire, player, aimDuration);
+
+            // Collect locked shots per hand
+            var activeShots = new List<(Vector2 start, Vector2 dir)>();
+            var secondaryShots = new List<(Vector2 start, Vector2 dir)>();
+
+            Vector2 lastActiveCheck = player.position;
+            Vector2 lastSecondaryCheck = player.position;
+
+            for (int shot = 0; shot < shotCount; shot++)
             {
-                aimTimer += Time.deltaTime;
-                if (activeFire != null) AimFirePoint(activeFire, player);
-                if (secondaryFire != null) AimFirePoint(secondaryFire, player);
-                yield return null;
+                // Lock aim for this shot
+                if (activeFire != null)
+                {
+                    Vector2 start = activeFire.position;
+                    Vector2 dir = CalculateAimDirection(activeFire, player, lastActiveCheck, shot == 0);
+                    lastActiveCheck = player.position;
+                    activeShots.Add((start, dir));
+                    CreateTelegraph(start, dir);
+                }
+                if (secondaryFire != null)
+                {
+                    Vector2 start = secondaryFire.position;
+                    Vector2 dir = CalculateAimDirection(secondaryFire, player, lastSecondaryCheck, shot == 0);
+                    lastSecondaryCheck = player.position;
+                    secondaryShots.Add((start, dir));
+                    CreateTelegraph(start, dir);
+                }
+
+                yield return new WaitForSeconds(_railgunTelegraph);
+
+                // Re-aim and wait interval before next telegraph (if not last shot)
+                if (shot < shotCount - 1)
+                {
+                    yield return AimPhaseCoroutine(activeFire, secondaryFire, player, _railgunTelegraphInterval);
+                }
             }
 
-            // Lock aim origin and direction at end of telegraph
-            Vector2 activeStart = Vector2.zero;
-            Vector2 activeDir = Vector2.zero;
-            Vector2 secondaryStart = Vector2.zero;
-            Vector2 secondaryDir = Vector2.zero;
-            if (activeFire != null)
-            {
-                activeStart = activeFire.position;
-                activeDir = ((Vector2)(player.position - activeFire.position)).normalized;
-            }
-            if (secondaryFire != null)
-            {
-                secondaryStart = secondaryFire.position;
-                secondaryDir = ((Vector2)(player.position - secondaryFire.position)).normalized;
-            }
-
-            // Telegraph lines
-            if (activeFire != null) CreateTelegraph(activeStart, activeDir);
-            if (secondaryFire != null) CreateTelegraph(secondaryStart, secondaryDir);
-
-            yield return new WaitForSeconds(_railgunTelegraph);
-
+            // Clear all telegraphs before firing
             ClearTelegraphs();
 
-            // Fire railguns along locked trajectory
-            if (activeFire != null) FireRailgun(activeStart, activeDir);
-            if (secondaryFire != null) FireRailgun(secondaryStart, secondaryDir);
+            // Fire all shots in sequence with tiny delay
+            for (int i = 0; i < activeShots.Count; i++)
+            {
+                FireRailgun(activeShots[i].start, activeShots[i].dir);
+                if (dualHand && i < secondaryShots.Count)
+                {
+                    FireRailgun(secondaryShots[i].start, secondaryShots[i].dir);
+                }
+
+                yield return new WaitForSeconds(0.2f);
+            }
         }
 
-        private void AimFirePoint(Transform firePoint, Transform player)
+        private IEnumerator AimPhaseCoroutine(Transform fireA, Transform fireB, Transform player, float duration)
         {
-            if (firePoint == null) return;
+            float timer = 0f;
+            while (timer < duration)
+            {
+                timer += Time.deltaTime;
+                if (fireA != null)
+                {
+                    AimFirePoint(fireA, player);
+                }
+
+                if (fireB != null)
+                {
+                    AimFirePoint(fireB, player);
+                }
+
+                yield return null;
+            }
+        }
+
+        private Vector2 CalculateAimDirection(Transform firePoint, Transform player, Vector2 lastCheckedPos, bool isFirstShot)
+        {
+            Vector2 rawDir = ((Vector2)(player.position - firePoint.position)).normalized;
+
+            // First shot is always accurate; variance only applies to follow-up shots
+            if (isFirstShot || _railgunAimVarianceDeg <= 0f)
+            {
+                return rawDir;
+            }
+
+            // Add random angular offset
+            float offset = Random.Range(-_railgunAimVarianceDeg, _railgunAimVarianceDeg);
+            return Quaternion.Euler(0, 0, offset) * rawDir;
+        }
+
+        private static void AimFirePoint(Transform firePoint, Transform player)
+        {
+            if (firePoint == null)
+            {
+                return;
+            }
+
             Vector2 direction = ((Vector2)(player.position - firePoint.position)).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
             firePoint.rotation = Quaternion.Euler(0, 0, angle);
@@ -338,7 +448,11 @@ namespace Enemy.Bosses
 
         private void FireBullet(Transform firePoint, Transform player)
         {
-            if (firePoint == null) return;
+            if (firePoint == null)
+            {
+                return;
+            }
+
             Vector2 dir = ((Vector2)(player.position - firePoint.position)).normalized;
             var damageInfo = new DamageInfo(_stats.Damage, dir * _stats.KnockbackForce);
             Bullet bullet = _bulletPool.Get();
@@ -387,7 +501,10 @@ namespace Enemy.Bosses
         {
             Vector2 start = lockedStart;
             Vector2 dir = lockedDir;
-            if (dir.sqrMagnitude < 0.001f) dir = Vector2.up;
+            if (dir.sqrMagnitude < 0.001f)
+            {
+                dir = Vector2.up;
+            }
 
             float remainingRange = _railgunMaxRange;
             Vector2 currentStart = start;

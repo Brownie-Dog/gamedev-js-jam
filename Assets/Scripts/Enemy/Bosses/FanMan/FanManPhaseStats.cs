@@ -20,6 +20,11 @@ namespace Enemy.Bosses
             RailgunTelegraphDuration = 2f,
             RailgunLingerDuration = 1.5f,
             RailgunMaxRange = 60f,
+            RailgunMultiShotMin = 1,
+            RailgunMultiShotMax = 1,
+            RailgunTelegraphInterval = 0.5f,
+            RailgunAimVarianceDeg = 0f,
+            RailgunAimVarianceThreshold = 1f,
             FanPushWeight = 0.5f,
             NormalGunWeight = 0.5f,
             RailgunWeight = 0f,
@@ -41,6 +46,11 @@ namespace Enemy.Bosses
             RailgunTelegraphDuration = 1.5f,
             RailgunLingerDuration = 1.5f,
             RailgunMaxRange = 60f,
+            RailgunMultiShotMin = 1,
+            RailgunMultiShotMax = 1,
+            RailgunTelegraphInterval = 0.5f,
+            RailgunAimVarianceDeg = 0f,
+            RailgunAimVarianceThreshold = 1f,
             FanPushWeight = 0.45f,
             NormalGunWeight = 0.4f,
             RailgunWeight = 0.15f,
@@ -62,6 +72,11 @@ namespace Enemy.Bosses
             RailgunTelegraphDuration = 1f,
             RailgunLingerDuration = 2f,
             RailgunMaxRange = 60f,
+            RailgunMultiShotMin = 2,
+            RailgunMultiShotMax = 3,
+            RailgunTelegraphInterval = 0.5f,
+            RailgunAimVarianceDeg = 10f,
+            RailgunAimVarianceThreshold = 1f,
             FanPushWeight = 0.35f,
             NormalGunWeight = 0.3f,
             RailgunWeight = 0.35f,
@@ -91,6 +106,11 @@ namespace Enemy.Bosses
             public float RailgunTelegraphDuration = 2f;
             public float RailgunLingerDuration = 1.5f;
             public float RailgunMaxRange = 30f;
+            public int RailgunMultiShotMin = 1;
+            public int RailgunMultiShotMax = 1;
+            public float RailgunTelegraphInterval = 0.5f;
+            public float RailgunAimVarianceDeg = 0f;
+            public float RailgunAimVarianceThreshold = 1f;
 
             [Header("Move Weights")]
             [Range(0f, 1f)] public float FanPushWeight = 0.5f;

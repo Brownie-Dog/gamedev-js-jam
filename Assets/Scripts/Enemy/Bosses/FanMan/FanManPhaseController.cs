@@ -140,6 +140,9 @@ namespace Enemy.Bosses
             _gunMove.SetShotInterval(stats.NormalGunShotInterval);
             _gunMove.SetAimDurationRange(stats.AimDurationMin, stats.AimDurationMax);
             _gunMove.SetRailgunStats(stats.RailgunTelegraphDuration, stats.RailgunLingerDuration, stats.RailgunMaxRange);
+            _gunMove.SetMultiShotConfig(stats.RailgunMultiShotMin, stats.RailgunMultiShotMax,
+                stats.RailgunTelegraphInterval,
+                stats.RailgunAimVarianceDeg, stats.RailgunAimVarianceThreshold);
             _gunMove.SetGunWeights(stats.NormalGunWeight, stats.RailgunWeight);
         }
 
