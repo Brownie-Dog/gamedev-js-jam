@@ -27,10 +27,15 @@ namespace Loadout
 
         [SerializeField] private Camera _mainCamera;
 
-        [SerializeField] private Color _emptySlotColor = new Color(0.2f, 0.8f, 0.2f, 0.5f);
+        [SerializeField] private Color _emptyGeneralSlotColor = new Color(0.04f, 0.94f, 0.93f, 0.5f);
 
-        [SerializeField] private Color _occupiedSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.7f);
+        [SerializeField] private Color _occupiedGeneralSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.5f);
 
+        [SerializeField] private Color _emptyBackSlotColor = new Color(0.53f, 0.34f, 0.85f, 0.5f);
+
+        [SerializeField] private Color _occupiedBackSlotColor = new Color(0.8f, 0.2f, 0.2f, 0.5f);
+
+        private WeaponItemData CurrentlyDraggedWeapon { get; set; }
         private readonly Dictionary<int, LoadoutSlotUI> _slotUIs = new();
         private readonly List<LoadoutInventoryItemUI> _inventoryItemUIs = new();
 
@@ -81,6 +86,41 @@ namespace Loadout
         {
             _canvasRoot.SetActive(false);
             ClearAll();
+        }
+
+        public void SetDraggingWeapon(WeaponItemData weapon)
+        {
+            CurrentlyDraggedWeapon = weapon;
+            UpdateSlotHighlights();
+        }
+
+        public void ClearDraggingWeapon()
+        {
+            CurrentlyDraggedWeapon = null;
+            UpdateSlotHighlights();
+        }
+
+        private void UpdateSlotHighlights()
+        {
+            if (CurrentlyDraggedWeapon == null)
+            {
+                foreach (var slotUI in _slotUIs.Values)
+                {
+                    slotUI.ShowCompatibleItemSlot(isCompatible: false, isDragging: false);
+                }
+
+                return;
+            }
+
+            var compatibleTypes = CurrentlyDraggedWeapon.CompatibleSlotTypes;
+
+            foreach (var slotData in _slotUIs)
+            {
+                var slotUI = slotData.Value;
+                var slotType = _playerEquipment.GetSlotType(slotData.Key);
+                var isCompatible = compatibleTypes.Contains(slotType);
+                slotUI.ShowCompatibleItemSlot(isCompatible: isCompatible, isDragging: true);
+            }
         }
 
         public void HandleDropOnSlot(WeaponItemData weapon, bool dragFromEquipment, int sourceSlotId,
@@ -203,7 +243,10 @@ namespace Loadout
                 var slotUI = Instantiate(_slotUIPrefab, _slotContainer);
                 var weapon = _playerEquipment.GetWeaponInSlot(slotId);
 
-                slotUI.Initialize(slotId, weapon, _emptySlotColor, _occupiedSlotColor);
+                var slotType = _playerEquipment.GetSlotType(slotId);
+                var emptySlotColor = slotType == SlotType.Back ? _emptyBackSlotColor : _emptyGeneralSlotColor;
+                var occupiedSlotColor = slotType == SlotType.Back ? _occupiedBackSlotColor : _occupiedGeneralSlotColor;
+                slotUI.Initialize(slotId, weapon, emptySlotColor, occupiedSlotColor, slotType);
                 _slotUIs[slotId] = slotUI;
             }
         }

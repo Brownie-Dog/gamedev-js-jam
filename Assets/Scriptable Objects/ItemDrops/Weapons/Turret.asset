@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDrops.WeaponItemData
   <ItemName>k__BackingField: Turret
   <Description>k__BackingField: Your friendly companion
-  <Icon>k__BackingField: {fileID: 5268392283821558990, guid: 9f2b5178dd2224e438b6b805212256c0, type: 3}
+  <Icon>k__BackingField: {fileID: 1036049719387821611, guid: 9f2b5178dd2224e438b6b805212256c0, type: 3}
   <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 2760287811646268166, guid: 4780f64ed7b090546bed2c346bc259c2, type: 3}
   <Damage>k__BackingField: 1

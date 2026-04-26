@@ -15,7 +15,7 @@ TagManager:
   - UI
   - Enemy
   - Player
-  - 
+  - Wall
   - 
   - 
   - 
@@ -42,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: OvenLordSwordSweep
+    uniqueID: 2575009981
     locked: 0
   m_RenderingLayers:
   - Default
