@@ -15,7 +15,7 @@ MonoBehaviour:
   <ItemName>k__BackingField: Sawblade
   <Description>k__BackingField: Watch your fingers!
   <Icon>k__BackingField: {fileID: -3491535641950164880, guid: 69c55a2474d14b1428b6c2fbbe6467a3, type: 3}
-  <Rarity>k__BackingField: 0
+  <Rarity>k__BackingField: 1
   <WeaponPrefab>k__BackingField: {fileID: 1598624845947114235, guid: 1921feabbb7bdb74ca0e7c8d013d6960, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0

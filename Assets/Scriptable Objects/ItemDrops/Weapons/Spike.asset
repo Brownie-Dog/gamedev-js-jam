@@ -15,7 +15,7 @@ MonoBehaviour:
   <ItemName>k__BackingField: Spike
   <Description>k__BackingField: This hurts more than you think!
   <Icon>k__BackingField: {fileID: -3064960857611016881, guid: 52f6a77d5d715f14d87154a33106ccce, type: 3}
-  <Rarity>k__BackingField: 1
+  <Rarity>k__BackingField: 0
   <WeaponPrefab>k__BackingField: {fileID: 8907648602986796793, guid: 1cd8f774ad3795a41ab16a1a269956ca, type: 3}
   <Damage>k__BackingField: 1
   <CooldownTime>k__BackingField: 0

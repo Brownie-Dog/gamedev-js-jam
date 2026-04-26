@@ -15,7 +15,7 @@ MonoBehaviour:
   <ItemName>k__BackingField: Railgun
   <Description>k__BackingField: Get railed
   <Icon>k__BackingField: {fileID: -5982428818339340050, guid: 9d5c539993c7a444a9fc75f273941fda, type: 3}
-  <Rarity>k__BackingField: 0
+  <Rarity>k__BackingField: 1
   <WeaponPrefab>k__BackingField: {fileID: 1500723003622204600, guid: 30b740bd94ab2d448bd8154a770d875c, type: 3}
   <Damage>k__BackingField: 10
   <CooldownTime>k__BackingField: 2.5
