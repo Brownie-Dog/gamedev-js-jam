@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     public interface IFanManMove
     {

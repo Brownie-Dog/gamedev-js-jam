@@ -6,7 +6,7 @@ using UnityEngine.Assertions;
 using Weapons;
 using Random = UnityEngine.Random;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     public class FanManGunMove : MonoBehaviour, IFanManMove
     {

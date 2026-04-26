@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     public class FanManPhaseController : MonoBehaviour
     {

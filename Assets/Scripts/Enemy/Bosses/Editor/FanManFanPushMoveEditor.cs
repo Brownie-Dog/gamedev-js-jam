@@ -1,3 +1,4 @@
+using Enemy.Bosses.FanMan;
 using UnityEngine;
 using UnityEditor;
 

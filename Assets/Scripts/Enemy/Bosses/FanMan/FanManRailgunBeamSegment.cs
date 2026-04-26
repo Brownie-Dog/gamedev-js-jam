@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Pool;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     public class FanManRailgunBeamSegment : MonoBehaviour
     {

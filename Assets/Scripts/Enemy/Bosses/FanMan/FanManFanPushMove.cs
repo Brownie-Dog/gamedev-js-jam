@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     public class FanManFanPushMove : MonoBehaviour, IFanManMove
     {

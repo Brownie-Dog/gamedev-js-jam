@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     [CreateAssetMenu(menuName = "Boss/FanManPhaseStats")]
     public class FanManPhaseStats : ScriptableObject

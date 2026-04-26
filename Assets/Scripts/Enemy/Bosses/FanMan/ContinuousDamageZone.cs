@@ -2,7 +2,7 @@ using System.Collections;
 using Player;
 using UnityEngine;
 
-namespace Enemy.Bosses
+namespace Enemy.Bosses.FanMan
 {
     /// <summary>
     /// Wraps a DamageDealer to apply continuous damage on a cooldown cycle.
