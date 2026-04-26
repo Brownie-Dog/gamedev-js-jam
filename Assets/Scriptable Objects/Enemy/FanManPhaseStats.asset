@@ -24,10 +24,12 @@ MonoBehaviour:
     NormalGunShotInterval: 0.2
     RailgunTelegraphDuration: 2
     RailgunLingerDuration: 1.5
-    RailgunMaxRange: 30
+    RailgunMaxRange: 60
     FanPushWeight: 0.5
     NormalGunWeight: 0.5
     RailgunWeight: 0
+    DualHandGunWeight: 0
+    ConcurrentMoveWeight: 0
   Phase2:
     MoveCooldown: 2.5
     AimDurationMin: 1.5
@@ -40,10 +42,12 @@ MonoBehaviour:
     NormalGunShotInterval: 0.2
     RailgunTelegraphDuration: 1.5
     RailgunLingerDuration: 1.5
-    RailgunMaxRange: 30
+    RailgunMaxRange: 60
     FanPushWeight: 0.45
     NormalGunWeight: 0.4
     RailgunWeight: 0.15
+    DualHandGunWeight: 0.5
+    ConcurrentMoveWeight: 0
   Phase3:
     MoveCooldown: 1.5
     AimDurationMin: 1
@@ -56,7 +60,9 @@ MonoBehaviour:
     NormalGunShotInterval: 0.15
     RailgunTelegraphDuration: 1
     RailgunLingerDuration: 2
-    RailgunMaxRange: 30
-    FanPushWeight: 0.35
+    RailgunMaxRange: 80
+    FanPushWeight: 0.2
     NormalGunWeight: 0.3
     RailgunWeight: 0.35
+    DualHandGunWeight: 0.75
+    ConcurrentMoveWeight: 0.35

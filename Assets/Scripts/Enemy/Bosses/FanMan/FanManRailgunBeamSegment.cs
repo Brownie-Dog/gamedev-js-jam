@@ -13,6 +13,7 @@ namespace Enemy.Bosses
 
         private IObjectPool<FanManRailgunBeamSegment> _pool;
         private Coroutine _lingerRoutine;
+        private System.Action _onReleased;
 
         private void Awake()
         {
@@ -24,8 +25,10 @@ namespace Enemy.Bosses
             _pool = pool;
         }
 
-        public void Setup(Vector2 start, Vector2 end, float lingerDuration, int damage, float knockbackForce)
+        public void Setup(Vector2 start, Vector2 end, float lingerDuration, int damage, float knockbackForce, System.Action onReleased = null)
         {
+            _onReleased = onReleased;
+
             if (_lingerRoutine != null)
             {
                 StopCoroutine(_lingerRoutine);
@@ -76,6 +79,7 @@ namespace Enemy.Bosses
             _lineRenderer.startColor = Color.clear;
             _lineRenderer.endColor = Color.clear;
 
+            _onReleased?.Invoke();
             _pool?.Release(this);
             _lingerRoutine = null;
         }

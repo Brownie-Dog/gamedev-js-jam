@@ -50,10 +50,11 @@ namespace Enemy.Bosses
         private Coroutine _routine;
         private readonly List<GameObject> _activeTelegraphs = new();
         private readonly List<GameObject> _activeGuns = new();
+        private int _activeBeamSegments;
         private bool _isComplete;
         private bool _isActive;
 
-        public bool IsComplete => _isComplete;
+        public bool IsComplete => _isComplete && _activeBeamSegments == 0;
         public bool IsActive => _isActive;
         public event Action OnMoveComplete;
 
@@ -158,7 +159,16 @@ namespace Enemy.Bosses
 
             if (useRailgun)
             {
+                // Pause movement for the entire railgun sequence (aim + telegraph + fire + linger)
+                var movement = boss.GetComponent<EnemyMovement>();
+                if (movement != null) movement.PauseMovement();
+
                 yield return ExecuteRailgun(player, _useBothHands);
+
+                while (_activeBeamSegments > 0)
+                    yield return null;
+
+                if (movement != null) movement.ResumeMovement();
             }
             else
             {
@@ -289,17 +299,33 @@ namespace Enemy.Bosses
                 yield return null;
             }
 
+            // Lock aim origin and direction at end of telegraph
+            Vector2 activeStart = Vector2.zero;
+            Vector2 activeDir = Vector2.zero;
+            Vector2 secondaryStart = Vector2.zero;
+            Vector2 secondaryDir = Vector2.zero;
+            if (activeFire != null)
+            {
+                activeStart = activeFire.position;
+                activeDir = ((Vector2)(player.position - activeFire.position)).normalized;
+            }
+            if (secondaryFire != null)
+            {
+                secondaryStart = secondaryFire.position;
+                secondaryDir = ((Vector2)(player.position - secondaryFire.position)).normalized;
+            }
+
             // Telegraph lines
-            if (activeFire != null) CreateTelegraph(activeFire);
-            if (secondaryFire != null) CreateTelegraph(secondaryFire);
+            if (activeFire != null) CreateTelegraph(activeStart, activeDir);
+            if (secondaryFire != null) CreateTelegraph(secondaryStart, secondaryDir);
 
             yield return new WaitForSeconds(_railgunTelegraph);
 
             ClearTelegraphs();
 
-            // Fire railguns
-            if (activeFire != null) FireRailgun(activeFire);
-            if (secondaryFire != null) FireRailgun(secondaryFire);
+            // Fire railguns along locked trajectory
+            if (activeFire != null) FireRailgun(activeStart, activeDir);
+            if (secondaryFire != null) FireRailgun(secondaryStart, secondaryDir);
         }
 
         private void AimFirePoint(Transform firePoint, Transform player)
@@ -319,28 +345,49 @@ namespace Enemy.Bosses
             bullet.Activate(firePoint.position, dir, damageInfo, 1);
         }
 
-        private void CreateTelegraph(Transform firePoint)
+        private void CreateTelegraph(Vector2 lockedStart, Vector2 lockedDir)
         {
-            Vector2 start = firePoint.position;
-            Vector2 dir = ((Vector2)(GameObject.FindGameObjectWithTag("Player").transform.position - firePoint.position)).normalized;
+            // Raycast to find bounce for the telegraph too
+            float remainingRange = _railgunMaxRange;
+            RaycastHit2D hit = Physics2D.Raycast(lockedStart, lockedDir, remainingRange, _stats.WallLayer);
 
             GameObject telegraphObj = new GameObject("RailgunTelegraph");
             _activeTelegraphs.Add(telegraphObj);
             LineRenderer telegraph = telegraphObj.AddComponent<LineRenderer>();
             telegraph.useWorldSpace = true;
-            telegraph.positionCount = 2;
             telegraph.startWidth = 0.05f;
             telegraph.endWidth = 0.05f;
-            telegraph.SetPosition(0, start);
-            telegraph.SetPosition(1, start + dir * _railgunMaxRange);
             telegraph.startColor = Color.red;
             telegraph.endColor = new Color(1f, 0f, 0f, 0.3f);
+
+            if (hit.collider != null)
+            {
+                // Bounce — draw 3 points: start → hit → bounce endpoint
+                Vector2 hitPoint = hit.point;
+                remainingRange -= hit.distance;
+                Vector2 bounceDir = Vector2.Reflect(lockedDir, hit.normal);
+                RaycastHit2D bounceHit = Physics2D.Raycast(hitPoint, bounceDir, remainingRange, _stats.WallLayer);
+                Vector2 bounceEnd = bounceHit.collider != null ? bounceHit.point : hitPoint + bounceDir * remainingRange;
+
+                telegraph.positionCount = 3;
+                telegraph.SetPosition(0, lockedStart);
+                telegraph.SetPosition(1, hitPoint);
+                telegraph.SetPosition(2, bounceEnd);
+            }
+            else
+            {
+                // No bounce
+                telegraph.positionCount = 2;
+                telegraph.SetPosition(0, lockedStart);
+                telegraph.SetPosition(1, lockedStart + lockedDir * _railgunMaxRange);
+            }
         }
 
-        private void FireRailgun(Transform firePoint)
+        private void FireRailgun(Vector2 lockedStart, Vector2 lockedDir)
         {
-            Vector2 start = firePoint != null ? (Vector2)firePoint.position : (Vector2)transform.position;
-            Vector2 dir = ((Vector2)(GameObject.FindGameObjectWithTag("Player").transform.position - (Vector3)start)).normalized;
+            Vector2 start = lockedStart;
+            Vector2 dir = lockedDir;
+            if (dir.sqrMagnitude < 0.001f) dir = Vector2.up;
 
             float remainingRange = _railgunMaxRange;
             Vector2 currentStart = start;
@@ -367,18 +414,25 @@ namespace Enemy.Bosses
                 end = currentStart + currentDir * remainingRange;
             }
 
+            _activeBeamSegments++;
             FanManRailgunBeamSegment seg1 = _beamPool.Get();
             seg1.transform.SetParent(null);
             seg1.transform.localScale = Vector3.one;
-            seg1.Setup(currentStart, end, _railgunLinger, _stats.Damage, _stats.KnockbackForce);
+            seg1.Setup(currentStart, end, _railgunLinger, _stats.Damage, _stats.KnockbackForce, OnBeamReleased);
 
             if (bounced)
             {
+                _activeBeamSegments++;
                 FanManRailgunBeamSegment seg2 = _beamPool.Get();
                 seg2.transform.SetParent(null);
                 seg2.transform.localScale = Vector3.one;
-                seg2.Setup(end, bounceEnd, _railgunLinger, _stats.Damage, _stats.KnockbackForce);
+                seg2.Setup(end, bounceEnd, _railgunLinger, _stats.Damage, _stats.KnockbackForce, OnBeamReleased);
             }
+        }
+
+        private void OnBeamReleased()
+        {
+            _activeBeamSegments = Mathf.Max(0, _activeBeamSegments - 1);
         }
     }
 }
