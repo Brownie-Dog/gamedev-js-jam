@@ -194,8 +194,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EndlessMode.EndlessSpawner
   _manager: {fileID: 6871808395724779567}
   _enemyPrefabs:
-  - {fileID: 5394226868365281370, guid: 3cc64f5c917b5a641beb85f4e00511b5, type: 3}
-  - {fileID: 9121619632632392292, guid: 468dfcec77055a24aa4e6d441c5575d3, type: 3}
+  - {fileID: 9121619632632392292, guid: 7cf5a41f24a2af242aee03276a71ce9a, type: 3}
+  - {fileID: 9121619632632392292, guid: 13ca110d15a9e4b4a89543324764d9f3, type: 3}
+  - {fileID: 9121619632632392292, guid: 15002b428403d9542b86aaf21f0f6f64, type: 3}
+  - {fileID: 9121619632632392292, guid: cd85fdd086063eb4aaad29c3b4075223, type: 3}
+  - {fileID: 9121619632632392292, guid: b0c9be48b1d9cd24c897ad080774799a, type: 3}
+  - {fileID: 9121619632632392292, guid: f09009187e149884f99d6d9d89ea3b39, type: 3}
+  - {fileID: 9121619632632392292, guid: 9ff6684484130384486d1b5d015756c3, type: 3}
+  - {fileID: 9121619632632392292, guid: 1e54d535415ff5f46a6b0422ecf8eac5, type: 3}
+  - {fileID: 9121619632632392292, guid: ee5f24317fbdc1842b5bac68f87f461c, type: 3}
+  - {fileID: 9121619632632392292, guid: 2b0f273a59a446a4f969229a5fac6716, type: 3}
   _spawnArea: {fileID: 6628525467168176762}
   _timeBetweenSpawns: 1.5
   _playerTransform: {fileID: 0}
