@@ -43,6 +43,7 @@ public class MeleeEnemyAttack : EnemyAttack
 
     protected override void Attack()
     {
+        if (_playerCollider == null) return;
         var direction = ((Vector2)(_playerCollider.transform.position - transform.position)).normalized;
         var damageInfo = new DamageInfo(_stats.Damage, direction * _stats.KnockbackForce);
         _damageDealer.Activate(damageInfo);

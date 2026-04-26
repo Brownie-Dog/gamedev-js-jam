@@ -25,7 +25,7 @@ MonoBehaviour:
   AttackCooldown: 1
   AttackRange: 1
   Damage: 1
-  KnockbackForce: 15
+  KnockbackForce: 30
   MaxHealth: 15
   DropChance: 0.05
   GuaranteedItem: {fileID: 0}
