@@ -13,10 +13,46 @@ MonoBehaviour:
   m_Name: ShopTable
   m_EditorClassIdentifier: Assembly-CSharp::Shop.ShopTable
   _items:
-  - _item: {fileID: 11400000, guid: bf0b1c0242bcc264a9cea44ff7abe56e, type: 2}
+  - _item: {fileID: 11400000, guid: a5b098006b0439e4eb198be851600f24, type: 2}
     _price: 1
     _weight: 1
-  - _item: {fileID: 11400000, guid: a3ba8464069f07840aed9729a77966c2, type: 2}
+  - _item: {fileID: 11400000, guid: 0ebd0aee9a4809f4d92a72bea9b9d74f, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: 3fdec50085bc4544aabdc58b47dc9302, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: bbf32a44904f63a42a7e1713a0e782e0, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: 3fdec50085bc4544aabdc58b47dc9302, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: acc7cdf7a3706cf4aaf5b1b2a401c92e, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: 79384dbf29613d04181919b8fb4d5110, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: 54e2fd6c1d3bbfd45b6de8c277a34ece, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: bd9c4bcc25b2dc8429806229d97f5b08, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: eade5d80fe5edae4a8e6577166eee7a7, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: 1fe2e65a36975044b973e67e521427f2, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: b4b819ddec591a74a96cc5397242cd88, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: 8be4b37e9415e3c4bba4e91e40102f7d, type: 2}
+    _price: 1
+    _weight: 1
+  - _item: {fileID: 11400000, guid: da2729fa90be3044987e977bd4031fae, type: 2}
     _price: 1
     _weight: 1
   _rareWeight: 70
