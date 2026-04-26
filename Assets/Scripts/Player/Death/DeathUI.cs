@@ -18,8 +18,8 @@ public class DeathUI : MonoBehaviour
     [SerializeField] private VideoEffect _videoEffect;
     [SerializeField] private Transform _defaultRespawnPoint;
 
-    public static bool IsEndlessMode { get; set; } = false;
     public static Transform CurrentRespawnPoint { get; set; }
+    private static Vector3 _pendingEndlessRespawnPosition;
 
     private void Awake()
     {
@@ -59,13 +59,19 @@ public class DeathUI : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        if (IsEndlessMode)
+        var respawnPoint = CurrentRespawnPoint ?? _defaultRespawnPoint;
+
+        if (respawnPoint != null && respawnPoint.GetComponent<EndlessModeMarker>() != null)
         {
+            _pendingEndlessRespawnPosition = respawnPoint.position;
+            SceneManager.sceneLoaded += OnSceneLoadedForEndlessRespawn;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             return;
         }
 
-        var respawnPoint = CurrentRespawnPoint ?? _defaultRespawnPoint;
+        // Reset stage: respawn all enemies and reset boss rooms
+        StageManager.Instance?.ResetStage();
+
         if (respawnPoint != null)
         {
             var player = GameObject.FindGameObjectWithTag(GlobalConstants.PLAYER_TAG);
@@ -73,6 +79,27 @@ public class DeathUI : MonoBehaviour
             {
                 player.transform.position = respawnPoint.position;
             }
+        }
+
+        _canvasObject.SetActive(false);
+        _bsodLayer.SetActive(false);
+    }
+
+    private static void OnSceneLoadedForEndlessRespawn(Scene scene, LoadSceneMode mode)
+    {
+        SceneManager.sceneLoaded -= OnSceneLoadedForEndlessRespawn;
+
+        var player = GameObject.FindGameObjectWithTag(GlobalConstants.PLAYER_TAG);
+        if (player != null)
+        {
+            player.transform.position = _pendingEndlessRespawnPosition;
+        }
+
+        // Refresh the respawn point reference to the new scene's endless marker
+        var marker = GameObject.FindObjectOfType<EndlessModeMarker>();
+        if (marker != null)
+        {
+            CurrentRespawnPoint = marker.transform;
         }
     }
 }

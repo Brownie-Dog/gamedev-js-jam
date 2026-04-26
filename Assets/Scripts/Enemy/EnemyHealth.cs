@@ -20,6 +20,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         _currentHealth = _stats.MaxHealth;
     }
 
+    private void OnEnable()
+    {
+        if (_stats != null)
+            _currentHealth = _stats.MaxHealth;
+    }
+
     public void TakeDamage(DamageInfo info)
     {
         _currentHealth -= info.Damage;
@@ -34,7 +40,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (IsDead())
         {
             OnDeath?.Invoke(this, EventArgs.Empty);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
