@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public EventHandler OnDeath;
     public EventHandler OnHealthChanged;
 
+    public float HealthPercent => (float)_currentHealth / _stats.MaxHealth;
+
     private void Awake()
     {
         Assert.IsNotNull(_stats);

@@ -10,9 +10,10 @@ namespace Player
         [SerializeField] private LayerMask _targetLayerMask;
 
         private int _damageAmount;
-        private float _knockbackForce;
+        private Vector2 _knockback;
+        private bool _useExplicitKnockback;
         private bool _active;
-        private readonly HashSet<Collider2D> _hitTargets = new();
+        private readonly HashSet<GameObject> _hitTargets = new();
 
         public event Action OnHit;
 
@@ -24,20 +25,16 @@ namespace Player
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            // TryDealDamage(other);
-        }
-
         private void OnTriggerStay2D(Collider2D other)
         {
             TryDealDamage(other);
         }
 
-        public void Activate(DamageInfo damageInfo)
+        public void Activate(DamageInfo damageInfo, bool useExplicitKnockback = true)
         {
             _damageAmount = damageInfo.Damage;
-            _knockbackForce = damageInfo.Knockback.magnitude;
+            _knockback = damageInfo.Knockback;
+            _useExplicitKnockback = useExplicitKnockback && damageInfo.Knockback.sqrMagnitude > 0.001f;
             _active = true;
             _hitTargets.Clear();
         }
@@ -46,7 +43,6 @@ namespace Player
         {
             _active = false;
         }
-
 
         private void TryDealDamage(Collider2D other)
         {
@@ -60,7 +56,7 @@ namespace Player
                 return;
             }
 
-            if (_hitTargets.Contains(other))
+            if (_hitTargets.Contains(other.gameObject))
             {
                 return;
             }
@@ -68,10 +64,20 @@ namespace Player
             var target = other.gameObject.GetComponent<IDamageable>();
             if (target != null)
             {
-                var direction = ((Vector2)(other.transform.position - transform.position)).normalized;
-                var info = new DamageInfo(_damageAmount, direction * _knockbackForce);
+                Vector2 knockback;
+                if (_useExplicitKnockback)
+                {
+                    knockback = _knockback;
+                }
+                else
+                {
+                    var direction = ((Vector2)(other.transform.position - transform.position)).normalized;
+                    knockback = direction * _knockback.magnitude;
+                }
+
+                var info = new DamageInfo(_damageAmount, knockback);
                 target.TakeDamage(info);
-                _hitTargets.Add(other);
+                _hitTargets.Add(other.gameObject);
                 OnHit?.Invoke();
             }
         }
