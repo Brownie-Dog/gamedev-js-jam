@@ -108,7 +108,7 @@ namespace EndlessMode
         {
             if (_isSpawning) return;
 
-            _activeEnemies.RemoveAll(item => item == null);
+            _activeEnemies.RemoveAll(item => item == null || !item.activeInHierarchy);
 
             if (_activeEnemies.Count == 0)
             {
