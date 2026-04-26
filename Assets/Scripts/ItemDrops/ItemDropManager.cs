@@ -1,5 +1,6 @@
 using System;
 using Player;
+using UI;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
@@ -81,6 +82,15 @@ namespace ItemDrops
 
         private void HandleItemPicked(object sender, ItemPickedEventArgs e)
         {
+            if (e.Item is WeaponItemData weaponData)
+            {
+                int emptySlot = _playerEquipment.FirstEmptySlot(weaponData);
+                if (emptySlot < 0)
+                {
+                    InventoryPickupAnimator.Instance?.AnimatePickup(e.IconSprite, e.IconScreenPosition);
+                }
+            }
+
             e.Item.Apply(_playerEquipment, _playerInventory, _playerStats);
         }
 
