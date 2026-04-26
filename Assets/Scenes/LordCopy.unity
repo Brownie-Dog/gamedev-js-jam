@@ -5463,34 +5463,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2379184611772885527, guid: ec544ce2f1cb53242aa3fa484ca69f0a, type: 3}
   m_PrefabInstance: {fileID: 1370518645}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1468388038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9121619632632392292, guid: 13ca110d15a9e4b4a89543324764d9f3, type: 3}
-  m_PrefabInstance: {fileID: 928504766164440469}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1468388053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468388038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07f6bf585183bf469e9baccd759e403, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlowtorchAttack
-  _stats: {fileID: 11400000, guid: 70a78692c5b397f40a7c3fb5be5c7382, type: 2}
-  _attackSound: {fileID: 0}
-  _lastAttackTime: -3.4028235e+38
-  _bulletPrefab: {fileID: 0}
-  _poolSize: 15
-  _firePoint: {fileID: 0}
-  _penetrationCount: 1
-  _player: {fileID: 0}
-  _weaponTransform: {fileID: 0}
-  _botRenderer: {fileID: 0}
-  _weaponRenderer: {fileID: 0}
 --- !u!1 &1479418686
 GameObject:
   m_ObjectHideFlags: 0
@@ -5945,6 +5917,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 837830959801875611, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+      propertyPath: _cameraTransform
+      value: 
+      objectReference: {fileID: 1885529962}
     - target: {fileID: 3786387213844115255, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 126.49
@@ -7095,6 +7071,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 8137589601223373071, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
   m_PrefabInstance: {fileID: 1620523745}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1885529962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5988356853382580324, guid: 808be9d449da5f349ac84080c0bcbe07, type: 3}
+  m_PrefabInstance: {fileID: 1620523745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1928153125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7282,10 +7263,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9121619632632392292, guid: 13ca110d15a9e4b4a89543324764d9f3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1468388053}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca110d15a9e4b4a89543324764d9f3, type: 3}
 --- !u!1001 &1159702731020615676
 PrefabInstance:

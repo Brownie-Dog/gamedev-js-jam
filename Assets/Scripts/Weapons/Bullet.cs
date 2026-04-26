@@ -16,6 +16,7 @@ namespace Weapons
         private IObjectPool<Bullet> _pool;
         private float _lifetimeTimer;
         private int _currentPenetration;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -51,7 +52,7 @@ namespace Weapons
                 ReturnToPool();
             }
         }
-        
+
         public void Deactivate()
         {
             _damageDealer.Deactivate();
@@ -75,6 +76,14 @@ namespace Weapons
         public void SetPool(IObjectPool<Bullet> pool)
         {
             _pool = pool;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+            {
+                ReturnToPool();
+            }
         }
     }
 }
